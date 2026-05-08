@@ -44,6 +44,26 @@ supervision (core business logic, critical fixes). Abstract tasks on the
 product’s edges can be handled with `auto accept mode`   
 Build custom slash commands: save tokens
 
+Stages and challenges of AI adoption:
+https://x.com/Alfred_Lin/status/2051660439667527715?utm_source=tldrfounders
+
+- Adoption: The first bottleneck is getting people to actually use AI tools, not just sign up for them. Leadership has to shape behavior so usage is effective and not just “token-maxing.”
+
+- Engineering velocity: After adoption, the constraint becomes how much real engineering output improves across the whole team. The challenge is spreading top-performer gains to the median developer, not just celebrating a small elite.
+
+- Product velocity and quality: Once engineers can ship faster, decision-making and product taste become the new limit. Companies stall when they accelerate output without improving what they choose to build or the user experience quality.
+
+- Internal development operating system: The next bottleneck is building custom AI-enabled workflows and agents (evals, routing, code review, security, incident triage) that remove recurring friction. These systems must be continuously rebuilt because tools and patterns age quickly.
+
+- Team design and organizational model: The final bottleneck is how work is divided and coordinated in an AI era where smaller teams can move much faster. Existing operating models (waterfall, classic agile) are no longer enough, so organizations must redesign how teams collaborate end-to-end.
+
+
+AI generated::
+1. Education and awareness: workshops, training, office hours, show and tells, … (EDUCATION.md). Identify low hanging fruit projects and what AI show _NOT_ do.
+2. Making data ready for AI use. APIs, MCP, slash commands, documentation (AGENTS.md). Piloting automation of internal processes.
+3. Scaling AI across the organization. Building infrastructure, governance, and culture to support widespread AI adoption.
+
+
 # Security
 
 Create a set of approved MCP servers. Lock MCP servers down.
