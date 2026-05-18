@@ -22,6 +22,11 @@ I know it sounds like a utopian dream, an smoke dream. But this is only power as
 If you like to read more about this topic, there are many resources and scholarly thoughts:
 ...
 
+## The ROI and Unit Economics Trap
+
+Combine two sections of the bottlenecks.md article: [ROI](bottlenecks.md#roi) and [Unit Economics](bottlenecks.md#unit-economics) 
+
+
 ## Blueprint for Production-grade Customer-facing Agents
 
 The architecture and design considerations for building production-grade customer-facing agents. Thread off the conversation in [bottlenecks.md - Agentic Problems](bottlenecks.md#agentic-orchestration)

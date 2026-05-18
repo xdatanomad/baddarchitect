@@ -314,7 +314,7 @@ The AI should not be “connected to everything.” It should be connected to th
 
 ---
 
-# 5. ROI clarity
+# 5. ROI clarity {#roi}
 
 AI-native companies can also fall into the ROI trap.
 
@@ -559,7 +559,7 @@ Narrow agents with clear tools and clear success criteria beat general agents al
 
 ---
 
-# 9. Unit economics
+# 9. Unit economics {#unit-economics}
 
 This is a brutal one.
 
