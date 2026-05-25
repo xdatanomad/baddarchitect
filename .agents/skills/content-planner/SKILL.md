@@ -77,3 +77,23 @@ When revising the map:
 - Mark factual claims that need external research instead of presenting them as settled.
 
 The planner builds, revises, and suggests content to be delivered later. It does not create the content itself.
+
+## Numbering System
+
+Use stable content IDs in item headings. The prefix comes from the top-level content-map section:
+
+- `p1` for Pillar 1: AI Adoption Stages & Challenges.
+- `p2` for Pillar 2: AI Adoption Operating Manual.
+- `p3` for Pillar 3: Production AI Systems and Agents with ROI.
+- `p4` for Pillar 4: AI Security Best Practices.
+- `cc` for Challenged / Later Candidates.
+
+Follow the prefix with a two-digit sequence, such as `p1-01`, `p2-03`, or `cc-01`.
+
+Use the ID at the start of the content item heading:
+
+```markdown
+### p1-01 Title
+```
+
+When adding a new item, use the next available number within that section. Do not renumber existing items unless the user explicitly asks for a full renumbering pass.
