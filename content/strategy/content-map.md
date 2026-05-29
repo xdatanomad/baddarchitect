@@ -79,6 +79,8 @@ Use this shape for each planned content entry:
   - Use the existing fear/adoption articles to frame the human tension: fear is rational, but disengagement leaves teams behind; enthusiasm is useful, but blind acceleration creates quality and trust risk.
   - Show why AI-native teams need mixed capability: product judgment, domain knowledge, data engineering, platform/infra, security, evals, customer implementation, and workflow design.
   - Contrast the two failure profiles: the overly eager engineer who ships untrusted AI shortcuts, and the fear-driven engineer who avoids the tools and loses leverage.
+  - Explain the management shift from command-and-control to coach-and-communicate: faster AI-assisted teams need clearer context, stronger trust, better feedback loops, and leaders who coach decision quality instead of routing every decision upward.
+  - Argue that developers increasingly become micro product managers: coding agents let individuals touch more unfamiliar areas faster, so companies must find or groom builders who can weigh security, ROI, UX, data, support, and customer impact while working with less cross-team handoff time.
   - Turn adoption into management practice: pair skeptics with AI-forward builders, require verification and tests, create show-and-tell loops, document safe patterns, and reward measured business impact over tool usage.
   - Practical takeaway: a balanced-builder scorecard covering AI fluency, skepticism, verification discipline, workflow thinking, security judgment, and customer empathy.
 - Source notes: `content/notes/bottlenecks.md` section 11; `content/articles/challenges/the_fear.md`; `content/articles/challenges/02_moving_forward.md`; `content/notes/NOTES.md` adoption, develop, and company restructure notes.
