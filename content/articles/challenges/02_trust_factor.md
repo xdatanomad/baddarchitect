@@ -161,6 +161,10 @@ Before promoting an agent from one level to the next, get clear answers:
 
 If you cannot answer these for the current level, you are not ready for the next one.
 
+**Pro Tip:** _Don't write the adversarial test set by hand._
+
+— Point a second AI agent at your chatbot and have it generate hostile prompts, prompt-injection attempts, emotionally charged conversations, and policy edge cases at scale. Score the results, fold the failures back into your eval set, and re-run on every prompt, model, or tool change.
+
 ## The Point
 
 The trust factor is not a model problem. It is a **system** problem.
