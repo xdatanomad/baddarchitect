@@ -83,7 +83,9 @@ Not to say that speeding up engineering time or generating summaries is not valu
 
 **Pro Tip:** _Map your AI features to the business outcomes and put a dollar value on them._
 
-## The Margin Trap
+## The Margin Trap - Cost-to-Serve Problem
+
+AI Cost-to-Serve: What is the cost of delivering the AI feature to the customer?
 
 This is where popular AI features quietly go negative.
 
@@ -106,9 +108,7 @@ That is not one model call. That is a small cost stack, _run thousands of times 
 
 It is hard to build a fixed monthly user pricing model on top of a variable cost stack that can easily run into the double digits.
 
----
-
-Here is the shape of the trap:
+Here is the shape of the **trap**:
 
 1. The team ships an AI feature inside an existing product.
 2. Usage explodes because the feature is genuinely useful.
@@ -120,20 +120,26 @@ Here is the shape of the trap:
 
 The feature was not a mistake. The economics were.
 
-The fix is operational, not philosophical:
+The **fix** is **operational**, not philosophical:
 
-- **Know the cost per completed workflow**, not just the cost per token.
-- **Route by difficulty.** Cheap model first, escalate only when the cheap model is not enough.
-- **Cache aggressively.** Identical prompts, retrievals, and tool outputs should not be re-paid for.
-- **Use deterministic code wherever AI judgment is not adding value.**
-- **Cap retries and context length.** Unbounded loops turn a $0.04 workflow into a $4 workflow.
-- **Align pricing with cost shape.** Seat pricing is fine for predictable usage; outcome or hybrid pricing is more honest when cost scales with consumption. Bessemer's playbook lays out workable hybrids. ([Bessemer](https://www.bvp.com/assets/uploads/2026/02/The_AI_pricing_playbook_for_founders_Bessemer_Venture_Partners_2026.pdf))
+- _Know the cost per completed AI-workflow_, not just the cost per token.
+- _Route by difficulty._ Cheap model first, escalate only when the cheap model is not enough.
+- _Cache aggressively._ Identical prompts, retrievals, and tool outputs should not be re-paid for.
+- _Use deterministic code wherever AI judgment is not adding value._
+- _Cap retries and context length._ Unbounded loops turn a $0.04 workflow into a $4 workflow.
+- _Align pricing with cost shape._ Seat pricing is fine for predictable usage; outcome or hybrid pricing is more honest when cost scales with consumption. Bessemer's playbook lays out workable hybrids. ([Bessemer](https://www.bvp.com/assets/uploads/2026/02/The_AI_pricing_playbook_for_founders_Bessemer_Venture_Partners_2026.pdf))
 
-A profitable AI product knows its **cost per completed workflow** the way a SaaS company knows its CAC.
+A profitable AI product knows its **cost per completed AI-workflow** the way a SaaS company knows its CAC.
 
-**Pro Tip:** _Instrument cost at the workflow level, not the API level._
+**Pro Tip #1:**
+- _Instrument cost at the workflow level, not the API level._
+- _Higher instrumentation on metrics is essential._ 
+- _A direct-path from API costs to real business value improves decision-making._
+- _Hiring professionals to optimize the cost per workflow can change the ROI game._
 
-— Tag every model call, retrieval, tool call, and human review with a workflow ID. Sum the total at the end of each successful outcome. The number that matters is "cost to finish this job for this customer," not "monthly OpenAI bill."
+**Pro Tip #2:**
+
+**Tag** every model call, retrieval, tool call, and human review with a workflow ID. Sum the total at the end of each successful outcome. The number that matters is "cost to finish this job for this customer," not "monthly OpenAI bill."
 
 ## A Personal Example
 
@@ -145,15 +151,15 @@ We sat down and reconstructed one "successful customer outcome" from the product
 
 The fully loaded cost per outcome was roughly **9x** what the team had assumed when they set the price.
 
-At their seat price, heavy users were unprofitable. Light users were subsidizing the heavy ones. Margin was a polite fiction.
+At their seat price, heavy users were unprofitable. **Light users were subsidizing the heavy ones**. Margin was a polite fiction.
 
-It took two weeks of work to fix. Cheaper default model. Aggressive caching on retrieval. Bounded retries. Deterministic code where the AI was adding nothing. A pricing change for the next renewal cohort.
+It took four weeks of work to fix. Cheaper default model. Aggressive caching on retrieval. Bounded retries. Deterministic code where the AI was adding nothing. A possible pricing change for the next renewal cohort.
 
 The feature stayed popular. Margin moved from negative to healthy. Nothing about the customer experience got worse.
 
-The lesson I took with me: **most AI features are mispriced because nobody calculated the real cost per outcome before shipping.** Not from carelessness. The cost is hidden across five different bills — model, embeddings, vector DB, observability, human review — and nobody adds them up at the workflow level.
+The lesson I took with me: **most AI features are mispriced because nobody calculated the real cost per outcome before shipping.** Not from carelessness. The cost is hidden across different bills and is truly hard to track — model, embeddings, vector DB, observability, infrastructure, human review — and how to divide it across number of users/seats is not obvious.
 
-If you do not measure cost per outcome, you do not have a unit economics problem.
+If you do not **measure cost per outcome**, you do **not** have a **unit economics problem**.
 
 You have a unit economics _blind spot_, which is worse.
 
@@ -163,7 +169,11 @@ Even with healthy unit economics, there is a second question:
 
 _What stops someone else from doing this?_
 
+_Would one of the flagship AI models just do the same thing with a simple wrapper and a UI?_
+
 For the first wave of AI products, novelty was enough. Being early was the moat. That window is closing.
+
+---
 
 Models are converging. APIs are getting cheaper. Coding agents are turning a six-week build into a six-day build. Foundation labs absorb common features into the base layer every few months.
 
