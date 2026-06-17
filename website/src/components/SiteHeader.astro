@@ -1,0 +1,102 @@
+---
+import { site } from "@/lib/site";
+---
+
+<header class="site-header">
+  <a class="skip" href="#main-content">Skip to content</a>
+  <nav class="shell nav" aria-label="Primary navigation">
+    <a class="brand" href="/">
+      <span class="mark" aria-hidden="true">AAB</span>
+      <span>{site.name}</span>
+    </a>
+    <div class="links">
+      {site.nav.slice(1).map((item) => <a href={item.href}>{item.label}</a>)}
+    </div>
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    border-bottom: 1px solid var(--line);
+    background: rgba(247, 244, 237, 0.92);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .skip {
+    background: var(--ink);
+    color: var(--surface);
+    left: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: -60px;
+  }
+
+  .skip:focus {
+    top: 12px;
+  }
+
+  .nav {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    min-height: 72px;
+  }
+
+  .brand {
+    align-items: center;
+    color: var(--ink);
+    display: inline-flex;
+    font-family: Avenir Next, Avenir, "Segoe UI", sans-serif;
+    font-weight: 800;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .mark {
+    align-items: center;
+    background: var(--ink);
+    color: var(--surface);
+    display: inline-flex;
+    font-size: 0.66rem;
+    height: 34px;
+    justify-content: center;
+    letter-spacing: 0.08em;
+    width: 42px;
+  }
+
+  .links {
+    align-items: center;
+    display: flex;
+    font-family: Avenir Next, Avenir, "Segoe UI", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    gap: 22px;
+  }
+
+  .links a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .links a:hover {
+    color: var(--signal);
+  }
+
+  @media (max-width: 760px) {
+    .nav {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 14px;
+      padding-bottom: 16px;
+      padding-top: 16px;
+    }
+
+    .links {
+      flex-wrap: wrap;
+      gap: 14px 18px;
+    }
+  }
+</style>
+

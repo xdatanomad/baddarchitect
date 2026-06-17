@@ -1,0 +1,27 @@
+---
+import ArticleCard from "@/components/ArticleCard.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getPublishedLessons } from "@/lib/content";
+
+const lessons = await getPublishedLessons();
+---
+
+<BaseLayout
+  title="Lessons"
+  description="Short practical lessons for AI architects and adoption teams."
+>
+  <section class="shell section tight">
+    <div class="prose">
+      <p class="eyebrow">Lessons</p>
+      <h1>Short lessons for adoption work.</h1>
+      <p class="lede">
+        Compact guides, checklists, and implementation notes. The first MVP
+        lesson is included to validate the MDX workflow.
+      </p>
+    </div>
+  </section>
+  <section class="shell">
+    {lessons.map((lesson) => <ArticleCard entry={lesson} />)}
+  </section>
+</BaseLayout>
+

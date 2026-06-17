@@ -1,0 +1,25 @@
+---
+const { title = "Takeaway" } = Astro.props;
+---
+
+<aside class="callout">
+  <strong>{title}</strong>
+  <slot />
+</aside>
+
+<style>
+  .callout {
+    background: rgba(18, 106, 91, 0.08);
+    border: 1px solid rgba(18, 106, 91, 0.24);
+    border-left: 5px solid var(--accent);
+    margin: 28px 0;
+    padding: 18px;
+  }
+
+  strong {
+    display: block;
+    font-family: Avenir Next, Avenir, "Segoe UI", sans-serif;
+    margin-bottom: 8px;
+  }
+</style>
+

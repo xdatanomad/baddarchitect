@@ -1,0 +1,23 @@
+{
+  "name": "ai-adoption-blueprint-website",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
+    "check": "ASTRO_TELEMETRY_DISABLED=1 astro check"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.2",
+    "@astrojs/mdx": "^6.0.3",
+    "@astrojs/rss": "^4.0.9",
+    "astro": "^6.4.7",
+    "typescript": "^5.6.3"
+  },
+  "overrides": {
+    "esbuild": "0.28.1",
+    "yaml": "2.9.0"
+  }
+}

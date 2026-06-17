@@ -1,0 +1,62 @@
+---
+import ArticleCard from "@/components/ArticleCard.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getPublishedArticles, getPublishedLessons } from "@/lib/content";
+import { getPillarSlug, pillars } from "@/lib/site";
+
+export function getStaticPaths() {
+  return pillars.map((pillar) => ({
+    params: { topic: pillar.slug },
+    props: { pillar }
+  }));
+}
+
+const { pillar } = Astro.props;
+const articles = (await getPublishedArticles()).filter(
+  (article) => getPillarSlug(article.data.pillar) === pillar.slug
+);
+const lessons = (await getPublishedLessons()).filter(
+  (lesson) => getPillarSlug(lesson.data.pillar) === pillar.slug
+);
+---
+
+<BaseLayout title={pillar.title} description={pillar.description}>
+  <section class="shell section tight">
+    <div class="prose">
+      <p class="eyebrow">Topic</p>
+      <h1>{pillar.title}</h1>
+      <p class="lede">{pillar.description}</p>
+    </div>
+  </section>
+  <section class="shell topic-list">
+    <h2>Articles</h2>
+    {
+      articles.length > 0 ? (
+        articles.map((article) => <ArticleCard entry={article} />)
+      ) : (
+        <p class="muted">No published articles in this topic yet.</p>
+      )
+    }
+
+    <h2>Lessons</h2>
+    {
+      lessons.length > 0 ? (
+        lessons.map((lesson) => <ArticleCard entry={lesson} />)
+      ) : (
+        <p class="muted">No published lessons in this topic yet.</p>
+      )
+    }
+  </section>
+</BaseLayout>
+
+<style>
+  .topic-list {
+    padding-bottom: 72px;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    margin: 28px 0 4px;
+  }
+</style>
+

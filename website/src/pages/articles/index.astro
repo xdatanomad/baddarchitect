@@ -1,0 +1,27 @@
+---
+import ArticleCard from "@/components/ArticleCard.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getPublishedArticles } from "@/lib/content";
+
+const articles = await getPublishedArticles();
+---
+
+<BaseLayout
+  title="Articles"
+  description="Practical articles on AI adoption, production workflows, AI systems, ROI, and security."
+>
+  <section class="shell section tight">
+    <div class="prose">
+      <p class="eyebrow">Articles</p>
+      <h1>Field notes for production AI adoption.</h1>
+      <p class="lede">
+        Direct, practical essays for teams moving from AI experiments to
+        measurable, governed workflows.
+      </p>
+    </div>
+  </section>
+  <section class="shell">
+    {articles.map((article) => <ArticleCard entry={article} />)}
+  </section>
+</BaseLayout>
+

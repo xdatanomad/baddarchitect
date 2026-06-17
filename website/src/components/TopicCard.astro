@@ -1,0 +1,39 @@
+---
+const { topic } = Astro.props;
+---
+
+<a class="topic-card" href={`/topics/${topic.slug}/`}>
+  <span class="eyebrow">Pillar</span>
+  <h2>{topic.title}</h2>
+  <p>{topic.description}</p>
+</a>
+
+<style>
+  .topic-card {
+    background: rgba(255, 253, 248, 0.74);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    display: block;
+    min-height: 220px;
+    padding: 22px;
+    text-decoration: none;
+  }
+
+  .topic-card:hover {
+    background: var(--surface);
+    border-color: var(--accent);
+    color: var(--ink);
+  }
+
+  h2 {
+    font-size: 1.35rem;
+    line-height: 1.18;
+    margin: 16px 0 12px;
+  }
+
+  p {
+    color: var(--muted);
+    margin: 0;
+  }
+</style>
+

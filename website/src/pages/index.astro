@@ -1,0 +1,104 @@
+---
+import ArticleCard from "@/components/ArticleCard.astro";
+import TopicCard from "@/components/TopicCard.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getPublishedArticles } from "@/lib/content";
+import { pillars } from "@/lib/site";
+
+const articles = (await getPublishedArticles()).slice(0, 3);
+---
+
+<BaseLayout>
+  <section class="hero shell">
+    <div class="prose">
+      <p class="eyebrow">AI Adoption Blueprint</p>
+      <h1>Production AI is an operating model, not a demo.</h1>
+      <p class="lede">
+        Practical guidance for architects and leaders moving from scattered AI
+        experiments to measurable, governed, production-grade systems.
+      </p>
+      <div class="button-row">
+        <a class="button" href="/articles">Read the articles</a>
+        <a class="button secondary" href="/topics">Browse the blueprint</a>
+      </div>
+    </div>
+    <aside class="hero-note" aria-label="Core stance">
+      <span class="eyebrow">Decision rule</span>
+      <p>
+        If an AI workflow cannot be observed, governed, measured, and owned
+        after launch, it is still a prototype.
+      </p>
+    </aside>
+  </section>
+
+  <section class="section shell">
+    <div class="section-head">
+      <p class="eyebrow">What this site covers</p>
+      <h2>Four practical pillars for serious adoption.</h2>
+    </div>
+    <div class="grid">
+      {pillars.map((pillar) => <TopicCard topic={pillar} />)}
+    </div>
+  </section>
+
+  <section class="section shell">
+    <div class="section-head">
+      <p class="eyebrow">Start here</p>
+      <h2>Recent articles</h2>
+    </div>
+    <div>
+      {articles.map((article) => <ArticleCard entry={article} />)}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    display: grid;
+    gap: 36px;
+    grid-template-columns: minmax(0, 1.6fr) minmax(260px, 0.7fr);
+    min-height: calc(100svh - 72px);
+    padding-bottom: 60px;
+    padding-top: 78px;
+  }
+
+  .hero-note {
+    align-self: end;
+    background: var(--ink);
+    color: var(--surface);
+    padding: 22px;
+  }
+
+  .hero-note .eyebrow {
+    color: #e7b763;
+  }
+
+  .hero-note p {
+    font-size: 1.08rem;
+    margin: 10px 0 0;
+  }
+
+  .section-head {
+    margin-bottom: 24px;
+    max-width: 760px;
+  }
+
+  .section-head h2 {
+    font-size: clamp(1.9rem, 4vw, 3rem);
+    line-height: 1.08;
+    margin: 8px 0 0;
+  }
+
+  @media (max-width: 820px) {
+    .hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+      padding-top: 48px;
+    }
+
+    .hero-note {
+      align-self: auto;
+    }
+  }
+</style>
+

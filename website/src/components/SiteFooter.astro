@@ -1,0 +1,72 @@
+---
+import { site } from "@/lib/site";
+---
+
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div>
+      <strong>{site.name}</strong>
+      <p>
+        Practical AI adoption guidance for teams that need production systems,
+        not theater.
+      </p>
+    </div>
+    <nav aria-label="Footer navigation">
+      <a href="/articles">Articles</a>
+      <a href="/lessons">Lessons</a>
+      <a href="/topics">Topics</a>
+      <a href="/about">About</a>
+      <a href="/rss.xml">RSS</a>
+    </nav>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--line);
+    padding: 38px 0;
+  }
+
+  .footer-grid {
+    align-items: start;
+    display: grid;
+    gap: 24px;
+    grid-template-columns: minmax(0, 1.5fr) minmax(220px, 0.7fr);
+  }
+
+  strong {
+    font-family: Avenir Next, Avenir, "Segoe UI", sans-serif;
+  }
+
+  p {
+    color: var(--muted);
+    margin: 8px 0 0;
+    max-width: 520px;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+    justify-content: flex-end;
+  }
+
+  nav a {
+    color: var(--ink);
+    font-family: Avenir Next, Avenir, "Segoe UI", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  @media (max-width: 720px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+
+    nav {
+      justify-content: flex-start;
+    }
+  }
+</style>
+

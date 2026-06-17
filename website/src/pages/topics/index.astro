@@ -1,0 +1,31 @@
+---
+import TopicCard from "@/components/TopicCard.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { pillars } from "@/lib/site";
+---
+
+<BaseLayout
+  title="Topics"
+  description="The four AI Adoption Blueprint pillars: adoption stages, operating model, production AI systems, and AI security."
+>
+  <section class="shell section">
+    <div class="prose">
+      <p class="eyebrow">Topics</p>
+      <h1>The blueprint is organized around four adoption problems.</h1>
+      <p class="lede">
+        Each topic connects strategy, architecture, governance, and production
+        constraints. The categories are intentionally practical.
+      </p>
+    </div>
+    <div class="grid topics-grid">
+      {pillars.map((pillar) => <TopicCard topic={pillar} />)}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .topics-grid {
+    margin-top: 32px;
+  }
+</style>
+

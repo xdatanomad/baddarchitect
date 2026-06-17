@@ -1,0 +1,66 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { formatDate } from "@/lib/content";
+import { getPillarSlug } from "@/lib/site";
+
+const { entry } = Astro.props;
+const contentType = entry.collection === "lessons" ? "lessons" : "articles";
+const canonical = entry.data.canonical ?? `/${contentType}/${entry.data.routeSlug}/`;
+const pillarUrl = `/topics/${getPillarSlug(entry.data.pillar)}/`;
+---
+
+<BaseLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  canonical={canonical}
+  ogType="article"
+>
+  <article class="shell article">
+    <div class="article-kicker">
+      <a href={pillarUrl}>{entry.data.pillar}</a>
+      <span>{formatDate(entry.data.publishedDate)}</span>
+    </div>
+    <div class="prose">
+      <h1>{entry.data.title}</h1>
+      <p class="lede">{entry.data.description}</p>
+    </div>
+    <div class="article-body prose">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .article {
+    padding-bottom: 88px;
+    padding-top: 56px;
+  }
+
+  .article-kicker {
+    align-items: center;
+    color: var(--muted);
+    display: flex;
+    flex-wrap: wrap;
+    font-family: Avenir Next, Avenir, "Segoe UI", sans-serif;
+    font-size: 0.86rem;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .article-kicker span::before {
+    content: "/";
+    margin-right: 10px;
+  }
+
+  .article-body {
+    border-top: 1px solid var(--line);
+    margin-top: 36px;
+    padding-top: 18px;
+  }
+
+  @media (max-width: 720px) {
+    .article {
+      padding-top: 34px;
+    }
+  }
+</style>

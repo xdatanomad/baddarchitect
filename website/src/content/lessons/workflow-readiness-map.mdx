@@ -1,0 +1,45 @@
+---
+title: "Workflow Readiness Map"
+description: "A short checklist for deciding whether an AI idea is ready to become a production workflow."
+routeSlug: "workflow-readiness-map"
+publishedDate: 2026-06-16
+updatedDate: 2026-06-16
+pillar: "A Blueprint for building Production AI Systems and Agents with ROI"
+status: "published"
+level: "intro"
+tags: ["workflow", "checklist", "production-ai"]
+summary: "Use this lightweight map before building an agent so the team starts with ownership, systems, context, and measurable outcomes."
+---
+
+**Takeaway:** Do not start with the agent. Start with the workflow it must complete.
+
+Use this map before a prototype becomes a build commitment.
+
+## The map
+
+1. What event starts the workflow?
+2. What business metric should improve?
+3. Which systems does the workflow read from?
+4. Which systems does it write to?
+5. What context does the agent need?
+6. What permissions constrain data and action?
+7. When should a human approve or override?
+8. What happens on failure, timeout, or uncertainty?
+9. How will cost, quality, latency, and outcomes be observed?
+10. Who owns the workflow after launch?
+
+## Minimum implementation sketch
+
+```ts
+type WorkflowReadiness = {
+  trigger: string;
+  businessMetric: string;
+  readSystems: string[];
+  writeSystems: string[];
+  requiredContext: string[];
+  approvalRequired: boolean;
+  owner: string;
+};
+```
+
+If the team cannot fill this out clearly, keep the work in discovery.

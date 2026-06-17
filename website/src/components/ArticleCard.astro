@@ -1,0 +1,61 @@
+---
+import { formatDate } from "@/lib/content";
+import { getPillarSlug } from "@/lib/site";
+
+const { entry } = Astro.props;
+const pillarUrl = `/topics/${getPillarSlug(entry.data.pillar)}/`;
+---
+
+<article class="article-card">
+  <div class="meta">
+    <a href={pillarUrl}>{entry.data.pillar}</a>
+    <span>{formatDate(entry.data.publishedDate)}</span>
+  </div>
+  <h2><a href={`/articles/${entry.data.routeSlug}/`}>{entry.data.title}</a></h2>
+  <p>{entry.data.summary ?? entry.data.description}</p>
+</article>
+
+<style>
+  .article-card {
+    border-top: 1px solid var(--line);
+    padding: 24px 0;
+  }
+
+  .meta {
+    color: var(--muted);
+    display: flex;
+    flex-wrap: wrap;
+    font-family: Avenir Next, Avenir, "Segoe UI", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 750;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .meta span::before {
+    content: "/";
+    margin-right: 8px;
+  }
+
+  h2 {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    line-height: 1.14;
+    margin: 0;
+    max-width: 820px;
+  }
+
+  h2 a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  h2 a:hover {
+    color: var(--accent-strong);
+  }
+
+  p {
+    color: var(--muted);
+    margin: 10px 0 0;
+    max-width: 760px;
+  }
+</style>
