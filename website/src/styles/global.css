@@ -13,6 +13,7 @@
   --code-ink: #f7f4ed;
   --max: 1120px;
   --reading: 760px;
+  --sans: Avenir Next, Avenir, "Segoe UI", sans-serif;
   font-family: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
 }
 
@@ -70,15 +71,47 @@ select {
   outline-offset: 4px;
 }
 
+.sr-only {
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 .shell {
   margin: 0 auto;
   max-width: var(--max);
   padding: 0 24px;
 }
 
+.brand-wordmark {
+  align-items: baseline;
+  display: inline-flex;
+  font-family: var(--sans);
+  font-weight: 800;
+  gap: 0.12em;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.brand-wordmark__small {
+  font-size: 0.86em;
+  font-weight: 750;
+}
+
+.brand-wordmark__divider {
+  /* color: var(--signal); */
+  font-weight: 850;
+}
+
 .eyebrow {
   color: var(--signal);
-  font-family: Avenir Next, Avenir, "Segoe UI", sans-serif;
+  font-family: var(--sans);
   font-size: 0.74rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -104,7 +137,7 @@ select {
   border: 1px solid var(--ink);
   color: var(--surface);
   display: inline-flex;
-  font-family: Avenir Next, Avenir, "Segoe UI", sans-serif;
+  font-family: var(--sans);
   font-size: 0.88rem;
   font-weight: 750;
   min-height: 44px;
@@ -226,4 +259,3 @@ select {
     width: 100%;
   }
 }
-
