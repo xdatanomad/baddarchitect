@@ -6,7 +6,11 @@ import { site } from "@/lib/site";
   <a class="skip" href="#main-content">Skip to content</a>
   <nav class="shell nav" aria-label="Primary navigation">
     <a class="brand" href="/">
-      <span class="mark" aria-hidden="true">AAB</span>
+      <span class="mark" aria-hidden="true">
+        <span class="mark-letter mark-letter-b">B</span>
+        <span class="mark-divider">|</span>
+        <span class="mark-letter mark-letter-a">A</span>
+      </span>
       <span>{site.name}</span>
     </a>
     <div class="links">
@@ -59,11 +63,32 @@ import { site } from "@/lib/site";
     background: var(--ink);
     color: var(--surface);
     display: inline-flex;
-    font-size: 0.66rem;
+    font-size: 0.72rem;
+    font-weight: 850;
+    gap: 1px;
     height: 34px;
     justify-content: center;
-    letter-spacing: 0.08em;
     width: 42px;
+  }
+
+  .mark-letter,
+  .mark-divider {
+    display: inline-block;
+    line-height: 1;
+  }
+
+  .mark-letter-b {
+    transform: scaleX(-1);
+  }
+
+  .mark-divider {
+    opacity: 0.74;
+    transform: translateY(-0.02em);
+  }
+
+  .mark-letter-a {
+    font-size: 1.15em;
+    transform: translateY(-0.01em);
   }
 
   .links {
@@ -99,4 +124,3 @@ import { site } from "@/lib/site";
     }
   }
 </style>
-

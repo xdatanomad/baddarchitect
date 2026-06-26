@@ -1,6 +1,6 @@
 export const site = {
-  name: "AI Adoption Blueprint",
-  url: "https://aiadoptionblueprint.com",
+  name: "Badd Architect",
+  url: "https://baddarchitect.io",
   description:
     "Practical AI adoption guidance for architects and leaders moving from experiments to governed, production-grade AI systems.",
   nav: [
@@ -42,4 +42,3 @@ export const pillars = [
 export function getPillarSlug(title: string) {
   return pillars.find((pillar) => pillar.title === title)?.slug ?? "topics";
 }
-
