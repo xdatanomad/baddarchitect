@@ -22,13 +22,42 @@ const articles = (await getPublishedArticles()).slice(0, 3);
         <a class="button secondary" href="/topics">Browse the blueprint</a>
       </div>
     </div>
-    <aside class="hero-note" aria-label="Core stance">
-      <span class="eyebrow">Decision rule</span>
-      <p>
-        If an AI workflow cannot be observed, governed, measured, and owned
-        after launch, it is still a prototype.
-      </p>
-    </aside>
+  </section>
+
+  <section class="positioning section shell" aria-labelledby="positioning-title">
+    <div class="section-head">
+      <p class="eyebrow">Who this is for</p>
+      <h2 id="positioning-title">
+        Built for teams turning AI experiments into governed, measurable
+        systems.
+      </h2>
+    </div>
+    <div class="positioning-grid">
+      <article class="positioning-card">
+        <h3>Who this site is for</h3>
+        <p>
+          For AI architects, CTOs, product leaders, AI practice leaders, and
+          adoption teams who need to move beyond scattered experiments and make
+          AI useful inside real operating constraints.
+        </p>
+      </article>
+      <article class="positioning-card">
+        <h3>What this site is</h3>
+        <p>
+          A practical blueprint for workflow design, data access, permissions,
+          evaluation, observability, governance, security, and ROI. The focus is
+          on the system around the model, not just the model itself.
+        </p>
+      </article>
+      <article class="positioning-card">
+        <h3>What this site is not</h3>
+        <p>
+          This is not an AI news site, prompt library, or tool hype channel.
+          Models and tools matter, but production AI usually succeeds or fails
+          because of ownership, process, controls, and measurement.
+        </p>
+      </article>
+    </div>
   </section>
 
   <section class="section shell">
@@ -54,28 +83,9 @@ const articles = (await getPublishedArticles()).slice(0, 3);
 
 <style>
   .hero {
-    display: grid;
-    gap: 36px;
-    grid-template-columns: minmax(0, 1.6fr) minmax(260px, 0.7fr);
     min-height: calc(100svh - 72px);
     padding-bottom: 60px;
     padding-top: 78px;
-  }
-
-  .hero-note {
-    align-self: end;
-    background: var(--ink);
-    color: var(--surface);
-    padding: 22px;
-  }
-
-  .hero-note .eyebrow {
-    color: #e7b763;
-  }
-
-  .hero-note p {
-    font-size: 1.08rem;
-    margin: 10px 0 0;
   }
 
   .section-head {
@@ -89,15 +99,42 @@ const articles = (await getPublishedArticles()).slice(0, 3);
     margin: 8px 0 0;
   }
 
+  .positioning {
+    padding-top: 0;
+  }
+
+  .positioning-grid {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .positioning-card {
+    background: rgba(255, 253, 248, 0.74);
+    border: 1px solid var(--line);
+    padding: 22px;
+  }
+
+  .positioning-card h3 {
+    font-family: var(--sans);
+    font-size: 1rem;
+    line-height: 1.2;
+    margin: 0 0 14px;
+  }
+
+  .positioning-card p {
+    color: var(--muted);
+    margin: 0;
+  }
+
   @media (max-width: 820px) {
     .hero {
-      grid-template-columns: 1fr;
       min-height: auto;
       padding-top: 48px;
     }
 
-    .hero-note {
-      align-self: auto;
+    .positioning-grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>
