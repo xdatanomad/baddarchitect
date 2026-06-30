@@ -60,8 +60,8 @@ const articles = (await getPublishedArticles()).slice(0, 3);
       <p class="eyebrow">What this site covers</p>
       <h2>Four practical pillars for serious adoption.</h2>
     </div>
-    <div class="grid">
-      {pillars.map((pillar) => <TopicCard topic={pillar} />)}
+    <div class="stacked-card-list">
+      {pillars.map((pillar) => <TopicCard topic={pillar} variant="stacked" />)}
     </div>
   </section>
 

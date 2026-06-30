@@ -175,6 +175,11 @@ select {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
+.stacked-card-list {
+  display: grid;
+  gap: 18px;
+}
+
 .prose {
   max-width: var(--reading);
 }
