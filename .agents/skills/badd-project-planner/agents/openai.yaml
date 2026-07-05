@@ -1,0 +1,4 @@
+interface:
+  display_name: "Badd Project Planner"
+  short_description: "Plan agent-ready project constitutions"
+  default_prompt: "Use $badd-project-planner to initiate this project with an agent-ready constitution, architecture, roadmap, decisions, feature contracts, and implementation tasks."
