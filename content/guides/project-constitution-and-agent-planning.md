@@ -1,218 +1,437 @@
 # Project Constitution and Planning for Coding Agents
 
 **SEO title:** Project Constitution and Planning for Coding Agents  
-**Description:** A concise guide for turning vague product ideas into architecture, capability maps, feature contracts, and implementation tasks that Codex and Claude can execute reliably.  
+**Description:** A technical guide for turning vague product ideas into architecture, capability maps, feature contracts, and implementation tasks that coding agents can execute reliably.  
 **Canonical slug:** `/guides/project-constitution-and-agent-planning`  
-**Reader/job:** Hands-on builders using coding agents to plan and implement production software without letting ambiguity leak into the codebase.
+**Reader/job:** Hands-on builders using Codex, Claude Code, or other coding agents to plan production software before implementation begins.
 
-**Takeaway:** Do not ask a coding agent to build a product before you have taught it the product's constitution, architecture, capabilities, dependencies, and feature contracts.
+**Technical executive summary:** Coding agents work best when they inherit durable project context, not scattered chat history. This guide shows how to move from a vague idea to a project constitution, system design, capabilities, dependency graph, epics, feature contracts, and implementation tasks. The sequence matters because each phase removes a different kind of ambiguity before code is generated. The practical takeaway is to [download and use the Badd Project Planner skill](../../.agents/skills/badd-project-planner/SKILL.md) as the operating loop for this process.
 
-Coding agents are fast.
+**Core takeaway:** Do not ask a coding agent to build the product until it knows the product's constitution, architecture, capability boundaries, dependencies, and feature contracts.
 
-That is useful, but it also makes a weak plan fail faster.
+## What You Will Learn
 
-The common mistake is to jump straight into epics and features:
+You will learn how to turn a project idea into artifacts that future agents can inherit. The goal is not to create heavy process. The goal is to prevent agents from guessing product behavior, architecture, permissions, data ownership, or acceptance criteria while they are writing code.
 
-```text
-Build an AI waiter app for my restaurant.
-```
-
-That prompt looks productive. It is not.
-
-It asks the agent to guess the product, the architecture, the data model, the security boundaries, the operational rules, and the acceptance criteria. The agent may still produce code, but the code will carry the ambiguity you failed to remove.
-
-The better approach is to plan by decision layers:
+You will also learn the phase order used by the `badd-project-planner` skill:
 
 ```text
-Vision
-  ↓
-Architecture
-  ↓
-Capabilities
-  ↓
-Dependency Graph
-  ↓
-Epics
-  ↓
-Feature Contracts
-  ↓
-Implementation Tasks
+Intake
+Artifact Audit
+Phase 0: Project Constitution
+Phase 1: System Design
+Phase 2: Capabilities
+Phase 3: Dependency Graph
+Phase 4: Epics
+Phase 5: Feature Contracts
+Phase 6: Implementation Tasks
 ```
 
-The goal is not bureaucracy. The goal is to eliminate unknowns in the right order.
+The most important rule is simple: Phase 5 feature contracts are required before Phase 6 implementation tasks. A task without a contract is usually just a request for the agent to invent missing product decisions.
 
-## The Running Example
+## Running Example
 
-We will use a fictional product:
-
-```text
-Maison Verre Concierge
-```
+This guide uses a fictional product called `Maison Verre Concierge`.
 
 Maison Verre is a 38-seat boutique French restaurant. It wants a multi-turn agentic waiter that helps guests explore menus, discuss dietary constraints, request wine pairings, and make or modify reservations.
 
-It also helps staff review risky requests, approve exceptions, see guest preferences, and audit agent decisions.
-
 The agent can recommend, collect information, and prepare actions. It cannot confirm allergy exceptions, billing decisions, unavailable reservation slots, or special kitchen requests without staff approval.
 
-The default technical stack:
+This example is intentionally small but serious. It has real product constraints: safety-sensitive requests, source-of-truth decisions, auditability, staff approval, and external system integration.
+
+## Intake: Establish The Project Mode
+
+Start by identifying the project mode. A new project, an existing project with weak docs, and an existing project with mature docs need different handling.
+
+Ask only the smallest useful set of questions. The planner skill recommends starting with the project goal, target users, product type, and known constraints.
+
+Good intake questions:
 
 ```text
-Python 3.12
-uv
-FastAPI
-Pydantic v2
-PostgreSQL
-Redis
-pytest
-ruff
-mypy
-Protocol-based interfaces
-Services
-Adapters
-Dependency injection
+What problem should this project solve first?
+Who are the primary users or operators?
+What is explicitly out of scope?
+Which decisions are already made and should not be revisited?
 ```
 
-## The Planning Strip
-
-Use this as the mental model:
+For Maison Verre, a useful intake answer might be:
 
 ```text
-┌────────────────────┐
-│ "Build the app"    │
-│ vague feature jump │
-└─────────┬──────────┘
-          ↓
-┌────────────────────┐
-│ Constitution       │
-│ durable context    │
-└─────────┬──────────┘
-          ↓
-┌────────────────────┐
-│ Architecture       │
-│ major boxes        │
-└─────────┬──────────┘
-          ↓
-┌────────────────────┐
-│ Capabilities       │
-│ system slices      │
-└─────────┬──────────┘
-          ↓
-┌────────────────────┐
-│ Dependency Graph   │
-│ safe sequencing    │
-└─────────┬──────────┘
-          ↓
-┌────────────────────┐
-│ Epics              │
-│ meaningful chunks  │
-└─────────┬──────────┘
-          ↓
-┌────────────────────┐
-│ Feature Contracts  │
-│ agent boundaries   │
-└─────────┬──────────┘
-          ↓
-┌────────────────────┐
-│ Tasks              │
-│ implementation     │
-└────────────────────┘
+The first problem is reducing routine guest coordination before service.
+Primary users are guests, hosts, waitstaff, and managers.
+Out of scope: payments, medical advice, replacing staff judgment, and final table assignment.
+The agent must never approve safety-sensitive exceptions without staff review.
 ```
 
-Imagine it as a comic strip: the first panel is a builder yelling "build the thing" into a terminal. Each later panel gives the agent one more map: principles, architecture, contracts, tests. By the final panel, the agent is no longer guessing. It is executing inside constraints.
+## Artifact Audit: Inspect Before Drafting
 
-Illustration brief for the final site:
+Before writing new docs, inspect what already exists. For an existing project, this prevents the agent from replacing intentional architecture with a generic framework.
 
-```text
-Wide comic-book-style strip with seven panels:
-
-1. A builder types "Build app" into a terminal while messy code spills out.
-2. A document labeled "Constitution" anchors the workspace.
-3. Architecture boxes are arranged on a wall.
-4. Capability cards are sorted into clear groups.
-5. Dependency lines connect the cards.
-6. A "Feature Contract" checklist defines inputs, outputs, errors, and tests.
-7. The coding agent calmly implements small tasks with passing tests.
-
-Style: crisp editorial comic, restrained color, professional technical tone.
-Alt text: Comic strip showing a vague coding-agent prompt becoming structured planning artifacts before implementation begins.
-```
-
-## Phase 0: Create the Project Constitution
-
-Before scaffolding code, create persistent project context.
-
-Recommended structure:
-
-```text
-project/
-├── AGENTS.md
-├── docs/
-│   ├── vision.md
-│   ├── architecture.md
-│   ├── principles.md
-│   ├── glossary.md
-│   ├── roadmap.md
-│   ├── capabilities.md
-│   ├── dependency-map.md
-│   ├── epics/
-│   │   ├── reservations.md
-│   │   ├── guest-profile.md
-│   │   └── agent-runtime.md
-│   ├── features/
-│   │   ├── reservation-hold.md
-│   │   ├── allergy-review.md
-│   │   └── wine-pairing-request.md
-│   └── decisions/
-│       ├── 0001-agent-boundaries.md
-│       ├── 0002-reservation-source-of-truth.md
-│       └── 0003-human-review-policy.md
-└── src/
-```
-
-What each file does:
+Check for:
 
 ```text
 AGENTS.md
-Rules for coding agents: stack, architecture principles, edit boundaries, test expectations, approval rules.
-
 docs/vision.md
-One-page product purpose, users, outcomes, non-goals.
-
 docs/architecture.md
-Major system boxes and boundaries. Not implementation detail.
-
 docs/principles.md
-Engineering rules that prevent drift.
-
 docs/glossary.md
-Shared language: guest, service, hold, allergy review, staff approval, table turn.
-
 docs/roadmap.md
-Capability, epic, status, dependencies, next step.
-
-docs/capabilities.md
-Independent slices of the system.
-
-docs/dependency-map.md
-What must happen first and what can happen in parallel.
-
-docs/epics/
-One file per capability area.
-
-docs/features/
-Feature contracts ready for coding agents.
-
 docs/decisions/
-Short architecture decision records.
+docs/capabilities.md
+docs/dependency-map.md
+docs/epics/
+docs/features/
+docs/tasks/
 ```
 
-Prompt:
+Classify each artifact as present and usable, present but stale, missing, or needing a user decision before editing. Do not automatically rewrite an existing root `AGENTS.md`; explain what is missing and get approval first.
+
+## Phase 0: Create The Project Constitution
+
+Phase 0 creates persistent context for future agents. This is where you define what the project is, who it serves, what it will not do, and which rules agents must obey.
+
+Minimum structure:
+
+```text
+project/
++-- AGENTS.md
++-- docs/
+    +-- vision.md
+    +-- architecture.md
+    +-- principles.md
+    +-- glossary.md
+    +-- roadmap.md
+    +-- decisions/
+        +-- 0001-project-initiation.md
+```
+
+Each file has a job. `AGENTS.md` tells agents how to work in the repo. `vision.md` explains the product and non-goals. `architecture.md` names system boundaries. `principles.md` captures project-specific engineering rules. `glossary.md` defines domain terms. `roadmap.md` tracks capabilities, epics, dependencies, status, and next steps.
+
+For Maison Verre, the constitution should make the agent's authority boundary explicit:
+
+```markdown
+## Agent Authority
+
+- The agent may recommend menu items, collect guest details, and prepare reservation actions.
+- The agent may not approve allergy exceptions, unavailable slots, billing changes, or special kitchen requests.
+- Staff approval is required before safety-sensitive notes become operational instructions.
+```
+
+Phase 0 gate:
+
+```text
+A future agent can explain the project without asking what it is.
+Out-of-scope items are explicit.
+Stack choices are decided or recorded as open decisions.
+AGENTS.md exists or an approved update plan exists.
+```
+
+## Phase 1: Design The System
+
+Phase 1 stabilizes the architecture before code. The agent should act like a staff architect, not a scaffolding tool.
+
+Ask it to identify core domains, major subsystems, risks, technical unknowns, likely scaling constraints, and architecture options. Do not write application code in this phase.
+
+For Maison Verre, the core domains might be:
+
+```text
+Guest conversation
+Reservation availability
+Guest profile and preferences
+Menu and wine knowledge
+Staff review
+Audit trail
+```
+
+Architecture should cover frontend, backend, storage, external systems, authentication, AI components, observability, and deployment. If an area is not applicable, say so directly instead of leaving it implied.
+
+Phase 1 gate:
+
+```text
+Major boxes and boundaries are named.
+Business logic ownership is clear.
+External systems are isolated behind adapters or contracts.
+Data, auth, observability, deployment, and AI components are addressed.
+Known unknowns are recorded.
+```
+
+## Phase 2: Identify Capabilities
+
+Capabilities are durable areas of system behavior. They are not buttons, screens, or isolated feature requests.
+
+Bad capability:
+
+```text
+Add reservation button
+```
+
+Better capability:
+
+```text
+Reservation Management
+```
+
+Create `docs/capabilities.md`. For each capability, capture purpose, users or actors, responsibilities, data owned, external dependencies, risks, and what is not included.
+
+Example:
+
+```markdown
+## Capability: Staff Review
+
+- Purpose: Route sensitive or uncertain actions to humans before they affect service.
+- Users or actors: Hosts, managers, waitstaff, agent runtime.
+- Core responsibilities: Review cases, approval decisions, comments, status changes.
+- Data owned: Review case records, approval history, reviewer notes.
+- External dependencies: Audit log, guest conversation, reservation management.
+- Risks: Unclear approval authority, delayed review, incomplete audit trail.
+- Not included: Payment approval, kitchen ticketing, medical advice.
+```
+
+Phase 2 gate:
+
+```text
+Capabilities are independent enough to plan separately.
+Capabilities are not just UI features.
+Shared data ownership and boundaries are explicit.
+MVP capabilities are separated from later work.
+```
+
+## Phase 3: Build The Dependency Graph
+
+The dependency graph turns planning into execution value. It shows what must be built first, what can happen in parallel, and where contracts are needed.
+
+Create `docs/dependency-map.md`. Use a simple text graph before reaching for elaborate diagrams.
+
+Example:
+
+```text
+Guest Profile
+ +-- None
+
+Menu and Wine Knowledge
+ +-- None
+
+Reservation Management
+ +-- Guest Profile
+ +-- Reservation Provider Adapter
+
+Staff Review
+ +-- Guest Conversation
+ +-- Reservation Management
+ +-- Audit and Observability
+
+Agent Runtime
+ +-- Guest Conversation
+ +-- Tool Contracts
+ +-- Staff Review
+ +-- Audit and Observability
+```
+
+Then classify the work:
+
+```text
+Sequential first:
+- Guest profile model
+- Reservation provider protocol
+- Audit event model
+
+Parallel after contracts:
+- Reservation adapter
+- Menu knowledge ingestion
+- Staff review queue
+- Conversation API
+
+Risk-driven early work:
+- Source of truth for reservation availability
+- Allergy and sensitive-data handling
+- Human approval policy
+```
+
+Phase 3 gate:
+
+```text
+No capability has hidden upstream dependencies.
+Parallel work has contracts or explicit contract tasks.
+Critical-path capabilities are obvious.
+Risk-driven work is visible.
+```
+
+## Phase 4: Define Epics
+
+An epic is a meaningful work package inside a capability. It should take days or weeks, contain multiple features, and produce useful system behavior.
+
+Create one epic file per important epic in `docs/epics/`. Each epic should include parent capability, outcome, domain model notes, API or interface contract notes, dependencies, acceptance criteria, and review checklist.
+
+Bad epic:
+
+```text
+Implement reservations.
+```
+
+Better epic:
+
+```text
+Allow the system to check availability, create temporary holds, and request staff-approved changes while preserving the reservation provider as the source of truth.
+```
+
+Example epic summary:
+
+```markdown
+# Epic: Reservation Holds
+
+## Parent Capability
+
+- Reservation Management
+
+## Outcome
+
+Guests can temporarily hold an available slot while the system collects required details.
+
+## Acceptance Criteria
+
+- The system can query available slots.
+- The system can create a time-limited hold.
+- Expired holds cannot be confirmed.
+- Large parties route to staff review.
+- All reservation actions emit audit events.
+```
+
+Phase 4 gate:
+
+```text
+Each epic has a clear capability parent.
+Each epic has concrete acceptance criteria.
+Dependencies and review gates are visible.
+Domain, API, data, security, testing, and documentation concerns are named.
+```
+
+## Phase 5: Write Feature Contracts
+
+Feature contracts are the key handoff between planning and implementation. A feature request says what someone wants; a feature contract defines behavior an agent can implement without inventing product rules.
+
+Each feature contract in `docs/features/` should include:
+
+```text
+Feature name
+Parent capability and epic
+Actor or trigger
+Requirements
+Inputs
+Outputs
+Errors and edge cases
+Data and state changes
+Permissions and security
+Observability
+Acceptance criteria
+Out of scope
+Open questions
+```
+
+Bad feature request:
+
+```text
+Add allergy support.
+```
+
+Better feature contract summary:
+
+```text
+When a guest mentions an allergy, classify the conversation as safety-sensitive, collect structured allergy details, avoid giving medical certainty, and create a staff review case before any reservation note is confirmed.
+```
+
+For Maison Verre, a `Reservation Hold` contract should define the hold duration, provider source of truth, duplicate-hold behavior, large-party review rule, audit events, errors, and tests. The agent should know exactly what it may implement and what it must leave alone.
+
+Phase 5 gate:
+
+```text
+Inputs, outputs, errors, and acceptance criteria are clear.
+Security and permissions are addressed.
+Observability is included.
+Out-of-scope behavior is explicit.
+The contract is stable enough for implementation.
+```
+
+## Phase 6: Generate Implementation Tasks
+
+Only now should you generate implementation tasks. The task list should be derived from feature contracts, not from a vague product idea.
+
+Good task size is a few hours of focused work. Each task should include source feature contract, requirements, dependencies, deliverables, likely files or areas, verification steps, and definition of done.
+
+Good coding-agent task:
+
+```text
+Implement ReservationHoldService from docs/features/reservation-hold.md.
+
+Constraints:
+- Service layer owns business logic.
+- Use ReservationProvider protocol.
+- Use AuditSink protocol.
+- No API route in this task.
+- Include unit tests for each acceptance criterion.
+```
+
+Too large:
+
+```text
+Build reservation management.
+```
+
+Too small:
+
+```text
+Rename hold_id to id.
+```
+
+Phase 6 gate:
+
+```text
+Every task traces to a feature contract.
+No task requires unresolved architecture decisions.
+Deliverables and verification steps are clear.
+The project is ready for code generation.
+```
+
+## Review Gate For Every Phase
+
+At the beginning of every major phase, ask the planner skill's inheritance question:
+
+```text
+Assume you are inheriting this project six months from now.
+What information would you wish existed before implementation begins?
+```
+
+Before starting a new epic or implementation phase, review architecture impact, dependency impact, API or interface impact, data model impact, security impact, testing impact, and documentation impact.
+
+For Maison Verre, this review should surface questions like:
+
+```text
+Are allergy notes treated as sensitive data?
+Can a guest delete remembered preferences?
+Which staff roles can approve exceptions?
+Is the reservation provider the final source of truth?
+What is logged when the model gives a recommendation?
+What happens if the model provider is unavailable during a conversation?
+```
+
+These are not details. They are the difference between a demo and a system.
+
+## Common Red Flags
+
+Pause when you see broad tasks like `Build the whole app`. That is not a task; it is an ambiguity bundle.
+
+Also pause when architecture is only a stack list, business logic has no owner, external systems have no adapter boundary, or AI components have no evaluation, observability, and human review story.
+
+Security and privacy are not cleanup items. If permissions, sensitive data, or auditability matter, they belong in the constitution, architecture, contracts, and tasks.
+
+## Appendix A: Longer Constitution Example
+
+Use this prompt to create the first planning artifacts:
 
 ```text
 We are starting a new project called Maison Verre Concierge.
 
-Create the initial project constitution for a Pythonic web application.
+Create only the project constitution and planning docs.
+Do not scaffold application code.
 
 The product is a multi-turn agentic waiter for a 38-seat boutique French restaurant.
 
@@ -234,50 +453,17 @@ It may not confirm allergy exceptions, unavailable reservations, billing changes
 Produce:
 - AGENTS.md
 - docs/vision.md
+- docs/architecture.md
 - docs/principles.md
 - docs/glossary.md
 - docs/roadmap.md
+- docs/decisions/0001-project-initiation.md
 
 Keep each file concise.
-Do not scaffold application code.
+Mark assumptions clearly.
 ```
 
-Expected `docs/vision.md` shape:
-
-```markdown
-# Vision
-
-## Problem
-
-High-touch restaurants handle guest questions, dietary constraints, wine preferences, and reservation changes through fragmented phone, email, and staff memory.
-
-## Users
-
-- Guests planning a visit.
-- Hosts managing reservations.
-- Waitstaff preparing for service.
-- Managers reviewing exceptions.
-
-## Product
-
-Maison Verre Concierge is a multi-turn agentic waiter that helps guests plan a visit and helps staff review service-sensitive requests.
-
-## Success in 12 Months
-
-- Fewer routine calls handled manually.
-- Faster guest response times.
-- Cleaner staff handoffs before service.
-- Auditable handling of allergy and exception requests.
-
-## Out of Scope
-
-- Replacing staff judgment.
-- Taking payments.
-- Diagnosing medical or allergy safety.
-- Confirming unavailable tables.
-```
-
-Expected `docs/principles.md` shape:
+Expected `docs/principles.md` excerpt:
 
 ```markdown
 # Engineering Principles
@@ -285,676 +471,128 @@ Expected `docs/principles.md` shape:
 - Service layer owns business logic.
 - API routes stay thin.
 - Adapters isolate external systems.
-- Protocols define contracts between layers.
-- Pydantic v2 models validate inputs and outputs.
 - Domain models should be testable without infrastructure.
 - Staff approval is required for safety-sensitive actions.
 - Agent decisions must be auditable.
 - External model and reservation providers are replaceable adapters.
 ```
 
-Bad prompt:
+## Appendix B: Longer Feature Contract Example
 
-```text
-Create a repo for my restaurant AI agent.
-```
-
-Better prompt:
-
-```text
-Create only the project constitution and planning docs.
-Do not scaffold code.
-Make the agent's authority boundaries explicit.
-```
-
-## Phase 1: Design the System
-
-Now use the coding agent as a staff architect.
-
-Do not build yet.
-
-Prompt:
-
-```text
-Read AGENTS.md and docs/vision.md.
-
-Analyze Maison Verre Concierge as a production system.
-
-Identify:
-- core domains
-- major subsystems
-- external systems
-- safety and compliance risks
-- technical unknowns
-- scaling constraints
-
-Propose 2 architecture options.
-
-For each option, include:
-- major boxes
-- tradeoffs
-- risks
-- what should be decided before implementation
-
-Do not write code.
-```
-
-Expected output:
-
-```text
-Core domains
-- Guest conversation
-- Reservation availability
-- Guest profile and preferences
-- Menu and wine knowledge
-- Staff review
-- Audit trail
-
-Major subsystems
-- Web/API interface
-- Conversation orchestration service
-- Reservation service
-- Menu knowledge service
-- Staff review queue
-- Audit/event log
-- Model provider adapter
-- Reservation provider adapter
-
-Key risks
-- Agent confirms unsafe allergy guidance.
-- Reservation source of truth is unclear.
-- Guest memory stores sensitive preference data without policy.
-- Staff cannot audit why a recommendation was made.
-
-Decision needed
-- Is the internal database or reservation provider the source of truth for availability?
-```
-
-Architecture should stabilize before code begins. If the agent proposes a framework too quickly, slow it down:
-
-```text
-Challenge your own architecture.
-
-Where is it over-designed?
-Where is it under-specified?
-Which decision would be expensive to reverse after implementation?
-```
-
-## Phase 2: Identify Capabilities
-
-Capabilities are independent slices of the system. They are not features.
-
-Bad:
-
-```text
-Add reservation button.
-```
-
-Better capability:
-
-```text
-Reservation Management
-```
-
-Prompt:
-
-```text
-Based on the stabilized architecture, define the system capabilities.
-
-For each capability, include:
-- purpose
-- primary users
-- owned data
-- external dependencies
-- examples of features it may later contain
-
-Do not define implementation tasks yet.
-```
-
-Expected `docs/capabilities.md`:
-
-```markdown
-# Capabilities
-
-## Guest Conversation
-
-- Purpose: Manage multi-turn guest interactions.
-- Users: Guests, staff reviewing transcripts.
-- Owned data: Conversation sessions, messages, intent state.
-- Dependencies: Agent runtime, menu knowledge, reservation management.
-- Possible features: Start conversation, continue conversation, summarize handoff.
-
-## Reservation Management
-
-- Purpose: Check availability, create holds, request modifications.
-- Users: Guests, hosts.
-- Owned data: Reservation requests, temporary holds, reservation status.
-- Dependencies: Guest profile, reservation provider adapter.
-- Possible features: Create hold, cancel hold, request modification.
-
-## Staff Review
-
-- Purpose: Route sensitive or uncertain actions to humans.
-- Users: Hosts, managers, waitstaff.
-- Owned data: Review cases, approvals, rejections, comments.
-- Dependencies: Audit log, guest conversation, reservations.
-- Possible features: Allergy review, exception approval, staff note.
-
-## Menu and Wine Knowledge
-
-- Purpose: Provide current menu, pairing, and policy context.
-- Users: Guests, waitstaff, agent runtime.
-- Owned data: Menu items, wine inventory references, pairing rules.
-- Dependencies: Staff-managed content source.
-- Possible features: Menu question answering, pairing request, unavailable item guard.
-
-## Audit and Observability
-
-- Purpose: Record decisions, tool calls, approvals, failures, and costs.
-- Users: Managers, engineers.
-- Owned data: Events, traces, model calls, approval records.
-- Dependencies: All action-producing capabilities.
-- Possible features: Conversation audit, tool-call trace, daily risk report.
-```
-
-## Phase 3: Build the Dependency Graph
-
-This is where planning starts to create execution value.
-
-Prompt:
-
-```text
-Create a capability dependency graph for Maison Verre Concierge.
-
-Separate:
-- sequential work
-- parallelizable work
-- risky dependencies
-- contracts needed before parallel implementation
-
-Output as docs/dependency-map.md.
-```
-
-Expected output:
-
-```markdown
-# Capability Dependency Map
-
-## Graph
-
-Guest Profile
-└── None
-
-Menu and Wine Knowledge
-└── None
-
-Audit and Observability
-└── None for first version
-
-Reservation Management
-├── Guest Profile
-└── Reservation Provider Adapter
-
-Staff Review
-├── Guest Conversation
-├── Reservation Management
-└── Audit and Observability
-
-Guest Conversation
-├── Menu and Wine Knowledge
-├── Reservation Management
-├── Staff Review
-└── Audit and Observability
-
-Agent Runtime
-├── Guest Conversation
-├── Tool Contracts
-├── Staff Review
-└── Audit and Observability
-
-## Sequential First
-
-1. Domain glossary.
-2. Guest profile model.
-3. Menu knowledge model.
-4. Reservation provider protocol.
-5. Audit event model.
-
-## Parallel After Contracts
-
-- Reservation provider adapter.
-- Menu knowledge ingestion.
-- Staff review queue.
-- Conversation API.
-```
-
-The important part is not the diagram. The important part is knowing what can safely happen in parallel.
-
-Parallel agent work without contracts creates merge conflicts in the architecture, not just in Git.
-
-## Phase 4: Define Epics
-
-Each capability can now become one or more epics.
-
-An epic should produce meaningful capability. It is larger than a feature but smaller than "build the product."
-
-Prompt:
-
-```text
-Using docs/capabilities.md and docs/dependency-map.md, define epics for the Reservation Management capability.
-
-For each epic, include:
-- goal
-- included features
-- excluded work
-- dependencies
-- acceptance criteria
-- open decisions
-
-Do not generate implementation tasks yet.
-```
-
-Expected `docs/epics/reservations.md`:
-
-```markdown
-# Epic: Reservation Management
-
-## Goal
-
-Allow the system to check availability, create temporary reservation holds, and request staff-approved reservation changes without making the agent the source of truth for final availability.
-
-## Included Features
-
-- Reservation provider protocol.
-- Availability query.
-- Temporary reservation hold.
-- Hold expiration.
-- Staff-approved modification request.
-
-## Excluded Work
-
-- Payment collection.
-- Final table assignment optimization.
-- Walk-in waitlist management.
-- Private dining events.
-
-## Dependencies
-
-- Guest profile model.
-- Reservation provider decision record.
-- Audit event model.
-
-## Acceptance Criteria
-
-- The system can query available slots.
-- The system can create a time-limited hold.
-- Expired holds cannot be confirmed.
-- Unavailable slots produce a clear rejection.
-- Staff can review modification requests.
-- All reservation actions emit audit events.
-
-## Open Decisions
-
-- Which reservation system is the source of truth?
-- How long should holds last?
-- Which changes require staff approval?
-```
-
-Bad epic:
-
-```text
-Implement reservations.
-```
-
-Better epic:
-
-```text
-Allow the system to check availability, create temporary holds, and request staff-approved changes while preserving the reservation provider as the source of truth.
-```
-
-## Phase 5: Write Feature Contracts, Not Feature Requests
-
-This is the key phase.
-
-A traditional feature request describes what someone wants. A feature contract defines the boundary a coding agent can implement against.
-
-Feature contracts should answer:
-
-```text
-What behavior is required?
-What inputs are accepted?
-What outputs are returned?
-What data changes?
-What events are emitted?
-What errors can occur?
-What is out of scope?
-What tests prove it works?
-```
-
-Bad feature:
-
-```text
-Add allergy support.
-```
-
-Better feature contract:
-
-```text
-When a guest mentions an allergy, classify the conversation as safety-sensitive, collect structured allergy details, avoid giving medical certainty, and create a staff review case before any reservation note is confirmed.
-```
-
-Prompt:
-
-```text
-Create a feature contract for Reservation Hold.
-
-Context:
-- The restaurant has limited seating and service pacing.
-- The reservation provider remains the source of truth.
-- The agent may create a temporary hold but may not guarantee final seating after expiration.
-- Holds expire after 10 minutes.
-
-Include:
-- purpose
-- user story
-- inputs
-- outputs
-- domain rules
-- errors
-- audit events
-- acceptance criteria
-- test cases
-- implementation boundaries
-
-Do not write code.
-```
-
-Expected `docs/features/reservation-hold.md`:
+Use this shape when a feature is ready to become implementation work:
 
 ```markdown
 # Feature Contract: Reservation Hold
 
-## Purpose
+## Parent
 
-Create a short-lived reservation hold while a guest confirms details during a conversation.
+- Capability: Reservation Management
+- Epic: Reservation Holds
 
-## User Story
+## Actor Or Trigger
 
-As a guest, I want the concierge to temporarily hold an available reservation slot while I confirm party size, dietary constraints, and contact details.
+- Actor: Guest in an active conversation
+- Trigger: Guest asks to reserve an available time
+
+## Requirements
+
+- Create a temporary hold through the reservation provider adapter.
+- Treat the reservation provider as the source of truth.
+- Expire holds after 10 minutes.
+- Route parties larger than 6 to staff review.
+- Describe the hold as temporary in guest-facing language.
 
 ## Inputs
 
-- guest_id
-- party_size
-- requested_date
-- requested_time
-- seating_preference, optional
-- conversation_id
+| Input | Required | Validation |
+| --- | --- | --- |
+| guest_id | yes | Existing guest or active anonymous session |
+| party_size | yes | Positive integer |
+| requested_date | yes | Valid service date |
+| requested_time | yes | Valid service time |
+| conversation_id | yes | Active conversation |
 
 ## Outputs
 
-Success:
-- hold_id
-- expires_at
-- reservation_slot
-- guest-facing confirmation message
+| Output | Notes |
+| --- | --- |
+| hold_id | Stable hold identifier |
+| expires_at | Expiration timestamp |
+| reservation_slot | Held slot details |
+| message | Guest-facing explanation |
 
-Failure:
-- error_code
-- user-facing explanation
-- recovery options
+## Errors And Edge Cases
 
-## Domain Rules
-
-- Holds last 10 minutes.
-- Holds must be created through the reservation provider adapter.
-- Holds must not be created for unavailable slots.
-- Holds for parties larger than 6 require staff review.
-- The agent must describe the hold as temporary.
-- Expired holds cannot be confirmed.
-
-## Errors
-
-- slot_unavailable
-- party_too_large
-- provider_timeout
-- duplicate_active_hold
-- invalid_guest_contact
+- `slot_unavailable`: return alternatives when available.
+- `party_too_large`: create staff review case.
+- `provider_timeout`: preserve conversation state and retry safely.
+- `duplicate_active_hold`: require explicit guest confirmation before replacing.
+- `expired_hold`: reject confirmation and ask the guest to check availability again.
 
 ## Audit Events
 
-- ReservationHoldRequested
-- ReservationHoldCreated
-- ReservationHoldRejected
-- ReservationHoldExpired
+- `ReservationHoldRequested`
+- `ReservationHoldCreated`
+- `ReservationHoldRejected`
+- `ReservationHoldExpired`
 
 ## Acceptance Criteria
 
 - Available slots can be held for 10 minutes.
-- Unavailable slots return alternatives.
-- Duplicate active holds are rejected or replaced by explicit user confirmation.
-- Party sizes above 6 create a staff review case.
+- Unavailable slots return a clear rejection or alternatives.
+- Expired holds cannot be confirmed.
+- Large parties create a staff review case.
 - Every outcome emits an audit event.
 
-## Test Cases
+## Out Of Scope
 
-- create hold for available table
-- reject unavailable slot
-- reject expired hold confirmation
-- route large party to staff review
-- handle provider timeout without losing conversation state
-
-## Implementation Boundaries
-
-- Implement domain service, repository protocol, provider protocol, and tests.
-- Do not implement frontend UI.
-- Do not implement real reservation provider integration.
-- Use an in-memory fake provider for tests.
+- Real reservation provider integration.
+- Payment collection.
+- Final table assignment.
+- Frontend UI.
 ```
 
-This is where Codex and Claude become much more effective. They can work inside the contract instead of inventing the contract while coding.
+## Appendix C: Longer Task Example
 
-## Phase 6: Generate Implementation Tasks
-
-Only now should you create implementation tasks.
-
-Prompt:
-
-```text
-Read:
-- AGENTS.md
-- docs/principles.md
-- docs/features/reservation-hold.md
-
-Break the Reservation Hold feature contract into coding-agent-sized implementation tasks.
-
-Each task must include:
-- goal
-- files likely touched
-- deliverables
-- tests
-- done criteria
-
-Keep each task small enough for a focused coding agent session.
-```
-
-Expected output:
+Once the feature contract passes the Phase 5 gate, generate tasks like this:
 
 ```markdown
-# Implementation Tasks: Reservation Hold
+# Task: Implement Reservation Hold Service
 
-## Task 1: Define Reservation Domain Models
+## Source Contract
 
-- Goal: Add typed domain models for reservation slots, holds, statuses, and errors.
-- Likely files: `src/reservations/domain.py`, `tests/reservations/test_domain.py`
-- Deliverables: Pydantic models or dataclasses, validation rules, unit tests.
-- Done: Invalid party sizes and expired holds are rejected by tests.
+- `docs/features/reservation-hold.md`
 
-## Task 2: Define Provider Protocol
+## Goal
 
-- Goal: Create a protocol for checking availability and creating holds.
-- Likely files: `src/reservations/ports.py`, `tests/reservations/test_ports.py`
-- Deliverables: `ReservationProvider` protocol and fake test provider.
-- Done: Service tests can run without a real external provider.
+Create service-layer behavior for validating, creating, expiring, and auditing reservation holds.
 
-## Task 3: Implement ReservationHoldService
+## Requirements
 
-- Goal: Implement hold creation rules.
-- Likely files: `src/reservations/service.py`, `tests/reservations/test_hold_service.py`
-- Deliverables: service, errors, audit event calls.
-- Done: All acceptance criteria pass through unit tests.
+- Enforce party-size rules before creating the hold.
+- Use the `ReservationProvider` protocol for availability and hold creation.
+- Use the `AuditSink` protocol for audit events.
+- Return structured success and failure results.
+- Do not implement the API route in this task.
 
-## Task 4: Add API Endpoint
+## Deliverables
 
-- Goal: Expose hold creation through a thin FastAPI route.
-- Likely files: `src/api/routes/reservations.py`, `tests/api/test_reservations.py`
-- Deliverables: request/response models, route, tests.
-- Done: Route delegates business logic to the service layer.
+- Reservation hold service.
+- Domain errors or result types.
+- Fake reservation provider for tests.
+- Unit tests for each acceptance criterion.
+
+## Verification
+
+- Run the relevant unit tests.
+- Confirm the service works without a real external provider.
+- Confirm no API endpoint owns business logic.
 ```
 
-Good coding-agent task:
+## Takeaway: Use The Skill
 
-```text
-Implement ReservationHoldService from docs/features/reservation-hold.md.
+The fastest way to apply this guide is to use the [Badd Project Planner skill](../../.agents/skills/badd-project-planner/SKILL.md). It encodes the phase order, operating loop, questions, quality gates, examples, and templates.
 
-Constraints:
-- Service layer owns business logic.
-- Use ReservationProvider protocol.
-- Use AuditSink protocol.
-- No FastAPI route in this task.
-- Include unit tests for each acceptance criterion.
-```
+Use it when starting a new project, preparing an existing repo for coding agents, repairing weak project docs, or turning vague features into agent-sized implementation tasks.
 
-Too large:
-
-```text
-Build reservation management.
-```
-
-Too small:
-
-```text
-Rename hold_id to id.
-```
-
-The right unit of work is a few hours of bounded implementation with clear tests.
-
-## The Review Gate
-
-Before each epic or feature implementation, ask:
-
-```text
-Assume you are inheriting this project six months from now.
-
-Review this feature contract for:
-- architecture impact
-- dependency impact
-- API impact
-- data model impact
-- security impact
-- observability impact
-- testing impact
-- missing decisions
-
-What would you want clarified before implementation begins?
-```
-
-For Maison Verre Concierge, this should surface questions like:
-
-```text
-- Are allergy notes treated as sensitive data?
-- Can a guest delete remembered preferences?
-- Which staff roles can approve exceptions?
-- Is the reservation provider the final source of truth?
-- What is logged when the model gives a recommendation?
-- What happens if the model provider is down during a conversation?
-```
-
-These are not details. They are the difference between a demo and a system.
-
-## Appendix: Decision Logs and Context Hygiene
-
-Coding agents need durable memory. Chat history is not enough.
-
-Add a decision log:
-
-```text
-docs/decisions/
-├── 0001-agent-boundaries.md
-├── 0002-reservation-source-of-truth.md
-└── 0003-human-review-policy.md
-```
-
-Decision record template:
-
-```markdown
-# 0001 Agent Boundaries
-
-## Status
-
-Accepted
-
-## Context
-
-The concierge can help guests and staff, but some actions require human judgment.
-
-## Decision
-
-The agent may recommend, collect information, and prepare actions.
-The agent may not approve allergy exceptions, unavailable slots, billing changes, or special kitchen requests.
-
-## Consequences
-
-- Staff review is required for sensitive requests.
-- Feature contracts must state whether human approval is required.
-- Audit events must capture prepared actions and approvals.
-```
-
-Add context hygiene rules to `AGENTS.md`:
-
-```markdown
-## Documentation Hygiene
-
-- If implementation changes architecture, update `docs/architecture.md`.
-- If a new domain term appears, update `docs/glossary.md`.
-- If a feature contract changes, update the related file in `docs/features/`.
-- If a decision becomes durable, add or update an ADR in `docs/decisions/`.
-- If a task changes sequencing, update `docs/dependency-map.md` or `docs/roadmap.md`.
-- Do not leave important decisions only in chat.
-```
-
-Add a phase-end prompt:
-
-```text
-Before we move to the next phase, review the docs changed in this phase.
-
-Identify:
-- decisions that should become ADRs
-- terms that should be added to the glossary
-- architecture assumptions that are not documented
-- feature contracts that are missing acceptance criteria
-- roadmap or dependency updates needed
-
-Then propose the minimal documentation updates.
-Do not edit files until I approve the list.
-```
-
-This keeps the repository as the source of truth.
-
-## The Rule
-
-Start every major phase with this question:
-
-```text
-Assume you are inheriting this project six months from now.
-
-What information would you wish existed before implementation begins?
-```
-
-The answer usually reveals the missing contracts, decisions, and boundaries.
-
-That is the point of the project constitution.
-
-It gives the agent enough context to stop guessing.
-
-And it gives you enough structure to know whether the generated code actually belongs in the system.
+The skill's practical rule is the rule of this guide: do not generate application code during planning. First create the constitution, architecture, capabilities, dependency graph, epics, and feature contracts; then generate implementation tasks.
