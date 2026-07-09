@@ -5,10 +5,17 @@ import { site } from "@/lib/site";
 <footer class="site-footer">
   <div class="shell footer-grid">
     <div>
-      <strong>{site.name}</strong>
+      <strong>
+        <span class="sr-only">{site.name}</span>
+        <span aria-hidden="true" class="brand-wordmark">
+          <span class="brand-wordmark__small">Badd</span>
+          <span class="brand-wordmark__divider">|</span>
+          <span>Architect</span>
+        </span>
+      </strong>
       <p>
-        Practical AI adoption guidance for teams that need production systems,
-        not theater.
+        Practical guidance for architects and leaders building production-grade
+        AI applications and agents with the operating model to run them.
       </p>
     </div>
     <nav aria-label="Footer navigation">
@@ -34,10 +41,6 @@ import { site } from "@/lib/site";
     grid-template-columns: minmax(0, 1.5fr) minmax(220px, 0.7fr);
   }
 
-  strong {
-    font-family: Avenir Next, Avenir, "Segoe UI", sans-serif;
-  }
-
   p {
     color: var(--muted);
     margin: 8px 0 0;
@@ -53,7 +56,7 @@ import { site } from "@/lib/site";
 
   nav a {
     color: var(--ink);
-    font-family: Avenir Next, Avenir, "Segoe UI", sans-serif;
+    font-family: var(--sans);
     font-size: 0.9rem;
     font-weight: 700;
     text-decoration: none;
@@ -69,4 +72,3 @@ import { site } from "@/lib/site";
     }
   }
 </style>
-

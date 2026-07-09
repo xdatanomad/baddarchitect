@@ -5,9 +5,17 @@ import { site } from "@/lib/site";
 <header class="site-header">
   <a class="skip" href="#main-content">Skip to content</a>
   <nav class="shell nav" aria-label="Primary navigation">
-    <a class="brand" href="/">
-      <span class="mark" aria-hidden="true">AAB</span>
-      <span>{site.name}</span>
+    <a class="brand" href="/" aria-label={site.name}>
+      <span class="mark" aria-hidden="true">
+        <span class="mark-letter mark-letter-b">B</span>
+        <span class="mark-divider">|</span>
+        <span class="mark-letter mark-letter-a">A</span>
+      </span>
+      <span class="brand-wordmark" aria-hidden="true">
+        <span class="brand-wordmark__small">Badd</span>
+        <span class="brand-wordmark__divider">|</span>
+        <span>Architect</span>
+      </span>
     </a>
     <div class="links">
       {site.nav.slice(1).map((item) => <a href={item.href}>{item.label}</a>)}
@@ -48,8 +56,6 @@ import { site } from "@/lib/site";
     align-items: center;
     color: var(--ink);
     display: inline-flex;
-    font-family: Avenir Next, Avenir, "Segoe UI", sans-serif;
-    font-weight: 800;
     gap: 10px;
     text-decoration: none;
   }
@@ -59,17 +65,38 @@ import { site } from "@/lib/site";
     background: var(--ink);
     color: var(--surface);
     display: inline-flex;
-    font-size: 0.66rem;
+    font-size: 0.72rem;
+    font-weight: 850;
+    gap: 1px;
     height: 34px;
     justify-content: center;
-    letter-spacing: 0.08em;
     width: 42px;
+  }
+
+  .mark-letter,
+  .mark-divider {
+    display: inline-block;
+    line-height: 1;
+  }
+
+  .mark-letter-b {
+    transform: scaleX(-1);
+  }
+
+  .mark-divider {
+    opacity: 0.74;
+    transform: translateY(-0.02em);
+  }
+
+  .mark-letter-a {
+    font-size: 1.15em;
+    transform: translateY(-0.01em);
   }
 
   .links {
     align-items: center;
     display: flex;
-    font-family: Avenir Next, Avenir, "Segoe UI", sans-serif;
+    font-family: var(--sans);
     font-size: 0.9rem;
     font-weight: 700;
     gap: 22px;
@@ -99,4 +126,3 @@ import { site } from "@/lib/site";
     }
   }
 </style>
-

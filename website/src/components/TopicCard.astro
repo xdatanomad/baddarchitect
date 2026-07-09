@@ -1,11 +1,14 @@
 ---
-const { topic } = Astro.props;
+const { topic, variant = "default" } = Astro.props;
+const className = variant === "stacked" ? "topic-card topic-card--stacked" : "topic-card";
 ---
 
-<a class="topic-card" href={`/topics/${topic.slug}/`}>
+<a class={className} href={`/topics/${topic.slug}/`}>
   <span class="eyebrow">Pillar</span>
-  <h2>{topic.title}</h2>
-  <p>{topic.description}</p>
+  <div>
+    <h2>{topic.title}</h2>
+    <p>{topic.description}</p>
+  </div>
 </a>
 
 <style>
@@ -25,15 +28,44 @@ const { topic } = Astro.props;
     color: var(--ink);
   }
 
+  .topic-card--stacked {
+    align-items: start;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: minmax(96px, 0.16fr) minmax(0, 1fr);
+    min-height: 0;
+    padding: 24px;
+  }
+
   h2 {
     font-size: 1.35rem;
     line-height: 1.18;
     margin: 16px 0 12px;
   }
 
+  .topic-card--stacked h2 {
+    font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+    margin: 0 0 10px;
+    max-width: 760px;
+  }
+
   p {
     color: var(--muted);
     margin: 0;
   }
-</style>
 
+  .topic-card--stacked p {
+    max-width: 760px;
+  }
+
+  @media (max-width: 680px) {
+    .topic-card--stacked {
+      display: block;
+      padding: 22px;
+    }
+
+    .topic-card--stacked h2 {
+      margin-top: 16px;
+    }
+  }
+</style>
