@@ -83,68 +83,189 @@ Use this shape for each planned content entry:
   - Argue that developers increasingly become micro product managers: coding agents let individuals touch more unfamiliar areas faster, so companies must find or groom builders who can weigh security, ROI, UX, data, support, and customer impact while working with less cross-team handoff time.
   - Turn adoption into management practice: pair skeptics with AI-forward builders, require verification and tests, create show-and-tell loops, document safe patterns, and reward measured business impact over tool usage.
   - Practical takeaway: a balanced-builder scorecard covering AI fluency, skepticism, verification discipline, workflow thinking, security judgment, and customer empathy.
-- Source notes: `content/notes/bottlenecks.md` section 11; `content/articles/challenges/the_fear.md`; `content/articles/challenges/02_moving_forward.md`; `content/notes/NOTES.md` adoption, develop, and company restructure notes.
+- Source notes: `content/notes/bottlenecks.md` section 11; `content/articles/challenges/00.a_the_fear.md`; `content/articles/challenges/00.b_moving_forward.md`; `content/notes/NOTES.md` adoption, develop, and company restructure notes.
 - Status: planned
 
 ## p2 Pillar 2: AI Adoption Operating Manual
 
-## p3 Pillar 3: Production AI Systems and Agents with ROI
+### p2-01 From Experimentation to an AI-native Operating Model
 
-## p4 Pillar 4: AI Security Best Practices
+- Reader/job: Executives, managers, AI practice leaders, and transformation owners who need a clear adoption path beyond scattered tool usage.
+- Goal: Establish the strategic journey from individual AI experimentation to a governed, measurable, AI-native operating model.
+- Outline:
+  - Define the destination: not "everyone uses AI," but workflows, teams, data, governance, and metrics redesigned around AI leverage.
+  - Show the maturity path: safe participation, workflow portfolio selection, AI Acceleration Team, trusted context layer, governed internal automation, and advanced customer-facing paths later.
+  - Make security, governance, evals, monitoring, and observability explicit at every stage instead of treating them as late-stage blockers.
+  - Practical takeaway: a one-page AI operating model ladder leaders can use to locate their current stage and next bottleneck.
+- Source notes: `content/notes/bottlenecks.md` maturity ladder and sections 6-10; `content/notes/NOTES.md` adoption stages and operating model notes.
+- Status: planned
+
+### p2-02 Make AI Participation Safe Enough to Start
+
+- Reader/job: Managers and adoption leaders trying to move cautious, skeptical, or uneven teams into productive AI use without hype or coercion.
+- Goal: Turn fear and resistance into structured participation, informed skepticism, and practical early wins.
+- Outline:
+  - Acknowledge legitimate fear: job impact, quality risk, privacy, ethics, power concentration, and skill erosion.
+  - Include skeptics and middle adopters in adoption design, not only the most enthusiastic front-runners.
+  - Use small exercises, office hours, show-and-tells, and paired adoption patterns to build trust and surface what AI should not do.
+  - Practical takeaway: a 30-day participation plan for safe experimentation, team learning, and early workflow discovery.
+- Source notes: `content/articles/challenges/00.a_the_fear.md`; `content/articles/challenges/00.b_moving_forward.md`; `content/notes/NOTES.md` adoption notes.
+- Status: planned
+
+### p2-03 Choose the Workflows That Deserve AI Investment
+
+- Reader/job: Executives, product leaders, and operations leaders deciding which AI opportunities should receive real investment.
+- Goal: Prevent tool sprawl by introducing a portfolio/ROI gate before teams automate or productionize workflows.
+- Outline:
+  - Separate personal productivity wins from workflows that deserve company investment.
+  - Score candidate workflows by business value, repeatability, data readiness, permission risk, failure cost, owner clarity, and measurable outcome.
+  - Require each selected workflow to define the trigger, systems touched, human review points, eval approach, monitoring needs, and cost per completed workflow.
+  - Practical takeaway: a workflow portfolio scorecard and kill/continue decision rule.
+- Source notes: `content/notes/bottlenecks.md` sections 1, 5, 7, 9; `content/articles/challenges/01_demo_workflow_product.md`; `content/articles/challenges/03_roi_reality_check.md`; `content/notes/NOTES.md` project pattern notes.
+- Status: planned
+
+### p2-04 Build the AI Acceleration Team
+
+- Reader/job: CTOs, engineering leaders, operations leaders, and AI practice leaders forming the team that turns local AI wins into repeatable company capability.
+- Goal: Define the AI Acceleration Team as a forward-deployed enablement function that raises the floor, spreads leverage, and prevents unmanaged AI sprawl.
+- Outline:
+  - Position the team as coaches, pattern-builders, and governance enablers rather than an elite approval bottleneck.
+  - Define core responsibilities: team enablement, reusable skills and prompts, company/project AI instructions, approved tool patterns, eval baselines, workflow intake, and internal automation candidates.
+  - Show how the team partners with security, data, product, and operations to convert discoveries into standards and reusable infrastructure.
+  - Practical takeaway: an AI Acceleration Team charter with roles, operating cadence, intake criteria, and first 90-day deliverables.
+- Source notes: `content/notes/NOTES.md` develop, adoption, team, tools, and security notes; `content/notes/bottlenecks.md` sections 6, 7, 10, 11.
+- Status: planned
+
+### p2-05 Build the Trusted Context Layer
+
+- Reader/job: Executives, AI leaders, data leaders, and architects deciding how company data should become usable by AI systems without losing control.
+- Goal: Explain the trusted context layer at executive altitude: governed access to company knowledge, systems, and operational memory for AI-assisted workflows.
+- Outline:
+  - Reframe MCP, RAG, APIs, documents, and knowledgebases as parts of a governed context layer, not disconnected technical projects.
+  - Cover the executive requirements: identity-aware access, source freshness, permission boundaries, audit trails, approved tools, observability, and security review.
+  - Separate the strategic principle from technical depth: leaders need the operating model; engineers need the implementation playbooks.
+  - Practical takeaway: a trusted-context readiness checklist for data, permissions, ownership, observability, and review.
+- Source notes: `content/notes/bottlenecks.md` sections 2, 4, 7, 10; `content/notes/NOTES.md` Step 2, MCP, AGENTS.md, slash command, and security notes.
+- Status: planned
+
+### p2-06 Turn Local Wins Into Governed Internal Automation
+
+- Reader/job: Executives, managers, and AI program owners ready to move from individual AI use to durable internal workflows.
+- Goal: Define how companies should productionize internal AI workflows before attempting broad or customer-facing autonomy.
+- Outline:
+  - Show the shift from personal workflows to shared, hosted, observable, auditable internal automation.
+  - Require each workflow to have an owner, success metric, human-in-the-loop design, eval set, escalation path, and rollback plan.
+  - Explain why durable execution, monitoring, cost control, and governance matter even for internal-only automation.
+  - Practical takeaway: an internal automation launch gate for trusted agentic workflows.
+- Source notes: `content/notes/bottlenecks.md` sections 6-10 and maturity ladder; `content/articles/challenges/01_demo_workflow_product.md`; `content/notes/NOTES.md` internal development operating system notes.
+- Status: planned
+
+## p3 Pillar 3: Production AI Systems and Internal Automation Playbooks
+
+### p3-01 AI Acceleration Team Starter Kit
+
+- Reader/job: Engineering leaders, staff engineers, platform teams, and AI enablement leads implementing the operating manual inside real teams.
+- Goal: Provide the practical artifacts the AI Acceleration Team needs to raise adoption quality without slowing teams down.
+- Outline:
+  - Define baseline artifacts: company AI instructions, project `AGENTS.md`/`CLAUDE.md`, reusable skills, slash commands, tool-use rules, review checklists, and example workflows.
+  - Show how to package guidance so agents and humans use the same standards for architecture, testing, security, and documentation.
+  - Include a lightweight cadence for office hours, show-and-tells, workflow intake, pattern review, and updating approved practices.
+  - Practical takeaway: a starter kit checklist for the first 30-60 days of the AI Acceleration Team.
+- Source notes: `content/notes/NOTES.md` develop, team, tools, security, and project pattern notes.
+- Status: planned
+
+### p3-02 Internal Agentic Workflow Blueprint
+
+- Reader/job: Architects and engineers building internal AI workflows that need to run reliably beyond a local demo.
+- Goal: Give a reference blueprint for durable, governed, human-reviewed internal agentic workflows.
+- Outline:
+  - Start with workflow mapping: trigger, owner, systems touched, state, tools, permissions, human review, and success metric.
+  - Cover implementation building blocks: orchestration, durable execution, retries, queues/schedules, tool boundaries, logs, evals, and rollback.
+  - Show how to choose narrow workflow agents over general-purpose agents.
+  - Practical takeaway: an internal workflow architecture checklist from prototype to hosted automation.
+- Source notes: `content/notes/bottlenecks.md` sections 1, 7, 8, 9; `content/articles/challenges/01_demo_workflow_product.md`; `content/notes/articles_outline.md` Blueprint for Production-grade Customer-facing Agents.
+- Status: planned
+
+### p3-03 Trusted Context Layer Technical Guide
+
+- Reader/job: Architects, platform engineers, data engineers, and security engineers implementing governed company context for AI systems.
+- Goal: Translate the executive trusted-context concept into practical patterns for retrieval, MCP/tool access, permissions, observability, and auditability.
+- Outline:
+  - Start with the minimum useful pattern: governed sources, identity-aware retrieval/tool access, source attribution, audit logs, and freshness checks.
+  - Compare when to use documents/RAG, APIs, MCP servers, and deterministic services as context providers.
+  - Flag advanced patterns as later-stage work: agent-assisted data exploration, read-only code execution, richer retrieval pipelines, reranking, and workflow-specific memory.
+  - Practical takeaway: a phased trusted-context implementation checklist that starts simple and leaves room for advanced RAG/MCP methods.
+- Source notes: `content/notes/bottlenecks.md` sections 2, 4, 7, 10; `content/notes/NOTES.md` MCP, AGENTS.md, security, tools, and project pattern notes.
+- Status: planned
+
+### p3-04 Evals, Observability, and Cost Controls for Internal AI Workflows
+
+- Reader/job: Architects and engineers who need internal agentic workflows to remain trustworthy, debuggable, and economically sane after launch.
+- Goal: Define the operational layer required for production-grade internal AI systems.
+- Outline:
+  - Build evals around realistic workflow cases, adversarial cases, retrieval quality, tool-call accuracy, regression checks, and human-rating rubrics.
+  - Instrument traces, logs, latency, cost per completed workflow, failure classes, escalations, and drift signals.
+  - Use cost controls such as model routing, caching, bounded retries, deterministic code, context limits, and workflow-level budgets.
+  - Practical takeaway: a minimum observability and eval dashboard spec for internal AI workflows.
+- Source notes: `content/notes/bottlenecks.md` sections 7, 8, 9; `content/articles/challenges/03_roi_reality_check.md`; `content/notes/perosnal_growth_plan.md` production AI ideas.
+- Status: planned
+
+## p4 Pillar 4: AI Security, Governance, Evals, and Observability
+
+### p4-01 Minimum Viable AI Governance and Security Review
+
+- Reader/job: Architects, security reviewers, engineering leaders, and AI Acceleration Team members creating safe boundaries for internal AI adoption.
+- Goal: Provide the MVP security, governance, and review process that should exist before internal agentic workflows become widely trusted.
+- Outline:
+  - Cover core risks: prompt injection, data exposure, excessive tool permissions, unsafe actions, cross-tenant leakage, audit gaps, and vendor/data handling.
+  - Define practical controls: approved MCP/tools, role-based access, read/write separation, sensitive-action approvals, logging, sandboxing, eval gates, red-team prompts, and incident response.
+  - Keep governance enabling rather than bureaucratic: clear defaults, fast exception paths, and reusable approved patterns.
+  - Practical takeaway: an AI/MCP security review checklist and launch gate for internal workflows.
+- Source notes: `content/notes/bottlenecks.md` section 10; `content/notes/NOTES.md` security notes; `content/articles/challenges/02_trust_factor.md`.
+- Status: planned
 
 ## cc Challenged / Later Candidates
 
-### cc-01 Adoption Psychology
+### cc-01 Customer-Facing Agentic Applications
 
-- Reader/job: AI adoption leaders who need to reduce fear, skepticism, and passive resistance.
-- Goal: Shape this into a concrete adoption-stage guide before promoting it to planned content.
+- Reader/job: Product leaders and architects considering externally exposed AI agents after internal operating capability is mature.
+- Goal: Keep customer-facing agentic apps visible as an advanced path without making them part of the launch MVP.
 - Outline:
-  - Fear, skepticism, participation, and education.
-  - Practical ways to build confidence through small wins.
-  - Decision point: when this becomes a standalone guide versus part of an adoption maturity page.
-- Source notes: `content/notes/NOTES.md`, `content/notes/website.md`.
+  - Treat external exposure as a maturity gate, not the default destination.
+  - Require stronger evals, customer trust design, legal/security review, escalation paths, and rollback.
+  - Decision point: promote to p3/p4 once the internal automation and trust-gate content is complete.
+- Source notes: `content/articles/challenges/02_trust_factor.md`; `content/notes/articles_outline.md` Blueprint for Production-grade Customer-facing Agents; `content/notes/bottlenecks.md` sections 3, 7, 8, 10.
 - Status: candidate
 
-### cc-02 Operating Model
+### cc-02 Advanced RAG and MCP Patterns
 
-- Reader/job: Leaders redesigning team structure and workflow ownership for AI adoption.
-- Goal: Scope this into a specific page, guide, or decision framework.
+- Reader/job: Architects and platform engineers improving the trusted context layer after the basic governed pattern is working.
+- Goal: Avoid overcomplicating the MVP while preserving deeper technical ideas for later.
 - Outline:
-  - Coach-and-communicate culture.
-  - Smaller teams and clearer ownership.
-  - Workflow ownership as the operating-model unit.
-- Source notes: `content/notes/NOTES.md`, `content/notes/bottlenecks.md`.
+  - Advanced retrieval pipelines, reranking, hybrid search, graph/context memory, and workflow-specific evals.
+  - Read-only code execution or agentic data exploration for controlled analysis.
+  - Decision point: require a concrete use case and security model before promoting.
+- Source notes: `content/notes/NOTES.md`; `content/notes/bottlenecks.md` sections 2, 4, 7, 10.
 - Status: candidate
 
-### cc-03 Production AI
+### cc-03 AI-native Team Restructure
 
-- Reader/job: Architects planning production-grade AI systems and agents.
-- Goal: Split this topic cluster into focused content entries before treating it as planned content.
+- Reader/job: Executives and operating leaders considering deeper changes to team design, management layers, and decision rights.
+- Goal: Keep the more aggressive org-design argument available, but avoid overloading the MVP operating manual.
 - Outline:
-  - Evals, orchestration, state, and retries.
-  - Observability, audit trails, and cost control.
-  - Decision point: whether this becomes one cornerstone blueprint or several focused guides.
-- Source notes: `content/notes/bottlenecks.md`, `content/notes/articles_outline.md`.
+  - Smaller teams, more autonomy, stronger accountability, and fewer handoffs.
+  - Command-and-control to coach-and-communicate leadership.
+  - Decision point: promote once the operating manual has established the basic AI-native operating model.
+- Source notes: `content/notes/NOTES.md` company restructure notes; `content/notes/bottlenecks.md` section 6.
 - Status: candidate
 
-### cc-04 Security
+### cc-04 Market and Moat Strategy
 
-- Reader/job: Architects and engineering leaders defining AI security boundaries.
-- Goal: Turn this into a concrete security checklist or review workflow.
+- Reader/job: Founders, product leaders, and AI business leaders evaluating defensibility in an AI-assisted build-vs-buy market.
+- Goal: Preserve broader strategy ideas that may become a later pillar extension or founder-focused series.
 - Outline:
-  - MCP controls and tool boundaries.
-  - Audit trails and approval workflows.
-  - Prompt injection and permission-risk controls.
-- Source notes: `content/notes/NOTES.md`, `content/notes/bottlenecks.md`.
-- Status: candidate
-
-### cc-05 Strategy
-
-- Reader/job: CTOs, product leaders, and AI practice leaders evaluating business value.
-- Goal: Split this broad strategy cluster into sharper content around ROI, unit economics, moat, or workflow ownership.
-- Outline:
-  - ROI and unit economics.
-  - Moat erosion and defensibility.
+  - Build-vs-buy pressure from coding agents.
+  - Unit economics, margin traps, pricing, and workflow-data defensibility.
   - Workflow ownership as the strategic lens.
 - Source notes: `content/notes/bottlenecks.md`, `content/notes/articles_outline.md`.
 - Status: candidate
