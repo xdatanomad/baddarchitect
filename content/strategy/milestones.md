@@ -1,19 +1,29 @@
 # Project Milestones
 
-These are the current user-provided milestones. Do not change them without direct user approval.
+These are the current user-approved milestones for the MVP content launch.
 
 ## Approved Milestones
 
 1. AI Adoption Stages & Challenges.
 2. AI Adoption Operating Manual.
-3. A Blueprint for building Production AI Systems and Agents with ROI.
-4. AI Security Best Practices.
+3. Production AI Systems and Internal Automation Playbooks.
+4. AI Security, Governance, Evals, and Observability.
 
-## Proposed Refinements Pending Approval
+## Approved MVP Refinements
 
-These are not applied changes. They are suggestions for review.
+These refinements were approved on July 10, 2026.
 
-1. Rename "Tools for Building Production-Grade AI Agents" to "Production AI Systems and Agents" so the section can cover workflow orchestration, evals, observability, human review, cost controls, and agent patterns without sounding like a vendor/tool catalog.
-2. Add a cross-cutting "Implementation Toolkit" layer for templates, maturity assessments, checklists, security review prompts, project AGENTS.md examples, and adoption workshop exercises.
-3. Split "AI Adoption Operating Manual" into two content tracks: executive operating model and practitioner implementation guide.
-4. Treat security, governance, and trust as a core thread across all milestones, while keeping the dedicated security pillar.
+1. Keep the first milestone focused on a limited set of challenge articles that diagnose why AI adoption stalls.
+2. Make the second milestone the executive strategy path from scattered experimentation to an AI-native operating model.
+3. Use "AI Acceleration Team" for the forward-deployed enablement group that raises adoption quality, creates reusable standards, and turns local wins into shared capability.
+4. Add a workflow portfolio/ROI gate before internal automation so companies choose the right workflows instead of creating governed tool sprawl.
+5. Split the trusted context layer by altitude: executives get the strategic operating model; engineers get practical guidance for MCP, RAG, permissions, observability, and auditability.
+6. Keep customer-facing agentic applications out of the MVP except as an advanced-path placeholder.
+7. Treat security, governance, monitoring, evals, and observability as cross-cutting requirements in every milestone while preserving a dedicated security/governance section.
+
+## MVP Content Flow
+
+1. Pain: why AI demos, adoption, trust, ROI, and talent models break.
+2. Strategy: how leaders move toward an AI-native operating model.
+3. Practice: how technical teams build the AI Acceleration Team toolkit, trusted context layer, and governed internal automations.
+4. Control layer: how security, governance, evals, monitoring, and observability keep the system trustworthy.
