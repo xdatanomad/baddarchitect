@@ -1,6 +1,6 @@
-# Project Milestones
+# Roadmap
 
-These are the current user-approved milestones for the MVP content launch.
+These are the current user-approved milestones for the MVP content launch. Do not revise approved milestone definitions without direct user approval.
 
 ## Approved Milestones
 

@@ -31,7 +31,7 @@ Use a direct, candid, professional, and humble voice. Avoid hype, inflated claim
 
 ## Main Project Pillars
 
-READ `content/strategy/project-brief.md`.
+READ `docs/vision.md`.
 
 **IMPORTANT:** The content will be divided into the following pillars, which will also be reflected in the website structure:
 1. AI Adoption Stages & Challenges.
@@ -41,18 +41,21 @@ READ `content/strategy/project-brief.md`.
 
 ## Current Content Map
 
+- `docs/` - project metadata, milestones, phases, architecture planning, decisions, and operating workflows.
 - `content/notes/website.md` - early site preamble and framing.
-- `content/strategy/` - project metadata, milestones, phases, and architecture planning.
 - `content/notes/bottlenecks.md` - major source essay on AI-native bottlenecks. Ideas on the general site content strategy and article topics.
 - `content/notes/NOTES.md` - raw milestone, adoption-stage, security, team, and tool notes.
 - `content/notes/articles_outline.md` - article backlog and article concepts. A mind draft space for article outlines and ideas.
-- `content/articles/...` - sub dirs to hold polished articles. Follows the structure of the website. 
+- `content/ready/articles/...` - polished source articles ready to adapt into website MDX.
+- `content/social/...` - LinkedIn and other social derivatives.
+- `research/` - source research, learning notes, evidence maps, and market maps.
+- `website/src/content/...` - live MDX content used by the Astro site.
 
 ## Suggested Working Flow
 
 1. Read this file.
-2. Read `content/strategy/project-brief.md`.
-3. Read only the source notes relevant to the task under under `content/strategy/` and `content/notes/`.
+2. Read `docs/vision.md`.
+3. Read only the source notes relevant to the task under `docs/`, `content/notes/`, `content/ready/`, `research/`, or `website/`.
 5. Preserve source material and separate raw notes from publishable content.
 6. Add citations for factual claims that depend on external research.
 7. Keep content concise and actionable.
@@ -80,14 +83,7 @@ The website should be:
 
 ## Website Direction
 
-The likely stack is:
-
-- Next.js or Astro for the main marketing and landing pages.
-- Docusaurus or an MDX documentation system for long-form guides.
-- Markdown/MDX as the primary content format.
-- Static-first deployment on Vercel, Netlify, Cloudflare Pages, or similar.
-
-The final stack decision is not locked yet. See `content/strategy/site-architecture.md`.
+The MVP stack is Astro, TypeScript, MDX, Astro content collections, and static deployment to Cloudflare Pages. See `docs/architecture.md` and `docs/decisions/0002-astro-static-site.md`.
 
 ## Project Skills
 
@@ -102,5 +98,3 @@ The tone should be:
 - Direct and candid, without hype or inflated claims.
 - Professional and humble, acknowledging the complexity and challenges of AI adoption.
 - Practical and skeptical, providing actionable guidance based on real-world examples and evidence.
-
-For an example of the tone and style, see the article: [Moving Forward](articles/challenges/02_moving_forward.md).

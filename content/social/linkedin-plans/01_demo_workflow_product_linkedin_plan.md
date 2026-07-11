@@ -1,6 +1,6 @@
 # LinkedIn Content Plan: The Demo Is Not the Product. The Workflow Is the Product.
 
-- Source article: `content/articles/challenges/01_demo_workflow_product.md`
+- Source article: `content/ready/articles/challenges/01_demo_workflow_product.md`
 - Status: planned
 - Recommended cadence: Eight short posts over roughly four weeks, spaced 2-4 business days apart.
 
@@ -86,7 +86,7 @@
 
 ## Schedule Notes
 
-- Existing plan context only includes `content/linkedin-content-plans/the_fear_linkedin_plan.md`, which uses relative timing and has no generated posts yet.
+- Existing plan context only includes `content/social/linkedin-plans/the_fear_linkedin_plan.md`, which uses relative timing and has no generated posts yet.
 - This sequence should start after the fear-article sequence or run in the following week so the account does not post multiple challenge-pillar pieces on the same business day.
 - No long post is included because the request was specifically to plan LinkedIn short posts.
 - Eight posts are feasible because the article has distinct angles: demo usefulness, workflow gravity, prototype deployment, local workflow stall, workflow mapping, context, operational memory, and production operations.

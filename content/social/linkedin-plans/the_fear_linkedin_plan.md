@@ -1,6 +1,6 @@
 # LinkedIn Content Plan: AI Adoption Starts With Fear
 
-- Source article: `content/articles/challenges/the_fear.md`
+- Source article: `content/ready/articles/challenges/00.a_the_fear.md`
 - Status: planned
 - Recommended cadence: Three short posts spaced 2-4 business days apart.
 
@@ -41,6 +41,6 @@
 
 ## Schedule Notes
 
-- No existing LinkedIn content schedule was found in `content/linkedin-content-plans/`, `content/linkedin-short-posts/`, or `content/linkedin-long-posts/`.
+- No existing LinkedIn content schedule was found beyond `content/social/`.
 - This plan intentionally omits a long post because the request was for three short LinkedIn posts.
 - The sequence moves from adoption psychology, to leadership credibility, to practical governance conversations.

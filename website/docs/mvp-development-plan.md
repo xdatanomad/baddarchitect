@@ -4,7 +4,7 @@
 
 Build the first public version of AI Adoption Blueprint as a static-first Astro site in this `website/` directory. The MVP includes a compact marketing surface, MDX-powered articles and lessons, SEO basics, code formatting, and deployment to Cloudflare Pages.
 
-The existing root `content/` workspace remains the editorial source area. Launch-ready content is copied or adapted into `website/src/content/`.
+The existing root `content/` workspace remains the editorial source area. Root `docs/` remains the project source-of-truth area. Launch-ready content is copied or adapted into `website/src/content/`.
 
 ## Milestones
 
@@ -51,4 +51,3 @@ The existing root `content/` workspace remains the editorial source area. Launch
 - Draft content is excluded from production lists.
 - Core pages have unique metadata.
 - Sitemap, RSS, and robots file are generated.
-
