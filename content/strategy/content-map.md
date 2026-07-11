@@ -160,7 +160,7 @@ Use this shape for each planned content entry:
 - Source notes: `content/notes/bottlenecks.md` sections 6-10 and maturity ladder; `content/articles/challenges/01_demo_workflow_product.md`; `content/notes/NOTES.md` internal development operating system notes.
 - Status: planned
 
-## p3 Pillar 3: Production AI Systems and Internal Automation Playbooks
+## p3 Pillar 3: Production AI Engineering Blueprint
 
 ### p3-01 AI Acceleration Team Starter Kit
 
@@ -210,7 +210,7 @@ Use this shape for each planned content entry:
 - Source notes: `content/notes/bottlenecks.md` sections 7, 8, 9; `content/articles/challenges/03_roi_reality_check.md`; `content/notes/perosnal_growth_plan.md` production AI ideas.
 - Status: planned
 
-## p4 Pillar 4: AI Security, Governance, Evals, and Observability
+## p4 Pillar 4: AI Security & Governance
 
 ### p4-01 Minimum Viable AI Governance and Security Review
 

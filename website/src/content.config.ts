@@ -5,8 +5,8 @@ import { z } from "astro/zod";
 const pillarSchema = z.enum([
   "AI Adoption Stages & Challenges",
   "AI Adoption Operating Manual",
-  "A Blueprint for building Production AI Systems and Agents with ROI",
-  "AI Security Best Practices"
+  "Production AI Engineering Blueprint",
+  "AI Security & Governance"
 ]);
 
 const baseContentSchema = z.object({

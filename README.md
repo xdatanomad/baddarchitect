@@ -23,6 +23,11 @@ The intended website should be minimal, SEO-first, easy to deploy, and easy to m
 
 READ `content/strategy/project-brief.md` for the project brief and core pillars.
 
+1. AI Adoption Stages & Challenges.
+2. AI Adoption Operating Manual.
+3. Production AI Engineering Blueprint.
+4. AI Security & Governance.
+
 ## Milestones
 
 The user-approved milestones are documented in `content/strategy/milestones.md`. Do not revise those milestone definitions without direct approval. Proposed refinements should be added as pending proposals only.

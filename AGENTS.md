@@ -36,8 +36,8 @@ READ `content/strategy/project-brief.md`.
 **IMPORTANT:** The content will be divided into the following pillars, which will also be reflected in the website structure:
 1. AI Adoption Stages & Challenges.
 2. AI Adoption Operating Manual.
-3. A Blueprint for building Production AI Systems and Agents with ROI.
-4. AI Security Best Practices.
+3. Production AI Engineering Blueprint.
+4. AI Security & Governance.
 
 ## Current Content Map
 
@@ -104,4 +104,3 @@ The tone should be:
 - Practical and skeptical, providing actionable guidance based on real-world examples and evidence.
 
 For an example of the tone and style, see the article: [Moving Forward](articles/challenges/02_moving_forward.md).
-

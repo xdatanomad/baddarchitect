@@ -26,16 +26,16 @@ export const pillars = [
       "Operating models, roles, governance, and decision habits for serious AI adoption."
   },
   {
-    title: "A Blueprint for building Production AI Systems and Agents with ROI",
+    title: "Production AI Engineering Blueprint",
     slug: "production-ai-systems",
     description:
-      "Architecture guidance for agents, evals, observability, workflow orchestration, and unit economics."
+      "Design patterns, reference architectures, and implementation guides for production AI systems, agents, internal automation, evals, observability, and ROI."
   },
   {
-    title: "AI Security Best Practices",
+    title: "AI Security & Governance",
     slug: "ai-security",
     description:
-      "Security reviews, permission boundaries, audit trails, and controls for AI systems and agent tools."
+      "Security reviews, governance gates, permission boundaries, audit trails, and controls for AI systems and agent tools."
   }
 ] as const;
 

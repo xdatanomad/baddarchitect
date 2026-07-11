@@ -20,8 +20,8 @@ This site should not be another AI news, prompt, or tool-list site. It should fo
 
 1. AI Adoption Stages & Challenges.
 2. AI Adoption Operating Manual.
-3. Tools for Building Production-Grade AI Agents with ROI.
-4. AI Security Best Practices.
+3. Production AI Engineering Blueprint.
+4. AI Security & Governance.
 
 ## Tone
 
