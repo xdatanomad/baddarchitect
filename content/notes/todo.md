@@ -16,6 +16,6 @@
 [ ] Build for Skills.
 	[ ] A Guide article style and tone
 [ ] Pillar #1: challenges @content-map is off.
-
-### Remove Friction
+[ ] Review @docs/architecture & @docs/principles.md
+[ ] A promotion strategy from @content/ready `.md` format to @website/src/content/articles `.mdx` format.
 [ ] Add daily automation for new articles and content.

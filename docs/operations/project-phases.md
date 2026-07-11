@@ -24,9 +24,11 @@ Outcomes:
 
 ## Phase 2: Website Stack Decision
 
+Status: complete for MVP.
+
 Outcomes:
 
-- Choose final stack: Next.js plus Docusaurus, Next.js plus MDX, Astro plus Starlight, or another lean static-first option.
+- Choose final stack: Astro, TypeScript, MDX, Astro content collections, and static deployment to Cloudflare Pages.
 - Define hosting, analytics, sitemap, RSS, metadata, and content workflow.
 - Create an implementation plan before installing dependencies.
 

@@ -1,12 +1,14 @@
 # Content Workspace
 
-This is the organized working area for the website content.
+This is the editorial workspace for AI Adoption Blueprint. It holds raw notes, active drafts, ready source material, social derivatives, and content assets. Live website MDX lives separately in `website/src/content/`.
 
 ## Directories
 
-- `articles/` - publishable or near-publishable article drafts.
+- `inbox/` - uncategorized captures to triage.
+- `notes/` - preserved raw source material, rough ideas, research prompts, and unpolished thinking.
+- `drafts/` - active article, guide, and lesson drafts.
+- `ready/` - polished source material ready to adapt into `website/src/content/`.
+- `social/` - LinkedIn and other social derivatives tied to source content.
 - `assets/` - future images, diagrams, source files, and visual references.
-- `notes/` - preserved source notes copied from the original root-level Markdown files, excluding private context from `MEMORY.md`.
-- `strategy/` - project brief, milestones, phases, information architecture, and site planning.
 
-The original root-level Markdown files and `artciles/` directory are intentionally preserved. Do not delete them unless the user explicitly approves cleanup. Treat root `MEMORY.md` as private context, not website content.
+Durable project strategy now lives in `docs/`. Research and evidence maps live in `research/`. Treat private memory files, if present, as private context and not website content.

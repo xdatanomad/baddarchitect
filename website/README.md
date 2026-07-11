@@ -23,7 +23,7 @@ Publishable website content lives in `src/content/`.
 - Articles: `src/content/articles/*.mdx`
 - Lessons: `src/content/lessons/*.mdx`
 
-The root repository `content/` directory remains the source workspace for strategy notes, drafts, and editorial planning. Do not delete, move, or rewrite those source files as part of routine website publishing.
+The root repository `content/` directory remains the editorial source workspace. Root project direction lives in `../docs/`, and research lives in `../research/`. Do not delete, move, or rewrite those source files as part of routine website publishing.
 
 Each article or lesson must include complete frontmatter. Draft content should use `draft: true` so it is excluded from production lists.
 
