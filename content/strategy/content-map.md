@@ -23,6 +23,7 @@ Use this shape for each planned content entry:
   - 
   - 
 - Source notes:
+- Additional notes:
 - Status: planned | candidate | challenged
 ```
 
@@ -42,13 +43,13 @@ Use this shape for each planned content entry:
 - Source notes: `content/notes/bottlenecks.md` sections 1, 2, 8; `content/notes/NOTES.md` adoption/develop/project pattern notes.
 - Status: planned
 
-### p1-02 The Trust Factor: When Is an AI Agent Safe Enough for Customers?
+### p1-02 The Trust Factor: When Is an AI Agent Safe Enough for our use?
 
 - Reader/job: AI architects, product leaders, support leaders, and security reviewers deciding whether a working internal agent can be exposed directly to customers.
 - Evidence/resources: [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework), [OWASP Top 10 for LLM Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications), [OWASP MCP Top 10](https://owasp.org/www-project-mcp-top-10/), [Gartner customer service AI pressure 2026](https://www.gartner.com/en/newsroom/press-releases/2026-02-18-gartner-survey-finds-ninety-one-percent-of-customer-service-leaders-under-pressure-to-implement-ai-in-2026), [Verint State of Customer Experience 2026](https://www.verint.com/press-room/2026-press-releases/new-verint-survey-reveals-rising-customer-service-expectations/), [Metrigy consumer AI service survey 2026](https://www.metrigy.com/press-release-metrigy-study-85-of-consumers-prefer-interacting-with-humans-vs-ai-agents-for-customer-service/).
 - Goal: Give teams a decision framework for the trust gap between "the agent works" and "the agent should speak or act on behalf of the company."
 - Outline:
-  - Start with the support-engineer robot example: the team built a useful support agent, but still debated whether it could directly respond to customer issues because customer-facing trust requires more than internal usefulness.
+  - Start with the support-engineer robot example: the team built a useful support agent, but still debated whether it could directly respond to user issues because customer-facing trust requires more than internal usefulness.
   - Combine reliability, permissions, evals, and security: the agent needs bounded data access, adversarial prompt handling, source-grounded answers, regression tests, tool-call controls, audit logs, escalation, and rollback.
   - Separate output trust from operational trust: being correct in test conversations is different from handling every customer input, every edge case, and every unsafe request in production.
   - Address customer acceptance: customers may tolerate AI for speed, routing, simple resolution, and status checks, but expect human access for complex, emotional, high-value, contractual, or unresolved issues.
