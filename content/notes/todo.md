@@ -13,6 +13,8 @@
 ---
 
 ## Quick Checklist
+[ ] p1 article content style skill
+	- Notes: take a look at the TODO section in @content/drafts/articles/ai-adoption-starts-with-fear-safe-participation.md. Make it a guide article style and tone.
 [ ] Build for Skills.
 	[ ] A Guide article style and tone
 [ ] Pillar #1: challenges @content-map is off.
