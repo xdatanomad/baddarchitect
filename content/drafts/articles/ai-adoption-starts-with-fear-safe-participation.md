@@ -19,44 +19,36 @@
 
 **Takeaway:** The first AI operating model is not a platform, a prompt library, or an agent strategy. It is the agreement that people can learn, question, test, and improve work with AI without being shamed, watched, or quietly measured for replacement.
 
-AI adoption starts with fear.
+AI adoption starts with **fear**.
 
-Not because employees are irrational.
+People are paying attention. They are seeing the headlines where executives talk about productivity, then watch companies fund AI programs while cutting teams elsewhere. They see entry-level hiring get tighter, support teams shrink, marketing teams reorganize, and software engineers wonder which parts of their craft will still matter.
 
-Because they are paying attention.
+In our experience, most successful programs were those where leaders acknowledged this fear **first**, created **safe spaces** for experimentation, and built trust through **clear communication** and **actions**.
 
-They see the headlines. They hear executives talk about productivity. They watch companies fund AI programs while cutting teams elsewhere. They see entry-level hiring get tighter, support teams shrink, marketing teams reorganize, design workflows change, and software engineers wonder which parts of their craft will still matter.
+When leadership walks into the room and says: _"We want everyone to experiment with AI."_. The sentence can mean two very different things. It can mean: 
+- "We want to help you learn the next important tool of your career."
+- Or it can mean: "We are collecting evidence that parts of your job can be automated."
 
-Then leadership walks into the room and says:
-
-_We want everyone to experiment with AI._
-
-That sentence can mean two very different things.
-
-It can mean: "We want to help you learn the next important tool of your career."
-
-Or it can mean: "We are collecting evidence that parts of your job can be automated."
-
-If leaders do not clarify which one they mean, employees will fill in the silence themselves.
-
-And usually, they will not fill it with trust.
+We've talked to many people who have expressed these concerns (off the record). It's every dinner conversation with friends - and naturally in our head when we walk into work the next day. I've also talked to many leaders to know letting go of employees is not at all their intention. But when leaders do not establish trust by sharing company's strategy and plans transparently, employees will fill in the silence themselves. And usually, they will not fill it with trust.
 
 ## The Fear Is Rational
 
-People are not only afraid that AI will make mistakes.
+People are no longer afraid that AI will make mistakes. They are afraid of what AI **reveals** about how the company sees their work.
 
-They are afraid of what AI reveals about how the company sees their work.
-
-They wonder:
+We all wonder:
 
 - Will this replace my job?
-- Am I training the system that will eventually replace me?
-- Will my manager compare my output to an AI tool I was never trained to use?
+- Will my managers compare my output to an AI tool or use it to judge me or justify changes?
+- How will I be compared to others?
 - Will the fastest adopters be rewarded while careful people are labeled resistant?
-- Will my private experiments become performance data?
-- Will AI make my skills less valuable?
-- Will the company use "productivity" as a polite word for layoffs?
-- Will I be blamed when an AI-generated answer creates quality, security, or customer risk?
+
+More nuanced questions is:
+- Will AI dull my skills or make them less valuable?
+
+And the important questions are:
+- Will my experience and judgment be valued more or less than a tool that can generate answers faster than I can?
+- Will my team be able to use AI to improve our work without creating new risks for our customers, our data, or our company?
+
 
 These are not fringe concerns. They are normal concerns inside a serious transition.
 
@@ -64,11 +56,7 @@ The World Economic Forum's 2025 Future of Jobs Report, based on the perspective 
 
 Gallup's 2026 workplace research shows a more practical version of the same tension. AI use is growing, but adoption varies by role and environment. In organizations where AI tools are available, leaders report frequent use more often than individual contributors. Gallup also found that employees are more likely to use AI when it integrates with existing systems, when managers actively support it, when experimentation is supported, and when clear AI policies exist. ([Gallup, 2026](https://www.gallup.com/workplace/704252/workplace-separates-adopters-holdouts.aspx))
 
-That last point matters.
-
-Access is not adoption.
-
-Adoption requires a believable environment.
+That last point matters. Access is not adoption. Adoption requires a **believable** environment.
 
 ## The Wrong Leadership Move
 
