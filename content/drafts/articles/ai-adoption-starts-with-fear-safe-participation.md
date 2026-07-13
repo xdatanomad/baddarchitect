@@ -25,9 +25,9 @@ People are paying attention. They are seeing the headlines where executives talk
 
 In our experience, most successful programs were those where leaders acknowledged this fear **first**, created **safe spaces** for experimentation, and built trust through **clear communication** and **actions**.
 
-When leadership walks into the room and says: _"We want everyone to experiment with AI."_. The sentence can mean two very different things. It can mean: 
-- "We want to help you learn the next important tool of your career."
-- Or it can mean: "We are collecting evidence that parts of your job can be automated."
+When leadership walks into the room and says: _"We want everyone to experiment with AI."_. The sentence can mean two very different things. 
+- It can mean: _"We want to help you learn the next important tool of your career."_
+- Or it can mean: _"We are collecting evidence that parts of your job can be automated."_
 
 We've talked to many people who have expressed these concerns (off the record). It's every dinner conversation with friends - and naturally in our head when we walk into work the next day. I've also talked to many leaders to know letting go of employees is not at all their intention. But when leaders do not establish trust by sharing company's strategy and plans transparently, employees will fill in the silence themselves. And usually, they will not fill it with trust.
 
@@ -37,15 +37,15 @@ People are no longer afraid that AI will make mistakes. They are afraid of what 
 
 We all wonder:
 
-- Will this replace my job?
-- Will my managers compare my output to an AI tool or use it to judge me or justify changes?
-- How will I be compared to others?
-- Will the fastest adopters be rewarded while careful people are labeled resistant?
+- Will this **replace my job?**
+- Will my managers compare my output to an AI tool, use it to judge me or justify _their_ changes?
+- How will I be _compared_ to others?
+- Will the fastest adopters be _rewarded_ while careful people are labeled _resistant_?
 
-More nuanced questions is:
+More **nuanced** questions is:
 - Will AI dull my skills or make them less valuable?
 
-And the important questions are:
+And the **important** questions are:
 - Will my experience and judgment be valued more or less than a tool that can generate answers faster than I can?
 - Will my team be able to use AI to improve our work without creating new risks for our customers, our data, or our company?
 
@@ -60,44 +60,26 @@ That last point matters. Access is not adoption. Adoption requires a **believabl
 
 ## The Wrong Leadership Move
 
-The worst version of AI adoption sounds upbeat on the surface:
+I've seen the worst version of AI adoption and it sounds upbeat on the surface:
 
-_Everyone should be using AI. Find five ways to use it this week. Share your prompts. Show us your productivity gains._
+_Everyone should be using AI. Everyone has Claude credit. Find five ways to use it this week. Share your prompts. Show us your productivity gains._
 
-Sometimes this is meant well. Leaders want motion. They want people to get hands-on. They want to move past abstract debate.
+I can tell you for fact that leaders meant meant well. They wanted motion, people to get hands-on, and to move past abstraction by enabling people genuinely. But they had not built **trust**. They had not laid out a concrete **plan**. Company's hiring/growth plans weren't communicated. And the pre-conditions for honest participation were not established.
 
-But without trust, the message lands differently.
+The results were predictable:
+- To the anxious employee, it sounded like a test.
+- To the _security-minded_ employee, it sounded like _unmanaged_ risk.
+- To the most _enthusiastic_ employee, it can sound like permission to _automate anything_.
+- To the _experienced_ employee, it can sound like the company is asking them to compress years of _judgment_ into a tool they do not yet trust.
 
-To the anxious employee, it sounds like a test.
-
-To the skeptical employee, it sounds like propaganda.
-
-To the security-minded employee, it sounds like unmanaged risk.
-
-To the experienced employee, it can sound like the company is asking them to compress years of judgment into a tool they do not yet trust.
-
-To the most enthusiastic employee, it can sound like permission to automate anything they can reach.
-
-None of those reactions creates a healthy adoption curve.
+<br/>
 
 The organization splits into camps:
-
-- The front-runners move fast and sometimes create shadow workflows.
+- The front-runners move fast and often create shadow workflows.
 - The skeptics hold back and are treated as blockers.
-- The middle waits to see whether this is a real operating change or just another executive push.
-- Managers send mixed signals because they are under pressure too.
+- The middle waits to see whether there is a real operating change and for **others to move-first**.
+- And honestly, most use AI in **private** (often wrongly), **without telling anyone!**
 
-Then leaders misread the room.
-
-They see hesitation and call it resistance.
-
-They see experimentation and call it transformation.
-
-Both readings are usually wrong.
-
-Hesitation may be unaddressed risk. Experimentation may be unmanaged sprawl.
-
-The leader's job is not to force everyone into enthusiasm. It is to create the conditions where honest participation is safer than avoidance and safer than reckless acceleration.
 
 ## Safe Does Not Mean Comfortable
 
