@@ -1,0 +1,4 @@
+interface:
+  display_name: "Baddarchitect Article Style"
+  short_description: "Write in the AI Adoption Blueprint house style"
+  default_prompt: "Use $baddarchitect-article-style to draft or revise this AI Adoption Blueprint article in the project house style."
