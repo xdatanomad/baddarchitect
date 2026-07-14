@@ -89,10 +89,9 @@ In my experience, it's important to acknowledge that safe AI adoption does not m
 
 Safe means the rules are **clear** enough that people can engage without guessing the hidden consequences.
 
-That distinction matters. A team can feel challenged and still feel safe enough to participate. A team can feel uncertain and still trust the process. What breaks adoption is not discomfort, is ambiguity around consequences.
+That distinction matters. A team can feel challenged and still feel safe enough to participate. A team can feel uncertain and still trust the process. What breaks adoption is not discomfort, is ambiguity around rules and consequences. Similar in what breaks governments and families: people can disagree and put up with a lot of discomfort, but if they cannot trust the process, they will stop participating.
 
 Employees need to know:
-
 - which tools are approved and which data must never be entered
 - which use cases are encouraged and which are off limits
 - whether AI usage data is monitored
@@ -103,7 +102,7 @@ Safe also means the company does **not pretend AI is harmless**.
 
 Some work will be automated. Some roles will change. Some skills will decline in value. Some new skills will matter more. Some teams will need fewer people for old tasks and more people for new ones. Leaders should not hide from that.
 
-The stronger message is not:
+The message is not:
 
 _AI will not affect your job._
 
