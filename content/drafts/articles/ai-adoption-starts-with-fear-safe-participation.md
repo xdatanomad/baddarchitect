@@ -83,28 +83,23 @@ The organization splits into camps:
 
 ## Safe Does Not Mean Comfortable
 
-"Safe" is an easy word to abuse.
+"Safe" is an over **abused** term these days.
 
-Safe AI adoption does not mean nobody feels challenged. It does not mean every concern gets veto power over progress. It does not mean jobs will never change. And it definitely does not mean people can ignore AI because the topic makes them uncomfortable.
+In my experience, it's important to acknowledge that safe AI adoption does not mean nobody feels _challenged_. It does not mean every concern gets _veto power_ over progress. It does not mean _jobs_ will never change. And it definitely does not mean people can _ignore_ AI because the topic makes them _uncomfortable_.
 
-Safe means the rules are clear enough that people can engage without guessing the hidden consequences.
+Safe means the rules are **clear** enough that people can engage without guessing the hidden consequences.
 
-That distinction matters. A team can feel challenged and still feel safe enough to participate. A team can feel uncertain and still trust the process. What breaks adoption is not discomfort by itself. What breaks adoption is ambiguity around consequences.
+That distinction matters. A team can feel challenged and still feel safe enough to participate. A team can feel uncertain and still trust the process. What breaks adoption is not discomfort, is ambiguity around consequences.
 
 Employees need to know:
 
-- which tools are approved
-- what data must never be entered
-- which use cases are encouraged
-- which use cases are off limits
+- which tools are approved and which data must never be entered
+- which use cases are encouraged and which are off limits
 - whether AI usage data is monitored
 - how experiments will be evaluated
-- what happens if AI creates a mistake
-- when human review is required
-- how concerns can be raised without career penalty
 - how the company will talk honestly about role change
 
-Safe also means the company does not pretend AI is harmless.
+Safe also means the company does **not pretend AI is harmless**.
 
 Some work will be automated. Some roles will change. Some skills will decline in value. Some new skills will matter more. Some teams will need fewer people for old tasks and more people for new ones. Leaders should not hide from that.
 
@@ -112,15 +107,14 @@ The stronger message is not:
 
 _AI will not affect your job._
 
-You cannot honestly promise that.
+We cannot honestly promise that.
 
 The stronger message is:
 
 _AI will change work. We will be honest about that change, help people adapt, protect customers and data, and make the rules visible before asking for broad participation._
+_We are figuring this out **together**._
 
-That message still asks people to move. It just gives them something real to stand on.
-
-The weak version creates fear performance: people pretending to adopt, hiding risky usage, or quietly disengaging.
+The balance that matters to leaders is the message that still asks people to move and just gives them something real to stand on.
 
 ## The Middle Is Where Adoption Is Won
 
