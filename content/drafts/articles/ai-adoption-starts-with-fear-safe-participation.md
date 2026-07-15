@@ -168,11 +168,9 @@ Microsoft's 2026 Work Trend Index frames the shift in a similar direction. In it
 
 This article would be dishonest if it avoided the job question.
 
-Will AI replace some jobs? Yes. Will AI change far more jobs than it replaces outright? Also yes. Will some leaders use AI badly, chasing headcount reduction before understanding workflow, quality, security, or customer impact? Yes.
+Will AI replace some jobs? **Yes**. Will AI change far more jobs than it replaces outright? Also **yes**. Will some leaders use AI badly, chasing headcount reduction before understanding workflow, quality, security, or customer impact? **Yes**. Fear is **rational**.
 
-That is why fear is rational.
-
-But the conclusion should not be disengagement. Avoiding AI does not protect a person's career. It may protect their comfort for a while, but it weakens their ability to influence how AI enters the work.
+We know avoiding AI does not protect a person's career. It may protect their comfort, but it weakens their ability to influence how AI enters the work.
 
 The more useful personal stance is:
 
@@ -182,17 +180,11 @@ This is especially important for experienced employees. AI lacks the lived conte
 
 That experience is leverage if paired with AI. It becomes a liability only when it turns into refusal.
 
-Leaders should say this plainly, without making threats.
-
-The weak message is:
-
-_Use AI or you will be replaced._
-
-That message creates panic and defensiveness. It may produce visible usage, but it will not produce honest learning.
-
-The better message is:
+We know the messages leaders should say this plainly is something along:
 
 _Your experience matters more if you learn how to direct, verify, and improve AI-assisted work. We will help you build that skill, and we will be honest about how work is changing._
+
+To be honest, this is hard to deliver! I am very interested in hearing from leaders who have done this well. If you have, please reach out to me. I would love to learn from your experience.
 
 ## Safe Experimentation Has Boundaries
 
