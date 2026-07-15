@@ -117,29 +117,24 @@ The balance that matters to leaders is the message that still asks people to mov
 
 ## The Middle Is Where Adoption Is Won
 
-Most companies over-index on the loudest people in the room.
+Most companies **over-index** on the loudest people in the room.
 
-They find the AI enthusiasts first. They put them in charge of adoption. They ask them to demo tools. They make them champions. This is understandable. Front-runners create energy. They show what is possible. They help the organization move past abstract debate.
+The _sequence_ I've seen play out: Companies find the AI enthusiasts first, put them in charge of adoption, ask them to demo tools, then make them champions. 
 
-But if the front-runners become the whole adoption strategy, the rest of the organization often hears a different message:
+It's completely understandable: Front-runners create energy and help others move forward. Let's challenge this thinking. But if the front-runners becomes the whole adoption strategy, the rest of the organization gets alienated, trust declines slightly, experience gets silenced, and eventual adoption gets skewed. This strategy is _growth hacking_ or similar to using growth hormones. The end results are not sustainable while immediate benefits are gained. If the goal is to **adopt AI responsibly across the organization**, we need a **balanced approach** and the front-runners are not enough.
 
-_The company already picked the winners. Now everyone else needs to catch up._
+The best early adopter groups is a balanced mix.
 
-That is not how trust spreads.
-
-Your best early adoption group is usually the thoughtful middle: people who are curious enough to try, experienced enough to see the risks, and trusted enough that skeptical peers will believe them. They are not anti-AI. They are not reckless either. They are the people who ask the questions that turn demos into operating practice.
+Our best group is usually the thoughtful middle: people who are curious enough to try, experienced enough to see the risks, and trusted enough that skeptical peers will believe them. They are not anti-AI. They are not reckless either. They are the people who ask the questions that turn demos into operating practice. Of course, augmented with the AI front-runners, achievements of this group can be _amplified_. In my observation, this strategy played better than only focused on the front-runners. The middle is where adoption is won.
 
 The middle asks better adoption questions:
 
-- Is this actually useful for our work?
-- What quality bar should we use?
 - Where does AI save time without creating cleanup somewhere else?
 - What customer or compliance risks are we introducing?
 - What work should remain human?
-- How do we know the answer is grounded?
 - Who owns the result after AI touches it?
 
-Those questions are not friction. They are design inputs.
+And most importantly: their work is trusted by all.
 
 A 2026 study on generative AI adoption across 35 European countries found that adoption was uneven and shaped by more than occupational exposure. Worker skills, abstract task content, employee influence in organizational decisions, digitalization, and training provision all influenced adoption patterns. ([Henseke, 2026](https://arxiv.org/abs/2604.18849))
 
@@ -151,11 +146,9 @@ So do not design AI adoption only with the people already convinced. Bring in th
 
 The employee you want in an AI-native organization is not the person who refuses to touch the tools. But it is also not the person who pastes customer data into any chatbot, ships unchecked AI output, and calls the result innovation.
 
-The person you want is the balanced builder.
+The person you want is the **balanced builder**.
 
-A balanced builder uses AI actively without surrendering judgment to it. They are curious, but not gullible. They move faster, but still verify. They know AI can produce useful drafts, plans, tests, summaries, and analysis. They also know it can be confidently wrong, context-blind, biased, stale, insecure, or economically wasteful.
-
-They ask:
+The signal to identify this group is people who are asking:
 
 - What part of this task needs judgment?
 - What part can be accelerated?
@@ -165,15 +158,11 @@ They ask:
 - What is the failure mode if this goes wrong?
 - What customer, security, legal, or operational risk does this create?
 
-This is the posture companies should reward: measured leverage with responsible judgment.
+This is the posture companies should reward: _measured leverage with responsible judgment_.
 
-Not raw tool usage. Not prompt volume. Not "AI-first" theater.
+Watch out for raw tool usage and prompt volume metrics. Not an "AI-first" theater.
 
-Microsoft's 2026 Work Trend Index frames the shift in a similar direction. In its survey of 20,000 AI users across 10 countries, Microsoft reported that many workers treat AI output as a starting point, not a final answer, and see quality control and critical thinking as increasingly important human skills. It also argues that as agents take on more execution, people need clearer direction-setting, oversight, and accountability. ([Microsoft WorkLab, 2026](https://www.microsoft.com/en-us/worklab/work-trend-index/agents-human-agency-and-the-opportunity-for-every-organization))
-
-That is the leadership message employees need to hear:
-
-_We are not asking you to become less responsible because AI is available. We are asking you to become more capable, with better tools and clearer standards._
+Microsoft's 2026 Work Trend Index frames the shift in a similar direction. In its survey of 20,000 AI users across 10 countries, Microsoft argues that as agents take on more execution, people clearer direction-setting, quality control, and critical thinking are increasingly important human skills. ([Microsoft WorkLab, 2026](https://www.microsoft.com/en-us/worklab/work-trend-index/agents-human-agency-and-the-opportunity-for-every-organization))
 
 ## A Realistic Conversation About Jobs
 
