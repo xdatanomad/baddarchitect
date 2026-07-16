@@ -198,15 +198,9 @@ The phrase "safe experimentation" can sound soft.
 
 It is not.
 
-Safe experimentation requires boundaries. Without boundaries, employees either freeze or improvise. Both are bad.
-
 An employee trying AI for a customer email needs to know whether customer data is allowed in the tool. A support engineer using AI to draft an answer needs to know whether the answer requires human review. A developer using a coding agent needs to know what repositories, credentials, and production systems are off limits. A manager using AI to summarize performance notes needs to know whether that use is prohibited entirely.
 
 This is where governance becomes enabling.
-
-NIST's AI Risk Management Framework describes AI risk management as a way to incorporate trustworthiness considerations into the design, development, use, and evaluation of AI systems. ([NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework))
-
-That is the right mental model for adoption too.
 
 Governance should not arrive as a late-stage review after everyone has already built shadow workflows. It should show up early as usable defaults that make the safe path easier than the risky path:
 
@@ -220,8 +214,6 @@ Governance should not arrive as a late-stage review after everyone has already b
 - ownership expectations
 
 This matters because people will experiment somewhere. If the official path is vague, slow, or punitive, the organization will still get AI adoption. It will just get adoption in private, outside the visibility of security, legal, product, and leadership.
-
-That is not empowerment. That is unmanaged risk.
 
 ## The Participation Compact
 
