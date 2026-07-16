@@ -174,9 +174,9 @@ We know avoiding AI does not protect a person's career. And we also know that AI
 
 I believe this is a **collective** effort. There's a **personal facet** and a **leadership facet** (and a **societal facet**).
 
-On the **personal facet**, we all need to shape our personal stance to:
+On the **personal facet**, we _all_ need to shape our personal stance to:
 
-_I will learn this technology well enough to understand where it helps, where it fails, where it should be governed, and how my judgment becomes more valuable around it. It's a tool, and I need to understand its capabilities and limitations. Humans picked up a hammer to shape steel, used machines to plow fields. My parent's and ancestors faced similar disruptions. How it affects my career to a large extent is within my control. There are other (social and economical) aspects that are beyond my control. To be fair, outside of any one-person control. A collective effort. I can be vocal about the importance of responsible AI. My voice is very important - but it's only effective if I'm on the playing field._
+_I will learn this technology well enough to understand where it helps, where it fails, where it should be governed, and how my judgment becomes more valuable around it. It's a tool, and I need to understand its capabilities and limitations. Humans picked up a hammer to shape steel, used machines to plow fields. My parents and ancestors faced similar disruptions. How it affects my career to a large extent is within my control. There are other aspects (social and economical) that are beyond my control. To be fair, beyond of any one-person control. A collective effort. I can be vocal about the importance of responsible AI. My voice is very important - but it's only effective if I'm on the playing field._
 
 This is especially important for experienced employees. AI lacks the lived context that good employees already have: customer nuance, organizational memory, judgment under constraints, knowledge of where the data is wrong, and a sense for what will break politically or operationally. That experience is leverage if paired with AI.
 
@@ -184,11 +184,11 @@ The **leadership facet** is simpler:
 
 _Your experience matters more if you learn how to direct, verify, and improve AI-assisted work. We will help you build that skill, and we will be honest about how work is changing._
 
-leaders need to acknowledge the fear, create safe spaces for experimentation, and build trust through clear communication and actions.
+Leaders need to acknowledge the fear, create safe spaces for experimentation, and build trust through clear _communication_ and _actions_.
 
 <br/>
 
-To be honest, this is **extremely hard** to deliver! I am very interested in hearing from leaders who have done this well. If you have, please reach out to me. I would love to learn from your experience.
+To be honest, this topic is **extremely hard** to deliver! I am very interested in hearing from leaders who have done this well. If you have, please reach out to me. I would love to learn from your experience.
 
 <br/>
 
