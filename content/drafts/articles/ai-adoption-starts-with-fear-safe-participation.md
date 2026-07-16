@@ -170,21 +170,27 @@ This article would be dishonest if it avoided the job question.
 
 Will AI replace some jobs? **Yes**. Will AI change far more jobs than it replaces outright? Also **yes**. Will some leaders use AI badly, chasing headcount reduction before understanding workflow, quality, security, or customer impact? **Yes**. Fear is **rational**.
 
-We know avoiding AI does not protect a person's career. It may protect their comfort, but it weakens their ability to influence how AI enters the work.
+We know avoiding AI does not protect a person's career. And we also know that AI does threaten jobs, or significantly changes them in a relatively short amount of time to adjust. That's unprecedented, hard to deal with. We may protect our comfort for a time, but not tackling this conversation head-on will limit our ability to influence how AI enters the work. And that's real danger.
 
-The more useful personal stance is:
+I believe this is a **collective** effort. There's a **personal facet** and a **leadership facet** (and a **societal facet**).
 
-_I will learn this technology well enough to understand where it helps, where it fails, where it should be governed, and how my judgment becomes more valuable around it._
+On the **personal facet**, we all need to shape our personal stance to:
 
-This is especially important for experienced employees. AI lacks the lived context that good employees already have: customer nuance, organizational memory, judgment under constraints, knowledge of where the data is wrong, and a sense for what will break politically or operationally.
+_I will learn this technology well enough to understand where it helps, where it fails, where it should be governed, and how my judgment becomes more valuable around it. It's a tool, and I need to understand its capabilities and limitations. Humans picked up a hammer to shape steel, used machines to plow fields. My parent's and ancestors faced similar disruptions. How it affects my career to a large extent is within my control. There are other (social and economical) aspects that are beyond my control. To be fair, outside of any one-person control. A collective effort. I can be vocal about the importance of responsible AI. My voice is very important - but it's only effective if I'm on the playing field._
 
-That experience is leverage if paired with AI. It becomes a liability only when it turns into refusal.
+This is especially important for experienced employees. AI lacks the lived context that good employees already have: customer nuance, organizational memory, judgment under constraints, knowledge of where the data is wrong, and a sense for what will break politically or operationally. That experience is leverage if paired with AI.
 
-We know the messages leaders should say this plainly is something along:
+The **leadership facet** is simpler:
 
 _Your experience matters more if you learn how to direct, verify, and improve AI-assisted work. We will help you build that skill, and we will be honest about how work is changing._
 
-To be honest, this is hard to deliver! I am very interested in hearing from leaders who have done this well. If you have, please reach out to me. I would love to learn from your experience.
+leaders need to acknowledge the fear, create safe spaces for experimentation, and build trust through clear communication and actions.
+
+<br/>
+
+To be honest, this is **extremely hard** to deliver! I am very interested in hearing from leaders who have done this well. If you have, please reach out to me. I would love to learn from your experience.
+
+<br/>
 
 ## Safe Experimentation Has Boundaries
 
