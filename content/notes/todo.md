@@ -17,6 +17,11 @@
 	- Notes: take a look at the TODO section in @content/drafts/articles/ai-adoption-starts-with-fear-safe-participation.md. Make it a guide article style and tone.
 [X] ~~Pillar #1: challenges @content-map is off.~~
 [X] Re-write the @content/drafts/articles/ai-adoption-starts-with-fear-safe-participation.md draft with the new skill.
+[ ] @content/drafts/articles/ai-adoption-starts-with-fear-safe-participation.md
+	- add what if it's too late for the adoption compact or show-and-tells
+	- produce 2 versions of the adoption compact
+	- produce a self-assessment adoption worksheet (where we are, filling the gaps, and what to do next)
+	- produce a first 30 days worksheet
 [ ] Build for Skills.
 	[ ] A Guide article style and tone
 [ ] Review @docs/architecture & @docs/principles.md
