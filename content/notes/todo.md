@@ -16,7 +16,7 @@
 [X] ~~p1 article content style skill~~
 	- Notes: take a look at the TODO section in @content/drafts/articles/ai-adoption-starts-with-fear-safe-participation.md. Make it a guide article style and tone.
 [X] ~~Pillar #1: challenges @content-map is off.~~
-[ ] Re-write the @content/drafts/articles/ai-adoption-starts-with-fear-safe-participation.md draft with the new skill.
+[X] Re-write the @content/drafts/articles/ai-adoption-starts-with-fear-safe-participation.md draft with the new skill.
 [ ] Build for Skills.
 	[ ] A Guide article style and tone
 [ ] Review @docs/architecture & @docs/principles.md
