@@ -217,113 +217,79 @@ This matters because people will experiment somewhere. If the official path is v
 
 ## The Participation Compact
 
-If leaders want AI adoption to start well, they should write down the compact.
+If leaders want AI adoption to start well, they should write down the **compact**.
 
-Not a 40-page policy. Not a legal document nobody reads. A simple operating agreement that makes participation safer and more honest. The compact is not a replacement for formal AI policy, security review, or legal guidance. It is the human-facing agreement that lets people know how to participate while the formal controls mature.
+Not a 40-page policy. Not a legal document. A short operating agreement that explains how people can participate, what boundaries apply, and how the organization will use what it learns. The compact does not replace formal AI policy, security review, privacy guidance, or legal review.
 
-Here is the first version I would use.
+_It gives employees the human-facing clarity they need — while those controls mature._
 
-### 1. We Will Tell the Truth About Why We Are Using AI
+Here is an _outline_ of what the compact might include.
 
-Do not say this is only about empowerment if the company is also looking for cost reduction.
+### 1. We Will Be Clear About Why We Are Using AI
 
-Say the whole thing.
+Do not frame AI only as empowerment if the company is also looking for speed, cost reduction, operating leverage, or role redesign.
 
-AI adoption is about improving quality, speed, learning, customer outcomes, and operating leverage. It may also change roles, staffing needs, and the shape of teams over time.
+**Say the whole thing.**
 
-People can handle difficult truth better than polished ambiguity. What they usually cannot handle is a cheerful message that does not match what they see happening around them.
+People do not need every answer. But they do need a message that matches what they see happening around them.
 
-### 2. We Will Not Use Experimentation As Secret Performance Surveillance
+### 2. We Will Explain How Experimentation Data Is Used
 
-Employees should know what usage data is collected, who can see it, and how it will or will not be used.
+Employees should know what AI usage data is collected (if any), who can see it, and how it will or will not be used in management decisions.
 
-If leaders want experimentation, they should not make every experiment feel like an audition.
+If leaders want honest experimentation, people should not feel that trials are evaluation events.
 
-A 2025 field experiment on AI use found that workers adopted AI recommendations less when their reliance on AI was visible to an evaluator, even when the evaluator was instructed to assess expected accuracy on the same AI-assisted task. The point is not that every workplace has the same dynamic. The point is that image, status, and evaluation pressure can change whether people use AI honestly. ([Almog, 2025](https://arxiv.org/abs/2511.18582))
+What works **best** in my experience is where usage data is presented privately back to the team, aggregated enough that no individual is singled out, with constructive feedback on risks or opportunities.
 
-The goal of early adoption data should be learning:
+Early adoption data should help the organization learn:
 
 - which workflows are promising
 - where tools fail
 - what training is needed
-- what policies are unclear
-- what risks keep showing up
+- which policies are unclear
+- what risks keep appearing
 
-Not ranking employees by prompt count. Not quietly building a replacement case from tool telemetry.
+It should not become a prompt-count leaderboard or a substitute for thoughtful performance management.
 
 ### 3. We Will Protect Time To Learn
 
-AI adoption cannot be another unpaid cognitive tax layered on top of full calendars.
+AI adoption cannot be another task added to already full calendars.
 
-If the company wants people to learn, it has to create time:
+This is important. In a culture where productivity is measured by raw output, and with a tool that is designed to amplify, thoughtful planning, reflection, and testing should be prioritized. People shall not feel pressure to produce, but to **learn** first. I cannot tell you how many times we still see poor quality prompts, badly constructed AGENTS.md, poor or non-existent project level architecture, policy, guardrails, etc.
+
+If the company wants people to learn, it needs to create time for practical experimentation:
 
 - office hours
 - show-and-tells
-- paired workflow experiments
-- small exercises
+- paired workflow tests
 - reusable examples
 - manager-led reflection
 
-Training does not need to be huge. It needs to be continuous, practical, and close to real work. A one-hour inspirational session is not an adoption program. It is a signal. The adoption program is what people can safely practice the next morning.
+### 4. We Will Reward Responsible Use, Not Just Speed
 
-### 4. We Will Reward Verification, Not Just Speed
-
-Fast wrong answers are not transformation.
+Fast output is not the same as better work.
 
 Reward employees who:
 
 - check sources
-- document assumptions
 - test outputs
 - protect sensitive data
 - keep humans in the loop where needed
-- turn useful experiments into repeatable workflows
+- turn useful experiments into **repeatable** workflows
 
-A team that only celebrates speed will eventually ship risk. Reward the person who says, _"This saved time, but the output is not safe yet."_ That sentence is not resistance. It is quality control.
+A team that celebrates only speed will eventually create risk. The person who says, _"This saved time, but the output is not safe yet,"_ is not slowing adoption. They are helping make it usable.
 
-### 5. We Will Include Skeptics In The Design
-
-Skeptics are not always right, but they often see failure modes early.
-
-Give them a role:
-
-- identify unsafe use cases
-- test outputs
-- challenge assumptions
-- define human-review points
-- help write team rules
-- pressure-test customer impact
-
-The point is not to let skepticism block adoption.
-
-The point is to turn skepticism into design quality. If skeptical people are only invited after the rollout is designed, they will behave like reviewers. If they are invited early, they can behave like builders.
-
-### 6. We Will Separate Personal Productivity From Production Workflow
+### 5. We Will Separate Personal Productivity From Production Workflow
 
 It is fine for employees to use approved AI tools to draft, summarize, learn, plan, and think.
 
-But a personal shortcut is not automatically a production workflow.
+But a personal shortcut is not automatically a production workflow. Before AI touches customers, systems of record, regulated data, financial decisions, hiring decisions, it needs a higher bar: owner, metric, approved tool path, data boundary, human review, and a rollback plan.
 
-Before AI touches customers, systems of record, regulated data, financial decisions, hiring decisions, or security-sensitive actions, it needs a higher bar:
+### 6. We Will Keep Human Judgment Visible
 
-- owner
-- metric
-- approved tool path
-- data boundary
-- human review
-- evals
-- audit trail
-- rollback plan
+AI should not make accountability disappear. For important work, the team should know who reviewed the output, who approved the action, and what standard was used.
 
-This bridge is where serious AI adoption begins. Personal productivity asks, _Did AI help me work faster?_ Production workflow asks, _Can the business trust this process repeatedly under real conditions?_
-
-### 7. We Will Keep Human Judgment Visible
-
-AI should not make accountability disappear.
-
-For important work, the team should know who reviewed the output, who approved the action, and what standard was used.
-
-This is not anti-AI. It is how AI becomes trustworthy enough to use.
+<br/>
 
 ## The First 30 Days
 
@@ -421,24 +387,13 @@ AI adoption is communicated through operating behavior.
 
 ## The Point
 
-AI adoption does not start with tooling. It starts with trust.
+AI adoption does **not** start with tooling. It starts with **trust**.
 
 Not blind trust in AI. Trust between people: leaders, managers, teams, security reviewers, product owners, engineers, and the people whose work will change.
 
-Fear is not the enemy. Unspoken fear is.
+Fear is not the enemy. **Unspoken** fear is.
 
-If employees believe AI experimentation is a hidden replacement test, they will protect themselves. If enthusiasts believe speed is the only signal leadership values, they will outrun the guardrails. If skeptics believe their concerns are unwelcome, the company will lose the very people most likely to spot risk early.
-
-Safe participation is the first operating model because it gives the organization a way to move without lying to itself.
-
-It says:
-
-- We will learn.
-- We will question.
-- We will protect customers and data.
-- We will keep human judgment visible.
-- We will not confuse tool usage with transformation.
-- We will face the job question honestly, because trust built on denial will not survive the first hard decision.
+If employees believe AI experimentation is a hidden replacement test, they will protect themselves. If enthusiasts believe speed is the only signal leadership values, they will outrun the guardrails. If skeptics believe their concerns are unwelcome, the company will lose the very people most likely to spot risks (that will get managers quit their jobs). Safe participation is the first operating model because it gives the organization a way to move without lying to itself.
 
 That is how serious AI adoption begins.
 
