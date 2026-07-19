@@ -156,44 +156,17 @@ These are not interchangeable **categories**:
 
 Build a **durable workflow** engine that solve different pieces of the production problem.
 
-## The Right Question Is Not "Which Agent Framework?"
-
-When an AI project stalls, teams often reach for a tool decision too early.
-
-_Should we use LangGraph? Should we use Bedrock AgentCore? Should we use Foundry Agent Service? Should we use Temporal? Should we build our own orchestrator?_
-
-Those may become important questions. They are rarely the first ones.
-
-The first question is: **what workflow are we trying to complete?**
-
-For example, "support agent" is too broad. "Draft the first response to billing-tier support tickets using customer plan, invoice history, open incidents, and refund policy, with human approval before sending" is a workflow.
-
-"Sales agent" is too broad. "Prepare renewal briefing packets every Monday for accounts renewing in the next 60 days, using CRM notes, product telemetry, support history, pricing exceptions, and latest stakeholder map" is a workflow.
-
-"Engineering agent" is too broad. "Review pull requests touching payment code for architecture rules, test coverage, sensitive data handling, and migration safety, then block only on explicit policy violations" is a workflow.
-
-The narrower version gives you a design surface:
-
-- trigger
-- inputs
-- systems touched
-- actions allowed
-- human review point
-- failure behavior
-- success metric
-- owner
-
-Now the architecture can follow the work instead of the other way around.
+<br/>
 
 ## A Practical Example: The Meeting Notes That Do Not Die
 
-A small example makes the difference visible.
+Let's take the most simple example that we've all got conditioned to by now, _meeting notes_. This small example makes the difference visible.
 
-The demo version is simple: after a customer meeting, AI summarizes the transcript and drafts a follow-up email.
+The demo version is simple: after a customer meeting, AI summarizes the transcript and drafts a follow-up email or updates the CRM.
 
 Useful? Yes.
 
-But in many companies, the summary dies in a document. A person still has to extract action items, update the CRM, notify product, check whether commitments are allowed, create follow-up tasks, prepare the next call, and remember the customer's unresolved concern two months later.
+But in many companies, the summary dies in a document. A person still has to perform the action items.
 
 The product version treats the meeting as a workflow trigger:
 
@@ -206,11 +179,9 @@ The product version treats the meeting as a workflow trigger:
 7. It creates a next-call brief when the renewal date approaches.
 8. It logs what was generated, approved, edited, sent, and ignored.
 
-The AI summary was the demo.
+The AI summary was the **demo**. The customer-follow-up workflow is the **product**.
 
-The customer-follow-up workflow is the product.
-
-Notice what changed. The value is not better prose. The value is fewer dropped commitments, cleaner account memory, better handoffs, and a measurable improvement in renewal or expansion work.
+<br/>
 
 ## The Workflow Readiness Map
 
