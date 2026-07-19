@@ -138,22 +138,6 @@ This is why "just connect it to the docs" is usually not enough. Company knowled
 
 Many teams can build an agent locally now. Fewer can run it reliably in the company environment where the work actually happens.
 
-A serious agent needs more than a prompt and a model key:
-
-- secure tool access
-- identity and permissions
-- secrets management
-- state and memory
-- retries and timeouts
-- schedules and event triggers
-- queues for long-running work
-- observability and traces
-- evals and regression checks
-- cost monitoring
-- versioning and rollback
-- human approval paths
-- incident response for bad AI actions
-
 This is why the agent tooling market is moving toward operational infrastructure, not just better demos.
 
 AWS Bedrock AgentCore, which became generally available after its 2025 preview, packages production agent capabilities such as runtime, memory, identity, gateway, browser, code interpreter, and observability. AWS's own launch post frames the problem directly: moving from proof of concept to production requires infrastructure for session management, identity controls, memory, observability, security, and compliance. ([AWS, 2025](https://aws.amazon.com/blogs/aws/introducing-amazon-bedrock-agentcore-securely-deploy-and-operate-ai-agents-at-any-scale/))
@@ -164,11 +148,13 @@ Google's Gemini Enterprise Agent Platform documentation shows the same direction
 
 Frameworks and workflow engines are converging around similar needs. LangGraph focuses on long-running, stateful agent orchestration with durable execution, human-in-the-loop workflows, memory, persistence, and observability. ([LangGraph](https://docs.langchain.com/oss/python/langgraph/overview)) Temporal's durable execution model is useful because many workflows need to survive crashes, network failures, human waits, retries, timers, and long-running processes. ([Temporal](https://docs.temporal.io/))
 
-These are not interchangeable categories. A managed cloud agent runtime, an orchestration framework, an eval platform, an observability tool, and a durable workflow engine solve different pieces of the production problem.
+These are not interchangeable **categories**:
+- A managed containerized agent runtime
+- An orchestration framework
+- An eval platform
+- An observability layer
 
-The important signal is broader than any vendor: the market is realizing that agents need to become boring enough to operate.
-
-Observable. Permissioned. Recoverable. Measurable. Integrated.
+Build a **durable workflow** engine that solve different pieces of the production problem.
 
 ## The Right Question Is Not "Which Agent Framework?"
 
