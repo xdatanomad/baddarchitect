@@ -13,6 +13,10 @@ That is useful. Sometimes it is necessary. People need to see the tool summarize
 
 But **what happens** between belief and deployment?
 
+In our organization, I saw the familiar signs of early AI energy: polished project presentations, structured meeting summaries, beautifully crafted long Slack ideas, and PRs flying around at speed. Everything had the _smell of AI_. Some of it was genuinely useful. But without structured, repeatable, measurable workflows, most of it became **noise**. The organization looked _busier_ but true **productivity** gain signal got harder to find.
+
+AI can make the surface area of work look dramatically better before it makes the business system meaningfully better.
+
 Inside a real company, the hard part begins after the demo works. The question changes from _can the model produce a good answer?_ to _can this system complete a real piece of work CONSISTENTLY_
 
 That second question is where many AI projects stall or get sloppy. Usually the demo was genuinely helpful. The problem is that a demo lives in a clean little box. A workflow has gravity. It has triggers, systems of record, missing context, customer history, policy exceptions, permissions, approvals, retries, duplicate detection, audit trails, cost limits, human judgment, and consequences when something goes wrong. All of those things are boring. They are not flashy. They are not fun like a demo. But they are the difference between a clever prototype and a real product. 
@@ -44,11 +48,11 @@ AI becomes valuable when the organization redesigns a workflow around its capabi
 
 The demo trap usually starts innocently.
 
-Someone builds a local AI workflow. It saves time. A support lead can triage tickets faster. A salesperson can prepare better account research. A product manager can summarize user feedback. An engineer can migrate repetitive code more quickly. People get excited, and they should. These are real gains.
+Someone builds a local AI workflow. It saves time. A support lead can triage tickets faster. A salesperson can prepare better account research. A product manager can summarize user feedback. An engineer can migrate repetitive code more quickly. People get excited, and they should. These are _real gains_.
 
-TODO: mistake is there's a weak (or non-existent) path for promotion of the demo. No tooling, no internal review process, no governance, no integration, no measurement, no ownership. The demo is a local productivity gain. It is not yet a product. Individuals continue to use it locally, often semi-manually, and three months later, there's 4-5 different versions of the same workflow, each with slightly different prompts, tools, and context. The company has no idea which one is actually working, and the local productivity gains are not translating into organizational capability.
+But this is where the company makes the first wrong jump: it mistakes **local productivity** for **organizational capability**.
 
-Then the company makes the first wrong jump: it mistakes **local productivity** for **organizational capability**.
+The mistake is these are still local demos without a clear company-wise promotion path: no internal review, no integration plan, no governance, no measurement, no owner, and no tooling that turns the pattern into something repeatable. So these useful workflows stay local. People keep using them semi-manually. Three months later, the company has four or five versions of the same workflow, each with different prompts, tools, context, and quality. The productivity gain is real, but it is trapped inside individual practice.
 
 The weak version sounds like this:
 
@@ -56,23 +60,13 @@ _This team built an amazing AI workflow. Let's roll it out._
 
 The stronger version is:
 
-_This team found a promising workflow pattern. Now we need to decide whether it deserves production ownership, integration, measurement, and governance._
+_This team found a promising workflow pattern. Now we need to decide whether it deserves an owner, integration, measurement, and a production path._
 
-That distinction matters because many demos still depend on invisible human labor around the edges:
+That distinction is the demo trap.
 
-- someone copies the output into another system
-- someone checks facts against the system of record
-- someone decides whether the action is allowed
-- someone repairs malformed output
-- someone catches duplicate work
-- someone remembers the policy exception
-- someone explains the decision later
+If the output still has to be copied, checked, routed, explained, and manually entered somewhere else, the workflow has not been automated. You created a better workbench for individuals.
 
-If the output still has to be copied, checked, routed, explained, and manually entered somewhere else, the workflow has not been automated. You created a better workbench for one person.
-
-That may be worth doing.
-
-It is not yet the product.
+That may be worth doing. It is not yet the product. The next step is to decide whether it should become an owned workflow the company can run consistently, measure, govern, and improve.
 
 ## What a Product Has That a Demo Avoids
 
