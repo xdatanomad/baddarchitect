@@ -7,47 +7,46 @@
 
 **Takeaway:** A demo answers a prompt. A product completes a workflow with state, context, permissions, approvals, retries, observability, and a business outcome someone owns.
 
-A good AI demo can create belief in ten minutes.
+A good AI demo can create _belief_ in _ten minutes._
 
 That is useful. Sometimes it is necessary. People need to see the tool summarize a ticket, draft a sales email, research an account, review a contract, or answer questions from a messy document before they believe the capability is real.
 
-But belief is not deployment.
+But **what happens** between belief and deployment?
 
-Inside a real company, the hard part begins after the demo works. The question changes from _can the model produce a good answer?_ to _can this system complete a real piece of work without creating new operational risk?_
+Inside a real company, the hard part begins after the demo works. The question changes from _can the model produce a good answer?_ to _can this system complete a real piece of work CONSISTENTLY_
 
-That second question is where many AI projects stall.
+That second question is where many AI projects stall or get sloppy. Usually the demo was genuinely helpful. The problem is that a demo lives in a clean little box. A workflow has gravity. It has triggers, systems of record, missing context, customer history, policy exceptions, permissions, approvals, retries, duplicate detection, audit trails, cost limits, human judgment, and consequences when something goes wrong. All of those things are boring. They are not flashy. They are not fun like a demo. But they are the difference between a clever prototype and a real product. 
 
-Not because the model is useless. Not because the prototype was fake. Usually the demo was genuinely helpful. The problem is that a demo lives in a clean little box. A workflow has gravity.
+And my honest opinion, this is where we, the AI-conditioned world now, loose our interest and attention span. We've just got used to the easy spark and don't wanna roll up our sleeves to do the hard work!
 
-It has triggers, systems of record, missing context, customer history, policy exceptions, permissions, approvals, retries, duplicate detection, audit trails, cost limits, human judgment, and consequences when something goes wrong.
-
-The demo matters because it creates energy.
-
-The workflow is where the value lives.
+The demo matters because it creates energy. The **work**\[flow\] is where the value lives.
 
 ## The Signal
 
 The market is telling a consistent story: AI usage is broad, but scaled workflow impact is still much harder than access.
 
-McKinsey's 2025 State of AI survey found that 88% of respondents reported regular AI use in at least one business function, while only about one-third said their companies had begun scaling AI across the enterprise. The same survey found that AI high performers were far more likely to fundamentally redesign workflows as part of AI deployment. ([McKinsey, 2025](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai))
+**McKinsey's 2025** State of AI survey found that 88% of respondents reported regular AI use in at least one business function, while only about **one-third** said their companies had begun scaling AI across the enterprise. The same survey found that AI high performers were far more likely to fundamentally redesign workflows as part of AI deployment. ([McKinsey, 2025](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai))
 
-Deloitte's 2026 State of AI in the Enterprise report found a similar pilot-to-production gap. Only 25% of respondents had moved 40% or more of their AI pilots into production, and only 30% said they were redesigning key processes around AI. ([Deloitte, 2026](https://www.deloitte.com/us/en/about/press-room/state-of-ai-report-2026.html))
+**Deloitte's 2026** State of AI in the Enterprise report found a similar pilot-to-production gap. **Only 25%** of respondents had moved 40% or more of their AI pilots into production, and only 30% said they were redesigning key processes around AI. ([Deloitte, 2026](https://www.deloitte.com/us/en/about/press-room/state-of-ai-report-2026.html))
 
-MIT NANDA's 2025 GenAI Divide report is more pointed. It found that only 5% of custom enterprise AI tools reached production in its research, with many failures tied to brittle workflows, weak contextual learning, and poor fit with day-to-day operations. The report is careful about its limits, but the pattern is useful: tools that do not remember, adapt, or integrate into the workflow lose their usefulness when the work becomes mission-critical. ([MIT NANDA / MLQ, 2025](https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf))
+MIT NANDA's 2025 GenAI Divide report is more pointed. It found that **only 5% **of custom enterprise AI tools reached production in its research, with many failures tied to brittle workflows, weak contextual learning, and poor fit with day-to-day operations. The report is careful about its limits, but the pattern is useful: tools that do not remember, adapt, or integrate into the workflow lose their usefulness when the work becomes mission-critical. ([MIT NANDA / MLQ, 2025](https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf))
 
-Gartner added a sharper warning for agents: it predicted that more than 40% of agentic AI projects will be canceled by the end of 2027 because of escalating costs, unclear business value, or inadequate risk controls. Gartner also called out that many agentic projects are still proofs of concept, not production systems. ([Gartner, 2025](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027))
+Gartner added a sharper **warning** for agents: it predicted that more than 40% of agentic AI projects will be canceled by the end of 2027 because of escalating **costs**\*\*, unclear business value, or inadequate risk controls. Gartner also called out that many agentic projects are still proofs of concept, not production systems. ([Gartner, 2025](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027))
+
 
 The practical lesson is simple.
 
-AI does not become valuable because someone built a clever interaction. It becomes valuable when the organization redesigns a workflow around that capability and can still explain, govern, measure, and improve the result.
+AI becomes valuable when the organization redesigns a workflow around its capability and can still explain, govern, measure, and improve the result.
+
+\*\* The warning on rising costs is raised by many experts. It's true. The unit economics for agentic AI use does not scale. And this is the signal what a good workflow design will become a moat.
 
 ## The Demo Trap
 
 The demo trap usually starts innocently.
 
-Someone builds a local AI workflow. It saves time. A support lead can triage tickets faster. A salesperson can prepare better account research. A product manager can summarize user feedback. An engineer can migrate repetitive code more quickly.
+Someone builds a local AI workflow. It saves time. A support lead can triage tickets faster. A salesperson can prepare better account research. A product manager can summarize user feedback. An engineer can migrate repetitive code more quickly. People get excited, and they should. These are real gains.
 
-People get excited, and they should. These are real gains.
+TODO: mistake is there's a weak (or non-existent) path for promotion of the demo. No tooling, no internal review process, no governance, no integration, no measurement, no ownership. The demo is a local productivity gain. It is not yet a product. Individuals continue to use it locally, often semi-manually, and three months later, there's 4-5 different versions of the same workflow, each with slightly different prompts, tools, and context. The company has no idea which one is actually working, and the local productivity gains are not translating into organizational capability.
 
 Then the company makes the first wrong jump: it mistakes **local productivity** for **organizational capability**.
 
@@ -101,6 +100,8 @@ Does it stop, ask a human, produce a draft, retry, escalate, or take a narrower 
 
 **What is the audit trail?**  
 Can someone later see which data was used, which tools were called, which prompt and model version ran, what the system decided, what it changed, and who approved the action?
+
+TODO: Add "What is the cost per completed workflow?". "Which portions must run (still) in code and not AI?" (the checks must be hard-code, not AI)
 
 That is the shape of a product.
 
