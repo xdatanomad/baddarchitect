@@ -205,46 +205,25 @@ Use this as a launch gate for any demo that someone wants to productionize.
 14. **Rollback:** How do you undo or compensate for a bad action?
 15. **Cost:** What is the cost per completed workflow, not just the cost per model call?
 
-The go/no-go rule is intentionally blunt:
+It's a lot of **boring work**, right?!
 
-If you cannot answer these questions, do not start with the agent.
+Do not skip it. The more you can answer these questions before you build, the more likely the workflow will survive the operating reality.
 
-Start with the workflow.
+A piece of advice: Keep the agents micro — focusing on a single **atomic task**. 
 
 ## What Strong Teams Do Differently
 
 Strong teams still build demos. They just do not confuse them with finished products.
 
-They use the demo to learn what is possible, then they slow down just enough to make the workflow explicit:
+They build a governed context system. Add ledgers. Make memory intentional instead of accidental. Instrument cost, quality, and outcome. And they assign an **owner** who can improve the workflow after deployment.
 
-- They pick narrow workflows with measurable outcomes.
-- They map systems of record before choosing the agent architecture.
-- They separate deterministic code from model judgment.
-- They design permissions before connecting tools.
-- They make memory intentional instead of accidental.
-- They define human review points before launch.
-- They instrument cost, quality, latency, and outcome.
-- They assign an owner who can improve the workflow after deployment.
-
-That last point is easy to underestimate. AI workflows drift. Policies change. Models change. Retrieval quality changes. Customer expectations change. Costs change. A deployed AI workflow without an owner becomes a clever dependency no one wants to touch.
-
-The owner does not need to be a single heroic engineer. In many companies, ownership belongs to a small cross-functional group: product, engineering, domain operations, security, and the business owner of the metric.
-
-AI adoption is a systems problem.
-
-Workflow ownership is how the system keeps learning.
+That last point is easy to underestimate. AI workflows drift. Policies change. Models change. A deployed AI workflow without an owner becomes a clever dependency no one wants to touch. The owner does not need to be a single heroic engineer. In many companies, ownership belongs to a small cross-functional group — with the _business owner of the metric_.
 
 ## The Point
 
 AI adoption does not become serious when more people use AI tools.
 
 It becomes serious when the company redesigns valuable work around AI and can still explain, measure, govern, and improve the result.
-
-The demo is not the enemy. The demo is often the first proof that a better workflow is possible.
-
-But a demo answers the happy-path question.
-
-A product has to survive the operating reality: context, permissions, state, tools, failure, cost, accountability, and trust.
 
 Do the demo.
 
