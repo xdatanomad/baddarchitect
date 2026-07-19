@@ -44,7 +44,7 @@ AI becomes valuable when the organization redesigns a workflow around its capabi
 
 \*\* The warning on rising costs is raised by many experts. It's true. The unit economics for agentic AI use does not scale. And this is the signal what a good workflow design will become a moat.
 
-## The Demo Trap
+## The Demo Trap — The Mistake
 
 The demo trap usually starts innocently.
 
@@ -86,8 +86,8 @@ Can it only draft? Can it update a field? Can it send a message? Can it approve 
 **What context does it need?**  
 Does it know the customer, contract, account history, product usage, open risks, previous exceptions, current policy, owner, SLA, and what happened last time?
 
-**What stays deterministic?**  
-Not every step deserves AI judgment. Parsing IDs, validating schemas, calculating totals, enforcing policy thresholds, and checking permissions should usually be code, not model improvisation.
+**Which portions must still run in code?**  
+Not every step deserves AI judgment. Enforcing policy thresholds, checking permissions, and validating schemas should usually be hard-coded. AI can assist the workflow; it should not improvise the checks that keep the workflow safe.
 
 **What happens when it is uncertain?**  
 Does it stop, ask a human, produce a draft, retry, escalate, or take a narrower action?
@@ -95,11 +95,10 @@ Does it stop, ask a human, produce a draft, retry, escalate, or take a narrower 
 **What is the audit trail?**  
 Can someone later see which data was used, which tools were called, which prompt and model version ran, what the system decided, what it changed, and who approved the action?
 
-TODO: Add "What is the cost per completed workflow?". "Which portions must run (still) in code and not AI?" (the checks must be hard-code, not AI)
+**What is the cost per completed workflow?**  
+Not the cost of one model call. The real number includes retrieval, tool calls, retries, validation, observability, infrastructure, and human review. If the workflow succeeds, what did it cost to finish the job?
 
 That is the shape of a product.
-
-Not the chat window. Not the prompt. Not the demo path.
 
 ## Context Is Not Decoration
 
@@ -107,33 +106,13 @@ Many AI workflows fail because they treat context as a nicer answer instead of t
 
 Generic AI can draft a decent email. An operational sales workflow needs to know who the email is for, what the account already bought, what objections were handled last quarter, which competitor is in the deal, what the implementation team can actually support, and which claims legal does not want made.
 
-Generic AI can summarize a support ticket. An operational support workflow needs to know the customer's plan, contract terms, open incidents, feature flags, previous refunds, health score, escalation rules, and whether similar requests were approved before.
-
 Generic AI can review a pull request. An operational engineering workflow needs to know the service boundaries, architecture rules, test expectations, release policy, incident history, security constraints, and ownership model.
 
-Without context, AI becomes fluent but shallow.
+The hard part is that context lives everywhere: CRM, Slack threads, support tickets, internal docs, contracts, and decisions living only in people’s heads.
 
-And shallow systems lose trust quickly.
+Retrieval helps. MCP servers and APIs help. But retrieval alone does not create operational memory. A true agentic workflow also needs to know what changed, what was approved, what failed, what the customer prefers, which facts are current, which permissions apply, what should happen next. A ledger and a governed system.
 
-The hard part is that context lives everywhere:
-
-- CRM records
-- call notes
-- Slack threads
-- product telemetry
-- support tickets
-- GitHub issues
-- internal docs
-- dashboards
-- contracts
-- spreadsheets
-- decisions living only in people's heads
-
-Retrieval helps. A good knowledge layer helps. MCP servers and APIs help. But retrieval alone does not create operational memory.
-
-RAG can find a document. A workflow also needs to know what changed, what was approved, what failed, what the customer prefers, which facts are current, which permissions apply, and what should happen next.
-
-That is a different design problem.
+That is where the design of holistic **context systems** becomes important.
 
 ## Memory Is Part of the Workflow, Not a Feature
 
