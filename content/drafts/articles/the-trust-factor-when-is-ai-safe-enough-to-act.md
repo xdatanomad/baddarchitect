@@ -7,21 +7,19 @@
 
 **Takeaway:** A working AI system is not automatically safe to act. Safe action requires bounded scope, permission-aware tools, source-grounded outputs, evals, audit trails, escalation, rollback, and a clear owner for the result.
 
-The dangerous moment in AI adoption is not when the demo fails.
-
-It is when the demo works.
+The dangerous moment in AI adoption is not when the demo fails. It is when the demo **works**.
 
 That is when people start asking the question that matters: _Can we let it do the thing?_
 
-Can it answer the customer? Can it update the CRM? Can it approve the refund? Can it route the ticket? Can it submit the change request? Can it create the incident summary? Can it trigger the follow-up workflow without waiting for a person?
+Can it answer the customer? Can it update the CRM? Can it approve the refund? Can it submit the code change request? Can it trigger the follow-up workflow without waiting for a person?
 
 This is where serious teams slow down just enough to be honest.
 
-The model may be useful. The workflow may be promising. The output may look right. But acting on behalf of the company is a different bar. Once AI touches a customer, a system of record, a financial decision, a regulated process, or a production environment, the question is no longer _does it usually answer well?_
+The model may be useful. The workflow may be promising. The output may look right. But acting on behalf of the company is a different bar. Once AI touches a customer, a system of record, a regulated process, or a production environment, the question is no longer _does it usually answer well?_
 
 The question is: _what can it safely be trusted to do, under which conditions, with which controls, and with whom accountable when it is wrong?_
 
-That is the trust factor.
+That is the **trust factor**.
 
 ## The Signal
 
@@ -29,77 +27,50 @@ The pressure to give AI more autonomy is real.
 
 Gartner's 2026 survey of customer service and support leaders found that 91% reported pressure from executive leadership to implement AI. The same release says many organizations expect human service roles to change, with humans providing context, empathy, and judgment while AI handles more routine work. ([Gartner, 2026](https://www.gartner.com/en/newsroom/press-releases/2026-02-18-gartner-survey-finds-ninety-one-percent-of-customer-service-leaders-under-pressure-to-implement-ai-in-2026))
 
-McKinsey's 2025 State of AI survey shows the broader adoption gap. It found that 88% of organizations report regular AI use in at least one business function, while only about one-third have begun scaling AI across the enterprise. For agents specifically, no more than 10% of respondents in any individual function said their organizations were scaling AI agents. ([McKinsey, 2025](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai/))
+Customer acceptance is just as uneven. Metrigy's 2026 consumer research found that 84.9% of consumers prefer a human agent over an AI agent for customer service, even though more consumers are willing to use AI in select circumstances. ([Metrigy, 2026](https://www.metrigy.com/press-release-metrigy-study-85-of-consumers-prefer-interacting-with-humans-vs-ai-agents-for-customer-service/)) Verint's 2026 customer experience research is more nuanced: 61% currently prefer a human agent, but **69%** of those people would switch to automated service if it _fully resolved_ their issue. ([Verint, 2026](https://www.verint.com/nl/press-room/2026-press-releases/new-verint-survey-reveals-rising-customer-service-expectations/))
 
-Customer acceptance is just as uneven. Metrigy's 2026 consumer research found that 84.9% of consumers prefer a human agent over an AI agent for customer service, even though more consumers are willing to use AI in select circumstances. ([Metrigy, 2026](https://www.metrigy.com/press-release-metrigy-study-85-of-consumers-prefer-interacting-with-humans-vs-ai-agents-for-customer-service/)) Verint's 2026 customer experience research is more nuanced: 61% currently prefer a human agent, but 69% of those people would switch to automated service if it fully resolved their issue. ([Verint, 2026](https://www.verint.com/nl/press-room/2026-press-releases/new-verint-survey-reveals-rising-customer-service-expectations/))
+The practical lesson is not "customers hate AI." The lesson is sharper: customers, employees, and executives will tolerate AI when it is fast, useful, and honest about its limits. They lose trust when it pretends to be more capable than the system around it can support.
 
-The practical lesson is not "customers hate AI."
+## An Example: The Support Engineer Robot
 
-The lesson is sharper: customers, employees, and executives will tolerate AI when it is fast, bounded, useful, and honest about its limits. They lose trust when it pretends to be more capable than the system around it can support.
-
-Access is not adoption. A good answer is not permission to act.
-
-## The Support Engineer Robot
-
-Imagine a support engineering team builds an AI assistant for ticket triage.
+I've seen this play out a few times with support engineering teams building an AI assistant for ticket triage.
 
 It reads the incoming ticket, pulls product documentation, checks recent incidents, summarizes the customer's setup, finds similar historical cases, and drafts a response. Internally, it is genuinely useful. A junior engineer who used to spend twenty minutes gathering context can now get a strong first draft in two.
 
-The team gets excited, and they should.
+The team gets excited, then someone asks the question: _Can it just respond to the customer directly?_
 
-Then someone asks the promotion question: _Can it just respond to the customer directly?_
-
-That is where the room should get quieter.
-
-Not because the team is anti-AI. Not because the assistant is useless. Because internal usefulness is not the same as operational trust.
-
-Before the assistant speaks for the company, the team needs answers:
+That is where the room should get quieter. Not because the assistant is not correct every time. Because internal usefulness is not the same as operational trust. Before the assistant speaks for the company, the team needs answers:
 
 - What happens when a customer pastes a prompt-injection attempt into the ticket?
-- Which sources are allowed to ground the answer?
 - What confidence threshold is high enough to respond without review?
 - Which issues must always escalate to a human?
 - What promises is the assistant forbidden to make?
 - What tools can it call, and what is the blast radius if it calls the wrong one?
 - Who owns the outcome if the customer relies on the answer?
 
-The strongest early decision is often not full automation. It is **human-reviewed draft mode**.
+The strongest early decision is often not full automation. The better first-step I've found is **human-reviewed draft mode**.
 
 The assistant still saves time. The engineer still keeps judgment. The company gets learning data from real work without giving the system authority it has not earned.
 
-That is not cowardice. That is a promotion path.
-
 ## Output Trust vs. Operational Trust
 
-Most teams test the wrong layer first.
-
-They test whether the AI can produce a good answer in a typical interaction. That matters, but it is only **output trust**.
+Most teams do _not_ distinguish clearly between two different levels of trust:
 
 **Output trust** asks: _Is this answer correct enough in the cases we expected?_
 
 **Operational trust** asks: _Can this system behave safely across the messy distribution of real work?_
 
-That distribution includes hostile prompts, stale documents, missing permissions, partial tool failures, ambiguous policy, duplicate events, upset customers, malformed inputs, regional requirements, model changes, and the 1% of edge cases that appear every day once the workflow is live.
+That distribution includes hostile prompts, stale documents, missing permissions, partial tool failures, ambiguous policy, duplicate events, upset customers, malformed inputs, regional requirements, model changes, and the 1% of edge cases that appear every day once the workflow is live. A demo passes ten clean examples, but production sees ten thousand uneven ones.
 
-A demo passes ten clean examples. Production sees ten thousand uneven ones.
-
-The difference is not only model quality. It is system design.
-
-An AI can draft a good refund reply. That does not mean it should approve the refund. It can summarize an incident. That does not mean it should page the on-call team. It can classify a lead. That does not mean it should change the forecast. It can propose an infrastructure change. That does not mean it should run it.
-
-Output trust is necessary.
-
-Operational trust is what gives AI permission to act.
+The difference is not just output quality and better context. It is **system design**. While output trust is necessary, operational trust is what gives AI permission to act.
 
 ## What "Safe Enough" Actually Requires
 
-Safe enough does not mean perfect.
+**Safe enough** means the system is _bounded tightly enough that its expected failures are tolerable, visible, and recoverable._
 
-It means the system is bounded tightly enough that its expected failures are tolerable, visible, and recoverable.
+The NIST AI Risk Management Framework is useful here because it treats trustworthy AI as a lifecycle discipline. Its core functions are **govern**, **map**, **measure**, and **manage**: in plain language, know _what the system is for_, understand its _risks_, _test_ those risks, and _operate controls_ over time. ([NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework))
 
-The NIST AI Risk Management Framework is useful here because it treats trustworthy AI as a lifecycle discipline, not a launch-day checklist. Its core functions are govern, map, measure, and manage: in plain language, know what the system is for, understand its risks, test those risks, and operate controls over time. ([NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework))
-
-For an AI workflow that can recommend, write, route, approve, or trigger tools, "safe enough" usually requires:
+For an AI workflow "safe enough" usually requires:
 
 - **Bounded scope.** The system has a narrow job and a clear refusal boundary. It knows what it is not allowed to solve.
 - **Bounded data access.** It only sees the data needed for the task, with tenant boundaries, role permissions, and sensitive-data rules enforced outside the prompt.
@@ -117,9 +88,7 @@ This is not a model checklist. It is a workflow safety checklist.
 
 OWASP's Top 10 for LLM Applications makes the same point from a security angle: prompt injection, insecure output handling, sensitive information disclosure, excessive agency, and overreliance are application risks, not abstract model trivia. ([OWASP LLM Top 10](https://owasp.org/www-project-top-10-for-large-language-model-applications/)) If the system uses MCP servers or external tools, the OWASP MCP Top 10 adds another set of risks around token exposure, scope creep, tool poisoning, command injection, and prompt injection through tool context. ([OWASP MCP Top 10](https://owasp.org/www-project-mcp-top-10/))
 
-The prompt is not the control plane.
-
-The system is.
+The prompt is not the **control plane**. The **system** is.
 
 ## The Four-Level Action Gate
 
