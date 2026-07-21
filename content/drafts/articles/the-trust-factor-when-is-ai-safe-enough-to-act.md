@@ -90,47 +90,45 @@ OWASP's Top 10 for LLM Applications makes the same point from a security angle: 
 
 The prompt is not the **control plane**. The **system** is.
 
---- TODO ---
+<br/>
 
-## The Four-Level Action Gate
+## The Four-Level Action Gate Evolution
 
-Before giving AI more authority, decide which level of exposure you are actually ready for.
+Most companies and teams follow the same evolution path below in maturing their AI workflows. Each level has a different trust bar, and each level requires different controls. Before giving AI more authority, they decide which level of exposure they are actually ready for.
 
 ### Level 1: Internal Assistant
 
-The AI helps employees think, summarize, search, draft, or analyze. It does not touch customers directly. It does not write to systems of record. It does not make binding decisions.
+The AI helps employees think, summarize, research, draft, and automate workflows. It does not touch customers, write to systems of record, or make binding decisions. The bar is usefulness, approved-tool usage, basic data boundaries, and nearly always with human judgment. 
 
-The bar is usefulness, approved-tool usage, basic data boundaries, and human judgment.
-
-This is where many teams should start. It creates learning without pretending the workflow is production-ready.
+This is where many teams (should) **start**. It creates learning without pretending the workflow is production-ready.
 
 ### Level 2: Human-Reviewed Draft
 
-The AI drafts a customer response, proposes a decision, recommends a route, prepares a CRM update, or suggests the next action. A human reviews, edits, approves, and remains accountable for the final step.
+The AI drafts a customer response, proposes a decision, recommends a solution, or suggests the next action. A human reviews, edits, approves, and remains accountable for the final step. This level captures a lot of value, and is also the most underrated imo.
 
-This level captures a lot of value. It is also the most underrated.
-
-Human review is not a failure state. It is a trust-building control while the organization learns where the system is strong, weak, expensive, slow, or risky.
+Human review is a **trust-building** transitional state while the organization learns where the system is strong, weak, expensive, slow — and builds trust methodology.
 
 ### Level 3: Bounded Action
 
-The AI can act without review inside a narrow box.
+The AI can act without review inside a narrow box. This is the evolutionary leap in AI workflows — and where "bounded" and "autonomy" come to life together.
 
 It might answer simple status questions, classify tickets, route work, update low-risk fields, schedule follow-ups, draft internal notes, or resolve a small set of reversible requests. The key is that the scope is explicit, the consequences are limited, and escalation is easy.
 
 At this level, the system needs real evals, adversarial tests, source grounding, logs, monitoring, rollback, and a named owner.
 
-Scope is the safety belt.
+**Scope** is the safety belt.
 
 ### Level 4: Autonomous External Action
 
-The AI speaks or acts on behalf of the company with little or no human review. It may handle full customer conversations, trigger refunds, make account changes, negotiate service steps, update contractual workflows, or run operational actions.
+The AI speaks or acts on behalf of the company with little or no human review. It may handle full customer conversations, trigger refunds, make account changes, negotiate service steps, update contractual workflows, or run operational actions. This level requires everything above, plus stronger identity controls, permission enforcement, action reversibility, incident response, customer disclosure, legal and security review, and continuous monitoring. The clear issue is where companies skip the previous steps and jump to Level 4.
 
-This level requires everything above, plus stronger identity controls, permission enforcement, action reversibility, incident response, customer disclosure, legal and security review, and continuous monitoring.
+They key is: we should not get to Level 4 by being optimistic. We get there by passing Level 3 **boringly** for a long time.
 
-You do not get to Level 4 by being optimistic.
+The previous are **trust gates** while the team learns and work out the kinks — a **decision framework** for when to give AI more authority
 
-You get there by passing Level 3 boringly for a long time.
+<br/>
+
+--- TODO ---
 
 ## Customer Trust Has Its Own Gate
 
