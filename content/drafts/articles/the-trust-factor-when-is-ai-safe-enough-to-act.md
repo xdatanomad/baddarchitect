@@ -128,35 +128,23 @@ The previous are **trust gates** while the team learns and work out the kinks â€
 
 <br/>
 
---- TODO ---
-
 ## Customer Trust Has Its Own Gate
 
 Customer-facing AI adds a separate acceptance problem.
 
-Customers may tolerate AI for speed, routing, status checks, simple policy questions, appointment scheduling, order updates, and self-service tasks they already understand.
+Customers may tolerate AI for speed, routing, status checks, simple policy questions, appointment scheduling, order updates, and self-service tasks they already understand. Experience shows that they expect human access for complex, emotional, contractual, legal, financial, medical, compliance-sensitive, or unresolved issues. And that path should be clear, relatively fast or time-bounded, and frictionless.
 
-They expect human access for complex, emotional, high-value, contractual, legal, financial, medical, compliance-sensitive, or unresolved issues.
+Important nuance: Customers do not only want an answer; they want confidence that the answer will **hold**.
 
-This is not irrational. It is calibrated.
+This is where the trust-factor built internally first will carry over to the customer. Think this way: The evals, escalation path, logs, bounded actions, and reversibility design choices enable the agent to respond something like:
 
-Customers do not only want an answer. They want confidence that the answer will hold. They want a human safety net when the cost of being wrong is personal, expensive, or exhausting.
+> "Everything looks good on my end. I've documented all my actions. If anything changes, someone from our team will follow up within 48 hours â€” otherwise you don't need to do anything else."
+
+What leaders know is that if an AI system speaks for the company, the company **owns** the **experience**. If it acts for the company, the company owns the **consequence**. That is why the escalation path is not a fallback. It is a feature.
 
 The Air Canada chatbot dispute is a clean example. In 2024, a Canadian tribunal found Air Canada responsible after its website chatbot gave a customer misleading bereavement-fare information. The operational lesson is simple: the company owns what its customer-facing system says, whether the message came from a static page or a chatbot. ([ABA Business Law Today, 2024](https://www.americanbar.org/groups/business_law/resources/business-law-today/2024-february/bc-tribunal-confirms-companies-remain-liable-information-provided-ai-chatbot/))
 
-The reputational lesson is just as clear. In 2024, DPD disabled part of its AI chatbot after a customer manipulated it into swearing and criticizing the company. ([The Guardian, 2024](https://www.theguardian.com/technology/2024/jan/20/dpd-ai-chatbot-swears-calls-itself-useless-and-criticises-firm))
-
-These are not only chatbot stories. They are action-boundary stories.
-
-If an AI system speaks for the company, the company owns the experience. If it acts for the company, the company owns the consequence.
-
-That is why the escalation path is not a fallback. It is a feature.
-
-A strong AI handoff sounds like:
-
-_"I can help with the basic details. This issue needs a specialist, so I am connecting you to a person now. I will pass along the account, policy, and steps I checked so you do not have to repeat yourself."_
-
-That kind of handoff builds trust because it respects the limit.
+<br/>
 
 ## The Promotion Checklist
 
@@ -178,11 +166,9 @@ Use this before moving an AI workflow from one level of action to the next.
 14. **Rollback:** How quickly can you disable the workflow or revert a bad action?
 15. **Disclosure:** If the system is customer-facing, how will users know they are interacting with AI and how to reach a human?
 
-If you cannot answer these questions for the current level, do not promote the workflow to the next one.
+Decide if you like to make a **hard rule**: if you cannot answer these questions for the current level, do not promote the workflow to the next one. Make the gate visible. Make it boring. Make it repeatable. That is how trust compounds.
 
-Make the gate visible. Make it boring. Make it repeatable.
-
-That is how trust compounds.
+<br/>
 
 ## A Practical Rule For Action
 
