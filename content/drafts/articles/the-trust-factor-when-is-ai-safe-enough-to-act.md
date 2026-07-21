@@ -176,56 +176,27 @@ Here is the rule I would use with most teams:
 
 **Let AI recommend before it drafts. Let it draft before it acts. Let it act internally before it acts externally. Let it act reversibly before it acts irreversibly.**
 
-That sequence is not slow. It is how you learn where the workflow is actually safe.
+This sequence is how you learn where the workflow is actually safe.
 
-For example:
-
-- A sales assistant first recommends account research.
-- Then it drafts the follow-up email.
-- Then it updates internal CRM notes after approval.
-- Then it autonomously creates low-risk follow-up tasks.
-- Much later, if the system earns it, it may send bounded customer messages under clear rules.
-
-The same pattern works in support, finance, legal operations, security, software delivery, customer success, and internal IT.
-
-Do not debate "AI autonomy" as one giant yes-or-no decision.
-
-Split autonomy into smaller permissions and promote them one at a time.
+Do not debate "AI autonomy" as **one** giant _yes-or-no_ decision. **Split** autonomy into smaller permissions and promote them one at a time.
 
 ## What Strong Teams Do Differently
 
-Strong teams do not treat trust as a feeling.
+Strong teams treat trust as an operating property of the workflow. A **controlled** property.
 
-They treat it as an operating property of the workflow.
+They write down what the system can do. They separate deterministic checks from model judgment. They build evals from real failures. They run adversarial tests. They keep humans in the loop where the cost of error is high. They log enough to debug. They monitor drift. They assign ownership. They make **rollback** accessible.
 
-They write down what the system can do. They separate deterministic checks from model judgment. They build evals from real failures. They run adversarial tests. They keep humans in the loop where the cost of error is high. They log enough to debug. They monitor drift. They assign ownership. They make rollback boring.
+They also accept that some workflows should not become autonomous yet. That is an important _leadership muscle_. A team that can say _"this is useful, but not safe enough to act"_. It is protecting the conditions that make projects durable.
 
-They also accept that some workflows should not become autonomous yet.
-
-That is an important leadership muscle. A team that can say _"this is useful, but not safe enough to act"_ is not blocking AI adoption. It is protecting the conditions that make adoption durable.
-
-The opposite pattern is familiar:
-
-_The answer looks good._  
-_The model is better now._  
-_We will monitor feedback._  
-_A human can always fix it later._
-
-That is not a release strategy. That is hope with a dashboard.
+A pattern to also watch out for is is **hope with a dashboard**. Don't just build evals and logs and wish they will be enough.
 
 ## The Point
 
-The trust factor is not a model problem. It is a system problem.
+The trust factor is not a model problem. It is a **system-design** problem.
 
-It lives in scope, permissions, evals, grounding, observability, human review, escalation, rollback, and ownership. It lives in the difference between a helpful suggestion and an action the company must stand behind.
+It lives in scope, permissions, evals, grounding, observability, human review, escalation, rollback, and ownership. AI does not become production-ready when it sounds confident. It becomes production-ready when the workflow can explain what happened, limit what can go wrong, recover when it fails, and make clear who owns the outcome.
 
-AI does not become production-ready when it sounds confident.
-
-It becomes production-ready when the workflow can explain what happened, limit what can go wrong, recover when it fails, and make clear who owns the outcome.
-
-_The AI works_ is the start of the conversation.
-
-_The AI is safe enough to act_ is what ships.
+_The AI works_ is the start of the conversation. _The AI is safe enough to act_ is where it ships.
 
 ---
 
