@@ -37,77 +37,40 @@ Put those signals together and the lesson is clear:
 
 Usage is not enough. A better demo is not enough. Even a genuinely helpful AI feature is not enough if the economics and defensibility are weak.
 
-## The Buyer Shift
+## The Buyer Mentality Shift
 
 The old software buying default was simple enough: buy the platform, configure it, train the team, and absorb the license cost.
 
-That default is weakening.
+That default is **weakening** when coding agents can build internal tools in matter of hours or days.
 
-Not because every company suddenly wants to become a software company. Most do not. Custom software still has maintenance cost, security work, integration debt, support burden, and governance risk. A rushed internal build can become expensive in a quieter way.
+Not because every company suddenly wants to become a software company. Most do not. Custom software still has maintenance cost, security work, integration debt, support burden, and governance risk. Yes, a rushed internal build can become expensive in a quieter way. But the buyer's calculation has changed. When coding agents reduce the cost of building a narrow internal workflow, buyers start asking sharper questions: _"Why buy the whole platform if we only use one part of it?"_, _"Why wait six months for a vendor roadmap if our team can build the missing piece?"_.
 
-But the buyer's calculation has changed.
+This does not mean every SaaS product gets replaced by internal tools. That would be too simple. It means vendors lose the right to be **vague** about value.
 
-When coding agents reduce the cost of building a narrow internal workflow, buyers start asking sharper questions:
+IMHO, the message to teams building consumer-facing AI products is:
 
-- Why buy the whole platform if we only use one part of it?
-- Why pay per seat for a workflow that only a few people touch?
-- Why wait six months for a vendor roadmap if our team can build the missing piece?
-- Why accept a generic AI feature if our internal context is the real differentiator?
-- Why renew if the product does not own a critical business outcome?
-
-This does not mean every SaaS product gets replaced by internal tools. That would be too simple. It means vendors lose the right to be vague about value.
-
-The stronger buyer question is:
-
-_What do you do for us that a capable internal team with coding agents, our data, and ninety days could not recreate well enough?_
-
-That question should unsettle weak AI products. It should also clarify the path for strong ones.
-
-If the product owns a valuable workflow, integrates deeply into systems of record, protects data and permissions, improves with operational memory, and produces a measurable result, it still has a reason to exist.
-
-If the product is mostly a model call, a chat box, and a nicer interface, the buyer's build option is getting better every quarter.
+- **Good:** If the product owns a valuable workflow, integrates deeply into systems of record, protects data and permissions, improves with operational memory, and produces a measurable result, it still has a reason to exist.
+- **Weak:** If the product is mostly a model call, a chat box, and a nicer interface, the buyer's build option is strong.
 
 ## Activity Is Not Value
 
-Most AI dashboards measure motion.
+Most internal AI dashboards measure motion: prompts run, tokens consumed, summaries generated, agents deployed, and workflows launched.
 
-- prompts run
-- tokens consumed
-- summaries generated
-- agents deployed
-- copilot seats issued
-- documents indexed
-- workflows launched
+These are not useless numbers. They can help teams understand cost and operational load. But they are _activity metrics_ and do **not** prove the work is more valuable.
 
-These are not useless numbers. They can help teams understand adoption, cost, and operational load.
+Durable AI value connects to the business:
 
-But they are **activity metrics**. They prove the system is being used. They do not prove the work is more valuable.
-
-Durable AI value connects to a number the business already understands:
-
-- cycle time reduced
 - support cost per ticket
 - time to resolution
 - conversion or retention lift
 - onboarding or implementation time
 - revenue per employee
 - gross margin per customer
-- defect or error reduction
+- issues or error reduction
 - manual review hours removed
 - faster sales cycle
-- lower cost to serve
 
-If the AI workflow cannot connect to one of those numbers, it may still be useful. It may help employees think, draft, search, summarize, or learn.
-
-But it is not yet a business case.
-
-This distinction matters because AI can make work look better on the surface. Meetings have cleaner notes. Tickets have better summaries. Salespeople have sharper account briefs. Engineers produce more code. Product managers generate more research.
-
-Some of that is real value. Some of it is better-looking activity.
-
-The question is not _did the AI produce something?_ The question is _what changed downstream because of it?_
-
-Did the support ticket close faster? Did the customer avoid a follow-up call? Did the seller move the deal forward? Did the engineer ship safer code? Did onboarding compress from weeks to days? Did a risky decision get escalated earlier? Did margin improve?
+Strong teams define clear **business outcomes** and find a way to **measure** them. Always take the time to carefully define the metrics. The question is not _did the AI produce something?_ The question is _what changed downstream because of it?_
 
 A useful rule:
 
@@ -115,20 +78,15 @@ A useful rule:
 
 ## The Margin Trap
 
-Traditional SaaS was built on a beautiful assumption: the next user was cheap.
+Traditional software has been built on a beautiful assumption: the next user is cheap.
 
-Once the product existed, serving one more user or one more action often had tiny marginal cost. That assumption shaped pricing, packaging, gross margin expectations, investor models, and buyer behavior.
+Once the product (internal or external) existed, serving one more user or one more action often had tiny marginal cost. Agentic workflows **break** that assumption. A serious AI workflow may include:
 
-AI breaks that assumption.
-
-A serious AI workflow is rarely one model call. A completed customer outcome may include:
-
-- identity and permission checks
 - document retrieval
 - embedding search
 - reranking
 - a long-context model call
-- one or more tool calls
+- few tool calls
 - structured output validation
 - a second model call for critique or classification
 - retries when the model output is malformed
@@ -137,29 +95,13 @@ A serious AI workflow is rarely one model call. A completed customer outcome may
 - human review for uncertain cases
 - infrastructure, queueing, and storage
 
-That is not "the cost of a prompt." It is a cost stack.
+The uncomfortable part is that the true AI cost is often hidden across systems. It is not _"the cost of a prompt"_; it's a **cost stack**.
 
-Stanford's 2026 AI Index notes the broader market version of this pressure: AI company revenue is rising quickly, but compute costs and infrastructure spending are also reaching record levels. ([Stanford HAI, 2026](https://hai.stanford.edu/ai-index/2026-ai-index-report/economy))
+There are also credible reports that LLM cost are significantly _subsidized_ by the providers and that increased token usage and inference costs from agentic workflows, will result in cost increases to the end users soon.
 
-At the product level, the pressure shows up as cost to serve. A popular AI feature can quietly become the worst-margin part of the product.
+One advice: monitor the end-to-end cost of a **completed workflow**...
 
-The pattern is familiar:
-
-1. The team ships an AI feature inside an existing subscription.
-2. Customers love it and use it more than expected.
-3. The product team celebrates adoption.
-4. The finance team notices cost per active customer rising.
-5. The vendor cannot easily reprice mid-contract.
-6. The team adds caps, rate limits, lower-quality models, or hidden throttling.
-7. The customer experience gets worse.
-
-The feature was not the mistake. The economics were.
-
-The uncomfortable part is that AI cost often hides across systems. The model bill is visible, but the real number also includes retrieval, vector storage, monitoring, evals, queues, latency overhead, human review, support, and implementation work.
-
-That is why the unit is not the token.
-
-The unit is the **completed workflow**.
+<br/>
 
 ## Measure Cost Per Completed Workflow
 
