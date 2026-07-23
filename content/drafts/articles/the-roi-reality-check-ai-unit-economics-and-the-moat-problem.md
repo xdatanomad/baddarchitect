@@ -103,23 +103,17 @@ One advice: monitor the end-to-end cost of a **completed workflow**...
 
 <br/>
 
--- TODO --
-
 ## Measure Cost Per Completed Workflow
 
-An AI product needs a workflow cost ledger.
+Any AI product, internal or external, needs a workflow **cost ledger**.
 
-Not a monthly API bill. Not a rough token estimate. A ledger that can reconstruct what it cost to complete one valuable job for one customer.
+Not a monthly API bill. Not a rough token estimate. A ledger that can reconstruct what it cost to complete one valuable job for one workflow or one customer.
 
 For every workflow run, tag the cost-bearing events:
 
-- model calls
 - input and output tokens
 - retrieval calls
-- vector database reads and writes
-- reranker calls
 - tool calls
-- validation steps
 - retries
 - human review minutes
 - observability and eval sampling
@@ -127,33 +121,21 @@ For every workflow run, tag the cost-bearing events:
 
 Then attach those events to the business object the customer cares about:
 
-- resolved ticket
-- qualified lead
-- completed onboarding step
-- reviewed contract clause
-- approved claim
-- migrated code change
-- generated compliance packet
-- scheduled shipment
-- completed account research brief
+- resolved tickets
+- qualified leads generated
+- PRs merged
+
+Then connect that completed unit to the company metric it is supposed to influence. This is the **metric chain**. This means the team can explain the path from workflow cost to business value without fake precision.
 
 The number that matters is:
 
-**What did it cost to complete this outcome at acceptable quality?**
+**What did it cost to complete the outcome, and what business value did that outcome plausibly create?**
 
-Once you know that, the product conversation changes.
+Once we know this, the decisional conversations change meaningfully.
 
-You can route simple cases to cheaper models and escalate only when needed. You can cache repeated retrievals. You can replace model judgment with deterministic code where the rule is known. You can cap retries. You can shorten context. You can decide where human review is worth the cost. You can price in a way that matches actual usage.
+You can route simple cases to cheaper models and escalate only when needed. You can cache repeated retrievals. You can replace model judgment with deterministic code where the rule is known. You can cap retries. You can shorten context. You can decide where human review is worth the cost. You can price in a way that matches actual usage. Without this ledger, the team usually argues from _vibes_ — reducing the _trust-factor_ internally which bleeds externally.
 
-Without that ledger, the team usually argues from vibes:
-
-- Product sees adoption.
-- Engineering sees latency.
-- Finance sees cloud spend.
-- Customer success sees complaints when caps appear.
-- Sales wants a simple price.
-
-Everyone is looking at a different shadow of the same workflow.
+<br/>
 
 ## Pricing Has To Match The Cost Shape
 
