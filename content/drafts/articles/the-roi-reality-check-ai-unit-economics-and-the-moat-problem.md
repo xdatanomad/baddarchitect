@@ -139,7 +139,7 @@ You can route simple cases to cheaper models and escalate only when needed. You 
 
 ## Pricing Has To Match The Cost Shape
 
-AI pricing is hard because customers want predictability while vendors need protection from unbounded usage.
+This section applies to teams building consumer-facing AI products. AI pricing is hard because customers want predictability while vendors need protection from unbounded usage.
 
 That is why old seat-based pricing often gets strained. Seat pricing can work when usage is predictable or the AI cost is small relative to contract value. It gets dangerous when a small group of power users can generate most of the cost.
 
@@ -147,19 +147,17 @@ Usage-based pricing has the opposite problem. It protects the vendor, but custom
 
 Outcome pricing is appealing when the outcome is clean: resolved ticket, qualified lead, completed claim, booked meeting, remediated vulnerability. It aligns value and price. But it requires confidence in attribution, quality, abuse controls, and cost variability.
 
-For many AI products, the practical answer will be a hybrid:
+For many AI products, the **practical answer is a hybrid:**
 
 - base subscription for access, workflow integration, admin controls, security, and support
 - included usage for predictable adoption
 - usage or outcome tiers above a threshold
-- enterprise terms for heavy-volume or high-risk workflows
+- enterprise negotiated terms for heavy-volumes or high-risk usage
 - clear limits rather than surprise throttling
 
 The deeper rule is simpler than the packaging:
 
-**If usage doubles and your cost doubles, your revenue model needs some way to notice.**
-
-Otherwise success becomes a margin problem.
+**If usage doubles and your cost doubles, the revenue model needs some way to adjust.**
 
 ## The Soft ROI Trap
 
