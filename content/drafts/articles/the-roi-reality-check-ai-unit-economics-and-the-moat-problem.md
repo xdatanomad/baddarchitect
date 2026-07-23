@@ -159,6 +159,8 @@ The deeper rule is simpler than the packaging:
 
 **If usage doubles and your cost doubles, the revenue model needs some way to adjust.**
 
+--- TODO ---
+
 ## The Soft ROI Trap
 
 There is a second pricing problem: some AI products cannot prove enough value to support the price they want.
