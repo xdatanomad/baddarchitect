@@ -161,143 +161,36 @@ The deeper rule is simpler than the packaging:
 
 --- TODO ---
 
-## The Soft ROI Trap
+## The Internal Moat Problem
 
-There is a second pricing problem: some AI products cannot prove enough value to support the price they want.
+For internal AI products, the moat problem is different.
 
-This is common with copilots that advise, summarize, draft, or suggest without closing the loop. The feature may be useful, but the buyer struggles to answer:
+The question is not _what stops a competitor from copying this?_ The question is: _does this workflow become a durable operating asset, or does it become another helpful tool that slowly decays?_
 
-_What did we get for this?_
+Internal AI products do not need market defensibility. They need **organizational defensibility**. They need to survive model changes, team turnover, policy updates, data drift, security review, budget pressure, and the natural tendency for every department to build its own version of the same thing.
 
-Soft ROI does not mean no ROI. It means the value is indirect, diffuse, or hard to attribute. That can be acceptable for personal productivity tools and broad horizontal platforms.
+That means the internal moat is not the model. It is not the prompt. It is not even "we have data."
 
-It is dangerous for expensive workflow products.
+The stronger internal moat is **usable, governed, permission-aware data inside a workflow the company depends on**.
 
-A customer may like the tool and still cut it at renewal because nobody can defend the business case. The internal champion has stories, but finance wants evidence. The business owner has activity, but not a before-and-after metric. The team has "hours saved," but no proof that those hours turned into lower cost, higher revenue, faster delivery, or better customer outcomes.
+The pieces that compound are practical:
 
-The stronger move is to design the workflow around a measurable result from the beginning.
+- **Workflow data.** What happened, what was approved, what failed, what users corrected, and what outcome followed.
+- **Deep integrations.** Permissioned connections to the systems where work actually happens.
+- **Operational memory.** The workflow remembers prior decisions, exceptions, risk patterns, and successful resolutions.
+- **Eval datasets.** Real cases from the company's own edge cases, failures, and quality reviews.
+- **Trust infrastructure.** Access controls, audit trails, human review, rollback, and clear ownership.
+- **Process ownership.** A named team owns the business outcome, not just the bot.
 
-Not:
+If those pieces are missing, the internal product may still be useful. But it will not compound. It will need to be re-explained, re-approved, re-debugged, and re-funded every time the environment changes.
 
-_AI helps account managers prepare for renewals._
+The goal is not to build an internal tool that nobody else can copy.
 
-Better:
-
-_AI reduces renewal preparation time from three hours to thirty minutes, improves risk coverage, and increases on-time executive review for accounts above $250K ARR._
-
-Not:
-
-_AI assists support agents._
-
-Better:
-
-_AI reduces time to first qualified response for tier-two tickets while holding escalation quality and customer satisfaction steady._
-
-Not:
-
-_AI writes engineering migration code._
-
-Better:
-
-_AI reduces migration cycle time for low-risk service changes while keeping test pass rate, review rejection rate, and incident rate inside agreed thresholds._
-
-Specificity is not decoration. It is how the economics become measurable.
-
-## The Moat Problem
-
-Even with good ROI and healthy unit economics, one question remains:
-
-_What stops someone else from doing this?_
-
-For the first wave of AI products, novelty carried a lot of weight. Customers had not seen the model summarize, draft, search, classify, translate, or generate code with that level of fluency. A working demo could feel like a product strategy.
-
-That window is closing.
-
-Generic AI features are becoming table stakes:
-
-- AI summarizes meetings.
-- AI writes emails.
-- AI chats with documents.
-- AI generates SQL.
-- AI drafts reports.
-- AI creates support replies.
-- AI explains code.
-
-These can be useful features. They are not automatically moats.
-
-The weak version of the moat argument says:
-
-_We have data._
-
-The stronger version asks:
-
-_Do we have proprietary, governed, permission-aware workflow data that improves the product in ways customers can feel and competitors cannot quickly reproduce?_
-
-That distinction matters. A16Z argued years ago that data moats do not automatically last just because a company collects more data; defensibility depends on the nature of the data, how hard it is to obtain, how useful it remains, and whether it compounds into product advantage. ([a16z, 2019](https://a16z.com/the-empty-promise-of-data-moats/))
-
-In AI products, "data is the moat" is only half true.
-
-The real moat is **usable, governed, permission-aware data inside a workflow the customer depends on**.
-
-## Where Defensibility Moves
-
-AI defensibility moves away from the model alone and toward the operating layer around the model.
-
-Stronger moat sources include:
-
-- **Proprietary workflow data.** Not raw documents in a bucket. The history of what happened, what was approved, what failed, what users corrected, and what outcomes followed.
-- **Deep integrations.** Permissioned, audited connections to systems of record. Integrations are not glamorous, but they are slow to replace when they sit inside real work.
-- **Operational memory.** The product remembers customer preferences, exceptions, prior decisions, risk patterns, and successful resolutions across runs.
-- **Eval datasets.** The company has realistic test cases from actual workflow failures and edge cases, so it can improve faster and ship safer.
-- **Trust infrastructure.** Security review, tenant isolation, audit trails, data controls, SLAs, compliance posture, and clear accountability.
-- **Distribution.** Existing customer relationships, channel reach, ecosystem position, and buyer trust.
-- **Implementation expertise.** The team knows how to map the workflow, handle change management, and get customers to value without pretending software alone is enough.
-- **Process ownership.** The product owns a measurable business process end to end, not just a step that can be swapped out.
-
-Notice what is missing from that list.
-
-The model.
-
-Models matter. Quality matters. Latency matters. Cost matters. But if the whole product strategy depends on a model staying uniquely capable, the moat is fragile. Frontier models improve. Open-source models improve. Platforms copy. Buyers learn. Internal teams get better.
-
-A stronger AI product becomes the operating layer for a business process.
-
-That is harder to clone than a prompt.
-
-## The 90-Day Clone Test
-
-Use this test before you overstate your moat:
-
-**Could a capable internal team, using current coding agents and the customer's existing systems, recreate the 30% of your product they actually use within ninety days?**
-
-If the honest answer is yes, the product may still be useful, but it is not deeply defensible.
-
-Run the test in five parts:
-
-1. **Workflow slice:** What is the narrowest part of the product that creates most of the value?
-2. **Data access:** Does the customer already own the data needed to recreate that slice?
-3. **Integration depth:** Are your integrations shallow API calls or deeply embedded operational paths?
-4. **Quality loop:** Do you have evals, feedback data, and operational memory the customer cannot easily reproduce?
-5. **Trust barrier:** Would security, compliance, auditability, support, or accountability make the internal clone hard to approve?
-
-The point is not to panic every time the answer is uncomfortable. The point is to see where the moat must be strengthened.
-
-If the customer can clone the core workflow, your advantage has to come from something else:
-
-- faster time to value
-- better quality at scale
-- lower total operating cost
-- stronger controls
-- deeper workflow ownership
-- better implementation
-- trusted accountability
-- compounding data and memory
-
-The clone test forces a product team to stop defending the surface area and start defending the business process.
+The goal is to build an internal workflow that becomes cheaper, safer, and more valuable as it runs.
 
 ## The AI Value Equation
 
-Before funding, buying, renewing, or scaling an AI product, run the value equation.
+Before funding, buying, or scaling an internal AI product, run the value equation.
 
 ### 1. Business Outcome
 
@@ -338,50 +231,33 @@ Include inference, retrieval, tool calls, retries, evals, observability, infrast
 
 If the product needs humans in the loop, include them. Hiding labor does not improve margin. It only delays the conversation.
 
-### 4. Pricing Model Alignment
+### 4. Funding Model Alignment
 
-Does the way the customer pays match the way the product consumes cost and creates value?
+Does the way the workflow is funded match the way it consumes cost and creates value?
 
-If cost scales with usage but revenue is fixed, heavy users may become unprofitable. If price scales with usage but the buyer cannot predict the bill, adoption may stall. If price scales with outcomes, the product needs strong attribution and quality controls.
+Internal products still need an economic model. If cost scales with usage but budget is fixed, a successful workflow can become politically expensive. If the bill is invisible, teams may overuse it. If usage is tightly capped, adoption may stall before the company learns where the value is.
 
-No model is perfect. But the mismatch should be visible.
+The point is not to create a complex chargeback scheme on day one. The point is to make the mismatch visible: who benefits, who pays, what usage is reasonable, and what level of value justifies broader rollout.
 
 ### 5. Adoption Path
 
 Who changes their behavior for the value to appear?
 
-AI ROI often fails because the product works but the workflow around it does not change. The team still copies output into another system. Managers still ask for the old report. Customers still call support because the self-service path is not trusted. Reviewers still redo the work because they do not believe the AI output.
+AI ROI often fails because the product works but the workflow around it does not change. The team still copies output into another system. Managers still ask for the old report. Employees still route around the tool because the official path is not trusted. Reviewers still redo the work because they do not believe the AI output.
 
 Value does not come from the model. It comes from the changed workflow.
 
-### 6. Switching Cost
-
-What real friction makes replacement unattractive?
-
-Be honest about the difference between useful switching cost and hostile lock-in. Customers should stay because the product owns context, workflow, trust, integrations, memory, and measurable value. Not because exports are painful or the data is trapped.
-
-Good switching cost looks like:
-
-- the workflow is embedded in daily operations
-- historical decisions and corrections improve future runs
-- integrations would take serious time to rebuild
-- security and compliance approval would have to be repeated
-- operators trust the product's audit trail and escalation path
-- the vendor understands the implementation pattern better than a generic tool
-
-Bad switching cost is just friction. It may protect a renewal once. It does not build trust.
-
-### 7. Risk And Trust Cost
+### 6. Risk And Trust Cost
 
 What controls are required before the workflow can run?
 
-A customer-facing support agent has a different cost profile than an internal drafting assistant. A financial approval workflow has a different trust bar than a meeting summary. A code migration agent has a different risk surface than a documentation assistant.
+A support triage workflow has a different cost profile than an internal drafting assistant. A financial approval workflow has a different trust bar than a meeting summary. A code migration agent has a different risk surface than a documentation assistant.
 
 Include the cost of controls: evals, audit logs, permissions, human review, rollback, security review, incident response, and ongoing monitoring.
 
 If the trust cost is ignored, the ROI case is incomplete.
 
-### 8. Defensibility
+### 7. Compounding Advantage
 
 What gets stronger as the product runs?
 
@@ -391,42 +267,38 @@ The best answer is not "more usage." The best answer is compounding advantage:
 - better evals
 - better operational memory
 - deeper integrations
-- stronger customer trust
+- stronger internal trust
 - more precise implementation patterns
 - lower cost per outcome
-- faster onboarding
+- faster adoption by adjacent teams
 
-If nothing compounds, the product is a feature with a revenue model.
+If nothing compounds, the product is an internal shortcut with a support burden.
 
-That may be enough for a while. It is not a moat.
+That may still be worth doing. But it is not a durable operating asset.
 
 ## A Simple Value Gate
 
-Use this before a team scales an AI product or before a buyer renews one.
+Use this before a team scales an internal AI product.
 
 1. **Outcome:** Can we name the business metric this workflow improves?
 2. **Baseline:** Do we know the current cost, time, quality, and volume?
 3. **Unit:** Have we defined the completed workflow, not just the model call?
 4. **Cost:** Do we know the fully loaded cost per successful workflow?
-5. **Price:** Does revenue increase, or value justify price, as usage increases?
+5. **Funding:** Does the budget model make sense if usage increases?
 6. **Workflow:** Has the surrounding process changed enough for value to appear?
-7. **Switching cost:** Is replacement hard because of workflow depth, memory, integrations, and trust, or only because leaving is annoying?
-8. **Controls:** Are trust, review, audit, and rollback costs included?
-9. **Clone test:** Could the customer or a competitor recreate the valuable slice in ninety days?
-10. **Moat:** What gets harder to replace after every workflow run?
-11. **Decision:** Are we scaling, narrowing, repricing, rebuilding, or killing it?
+7. **Controls:** Are trust, review, audit, and rollback costs included?
+8. **Compounding:** What gets cheaper, safer, or more valuable after every workflow run?
+9. **Decision:** Are we scaling, narrowing, funding differently, rebuilding, or killing it?
 
 The decision rule is simple:
 
 If you cannot answer 1 through 4, you do not have an ROI case.
 
-If you fail 5, success may hurt margin.
+If you fail 5, success may become a budget problem.
 
-If you fail 6, the customer may stay for the wrong reason.
+If you fail 6 or 7, the workflow may not survive production.
 
-If you fail 7 or 8, the workflow may not survive production.
-
-If you fail 9 and 10, the moat is rented.
+If you fail 8, the product will not compound.
 
 ## What Strong Teams Do Differently
 
@@ -436,15 +308,13 @@ They instrument cost from the first production workflow. They know which model c
 
 They also avoid the vanity of generic AI features.
 
-When they build, they build around a process that matters. When they buy, they ask whether the vendor owns enough workflow, data, trust, and implementation depth to justify the price. When they price, they try to align the charge metric with the value delivered and the cost incurred.
+When they build, they build around a process that matters. When they buy, they ask whether the vendor fits the company's workflow, data, trust, and implementation needs. When they scale, they align funding with the value delivered and the cost incurred.
 
-Most importantly, they are willing to narrow.
+Most importantly, they are willing to **narrow**.
 
-The strongest AI products are often not broad assistants. They are narrow workflow systems with excellent context, tight permissions, measurable outcomes, and a cost model that can survive real usage.
+The strongest internal AI products are often not broad assistants. They are narrow workflow systems with excellent context, tight permissions, measurable outcomes, and a cost model that can survive real usage.
 
-Narrow is not small.
-
-Narrow is how the economics become visible.
+Narrow is not small. Narrow is how the economics become visible.
 
 ## The Point
 
@@ -452,15 +322,15 @@ AI adoption gets serious when the conversation shifts from features to economics
 
 Not economics as a spreadsheet after the build is done. Economics as product design.
 
-A durable AI product has a clear business outcome, a known cost per completed workflow, pricing that respects the cost shape, an adoption path that changes real work, and a moat made of workflow ownership, governed data, operational memory, trust, and distribution.
+A durable internal AI product has a clear business outcome, a known cost per completed workflow, funding that respects the cost shape, an adoption path that changes real work, and compounding advantage from workflow ownership, governed data, operational memory, and trust.
 
-The weak products will still get usage. Some will get impressive usage. They will be popular, expensive, copyable, and hard to defend at renewal.
+The weak products will still get usage. Some will get impressive usage. They will be popular, expensive, fragile, and hard to defend when budgets tighten.
 
 Activity is not value.
 
 Usage is not margin.
 
-Novelty is not a moat.
+Novelty is not operating leverage.
 
 The workflow is the product. The economics are the business.
 
