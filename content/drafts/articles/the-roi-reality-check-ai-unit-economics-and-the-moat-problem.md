@@ -159,34 +159,7 @@ The deeper rule is simpler than the packaging:
 
 **If usage doubles and your cost doubles, the revenue model needs some way to adjust.**
 
---- TODO ---
-
-## The Internal Moat Problem
-
-For internal AI products, the moat problem is different.
-
-The question is not _what stops a competitor from copying this?_ The question is: _does this workflow become a durable operating asset, or does it become another helpful tool that slowly decays?_
-
-Internal AI products do not need market defensibility. They need **organizational defensibility**. They need to survive model changes, team turnover, policy updates, data drift, security review, budget pressure, and the natural tendency for every department to build its own version of the same thing.
-
-That means the internal moat is not the model. It is not the prompt. It is not even "we have data."
-
-The stronger internal moat is **usable, governed, permission-aware data inside a workflow the company depends on**.
-
-The pieces that compound are practical:
-
-- **Workflow data.** What happened, what was approved, what failed, what users corrected, and what outcome followed.
-- **Deep integrations.** Permissioned connections to the systems where work actually happens.
-- **Operational memory.** The workflow remembers prior decisions, exceptions, risk patterns, and successful resolutions.
-- **Eval datasets.** Real cases from the company's own edge cases, failures, and quality reviews.
-- **Trust infrastructure.** Access controls, audit trails, human review, rollback, and clear ownership.
-- **Process ownership.** A named team owns the business outcome, not just the bot.
-
-If those pieces are missing, the internal product may still be useful. But it will not compound. It will need to be re-explained, re-approved, re-debugged, and re-funded every time the environment changes.
-
-The goal is not to build an internal tool that nobody else can copy.
-
-The goal is to build an internal workflow that becomes cheaper, safer, and more valuable as it runs.
+<br/><br/>
 
 ## The AI Value Equation
 
@@ -276,6 +249,8 @@ If nothing compounds, the product is an internal shortcut with a support burden.
 
 That may still be worth doing. But it is not a durable operating asset.
 
+<br/><br/>
+
 ## A Simple Value Gate
 
 Use this before a team scales an internal AI product.
@@ -299,6 +274,8 @@ If you fail 5, success may become a budget problem.
 If you fail 6 or 7, the workflow may not survive production.
 
 If you fail 8, the product will not compound.
+
+<br/>
 
 ## What Strong Teams Do Differently
 
