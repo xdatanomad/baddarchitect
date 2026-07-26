@@ -1,6 +1,6 @@
 # LinkedIn Content Plan: The Demo Is Not the Product. The Workflow Is the Product.
 
-- Source article: `content/ready/articles/challenges/p1-02_demo-is-not-the-product-workflow-is-the-product.md`
+- Source article: `content/ready/articles/p1-challenges/p1-02_demo-is-not-the-product-workflow-is-the-product.md`
 - Status: planned
 - Recommended cadence: Eight short posts over roughly four weeks, spaced 2-4 business days apart.
 

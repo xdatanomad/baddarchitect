@@ -183,6 +183,6 @@ _The agent is safe_ is what ships.
 
 **Related reading:**
 
-- [The Demo Is Not the Product. The Workflow Is the Product.](./01_demo_workflow_product.md)
+- [The Demo Is Not the Product. The Workflow Is the Product.](./p1-x03_workflow_is_product.md)
 - [AI Adoption Starts With Fear](./the_fear.md)
 - [Moving Forward With AI](./02_moving_forward.md)

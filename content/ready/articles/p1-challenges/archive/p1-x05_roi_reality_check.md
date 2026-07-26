@@ -256,7 +256,7 @@ The **workflow** is the product. The **economics** is the business.
 
 **Related reading:**
 
-- [The Demo Is Not the Product. The Workflow Is the Product.](./01_demo_workflow_product.md)
-- [The Trust Factor: When Is an AI Agent Safe Enough for Customers?](./02_trust_factor.md)
+- [The Demo Is Not the Product. The Workflow Is the Product.](./p1-x03_workflow_is_product.md)
+- [The Trust Factor: When Is an AI Agent Safe Enough for Customers?](./p1-x04_trust_factor.md)
 - [AI Adoption Starts With Fear](./the_fear.md)
 - [Moving Forward With AI](./02_moving_forward.md)

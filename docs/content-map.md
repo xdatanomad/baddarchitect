@@ -39,7 +39,7 @@ Use this shape for each planned content entry:
   - Define safe experimentation: employees can learn, test, question, and share AI workflows without feeling watched, ranked, or quietly replaced.
   - Fold in the balanced-builder idea: useful AI adopters are neither frozen skeptics nor reckless accelerators; they combine curiosity, verification discipline, security judgment, workflow thinking, and customer responsibility.
   - Practical takeaway: a team participation compact covering what AI is for, what it is not for, how experiments are shared, how risks are raised, when human judgment stays in control, and how leaders will avoid weaponizing participation data.
-- Source notes: `content/ready/articles/challenges/p1-01_ai-adoption-starts-with-fear-safe-participation.md`; archived source material in `content/ready/articles/challenges/archive/00.a_the_fear.md` and `content/ready/articles/challenges/archive/00.b_moving_forward.md`; `content/notes/NOTES.md` adoption and team notes; `content/notes/bottlenecks.md` section 11.
+- Source notes: `content/ready/articles/p1-challenges/p1-01_ai-adoption-starts-with-fear-safe-participation.md`; archived source material in `content/ready/articles/p1-challenges/archive/p1-x01_the-fear.md` and `content/ready/articles/p1-challenges/archive/p1-x02_moving_forward.md`; `content/notes/NOTES.md` adoption and team notes; `content/notes/bottlenecks.md` section 11.
 - Additional notes: This replaces the standalone `p1-04 The Talent Mix` article by folding the balanced-builder argument into the opener. Preserve the original fear, moving-forward, and talent notes as source material.
 - Status: planned
 
@@ -108,7 +108,7 @@ Use this shape for each planned content entry:
   - Include skeptics and middle adopters in adoption design, not only the most enthusiastic front-runners.
   - Use small exercises, office hours, show-and-tells, and paired adoption patterns to build trust and surface what AI should not do.
   - Practical takeaway: a 30-day participation plan for safe experimentation, team learning, and early workflow discovery.
-- Source notes: `content/ready/articles/challenges/p1-01_ai-adoption-starts-with-fear-safe-participation.md`; archived source material in `content/ready/articles/challenges/archive/00.a_the_fear.md` and `content/ready/articles/challenges/archive/00.b_moving_forward.md`; `content/notes/NOTES.md` adoption notes.
+- Source notes: `content/ready/articles/p1-challenges/p1-01_ai-adoption-starts-with-fear-safe-participation.md`; archived source material in `content/ready/articles/p1-challenges/archive/p1-x01_the-fear.md` and `content/ready/articles/p1-challenges/archive/p1-x02_moving_forward.md`; `content/notes/NOTES.md` adoption notes.
 - Status: planned
 
 ### p2-03 Choose the Workflows That Deserve AI Investment
@@ -120,7 +120,7 @@ Use this shape for each planned content entry:
   - Score candidate workflows by business value, repeatability, data readiness, permission risk, failure cost, owner clarity, and measurable outcome.
   - Require each selected workflow to define the trigger, systems touched, human review points, eval approach, monitoring needs, and cost per completed workflow.
   - Practical takeaway: a workflow portfolio scorecard and kill/continue decision rule.
-- Source notes: `content/notes/bottlenecks.md` sections 1, 5, 7, 9; `content/ready/articles/challenges/p1-02_demo-is-not-the-product-workflow-is-the-product.md`; `content/ready/articles/challenges/p1-04_roi-reality-check-ai-unit-economics-and-the-moat-problem.md`; `content/notes/NOTES.md` project pattern notes.
+- Source notes: `content/notes/bottlenecks.md` sections 1, 5, 7, 9; `content/ready/articles/p1-challenges/p1-02_demo-is-not-the-product-workflow-is-the-product.md`; `content/ready/articles/p1-challenges/p1-04_roi-reality-check-ai-unit-economics-and-the-moat-problem.md`; `content/notes/NOTES.md` project pattern notes.
 - Status: planned
 
 ### p2-04 Build the AI Acceleration Team
@@ -156,7 +156,7 @@ Use this shape for each planned content entry:
   - Require each workflow to have an owner, success metric, human-in-the-loop design, eval set, escalation path, and rollback plan.
   - Explain why durable execution, monitoring, cost control, and governance matter even for internal-only automation.
   - Practical takeaway: an internal automation launch gate for trusted agentic workflows.
-- Source notes: `content/notes/bottlenecks.md` sections 6-10 and maturity ladder; `content/ready/articles/challenges/p1-02_demo-is-not-the-product-workflow-is-the-product.md`; `content/notes/NOTES.md` internal development operating system notes.
+- Source notes: `content/notes/bottlenecks.md` sections 6-10 and maturity ladder; `content/ready/articles/p1-challenges/p1-02_demo-is-not-the-product-workflow-is-the-product.md`; `content/notes/NOTES.md` internal development operating system notes.
 - Status: planned
 
 ## p3 Pillar 3: Production AI Engineering Blueprint
@@ -182,7 +182,7 @@ Use this shape for each planned content entry:
   - Cover implementation building blocks: orchestration, durable execution, retries, queues/schedules, tool boundaries, logs, evals, and rollback.
   - Show how to choose narrow workflow agents over general-purpose agents.
   - Practical takeaway: an internal workflow architecture checklist from prototype to hosted automation.
-- Source notes: `content/notes/bottlenecks.md` sections 1, 7, 8, 9; `content/ready/articles/challenges/p1-02_demo-is-not-the-product-workflow-is-the-product.md`; `content/notes/articles_outline.md` Blueprint for Production-grade Customer-facing Agents.
+- Source notes: `content/notes/bottlenecks.md` sections 1, 7, 8, 9; `content/ready/articles/p1-challenges/p1-02_demo-is-not-the-product-workflow-is-the-product.md`; `content/notes/articles_outline.md` Blueprint for Production-grade Customer-facing Agents.
 - Status: planned
 
 ### p3-03 Trusted Context Layer Technical Guide
@@ -206,7 +206,7 @@ Use this shape for each planned content entry:
   - Instrument traces, logs, latency, cost per completed workflow, failure classes, escalations, and drift signals.
   - Use cost controls such as model routing, caching, bounded retries, deterministic code, context limits, and workflow-level budgets.
   - Practical takeaway: a minimum observability and eval dashboard spec for internal AI workflows.
-- Source notes: `content/notes/bottlenecks.md` sections 7, 8, 9; `content/ready/articles/challenges/p1-04_roi-reality-check-ai-unit-economics-and-the-moat-problem.md`; `content/notes/perosnal_growth_plan.md` production AI ideas.
+- Source notes: `content/notes/bottlenecks.md` sections 7, 8, 9; `content/ready/articles/p1-challenges/p1-04_roi-reality-check-ai-unit-economics-and-the-moat-problem.md`; `content/notes/perosnal_growth_plan.md` production AI ideas.
 - Status: planned
 
 ## p4 Pillar 4: AI Security & Governance
@@ -220,7 +220,7 @@ Use this shape for each planned content entry:
   - Define practical controls: approved MCP/tools, role-based access, read/write separation, sensitive-action approvals, logging, sandboxing, eval gates, red-team prompts, and incident response.
   - Keep governance enabling rather than bureaucratic: clear defaults, fast exception paths, and reusable approved patterns.
   - Practical takeaway: an AI/MCP security review checklist and launch gate for internal workflows.
-- Source notes: `content/notes/bottlenecks.md` section 10; `content/notes/NOTES.md` security notes; `content/ready/articles/challenges/p1-03_trust-factor-when-is-ai-safe-enough-to-act.md`.
+- Source notes: `content/notes/bottlenecks.md` section 10; `content/notes/NOTES.md` security notes; `content/ready/articles/p1-challenges/p1-03_trust-factor-when-is-ai-safe-enough-to-act.md`.
 - Status: planned
 
 ## cc Challenged / Later Candidates
@@ -233,7 +233,7 @@ Use this shape for each planned content entry:
   - Treat external exposure as a maturity gate, not the default destination.
   - Require stronger evals, customer trust design, legal/security review, escalation paths, and rollback.
   - Decision point: promote to p3/p4 once the internal automation and trust-gate content is complete.
-- Source notes: `content/ready/articles/challenges/p1-03_trust-factor-when-is-ai-safe-enough-to-act.md`; `content/notes/articles_outline.md` Blueprint for Production-grade Customer-facing Agents; `content/notes/bottlenecks.md` sections 3, 7, 8, 10.
+- Source notes: `content/ready/articles/p1-challenges/p1-03_trust-factor-when-is-ai-safe-enough-to-act.md`; `content/notes/articles_outline.md` Blueprint for Production-grade Customer-facing Agents; `content/notes/bottlenecks.md` sections 3, 7, 8, 10.
 - Status: candidate
 
 ### cc-02 Advanced RAG and MCP Patterns

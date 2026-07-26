@@ -14,7 +14,7 @@
 
 ## Quick Checklist
 
-[ ] @content/ready/articles/challenges/p1-01_ai-adoption-starts-with-fear-safe-participation.md
+[ ] @content/ready/articles/p1-challenges/p1-01_ai-adoption-starts-with-fear-safe-participation.md
 	- add what if it's too late for the adoption compact or show-and-tells
 	- produce 2 versions of the adoption compact
 	- produce a self-assessment adoption worksheet (where we are, filling the gaps, and what to do next)
