@@ -17,4 +17,4 @@ Provide real-world signals to show credibility.
 - Value the reader time. Deliver points clearly and precisely.
 - Give examples when possible to validate the points.
 
-- Follow exsiting articles style and tone: @content/ready/articles/challenges/01_demo_workflow_product.md @content/ready/articles/challenges/02_trust_factor.md
+- Follow exsiting articles style and tone: @content/ready/articles/challenges/p1-02_demo-is-not-the-product-workflow-is-the-product.md @content/ready/articles/challenges/p1-03_trust-factor-when-is-ai-safe-enough-to-act.md
