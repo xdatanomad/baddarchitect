@@ -1,15 +1,3 @@
-# TODO
-- Suggest a better style of writing by re-writing the first two sections manually as a "good example":
-    - use less one-liners and more narrative flow
-    - use one-liners sparingly, only for emphasis a good point or a good place to break the flow for a pause
-- Use for of a personal voice:
-    - for example: this article is geared towards executives. The first section can be "we know your intention as an executive is not we will fire you by saying we want to be a AI-first company. But we also know that your employees are hearing a different message. You have to deliver the message effectively with your **actions**". Being **human** is the first step to being an AI-first company. Showing empathy and understanding for your employees' concerns is crucial - this happens only through your actions, not just your words.
-- Establish more thought leadership by providing examples - saying "we have seen this happen...":
-    - for example: in the section "The Wrong Leadership Move" could start with "We have seen this happen in multiple organizations where leaders, eager to showcase their commitment to AI, have inadvertently created an environment of fear and mistrust. "
-
----
-
-
 # AI Adoption Starts With Fear. Safe Participation Is the First Operating Model.
 
 **SEO title:** AI Adoption Starts With Fear. Safe Participation Is the First Operating Model.  
