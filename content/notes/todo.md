@@ -19,8 +19,15 @@
 	- produce 2 versions of the adoption compact
 	- produce a self-assessment adoption worksheet (where we are, filling the gaps, and what to do next)
 	- produce a first 30 days worksheet
-[ ] Build for Skills.
-	[ ] A Guide article style and tone
+
 [ ] Review @docs/architecture & @docs/principles.md
 [ ] A promotion strategy from @content/ready `.md` format to @website/src/content/articles `.mdx` format.
 [ ] Add daily automation for new articles and content.
+
+
+## Agent Skills
+
+[ ] Promotion strategy from:
+	- @content/drafts `.md` format to @content/ready `.md` format.
+	- @content/ready `.md` format to @website/src/content/articles `.mdx` format.
+[ ] A _Guide-specifc_ article style and tone
