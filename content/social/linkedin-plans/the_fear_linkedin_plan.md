@@ -1,6 +1,6 @@
 # LinkedIn Content Plan: AI Adoption Starts With Fear
 
-- Source article: `content/ready/articles/challenges/00.a_the_fear.md`
+- Source article: `content/ready/articles/p1-challenges/p1-01_ai-adoption-starts-with-fear-safe-participation.md`
 - Status: planned
 - Recommended cadence: Three short posts spaced 2-4 business days apart.
 

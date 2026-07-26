@@ -13,9 +13,21 @@
 ---
 
 ## Quick Checklist
-[ ] Build for Skills.
-	[ ] A Guide article style and tone
-[ ] Pillar #1: challenges @content-map is off.
+
+[ ] @content/ready/articles/p1-challenges/p1-01_ai-adoption-starts-with-fear-safe-participation.md
+	- add what if it's too late for the adoption compact or show-and-tells
+	- produce 2 versions of the adoption compact
+	- produce a self-assessment adoption worksheet (where we are, filling the gaps, and what to do next)
+	- produce a first 30 days worksheet
+
 [ ] Review @docs/architecture & @docs/principles.md
 [ ] A promotion strategy from @content/ready `.md` format to @website/src/content/articles `.mdx` format.
 [ ] Add daily automation for new articles and content.
+
+
+## Agent Skills
+
+[ ] Promotion strategy from:
+	- @content/drafts `.md` format to @content/ready `.md` format.
+	- @content/ready `.md` format to @website/src/content/articles `.mdx` format.
+[ ] A _Guide-specifc_ article style and tone
