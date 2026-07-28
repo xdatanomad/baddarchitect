@@ -24,6 +24,15 @@
 [ ] A promotion strategy from @content/ready `.md` format to @website/src/content/articles `.mdx` format.
 [ ] Add daily automation for new articles and content.
 
+## Website
+
+[ ] structure @website/src/content/articles and @website/src/content/lessons to match the @content/ready structure.
+[ ] add a new article to the website from @content/ready/articles/p1-challenges/ > @website/src/content/articles/p1-challenges/
+[ ] Nav menu re-design
+	- change topics to pillars (research first)
+	- keep lessons
+[ ] How to use the website main page to promote the adoption compact and show-and-tells.
+[ ] Placeholders for what to come
 
 ## Agent Skills
 
@@ -31,3 +40,5 @@
 	- @content/drafts `.md` format to @content/ready `.md` format.
 	- @content/ready `.md` format to @website/src/content/articles `.mdx` format.
 [ ] A _Guide-specifc_ article style and tone
+[ ] Adding **visuals** to articles and lessons
+[ ] Synchronizing @content to Notion for collaboration with co-authors and editors.
