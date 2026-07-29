@@ -28,9 +28,9 @@
 
 [X] ~~structure @website/src/content/articles and @website/src/content/lessons to match the @content/ready structure.~~
 [X] ~~add a new article to the website from @content/ready/articles/p1-challenges/ > @website/src/content/articles/p1-challenges/~~
-[ ] Nav menu re-design
-	- change topics to pillars (research first)
-	- keep lessons
+[X] ~~Nav menu re-design~~
+	- ~~change topics to pillars (research first)~~
+	- ~~keep lessons~~
 [ ] How to use the website main page to promote the adoption compact and show-and-tells.
 [ ] Placeholders for what to come
 [ ] Each pillar has lessons underneath it, move them to a single lessons page.
