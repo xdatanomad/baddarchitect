@@ -32,6 +32,9 @@
 	- ~~change topics to pillars (research first)~~
 	- ~~keep lessons~~
 [ ] How to use the website main page to promote the adoption compact and show-and-tells.
+	- I like the direction... 
+	- Maybe remove the old "who this if for"
+	- Make cards for the how to use this site
 [X] ~~Placeholders for what to come~~
 [ ] Each pillar has lessons underneath it, move them to a single lessons page.
 [ ] Quick revision of the /about page - include contact
