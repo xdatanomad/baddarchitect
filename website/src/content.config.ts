@@ -24,7 +24,7 @@ const baseContentSchema = z.object({
 });
 
 const articles = defineCollection({
-  loader: glob({ pattern: "**/*.mdx", base: "./src/content/articles" }),
+  loader: glob({ pattern: "p*/**/*.{md,mdx}", base: "./src/content" }),
   schema: baseContentSchema
 });
 

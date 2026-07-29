@@ -1,5 +1,11 @@
 import { getCollection } from "astro:content";
 
+const lessonFiles = import.meta.glob("../content/lessons/**/*.mdx");
+
+export function hasLessonFiles() {
+  return Object.keys(lessonFiles).length > 0;
+}
+
 export async function getPublishedArticles() {
   const articles = await getCollection("articles", ({ data }) => {
     return data.status === "published" && !data.draft;
@@ -11,6 +17,10 @@ export async function getPublishedArticles() {
 }
 
 export async function getPublishedLessons() {
+  if (!hasLessonFiles()) {
+    return [];
+  }
+
   const lessons = await getCollection("lessons", ({ data }) => {
     return data.status === "published" && !data.draft;
   });
