@@ -4,10 +4,7 @@ export const site = {
   description:
     "Practical AI adoption guidance for architects and leaders moving from experiments to governed, production-grade AI systems.",
   nav: [
-    { href: "/", label: "Home" },
-    { href: "/articles", label: "Articles" },
     { href: "/lessons", label: "Lessons" },
-    { href: "/topics", label: "Topics" },
     { href: "/about", label: "About" }
   ]
 } as const;

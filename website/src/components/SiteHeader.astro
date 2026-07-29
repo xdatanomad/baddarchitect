@@ -1,5 +1,5 @@
 ---
-import { site } from "@/lib/site";
+import { pillars, site } from "@/lib/site";
 ---
 
 <header class="site-header">
@@ -18,7 +18,20 @@ import { site } from "@/lib/site";
       </span>
     </a>
     <div class="links">
-      {site.nav.slice(1).map((item) => <a href={item.href}>{item.label}</a>)}
+      <details class="blueprint-menu">
+        <summary>Blueprint</summary>
+        <div class="blueprint-panel">
+          {
+            pillars.map((pillar) => (
+              <a class="pillar-link" href={`/topics/${pillar.slug}/`}>
+                <span>{pillar.title}</span>
+                <small>{pillar.description}</small>
+              </a>
+            ))
+          }
+        </div>
+      </details>
+      {site.nav.map((item) => <a href={item.href}>{item.label}</a>)}
     </div>
   </nav>
 </header>
@@ -102,13 +115,91 @@ import { site } from "@/lib/site";
     gap: 22px;
   }
 
-  .links a {
+  .links a,
+  summary {
     color: var(--ink);
+    cursor: pointer;
     text-decoration: none;
   }
 
-  .links a:hover {
+  .links a:hover,
+  summary:hover {
     color: var(--signal);
+  }
+
+  .blueprint-menu {
+    position: relative;
+  }
+
+  summary {
+    display: inline-flex;
+    gap: 6px;
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary::after {
+    border-bottom: 1.5px solid currentColor;
+    border-right: 1.5px solid currentColor;
+    content: "";
+    height: 6px;
+    margin-top: 0.42em;
+    transform: rotate(45deg);
+    transition: transform 140ms ease;
+    width: 6px;
+  }
+
+  .blueprint-menu[open] summary {
+    color: var(--accent-strong);
+  }
+
+  .blueprint-menu[open] summary::after {
+    margin-top: 0.62em;
+    transform: rotate(225deg);
+  }
+
+  .blueprint-panel {
+    background: rgba(255, 253, 248, 0.98);
+    border: 1px solid var(--line);
+    box-shadow: 0 18px 40px rgba(23, 23, 23, 0.12);
+    display: grid;
+    gap: 0;
+    min-width: min(420px, calc(100vw - 48px));
+    padding: 8px;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 16px);
+  }
+
+  .pillar-link {
+    border-bottom: 1px solid rgba(201, 192, 177, 0.72);
+    display: grid;
+    gap: 4px;
+    padding: 13px 14px;
+  }
+
+  .pillar-link:last-child {
+    border-bottom: 0;
+  }
+
+  .pillar-link:hover,
+  .pillar-link:focus-visible {
+    background: rgba(18, 106, 91, 0.08);
+    color: var(--accent-strong);
+  }
+
+  .pillar-link span {
+    font-weight: 800;
+  }
+
+  .pillar-link small {
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.35;
   }
 
   @media (max-width: 760px) {
@@ -121,8 +212,22 @@ import { site } from "@/lib/site";
     }
 
     .links {
+      align-items: flex-start;
       flex-wrap: wrap;
       gap: 14px 18px;
+      width: 100%;
+    }
+
+    .blueprint-menu {
+      width: 100%;
+    }
+
+    .blueprint-panel {
+      box-shadow: none;
+      margin-top: 10px;
+      min-width: 0;
+      position: static;
+      width: 100%;
     }
   }
 </style>
