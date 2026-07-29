@@ -32,7 +32,7 @@
 	- ~~change topics to pillars (research first)~~
 	- ~~keep lessons~~
 [ ] How to use the website main page to promote the adoption compact and show-and-tells.
-[ ] Placeholders for what to come
+[X] ~~Placeholders for what to come~~
 [ ] Each pillar has lessons underneath it, move them to a single lessons page.
 [ ] Quick revision of the /about page - include contact
 
