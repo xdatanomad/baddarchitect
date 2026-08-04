@@ -14,17 +14,17 @@ const rolePaths = [
     steps: [
       {
         label: "Start with fear and safe participation",
-        href: "/articles/ai-adoption-starts-with-fear-safe-participation/"
+        href: "/articles/ai-adoption-starts-with-fear-safe-participation/",
       },
       {
         label: "Move into the operating model",
-        href: "/topics/operating-manual/"
+        href: "/topics/operating-manual/",
       },
       {
         label: "Set governance and review gates",
-        href: "/topics/ai-security/"
-      }
-    ]
+        href: "/topics/ai-security/",
+      },
+    ],
   },
   {
     role: "For Architects",
@@ -33,17 +33,17 @@ const rolePaths = [
     steps: [
       {
         label: "Start with workflow, not demos",
-        href: "/articles/demo-is-not-the-product-workflow-is-the-product/"
+        href: "/articles/demo-is-not-the-product-workflow-is-the-product/",
       },
       {
         label: "Map the trust boundary",
-        href: "/articles/trust-factor-when-is-ai-safe-enough-to-act/"
+        href: "/articles/trust-factor-when-is-ai-safe-enough-to-act/",
       },
       {
         label: "Design the production blueprint",
-        href: "/topics/production-ai-systems/"
-      }
-    ]
+        href: "/topics/production-ai-systems/",
+      },
+    ],
   },
   {
     role: "For Engineers",
@@ -52,18 +52,18 @@ const rolePaths = [
     steps: [
       {
         label: "Understand the workflow product",
-        href: "/articles/demo-is-not-the-product-workflow-is-the-product/"
+        href: "/articles/demo-is-not-the-product-workflow-is-the-product/",
       },
       {
         label: "Build for evals, observability, and cost",
-        href: "/topics/production-ai-systems/"
+        href: "/topics/production-ai-systems/",
       },
       {
         label: "Treat permissions and tool access as architecture",
-        href: "/topics/ai-security/"
-      }
-    ]
-  }
+        href: "/topics/ai-security/",
+      },
+    ],
+  },
 ] as const;
 ---
 
@@ -71,10 +71,11 @@ const rolePaths = [
   <section class="hero shell">
     <div class="prose">
       <p class="eyebrow">Badd Architect</p>
-      <h1>A blueprint for building Production-grade AI Applications</h1>
+      <!-- <h1>A blueprint for building Production-grade AI Applications</h1> -->
+      <h1>Built for teams turning AI experiments into production systems.</h1>
       <p class="lede">
-        Practical guidance for architects and leaders moving from scattered AI
-        experiments to measurable, governed, production-grade systems.
+        A practical <b>blueprint</b> for architects and leaders moving from scattered
+        AI experiments to measurable, governed, production-grade systems.
       </p>
       <div class="button-row">
         <a class="button" href="/articles">Read the articles</a>
@@ -83,7 +84,11 @@ const rolePaths = [
     </div>
   </section>
 
-  <section class="positioning section shell" aria-labelledby="positioning-title">
+  <section
+    class="positioning section shell"
+    aria-labelledby="positioning-title"
+  >
+    <!-- 
     <div class="section-head">
       <p class="eyebrow">Who this is for</p>
       <h2 id="positioning-title">
@@ -91,9 +96,11 @@ const rolePaths = [
         systems.
       </h2>
     </div>
+    -->
     <div>
       <article>
-        <h3>Who this site is for</h3>
+        <!-- <h3>Who this site is for</h3> -->
+        <p class="eyebrow">Who this site is for</p>
         <p>
           For AI architects, CTOs, product leaders, AI practice leaders, and
           adoption teams who need to move beyond scattered experiments and make
@@ -101,23 +108,27 @@ const rolePaths = [
         </p>
       </article>
       <article>
-        <h3>What this site is</h3>
+        <!-- <h3>What this site is</h3> -->
+        <p class="eyebrow">What this site is</p>
         <p>
-          A set of strategic and architectural <b>guidelines</b> for AI adoption — <br/>
-          to <b>hands-on</b> tools, techniques, and code examples for building governed practical AI Applications.
-          <br/><br/>
-          This is <b>not</b> a prompt library, or tool hype channel. 
-          <br/><br/>
-          <b>Goal</b> is to offer a small-set of proven tools and patterns for building your Applications.
+          A set of strategic and architectural <b>guidelines</b> for AI adoption —
+          to <b>hands-on</b> tools, techniques, and code examples for building governed
+          practical AI applications.
         </p>
       </article>
     </div>
   </section>
 
-  <section class="reading-paths section shell" aria-labelledby="reading-paths-title">
+  <!--
+  <section
+    class="reading-paths section shell"
+    aria-labelledby="reading-paths-title"
+  >
     <div class="section-head">
       <p class="eyebrow">How to use this site</p>
-      <h2 id="reading-paths-title">Start with the pressure you are carrying.</h2>
+      <h2 id="reading-paths-title">
+        Start with the pressure you are carrying.
+      </h2>
       <p class="lede">
         Follow the pillars in order when you are shaping an adoption program.
         Jump by role when you need a practical path into a specific problem.
@@ -141,11 +152,19 @@ const rolePaths = [
       }
     </div>
   </section>
+  -->
 
   <section class="section shell">
     <div class="section-head">
       <p class="eyebrow">What this site covers</p>
-      <h2>Four practical pillars for serious adoption.</h2>
+      <h2>
+        Start with the pressure you are carrying. Four practical pillars for
+        AI adoption.
+      </h2>
+      <p class="lede">
+        Follow the pillars in order or jump into a pillar based on what you care
+        about.
+      </p>
     </div>
     <div class="stacked-card-list">
       {pillars.map((pillar) => <TopicCard topic={pillar} variant="stacked" />)}
