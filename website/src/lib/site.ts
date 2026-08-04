@@ -14,25 +14,25 @@ export const pillars = [
     title: "AI Adoption Stages & Challenges",
     slug: "adoption-stages",
     description:
-      "How teams move from fear and demos to trustworthy, measurable production workflows."
+      "A practical field guide to the first adoption blockers: fear, demos without workflows, unsafe trust assumptions, and weak ROI logic. Start here for hints toward remedies and ways to avoid common pitfalls."
   },
   {
     title: "AI Adoption Operating Manual",
     slug: "operating-manual",
     description:
-      "Operating models, roles, governance, and decision habits for serious AI adoption."
+      "An operating manual for moving from individual AI use to governed company capability. For leaders and architects shaping participation, workflow selection, team structure, and internal automation."
   },
   {
     title: "Production AI Engineering Blueprint",
     slug: "production-ai-systems",
     description:
-      "Design patterns, reference architectures, and implementation guides for production AI systems, agents, internal automation, evals, observability, and ROI."
+      "A builder's blueprint for turning AI workflows into durable internal systems. For architects and engineers designing context, evals, observability, tool boundaries, and cost controls."
   },
   {
     title: "AI Security & Governance",
     slug: "ai-security",
     description:
-      "Security reviews, governance gates, permission boundaries, audit trails, and controls for AI systems and agent tools."
+      "Security and governance patterns that let teams move faster without losing control. For architects and security leaders setting practical boundaries around data, tools, permissions, review gates, and auditability."
   }
 ] as const;
 
