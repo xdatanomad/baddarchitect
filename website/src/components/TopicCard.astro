@@ -1,13 +1,25 @@
 ---
 const { topic, variant = "default" } = Astro.props;
 const className = variant === "stacked" ? "topic-card topic-card--stacked" : "topic-card";
+const personas: string[] = topic.personas ?? [];
 ---
 
 <a class={className} href={`/topics/${topic.slug}/`}>
-  <span class="eyebrow">Pillar</span>
-  <div>
+  <div class="topic-meta">
+    <span class="eyebrow">Pillar</span>
+  </div>
+  <div class="topic-body">
     <h2>{topic.title}</h2>
     <p>{topic.description}</p>
+    {
+      personas.length > 0 && (
+        <ul class="persona-list" aria-label={`Primary personas for ${topic.title}`}>
+          {personas.map((persona) => (
+            <li>{persona}</li>
+          ))}
+        </ul>
+      )
+    }
   </div>
 </a>
 
@@ -35,6 +47,31 @@ const className = variant === "stacked" ? "topic-card topic-card--stacked" : "to
     grid-template-columns: minmax(96px, 0.16fr) minmax(0, 1fr);
     min-height: 0;
     padding: 24px;
+  }
+
+  .topic-meta {
+    display: grid;
+    justify-items: start;
+  }
+
+  .persona-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    margin: 26px 0 0;
+    padding: 0;
+  }
+
+  .persona-list li {
+    background: var(--ink);
+    border: 1px solid var(--ink);
+    color: var(--surface);
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    font-weight: 400;
+    line-height: 1;
+    padding: 7px 9px;
   }
 
   h2 {
@@ -66,6 +103,10 @@ const className = variant === "stacked" ? "topic-card topic-card--stacked" : "to
 
     .topic-card--stacked h2 {
       margin-top: 16px;
+    }
+
+    .persona-list {
+      margin-top: 22px;
     }
   }
 </style>
