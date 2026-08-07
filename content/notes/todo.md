@@ -31,7 +31,7 @@
 [X] ~~Nav menu re-design~~
 	- ~~change topics to pillars (research first)~~
 	- ~~keep lessons~~
-[ ] How to use the website main page to promote the adoption compact and show-and-tells.
+[X] ~~How to use the website main page to promote the adoption compact and show-and-tells.~~
 	- I like the direction... 
 	- Maybe remove the old "who this if for"
 	- Make cards for the how to use this site
