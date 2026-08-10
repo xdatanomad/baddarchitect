@@ -67,8 +67,45 @@ We can address the concern of introducing security or governanace in late-stages
 
 I fully agree, let's avoid not becoming a generic prompt-engineering or prompt-and-tool tutorial site. There are many sites like this. But we can teach strong techniques. 
 
-Yes, I also favor the second, let's focus the primary reader on **a leader/architect helping people progress through these stages WITH  individual guidance as the entry point or initial stages.** 
+Yes, I also favor the second, let's focus the primary reader on a leader/architect helping people progress through these stages WITH  individual guidance as the entry point or initial stages. 
 
 
 ## Ask
 
+---
+
+2026.08.10 WIP - step-by-step, docs first
+
+I do agree on everything. I won't go into too much detail, just to say that I agree with everything.
+
+I DO AGREE with EVERYTHING you suggested here.
+
+Some quick appraisals...
+
+You are right, let's call this "stages" — much clearer than pillars. 
+I do very much like the modified stages names you suggested. Aligns very well with the journey individuals and teams go through which would server a purpose for both individuals and teams audiences of our site. 
+I do very much also like the table with the definition of what we teach and what changes at each step. Very good outline of what we teach in each section. Creates the boudaries and an outline for each step.
+You are right. Let's also introduce the idea of how much authority the AI has and mature it with the stages. 
+
+**## Thoughts**
+
+We can address the concern of introducing security or governanace in late-stages by having them as more cross-cutting lessons that we address at each stage. Each stages introduces some ascpets of these concepts at the appropriate level for that stage. 
+
+I fully agree, let's avoid not becoming a generic prompt-engineering or prompt-and-tool tutorial site. There are many sites like this. But we can teach strong techniques. 
+
+Yes, I also favor the second, let's focus the primary reader on a leader/architect helping people progress through these stages WITH  individual guidance as the entry point or initial stages. 
+
+I am thinking each Stage will have 3-5 main articles below it. These will be high-level thoughts and points that we like to teach — each focusing on a single point, thought, best practice, or our unique design. Each article could also have sub articles or guides. These sub-guides would go into detail technical implemetation details and act as practical guides. Almost exercises with opinionated tools, techniques, and stacks. These guides can be shared or linked across different artciles at different stages if needed, act as more cross cutting. 
+
+**## Ask**
+
+This is a major refactor of the project. 
+
+Let's approach it step-by-step. As the first step, let's redefine the project [docs](/Users/clarus/work/lab/baddarchitect-notes/docs/) and root-level README and AGENTS. 
+Replace the old pillars with the stages defined above.
+ONLY introduce the stages at a high level for now and modify the files to reflect the new design. 
+We will next, one-by-one, define a new and detailed [content-map.md](/Users/clarus/work/lab/baddarchitect-notes/docs/content-map.md) outline for each stage articles. 
+
+Do NOT modify at the [website](/Users/clarus/work/lab/baddarchitect-notes/website/) at this point. We will do this later. 
+
+PLAN -- ASK ME ANYTHING
