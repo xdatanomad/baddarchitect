@@ -84,12 +84,12 @@ Some quick appraisals...
 
 You are right, let's call this "stages" — much clearer than pillars. 
 I do VERY MUCH like the modified stages names you suggested. Aligns very well with the journey individuals and teams go through which would server a purpose for both individuals and teams audiences of our site. 
-I do very much also like the table with the definition of what we teach and what changes at each step. Very good outline of what we teach in each section. Creates the boudaries and an outline for each step.
+I do very much also like the table with the definition of what we teach and what changes at each step. Very good outline of what we teach in each section. Creates the boundaries and an outline for each step.
 You are right. Let's also introduce the idea of how much authority the AI has and mature it with the stages. 
 
 **## Thoughts**
 
-We can address the concern of introducing security or governanace in late-stages by having them as more cross-cutting lessons that we address at each stage. Each stages introduces some ascpets of these concepts at the appropriate level for that stage. 
+We can address the concern of introducing security or governance in late-stages by having them as more cross-cutting lessons that we address at each stage. Each stages introduces some aspects of these concepts at the appropriate level for that stage. 
 
 I fully agree, let's avoid not becoming a generic prompt-engineering or prompt-and-tool tutorial site. There are many sites like this. But we can teach strong techniques. 
 
@@ -97,11 +97,11 @@ Yes, I also favor the second, let's focus the primary reader on a leader/archite
 
 I am thinking each Stage will have 3-5 main articles. These will be a series of field notes that mature naturally with the AI adoption narrative through the stages— each focusing on a single point, thought, best practice, or our unique design. 
 
-There will also be much more in-depth technical artciles. These guides would go into detail technical implemetation details and act as practical guides. They act as the detailed how-to-guides to drill-down into a point introduced in the main articles above. Almost exercises with opinionated tools, techniques, and stacks. The main articles instead of going into too much detail, will link to these articles. They can link into multiple guides. These guides can be shared or linked across different artciles at different stages if needed, act as more cross cutting. 
+There will also be much more in-depth technical articles. These guides would go into detail technical implementation details and act as practical guides. They act as the detailed how-to-guides to drill-down into a point introduced in the main articles above. Almost exercises with opinionated tools, techniques, and stacks. The main articles instead of going into too much detail, will link to these articles. They can link into multiple guides. These guides can be shared or linked across different articles at different stages if needed, act as more cross cutting. 
 
 I think a layered library instead: each stage has a concise orientation page; most field notes and articles are concise and answer one decision or practice; deeper implementation guides can be longer when a task genuinely needs depth. Every guide has one primary stage for its narrative home, plus “applies at” stages for discovery—so a guide is cross-listed rather than copied. The current schema cannot express that yet, but the refactor can add it cleanly. Article URLs themselves are stage-independent, so existing published URLs can remain stable. I would not create a rigid parent → sub-article tree.
 
-Existing published work is concentrated in the first pillar. We are completely replacing existing work. But we can archive them somewhere safe and use them in the future as research. Not yet, but as for the published artcles on the website, they'll be moved to an unlisted URL.
+Existing published work is concentrated in the first pillar. We are completely replacing existing work. But we can archive them somewhere safe and use them in the future as research. Not yet, but as for the published articles on the website, they'll be moved to an unlisted URL.
 
 **## Ask**
 
@@ -116,7 +116,7 @@ Let's only introduce the stages outline for now. We will next, one-by-one create
 Do NOT modify at the [website](website/) at this point. We will do this later. 
 
 Let's carefully plan this refactor. 
-Let's work itteratively together. Challenge any requirements or assumptions where needed and suggest alternative approach or ideas. 
+Let's work iteratively together. Challenge any requirements or assumptions where needed and suggest alternative approach or ideas. 
 Ask me any questions needed.
 
 ---
