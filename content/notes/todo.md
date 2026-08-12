@@ -33,6 +33,16 @@
 [ ] Each pillar has lessons underneath it, move them to a single lessons page.
 [ ] Quick revision of the /about page - include contact
 
+## Articles Embellishments
+
+[-] Skill to make a comic book illustration explaining the main point of the article in the art style of Spawn.
+[-] Skill **visuals** to articles and lessons
+[-] Add visual **gauges** to articles and guides on the AI adoption maturity, target audience, and other relevant metrics.
+[-] Each article should walkaway with an **Agent Skill** that can be applied to the reader's own work.
+[-] Add **links** and **resources** to articles and lessons
+[-] Add **examples** and **exercises** to articles and lessons
+
+
 ## Agent Skills
 
 [ ] Promotion strategy from:
