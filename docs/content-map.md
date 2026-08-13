@@ -27,7 +27,44 @@ Use this shape for each planned content entry:
 - Status: planned | candidate | challenged
 ```
 
-## p1 Pillar 1: AI Adoption Stages & Challenges
+## Foundation: Safe Participation
+
+The canonical foundation and stage definitions live in adoption-stages.md.
+Detailed content mapping is intentionally deferred to the next planning step.
+
+## Stage 1: Personal Leverage
+
+Field-note and guide assignments will be defined during the article-by-article
+migration.
+
+## Stage 2: Shared Team Practice
+
+Field-note and guide assignments will be defined during the article-by-article
+migration.
+
+## Stage 3: Managed Workflows
+
+Field-note and guide assignments will be defined during the article-by-article
+migration.
+
+## Stage 4: Governed Organizational Capability
+
+Field-note and guide assignments will be defined during the article-by-article
+migration.
+
+
+---
+
+
+## Legacy Article Map — Pending Stage Migration
+
+The entries below were planned under the former pillar model. Their IDs,
+reader/jobs, outlines, source notes, status, and future stage assignments are
+intentionally preserved until the next planning step. These entries will be 
+ONLY used for reference and backlog until they are migrated to the new stage model
+where they will be archived.
+
+### p1 Pillar 1: AI Adoption Stages & Challenges
 
 ### p1-01 AI Adoption Starts With Fear. Safe Participation Is the First Operating Model.
 
@@ -85,7 +122,7 @@ Use this shape for each planned content entry:
 - Source notes: `content/notes/bottlenecks.md` sections 5, 9, 12; `content/notes/articles_outline.md` ROI/unit economics, Giants Would Fall, Software Anarchy.
 - Status: planned
 
-## p2 Pillar 2: AI Adoption Operating Manual
+### p2 Pillar 2: AI Adoption Operating Manual
 
 ### p2-01 From Experimentation to an AI-native Operating Model
 
@@ -159,7 +196,7 @@ Use this shape for each planned content entry:
 - Source notes: `content/notes/bottlenecks.md` sections 6-10 and maturity ladder; `content/ready/articles/p1-challenges/p1-02_demo-is-not-the-product-workflow-is-the-product.md`; `content/notes/NOTES.md` internal development operating system notes.
 - Status: planned
 
-## p3 Pillar 3: Production AI Engineering Blueprint
+### p3 Pillar 3: Production AI Engineering Blueprint
 
 ### p3-01 AI Acceleration Team Starter Kit
 
@@ -209,7 +246,7 @@ Use this shape for each planned content entry:
 - Source notes: `content/notes/bottlenecks.md` sections 7, 8, 9; `content/ready/articles/p1-challenges/p1-04_roi-reality-check-ai-unit-economics-and-the-moat-problem.md`; `content/notes/perosnal_growth_plan.md` production AI ideas.
 - Status: planned
 
-## p4 Pillar 4: AI Security & Governance
+### p4 Pillar 4: AI Security & Governance
 
 ### p4-01 Minimum Viable AI Governance and Security Review
 
@@ -223,7 +260,7 @@ Use this shape for each planned content entry:
 - Source notes: `content/notes/bottlenecks.md` section 10; `content/notes/NOTES.md` security notes; `content/ready/articles/p1-challenges/p1-03_trust-factor-when-is-ai-safe-enough-to-act.md`.
 - Status: planned
 
-## cc Challenged / Later Candidates
+### cc Challenged / Later Candidates
 
 ### cc-01 Customer-Facing Agentic Applications
 

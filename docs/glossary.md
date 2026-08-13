@@ -8,9 +8,62 @@ The project and website: a practical blueprint for AI architects and leaders mov
 
 A forward-deployed enablement group that raises AI adoption quality, creates reusable standards, supports teams, and turns local wins into shared company capability.
 
-## Content Pillars
+## Adoption Stages
 
-The four top-level editorial areas: AI Adoption Stages & Challenges, AI Adoption Operating Manual, Production AI Engineering Blueprint, and AI Security & Governance.
+The stage-led model that describes how a person, team, or workflow can progress
+from safe experimentation to governed organizational capability. It is a guide
+to the next bottleneck, not a company-wide maturity score.
+
+## Foundation: Safe Participation
+
+The prerequisite for adoption: clear permission to learn and experiment, usable
+boundaries for data and tools, verification habits, and a way to raise concerns
+without being punished or ignored.
+
+## Personal Leverage
+
+Stage 1. An individual uses AI manually to improve their own work while
+retaining responsibility for decisions and actions.
+
+## Shared Team Practice
+
+Stage 2. A team shares repeatable skills, approved tools, and semi-structured
+workflows, then identifies the work that deserves greater investment.
+
+## Managed Workflows
+
+Stage 3. A team deliberately operates a bounded AI-enabled workflow with a
+named owner, review design, quality checks, failure handling, and a measurable
+outcome.
+
+## Governed Organizational Capability
+
+Stage 4. An organization makes trusted AI practices and services reusable
+across teams through an operating model, governed context and integrations,
+proportional controls, and portfolio-level accountability.
+
+## Authority Continuum
+
+The separate exposure axis used to decide what an AI workflow may do:
+Advisory, Human-approved, Bounded action, or Delegated action. Higher authority
+is not inherently better; the appropriate level depends on risk, reversibility,
+and business value.
+
+## Stage Orientation
+
+A concise page that helps readers locate a stage, understand its current
+bottleneck, and choose the next useful investment.
+
+## Field Note
+
+A concise article that addresses one decision, practice, or perspective in the
+adoption journey. Each future field note has one primary narrative stage.
+
+## Implementation Guide
+
+A deeper, practical how-to article for a technical task that warrants detail.
+Guides may use opinionated tools, techniques, and stacks. A future guide has
+one primary stage and may be cross-listed for the stages where it applies.
 
 ## Editorial Workspace
 

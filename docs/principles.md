@@ -6,6 +6,16 @@
 - Avoid hype, inflated claims, and broad unsupported AI predictions.
 - Separate opinion, experience, and cited external claims.
 - Give readers a usable takeaway: a checklist, decision rule, example, blueprint, or exercise.
+- Write primarily for leaders and architects who are enabling people and teams;
+  make individual guidance a practical entry point.
+- Use the adoption stages to frame the reader's next bottleneck, not to assign a
+  company-wide maturity grade.
+- Introduce safety, trust, quality, permissions, ownership, observability, ROI,
+  and operating-model concerns at the depth appropriate to the stage.
+- Do not present autonomy as the inevitable end state. Match AI authority to
+  risk, reversibility, and the value of the workflow.
+- Keep field notes focused on one decision or practice. Reserve opinionated
+  tool, technique, and stack detail for implementation guides that need it.
 
 ## Website
 

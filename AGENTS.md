@@ -29,15 +29,25 @@ Use a direct, candid, professional, and humble voice. Avoid hype, inflated claim
 - Proposed changes to milestones, strategy, site architecture, or skill inventory should be written after user approval.
 - If moving content, preserve the original text in an organized location and leave a clear pointer from the old location when practical.
 
-## Main Project Pillars
+## Adoption Model
 
-READ `docs/vision.md`.
+READ docs/vision.md and docs/adoption-stages.md before changing project
+strategy, content structure, or the future website taxonomy.
 
-**IMPORTANT:** The content will be divided into the following pillars, which will also be reflected in the website structure:
-1. AI Adoption Stages & Challenges.
-2. AI Adoption Operating Manual.
-3. Production AI Engineering Blueprint.
-4. AI Security & Governance.
+**IMPORTANT:** The project uses a stage-led adoption model:
+
+- Foundation: Safe Participation.
+- Stage 1: Personal Leverage.
+- Stage 2: Shared Team Practice.
+- Stage 3: Managed Workflows.
+- Stage 4: Governed Organizational Capability.
+
+The primary reader is a leader or architect helping people progress through
+the stages. Individual guidance is the entry point, not a shift into generic
+prompt or tool-list content. Treat maturity as specific to a workflow or team,
+not as a company-wide grade. Teach safety, trust, quality, permissions,
+ownership, observability, ROI, and operating model at the depth appropriate to
+each stage.
 
 ## Current Content Map
 
@@ -54,8 +64,10 @@ READ `docs/vision.md`.
 ## Suggested Working Flow
 
 1. Read this file.
-2. Read `docs/vision.md`.
-3. Read only the source notes relevant to the task under `docs/`, `content/notes/`, `content/ready/`, `research/`, or `website/`.
+2. Read docs/vision.md and, for strategy or content work,
+   docs/adoption-stages.md.
+3. Read only the source notes relevant to the task under docs/, content/notes/,
+   content/ready/, research/, or website/.
 5. Preserve source material and separate raw notes from publishable content.
 6. Add citations for factual claims that depend on external research.
 7. Keep content concise and actionable.

@@ -22,14 +22,21 @@ The website is a static-first Astro app under `website/`. The broader repository
 - `research/` - evidence, learning notes, market maps, and source tracking.
 - `website/` - deployable Astro website and live MDX content.
 
-## Project Pillars
+## Adoption Model
 
-READ `docs/vision.md` for the project brief and core pillars.
+READ docs/vision.md and docs/adoption-stages.md for the project brief and
+canonical adoption model.
 
-1. AI Adoption Stages & Challenges.
-2. AI Adoption Operating Manual.
-3. Production AI Engineering Blueprint.
-4. AI Security & Governance.
+- Foundation: Safe Participation.
+- Stage 1: Personal Leverage.
+- Stage 2: Shared Team Practice.
+- Stage 3: Managed Workflows.
+- Stage 4: Governed Organizational Capability.
+
+The site is written primarily for leaders and architects helping people
+progress through this journey. Individual guidance is the accessible entry
+point; safety, quality, permissions, ownership, and ROI stay cross-cutting
+concerns rather than late-stage topics.
 
 ## Milestones
 
