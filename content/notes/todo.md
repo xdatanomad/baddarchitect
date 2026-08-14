@@ -16,8 +16,12 @@
 
 [ ] Review @content/drafts/articles/foundation-safe-participation.md
 
-[ ] A promotion strategy from @content/ready `.md` format to @website/src/content/articles `.mdx` format.
+[ ] session: 
+	- "what is the best prompt for the first stage"
+	- OR "what is the best direction of the first stage"
 
+
+[ ] A promotion strategy from @content/ready `.md` format to @website/src/content/articles `.mdx` format.
 [ ] Add daily automation for new articles and content.
 
 ## Website
