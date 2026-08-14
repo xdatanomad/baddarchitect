@@ -34,23 +34,19 @@ Detailed content mapping is intentionally deferred to the next planning step.
 
 ## Stage 1: Personal Leverage
 
-Field-note and guide assignments will be defined during the article-by-article
-migration.
+Field-note and guide assignments will be defined article-by-article.
 
 ## Stage 2: Shared Team Practice
 
-Field-note and guide assignments will be defined during the article-by-article
-migration.
+Field-note and guide assignments will be defined article-by-article.
 
 ## Stage 3: Managed Workflows
 
-Field-note and guide assignments will be defined during the article-by-article
-migration.
+Field-note and guide assignments will be defined article-by-article.
 
 ## Stage 4: Governed Organizational Capability
 
-Field-note and guide assignments will be defined during the article-by-article
-migration.
+Field-note and guide assignments will be defined article-by-article.
 
 
 ---
