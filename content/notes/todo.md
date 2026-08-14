@@ -14,22 +14,14 @@
 
 ## Quick Checklist
 
-[ ] split from refactor-01
+[ ] Review @content/drafts/articles/foundation-safe-participation.md
+
 [ ] A promotion strategy from @content/ready `.md` format to @website/src/content/articles `.mdx` format.
+
 [ ] Add daily automation for new articles and content.
 
 ## Website
 
-[X] ~~structure @website/src/content/articles and @website/src/content/lessons to match the @content/ready structure.~~
-[X] ~~add a new article to the website from @content/ready/articles/p1-challenges/ > @website/src/content/articles/p1-challenges/~~
-[X] ~~Nav menu re-design~~
-	- ~~change topics to pillars (research first)~~
-	- ~~keep lessons~~
-[X] ~~How to use the website main page to promote the adoption compact and show-and-tells.~~
-	- I like the direction... 
-	- Maybe remove the old "who this if for"
-	- Make cards for the how to use this site
-[X] ~~Placeholders for what to come~~
 [ ] Each pillar has lessons underneath it, move them to a single lessons page.
 [ ] Quick revision of the /about page - include contact
 
