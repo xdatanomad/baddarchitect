@@ -16,6 +16,9 @@
 
 [ ] Review @content/drafts/articles/foundation-safe-participation.md
 
+[ ] Resume session "Define stage 2 practice sharing"
+	- good three concepts.
+
 [ ] session: 
 	- "what is the best prompt for the first stage"
 	- OR "what is the best direction of the first stage"
