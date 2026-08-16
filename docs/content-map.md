@@ -27,7 +27,139 @@ Use this shape for each planned content entry:
 - Status: planned | candidate | challenged
 ```
 
-## p1 Pillar 1: AI Adoption Stages & Challenges
+## Foundation: Safe Participation
+
+The canonical foundation and stage definitions live in adoption-stages.md.
+Detailed content mapping is intentionally deferred to the next planning step.
+
+## Stage 1: Personal Leverage
+
+Field-note and guide assignments will be defined article-by-article.
+
+## Stage 2: Shared Team Practice
+
+### A Shared Practice Is Not a Shared Prompt
+
+- Reader/job: Team leads, architects, managers, and experienced practitioners who need to turn useful individual AI methods into practices colleagues can reuse without exposing private methods, copying unsafe assumptions, or creating a permanent dependence on the most AI-fluent people.
+- Goal: Help a team make a responsible reuse promise: share enough task context, boundaries, verification, and ownership for a colleague to use a practice safely, while respecting that people may reasonably retain private prompts, methods, and competitive advantage.
+- Core argument: A shared prompt shares text. A shared practice shares the conditions that make a useful result repeatable and safe. If a method depends on one person’s private chat history, unstated judgment, or willingness to help, it is not yet a team practice.
+- Detailed outline:
+  - Open with the hidden-context problem: five people can claim to use the same AI workflow while using different tools, context, proprietary data, verification standards, and definitions of quality. The strongest practitioner becomes the informal help desk, while others either copy fragments unsafely or do not participate.
+  - Make the distinction explicit: a prompt library is insufficient. It does not reveal when a practice applies, which information is safe, what a good result looks like, who verifies it, or what happens when it fails. Do not ask people to expose their personal prompt history or hard-won private method merely to prove participation.
+  - Introduce the **Team Practice Card** as a deliberately shared, reusable team artifact rather than a policy document or a production runbook. It may live as a physical wall card or a simple digital-board card so the team can see, discuss, and improve the practice in its normal work.
+  - Define the Team Practice Card canvas. Each card should make visible:
+    - the recurring team task, intended user, expected outcome, when the practice applies, and when it does not;
+    - the approved tool, skill, or integration and the version or configuration being relied on;
+    - the context and data class required, including what must not be entered or shared;
+    - a reproducible method at the level needed for responsible reuse—without requiring the contributor to disclose every private prompt or method;
+    - one or two approved examples, the required human verification, known failure modes, and an explicit boundary on consequential actions;
+    - the current status, such as draft, team trial, shared practice, changed, or retired;
+    - a steward, version, update/review point, and links to supporting material where useful.
+  - Explain that the creator may be the steward, but is not required to be. Encourage colleagues with different perspectives—such as an AI-forward practitioner, a skeptical or quality-minded peer, and the responsible manager—to contribute to the card when useful. At this stage, this is collaboration rather than a formal sign-off gate.
+  - Explain why those perspectives matter: the team can see that a useful method was not imposed by enthusiasts, blocked by skeptics, or blessed by management without practical testing. This distributes ownership, gives people a trusted reason to consult one another, and turns objections into improvements.
+  - Briefly introduce a **Practice Seed** as an optional, low-friction landing space for an unfinished idea that needs help to become shareable. A seed may state the task, possible value, known boundary, and question for the team; it is not a second workflow, a mandatory prompt submission, or a promise to produce a full card. Keep the article’s emphasis on the Team Practice Card.
+  - Close with a clear boundary: creating the card does not prove that the practice is consistent, safe to scale, or ready for automation. The next article’s calibration loop tests it; the later promotion gate decides whether it deserves managed-workflow investment.
+- Practical takeaway: A **Team Practice Card canvas** that teams can place on a wall or digital board. The card’s visible fields—task and expected outcome, use and non-use boundary, tool, context and data boundary, method, examples, verification, known failures, status, steward, version, and review point—make the practice tangible and invite responsible reuse.
+- Decision rule: A method becomes a shared team practice only when a colleague can understand when to use it, use approved inputs and tools, verify the result, recognize known limits, and find a named person responsible for keeping the card current. Otherwise it remains personal leverage or a Practice Seed.
+- Source notes: `docs/adoption-stages.md` Stage 1 signals and Stage 2 situation, challenges, teaching points, and transition signal; `docs/roadmap.md` Stage 2 milestone and carry-forward commitments; `docs/principles.md` editorial and adoption-stage principles; prior Foundation discussion on optional problem-led learning and privacy of personal methods.
+- Additional notes: Do not impose a formal signature gate on a low-risk Team Practice Card. The third article’s promotion gate will introduce the stronger, multi-person confidence and sign-off requirement for practices seeking greater investment or exposure.
+- Status: planned
+
+### Calibrate Shared Work Before Scaling It
+
+- Reader/job: Team leads, practitioners, architects, and managers deciding whether a Team Practice Card is reliable enough for colleagues to reuse, and whether its current authority and data boundary remain appropriate.
+- Goal: Give teams a low-friction, psychologically safe way to test a shared practice on representative work, compare outcomes and verification burden, learn from failures, and set a proportionate use boundary before the practice spreads.
+- Core argument: A practice that worked once for its creator is an anecdote. A practice that another person can use on representative work, with approved context and visible limits, is beginning to earn team trust. Calibration is how the team makes that distinction without building a formal evaluation platform.
+- Detailed outline:
+  - Open with the false sense of safety created by a completed Team Practice Card. The card may be clear, but its author still carries hidden judgment about context, quality, tool behavior, and exceptions. Reuse exposes the gap between a documented method and a dependable shared practice.
+  - Define **team calibration** as a small, repeatable learning loop, not a public performance contest, a generic show-and-tell, a technical benchmark, or an advanced production-evaluation suite. Its purpose is to improve the practice and its boundary—not to rank people, prove that AI is always useful, or identify low performers.
+  - Establish the trust conditions for the loop: participants use only approved tools and appropriate test material; findings are attached to the practice, not used to judge the contributor; contributors need not disclose private prompt history; and a failed result is useful evidence, not embarrassment.
+  - Position the calibration clinic as a **designed space for knowledge transfer**. It gives the team a recurring, optional place to bring a shared practice, learn the reasoning behind its boundaries, compare real outcomes, and preserve what was learned on the two cards. The aim is not to force people to disclose private methods; it is to make the deliberately shared practice less dependent on memory, informal chat, or access to one AI-forward colleague.
+  - Introduce a **Team Calibration Card** as the companion canvas to the Team Practice Card. It can be a physical card placed beside the practice or a linked digital-board card. It records:
+    - the Team Practice Card and version being tested, its intended task, and its current use boundary;
+    - two to five representative, approved cases: a normal case, a common variation, and where relevant an ambiguous or edge case;
+    - the minimum acceptable outcome and review questions before the test begins, including what a human must verify;
+    - the people taking part and their perspectives, such as a task practitioner, an AI-forward colleague, and a skeptical or quality-minded peer; the creator may participate but should not need to coach every attempt;
+    - observed output quality, correction or rework required, missing context, tool/integration behavior, and any data or permission concern;
+    - the updated known-failure list, changes required to the Team Practice Card, and the decision reached.
+  - Walk through a lightweight calibration clinic:
+    1. Choose one Team Practice Card in team-trial status and state the specific claim being tested, such as “a teammate can draft a complete internal brief from an approved source pack and verify it in ten minutes.”
+    2. Agree the small case set and the minimum acceptable outcome. Use representative work, but sanitize, mask, or replace sensitive content when the practice does not have permission to use it.
+    3. Have a colleague use the card with the approved tool and context. The creator may clarify the documented card, but should not supply hidden steps that a future user would not have.
+    4. Compare the outcome and the human effort required. Ask where the practice helped, where it created cleanup, where it failed, and whether the reviewer could recognize the failure before it mattered.
+    5. Update the practice, narrow its scope, add examples or warnings, or stop using it. Capture the decision on the Calibration Card rather than relying on meeting memory.
+  - Introduce proportionate **use boundaries** as the calibration decision:
+    - **Everyday assistance:** a person uses an approved practice for advisory drafting, analysis, or learning and verifies the result.
+    - **Human-approved shared work:** AI prepares a shared or consequential result, but a named person reviews and authorizes it before use.
+    - **Needs formal design:** the practice touches sensitive/proprietary context beyond the agreed boundary, systems of record, recurring automation, or has material failure cost. It should not spread informally; it becomes a candidate for the promotion gate.
+  - Make clear that a boundary is not a quality score. A practice may be useful and still stay at everyday assistance indefinitely. Higher authority is not the prize; the smallest safe authority is usually the right choice.
+  - Explain how calibration prevents the AI-forward help-desk problem. The visible cards and repeatable clinic create a deliberate path for knowledge transfer: understanding moves from one person’s memory to a team asset, and each session leaves the next colleague a clearer starting point. The skeptical colleague has a defined constructive role: pressure-test the conditions, not veto progress.
+  - Close with the next boundary: calibration can show that a practice is reusable, limited, or not worth keeping. Only a small subset should proceed to Article 3’s promotion gate; a good calibration result is not automatic approval for investment, integration, or automation.
+- Practical takeaway: A **Team Calibration Card** that teams can display beside the Team Practice Card. Used in an optional, recurring calibration clinic, it records the practice version, representative cases, quality bar, participant perspectives, verification/rework findings, failure patterns, revised use boundary, and decision: revise, share with limits, stop, or consider for promotion. Together, the cards preserve the team’s deliberately shared knowledge between sessions.
+- Decision rule: Do not call a method a reusable team practice until someone other than its creator can apply the documented card to representative approved work, identify its limits, and complete the required human verification. If the task needs hidden expertise, prohibited data, unbounded permissions, or disproportionate cleanup, revise or narrow the practice instead of scaling it.
+- Source notes: `docs/adoption-stages.md` Stage 2 situation, challenges, teaching points, authority continuum, and transition signal; `docs/roadmap.md` Stage 2 milestone and cross-cutting control commitments; `docs/principles.md` principles on trust, quality, permissions, ownership, and proportionate authority; prior Foundation and Stage 2 discussions on optional learning, privacy of personal methods, and informed skepticism.
+- Additional notes: Participation in a clinic is voluntary and learning-oriented, but some proportionate calibration is required before a practice is labelled as a shared team default. Keep the process small enough for a team; production evaluation suites, monitoring, and formal operational controls belong primarily to Stage 3.
+- Status: planned
+
+### Create a Promotion Gate: Which Shared Practices Deserve Investment?
+
+- Reader/job: Team leads, managers, architects, and practitioners deciding which calibrated team practices should remain useful shared assistance, which should be retired, and which are sufficiently valuable and bounded to justify managed-workflow design.
+- Goal: Help a team turn a noisy collection of AI ideas and successful local practices into a small, trusted set of workflow candidates with a named owner, a measurable intended outcome, known exposure, and an explicit decision to invest—or not.
+- Core argument: A calibrated Team Practice Card is not a mandate to automate. The team’s job is not to collect the largest possible AI opportunity backlog; it is to identify the few practices whose value, repeatability, data readiness, failure cost, and ownership justify a higher level of design and operating responsibility.
+- Detailed outline:
+  - Open with the accumulation problem: once teams begin sharing practices, every useful result can look like an automation opportunity. The predictable failure is an unranked idea board, popular demos that never improve real work, and “AI projects” with no owner, outcome, or boundary.
+  - Reframe promotion as a **portfolio decision at team scale**. The most responsible decision may be to keep a practice as advisory shared assistance, narrow it, continue learning, or stop using it. Promotion is reserved for a workflow that needs more than a Team Practice Card and calibration clinic: deliberate design, operational ownership, systems context, or recurring human-approved work.
+  - Introduce the **Workflow Promotion Card** as the final companion canvas. It is a physical wall card or a digital-board card linked to its Team Practice Card and Calibration Card. It turns a promising shared practice into an explicit investment decision rather than a vague recommendation to “automate this.”
+  - Define the Workflow Promotion Card canvas. It should make visible:
+    - the linked practice and calibration evidence, including what worked, what failed, and the practice’s current use boundary;
+    - the specific workflow: primary user, trigger, current steps/handoff, expected output, and the bounded problem to solve;
+    - a value hypothesis and baseline signal appropriate to the work, such as cycle time, rework, quality, capacity, customer response time, or risk reduction—not raw AI activity;
+    - repeatability, expected frequency, and who benefits, so a one-off personal win is not mistaken for a team investment;
+    - required data, company context, tools, integrations, systems touched, and the permissions that would be needed;
+    - failure cost, reversibility, customer or employee exposure, required human review, and the highest authority level being requested;
+    - a named workflow owner, available team capacity, and the next investment requested: continue discovery, design a managed workflow, or decline/retire;
+    - a decision, decision date, review point, and the explicit reasons for keeping, promoting, narrowing, or stopping the practice.
+  - Walk through the **promotion gate** in order:
+    1. Start with evidence, not enthusiasm. Review the linked calibration findings and ask whether the practice creates a repeated, meaningful problem worth solving beyond individual assistance.
+    2. Test value and repeatability. Can the team name the user, trigger, expected outcome, current friction, and a baseline or signal that would show improvement?
+    3. Test readiness and exposure. Can the team name the data, context, systems, permissions, human-review point, failure cost, and reversibility? If not, the candidate is not ready to advance.
+    4. Test ownership and capacity. Is one person accountable for the workflow outcome—not merely its prompt—and does the team have a realistic next step and capacity to carry it?
+    5. Make an explicit portfolio decision: keep as a shared practice, revise and recalibrate, time-box further discovery, promote into Stage 3 managed-workflow design, or retire it. Capture the reasons publicly on the card.
+  - Make the multi-person confidence gate a **hard requirement for promotion**. Before a team asks for Stage 3 investment, the Workflow Promotion Card must be signed and dated by:
+    - an **AI-forward practitioner**, confirming that the proposed approach is concrete enough to design and that the card does not rely on hidden personal know-how;
+    - a **skeptical or quality-minded practitioner**, confirming that known failure modes, context/data concerns, human review, and unresolved risks are visible rather than ignored;
+    - the **responsible manager**, confirming the problem matters to the team, the expected outcome is worth the capacity, and a named owner accepts accountability for the next decision.
+  - Explain the trust purpose of the signatures. A team can see that the candidate was challenged by someone who looks for failure, made practical by someone who knows the tools, and connected to real work by someone responsible for priorities. The original creator may be an owner or signer, but need not be; their idea can earn team investment without forcing them to carry it alone.
+  - Set guardrails on signatures: they affirm a bounded promotion decision, not universal safety, a permanent endorsement, or permission to bypass security, privacy, procurement, or later Stage 3 controls. Signatures should be renewed when the workflow’s scope, data, tools, or authority changes. In a very small team where distinct perspectives are unavailable, involve a credible peer outside the immediate workflow rather than allowing one person to sign every role.
+  - Separate team input from the gate. Colleagues may vote or comment to decide which practice to examine next, but popularity does not replace evidence, risk judgment, ownership, or the signed promotion decision.
+  - Close with the Stage 2 exit: the team has selected a high-value, bounded workflow whose owner, users, trigger, systems touched, intended outcome, and exposure are clear. It is now ready for Stage 3, where the work becomes an operational service with explicit design, quality checks, failure handling, and measurement—not just a better shared prompt.
+- Practical takeaway: A **Workflow Promotion Card** displayed with the practice and calibration cards. Its fields—workflow, evidence, value signal, repeatability, data/systems/permissions, failure and human-review design, owner/capacity, explicit decision, and three dated signatures—give the team a visible, trusted gate between shared practice and managed-workflow investment.
+- Decision rule: Do not invest in Stage 3 design unless the team can name the workflow’s user, trigger, intended outcome, owner, required context and permissions, human review, failure cost, and measure of improvement—and the AI-forward, skeptical/quality-minded, and manager perspectives have each signed the bounded promotion decision. A missing answer means keep the practice shared, narrow it, recalibrate, or stop it.
+- Source notes: `docs/adoption-stages.md` Stage 2 teaching points, Stage 2 transition signal, Stage 3 situation and teaching points, cross-cutting value/ownership/permissions practices, and authority continuum; `docs/roadmap.md` workflow portfolio and ROI gate commitment; `docs/content-map.md` legacy `p2-03 Choose the Workflows That Deserve AI Investment`, `p2-06 Turn Local Wins Into Governed Internal Automation`, and `p3-02 Internal Agentic Workflow Blueprint`; `docs/principles.md` adoption-stage and proportionate-authority principles.
+- Additional notes: This is a team-level promotion gate, not a company-wide portfolio council or a replacement for formal security, privacy, legal, or procurement review. It deliberately favors a small number of evidence-backed candidates over a large opportunity list. The hard signature requirement begins here, not on low-risk practice or calibration cards.
+- Status: planned
+
+## Stage 3: Managed Workflows
+
+Field-note and guide assignments will be defined article-by-article.
+
+## Stage 4: Governed Organizational Capability
+
+Field-note and guide assignments will be defined article-by-article.
+
+
+---
+
+
+## Legacy Article Map — Pending Stage Migration
+
+The entries below were planned under the former pillar model. Their IDs,
+reader/jobs, outlines, source notes, status, and future stage assignments are
+intentionally preserved until the next planning step. These entries will be 
+ONLY used for reference and backlog until they are migrated to the new stage model
+where they will be archived.
+
+### p1 Pillar 1: AI Adoption Stages & Challenges
 
 ### p1-01 AI Adoption Starts With Fear. Safe Participation Is the First Operating Model.
 
@@ -85,7 +217,7 @@ Use this shape for each planned content entry:
 - Source notes: `content/notes/bottlenecks.md` sections 5, 9, 12; `content/notes/articles_outline.md` ROI/unit economics, Giants Would Fall, Software Anarchy.
 - Status: planned
 
-## p2 Pillar 2: AI Adoption Operating Manual
+### p2 Pillar 2: AI Adoption Operating Manual
 
 ### p2-01 From Experimentation to an AI-native Operating Model
 
@@ -159,7 +291,7 @@ Use this shape for each planned content entry:
 - Source notes: `content/notes/bottlenecks.md` sections 6-10 and maturity ladder; `content/ready/articles/p1-challenges/p1-02_demo-is-not-the-product-workflow-is-the-product.md`; `content/notes/NOTES.md` internal development operating system notes.
 - Status: planned
 
-## p3 Pillar 3: Production AI Engineering Blueprint
+### p3 Pillar 3: Production AI Engineering Blueprint
 
 ### p3-01 AI Acceleration Team Starter Kit
 
@@ -209,7 +341,7 @@ Use this shape for each planned content entry:
 - Source notes: `content/notes/bottlenecks.md` sections 7, 8, 9; `content/ready/articles/p1-challenges/p1-04_roi-reality-check-ai-unit-economics-and-the-moat-problem.md`; `content/notes/perosnal_growth_plan.md` production AI ideas.
 - Status: planned
 
-## p4 Pillar 4: AI Security & Governance
+### p4 Pillar 4: AI Security & Governance
 
 ### p4-01 Minimum Viable AI Governance and Security Review
 
@@ -223,7 +355,7 @@ Use this shape for each planned content entry:
 - Source notes: `content/notes/bottlenecks.md` section 10; `content/notes/NOTES.md` security notes; `content/ready/articles/p1-challenges/p1-03_trust-factor-when-is-ai-safe-enough-to-act.md`.
 - Status: planned
 
-## cc Challenged / Later Candidates
+### cc Challenged / Later Candidates
 
 ### cc-01 Customer-Facing Agentic Applications
 

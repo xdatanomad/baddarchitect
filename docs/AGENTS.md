@@ -6,17 +6,19 @@
 
 ## Current Files
 
-- `vision.md` - mission, audience promise, differentiation, content pillars, tone, and non-goals.
-- `roadmap.md` - approved milestones and proposed refinements that require user approval.
+- `vision.md` - mission, audience promise, differentiation, adoption model, tone, and non-goals.
+- `adoption-stages.md` - canonical foundation, stages, authority continuum, cross-cutting practices, and library model.
+- `roadmap.md` - approved stage-led milestones and carry-forward commitments.
 - `operations/project-phases.md` - phased roadmap from scaffold through production polish.
 - `architecture.md` - current website architecture and stack decision context.
-- `content-map.md` - source notes, candidate launch pages, and candidate content series.
+- `content-map.md` - canonical top-level stage structure plus legacy article briefs pending a later migration.
 - `decisions/` - durable architecture and project decisions.
 - `operations/` - repeatable workflows and checklists.
 
 ## Rules
 
-- Read `vision.md` before changing strategy, structure, or content plans.
+- Read vision.md and adoption-stages.md before changing strategy, structure, or
+  content plans.
 - Do not revise approved milestones without direct user approval.
 - Keep proposed strategy changes clearly marked as proposed until approved.
 - Do not treat docs files as publishable website content.

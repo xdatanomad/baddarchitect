@@ -14,30 +14,37 @@
 
 ## Quick Checklist
 
-[ ] @content/ready/articles/p1-challenges/p1-01_ai-adoption-starts-with-fear-safe-participation.md
-	- add what if it's too late for the adoption compact or show-and-tells
-	- produce 2 versions of the adoption compact
-	- produce a self-assessment adoption worksheet (where we are, filling the gaps, and what to do next)
-	- produce a first 30 days worksheet
+[ ] Review @content/drafts/articles/foundation-safe-participation.md
 
-[ ] Review @docs/architecture & @docs/principles.md
+[ ] Plan stage 2 - session: 
+	- "what is the best prompt for the first stage"
+	- OR "what is the best direction of the first stage"
+
+```text
+Looking at the [docs](docs/) , [adoption-stages.md](docs/adoption-stages.md) and [content-map.md](docs/content-map.md) , what are the main topics we should focus on in the foundation Safe Participation phase?
+No need to write any changes yet. Let's discuss together. Work collaboratively. Present ideas, options, and we can debate together.
+```
+
+PREVIOUS SESSIONS:
+[X] ~~Resume session "Define stage 2 practice sharing"~~
+
 [ ] A promotion strategy from @content/ready `.md` format to @website/src/content/articles `.mdx` format.
 [ ] Add daily automation for new articles and content.
 
 ## Website
 
-[X] ~~structure @website/src/content/articles and @website/src/content/lessons to match the @content/ready structure.~~
-[X] ~~add a new article to the website from @content/ready/articles/p1-challenges/ > @website/src/content/articles/p1-challenges/~~
-[X] ~~Nav menu re-design~~
-	- ~~change topics to pillars (research first)~~
-	- ~~keep lessons~~
-[X] ~~How to use the website main page to promote the adoption compact and show-and-tells.~~
-	- I like the direction... 
-	- Maybe remove the old "who this if for"
-	- Make cards for the how to use this site
-[X] ~~Placeholders for what to come~~
 [ ] Each pillar has lessons underneath it, move them to a single lessons page.
 [ ] Quick revision of the /about page - include contact
+
+## Articles Embellishments
+
+[-] Skill to make a comic book illustration explaining the main point of the article in the art style of Spawn.
+[-] Skill **visuals** to articles and lessons
+[-] Add visual **gauges** to articles and guides on the AI adoption maturity, target audience, and other relevant metrics.
+[-] Each article should walkaway with an **Agent Skill** that can be applied to the reader's own work.
+[-] Add **links** and **resources** to articles and lessons
+[-] Add **examples** and **exercises** to articles and lessons
+
 
 ## Agent Skills
 

@@ -16,10 +16,14 @@ Outcomes:
 
 Outcomes:
 
-- Convert raw notes into a publishable information architecture.
-- Define top-level navigation and content taxonomy.
+- Establish the stage-led information architecture: Safe Participation,
+  Personal Leverage, Shared Team Practice, Managed Workflows, and Governed
+  Organizational Capability.
+- Define the stage orientations, cross-cutting practices, authority continuum,
+  and layered library model before assigning individual articles.
+- Later, migrate legacy article briefs and define stage-level field-note and
+  implementation-guide outlines.
 - Decide which existing drafts become first launch articles.
-- Create article briefs for the four approved milestones.
 - Identify claims that need external research and citations.
 
 ## Phase 2: Website Stack Decision

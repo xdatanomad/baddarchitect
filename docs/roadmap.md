@@ -1,39 +1,64 @@
 # Roadmap
 
-These are the current user-approved milestones for the MVP content launch. Do not revise approved milestone definitions without direct user approval.
+This is the current user-approved roadmap for the MVP content launch. The
+stage-led milestones below supersede the former pillar-led milestones. See
+decisions/0003-stage-led-content-model.md for the decision record.
 
-## Approved Milestones
+## Foundation: Safe Participation
 
-1. AI Adoption Stages & Challenges.
-2. AI Adoption Operating Manual.
-3. Production AI Engineering Blueprint.
-4. AI Security & Governance.
+Safe Participation is a prerequisite for every milestone, not a full
+field-note series. It establishes that people can learn, question, and share
+AI practices under clear boundaries for data, tools, verification, and raising
+concerns.
 
-## Milestone Descriptions
+## Approved Content Milestones
 
-1. **AI Adoption Stages & Challenges**: This milestone focuses on common challenges that organizations face when adopting AI technologies. It states the pain points (in the art of storytelling) and provides a clear understanding of why AI adoption often stalls, including issues related to demos, trust, ROI, and talent models.
+1. **Stage 1: Personal Leverage**: Help individuals use AI to improve their
+   own work while they remain responsible for decisions and actions. Cover
+   repeatable personal practices, safe access to skills and tools, verification,
+   and the difference between useful assistance and fragile personal sprawl.
 
-2. **AI Adoption Operating Manual**: This milestone provides a strategic framework for leaders to move from scattered experimentation to an AI-native operating model. It outlines the steps to best restructure teams, processes, projects, and governance to support AI adoption effectively. A step-by-step blueprint to thoughtfully progress AI adoption across the organization.
+2. **Stage 2: Shared Team Practice**: Help leaders and teams turn individual
+   wins into shared, semi-structured practices. Cover reusable team skills,
+   approved integrations, workflow sharing, lightweight controls, and the
+   selection of workflows worth managing.
 
-3. **Production AI Engineering Blueprint**: This milestone provides the practical engineering path for production AI systems, agents, internal automation, trusted context, evals, observability, cost controls, and ROI. It turns the operating model into buildable reference architectures, implementation guides, and production launch criteria.
+3. **Stage 3: Managed Workflows**: Help teams operationalize a bounded,
+   high-value workflow with an owner, explicit human review, quality checks,
+   failure handling, systems context, and an outcome metric.
 
-4. **AI Security & Governance**: This milestone defines the security and governance controls needed to keep AI adoption trustworthy. It covers review gates, permission boundaries, audit trails, approved tool patterns, incident response, and the governance practices that support production AI without becoming a blocker.
+4. **Stage 4: Governed Organizational Capability**: Help organizations make
+   trusted AI capabilities reusable across teams. Cover the AI Acceleration
+   Team, governed context and integrations, policies, observability,
+   proportional evaluation, workflow portfolios, and business outcomes.
 
-## MVP Content Flow
+## Content Flow
 
-1. Pain: why AI demos, adoption, trust, ROI, and talent models break.
-2. Strategy: how leaders move toward an AI-native operating model.
-3. Practice: how technical teams build the AI Acceleration Team toolkit, trusted context layer, and governed internal automations.
-4. Control layer: how security, governance, evals, monitoring, and observability keep the system trustworthy.
+Foundation → Personal Leverage → Shared Team Practice → Managed Workflows →
+Governed Organizational Capability.
 
-## Approved MVP Refinements
+The next investment is determined by the workflow's current bottleneck and
+exposure, not by a claim that the whole organization has reached one stage.
 
-These refinements were approved on July 10, 2026.
+## Carry-Forward Commitments
 
-1. Keep the first milestone focused on a limited set of challenge articles that diagnose why AI adoption stalls.
-2. Make the second milestone the executive strategy path from scattered experimentation to an AI-native operating model.
-3. Use "AI Acceleration Team" for the forward-deployed enablement group that raises adoption quality, creates reusable standards, and turns local wins into shared capability.
-4. Add a workflow portfolio/ROI gate before internal automation so companies choose the right workflows instead of creating governed tool sprawl.
-5. Split the trusted context layer by altitude: executives get the strategic operating model; engineers get practical guidance for MCP, RAG, permissions, observability, and auditability.
-6. Keep customer-facing agentic applications out of the MVP except as an advanced-path placeholder.
-7. Treat security, governance, monitoring, evals, and observability as cross-cutting requirements in every milestone while preserving a dedicated security/governance section.
+- The AI Acceleration Team is a forward-deployed enablement function. It
+  emerges through shared practice and becomes a reusable organizational
+  capability; it should not become an approval bottleneck.
+- A workflow portfolio and ROI gate belongs before substantial managed-workflow
+  investment, so useful personal experimentation does not become unmanaged
+  tool sprawl.
+- The trusted context layer is introduced when workflows need dependable,
+  permission-aware organizational context. Leaders need the operating model;
+  engineers need the implementation guides.
+- Security, governance, evaluation, monitoring, and observability are
+  cross-cutting requirements. Their depth increases with workflow risk,
+  consequence, and authority.
+- Customer-facing or materially consequential delegated action is an advanced,
+  separately gated path, not an MVP destination.
+
+## Current Refactor Boundary
+
+This documentation refactor establishes the stage model only. Article-level
+planning, live website taxonomy, content-schema changes, and published-content
+migration are intentionally deferred.
