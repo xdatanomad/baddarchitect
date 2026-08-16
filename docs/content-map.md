@@ -63,7 +63,7 @@ Field-note and guide assignments will be defined article-by-article.
 - Decision rule: A method becomes a shared team practice only when a colleague can understand when to use it, use approved inputs and tools, verify the result, recognize known limits, and find a named person responsible for keeping the card current. Otherwise it remains personal leverage or a Practice Seed.
 - Source notes: `docs/adoption-stages.md` Stage 1 signals and Stage 2 situation, challenges, teaching points, and transition signal; `docs/roadmap.md` Stage 2 milestone and carry-forward commitments; `docs/principles.md` editorial and adoption-stage principles; prior Foundation discussion on optional problem-led learning and privacy of personal methods.
 - Additional notes: Do not impose a formal signature gate on a low-risk Team Practice Card. The third article’s promotion gate will introduce the stronger, multi-person confidence and sign-off requirement for practices seeking greater investment or exposure.
-- Status: candidate
+- Status: planned
 
 ### Calibrate Shared Work Before Scaling It
 
@@ -99,7 +99,7 @@ Field-note and guide assignments will be defined article-by-article.
 - Decision rule: Do not call a method a reusable team practice until someone other than its creator can apply the documented card to representative approved work, identify its limits, and complete the required human verification. If the task needs hidden expertise, prohibited data, unbounded permissions, or disproportionate cleanup, revise or narrow the practice instead of scaling it.
 - Source notes: `docs/adoption-stages.md` Stage 2 situation, challenges, teaching points, authority continuum, and transition signal; `docs/roadmap.md` Stage 2 milestone and cross-cutting control commitments; `docs/principles.md` principles on trust, quality, permissions, ownership, and proportionate authority; prior Foundation and Stage 2 discussions on optional learning, privacy of personal methods, and informed skepticism.
 - Additional notes: Participation in a clinic is voluntary and learning-oriented, but some proportionate calibration is required before a practice is labelled as a shared team default. Keep the process small enough for a team; production evaluation suites, monitoring, and formal operational controls belong primarily to Stage 3.
-- Status: candidate
+- Status: planned
 
 ### Create a Promotion Gate: Which Shared Practices Deserve Investment?
 
@@ -137,7 +137,7 @@ Field-note and guide assignments will be defined article-by-article.
 - Decision rule: Do not invest in Stage 3 design unless the team can name the workflow’s user, trigger, intended outcome, owner, required context and permissions, human review, failure cost, and measure of improvement—and the AI-forward, skeptical/quality-minded, and manager perspectives have each signed the bounded promotion decision. A missing answer means keep the practice shared, narrow it, recalibrate, or stop it.
 - Source notes: `docs/adoption-stages.md` Stage 2 teaching points, Stage 2 transition signal, Stage 3 situation and teaching points, cross-cutting value/ownership/permissions practices, and authority continuum; `docs/roadmap.md` workflow portfolio and ROI gate commitment; `docs/content-map.md` legacy `p2-03 Choose the Workflows That Deserve AI Investment`, `p2-06 Turn Local Wins Into Governed Internal Automation`, and `p3-02 Internal Agentic Workflow Blueprint`; `docs/principles.md` adoption-stage and proportionate-authority principles.
 - Additional notes: This is a team-level promotion gate, not a company-wide portfolio council or a replacement for formal security, privacy, legal, or procurement review. It deliberately favors a small number of evidence-backed candidates over a large opportunity list. The hard signature requirement begins here, not on low-risk practice or calibration cards.
-- Status: candidate
+- Status: planned
 
 ## Stage 3: Managed Workflows
 
