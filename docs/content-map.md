@@ -38,7 +38,32 @@ Field-note and guide assignments will be defined article-by-article.
 
 ## Stage 2: Shared Team Practice
 
-Field-note and guide assignments will be defined article-by-article.
+### A Shared Practice Is Not a Shared Prompt
+
+- Reader/job: Team leads, architects, managers, and experienced practitioners who need to turn useful individual AI methods into practices colleagues can reuse without exposing private methods, copying unsafe assumptions, or creating a permanent dependence on the most AI-fluent people.
+- Goal: Help a team make a responsible reuse promise: share enough task context, boundaries, verification, and ownership for a colleague to use a practice safely, while respecting that people may reasonably retain private prompts, methods, and competitive advantage.
+- Core argument: A shared prompt shares text. A shared practice shares the conditions that make a useful result repeatable and safe. If a method depends on one person’s private chat history, unstated judgment, or willingness to help, it is not yet a team practice.
+- Detailed outline:
+  - Open with the hidden-context problem: five people can claim to use the same AI workflow while using different tools, context, proprietary data, verification standards, and definitions of quality. The strongest practitioner becomes the informal help desk, while others either copy fragments unsafely or do not participate.
+  - Make the distinction explicit: a prompt library is insufficient. It does not reveal when a practice applies, which information is safe, what a good result looks like, who verifies it, or what happens when it fails. Do not ask people to expose their personal prompt history or hard-won private method merely to prove participation.
+  - Introduce the **Team Practice Card** as a deliberately shared, reusable team artifact rather than a policy document or a production runbook. It may live as a physical wall card or a simple digital-board card so the team can see, discuss, and improve the practice in its normal work.
+  - Define the Team Practice Card canvas. Each card should make visible:
+    - the recurring team task, intended user, expected outcome, when the practice applies, and when it does not;
+    - the approved tool, skill, or integration and the version or configuration being relied on;
+    - the context and data class required, including what must not be entered or shared;
+    - a reproducible method at the level needed for responsible reuse—without requiring the contributor to disclose every private prompt or method;
+    - one or two approved examples, the required human verification, known failure modes, and an explicit boundary on consequential actions;
+    - the current status, such as draft, team trial, shared practice, changed, or retired;
+    - a steward, version, update/review point, and links to supporting material where useful.
+  - Explain that the creator may be the steward, but is not required to be. Encourage colleagues with different perspectives—such as an AI-forward practitioner, a skeptical or quality-minded peer, and the responsible manager—to contribute to the card when useful. At this stage, this is collaboration rather than a formal sign-off gate.
+  - Explain why those perspectives matter: the team can see that a useful method was not imposed by enthusiasts, blocked by skeptics, or blessed by management without practical testing. This distributes ownership, gives people a trusted reason to consult one another, and turns objections into improvements.
+  - Briefly introduce a **Practice Seed** as an optional, low-friction landing space for an unfinished idea that needs help to become shareable. A seed may state the task, possible value, known boundary, and question for the team; it is not a second workflow, a mandatory prompt submission, or a promise to produce a full card. Keep the article’s emphasis on the Team Practice Card.
+  - Close with a clear boundary: creating the card does not prove that the practice is consistent, safe to scale, or ready for automation. The next article’s calibration loop tests it; the later promotion gate decides whether it deserves managed-workflow investment.
+- Practical takeaway: A **Team Practice Card canvas** that teams can place on a wall or digital board. The card’s visible fields—task and expected outcome, use and non-use boundary, tool, context and data boundary, method, examples, verification, known failures, status, steward, version, and review point—make the practice tangible and invite responsible reuse.
+- Decision rule: A method becomes a shared team practice only when a colleague can understand when to use it, use approved inputs and tools, verify the result, recognize known limits, and find a named person responsible for keeping the card current. Otherwise it remains personal leverage or a Practice Seed.
+- Source notes: `docs/adoption-stages.md` Stage 1 signals and Stage 2 situation, challenges, teaching points, and transition signal; `docs/roadmap.md` Stage 2 milestone and carry-forward commitments; `docs/principles.md` editorial and adoption-stage principles; prior Foundation discussion on optional problem-led learning and privacy of personal methods.
+- Additional notes: Do not impose a formal signature gate on a low-risk Team Practice Card. The third article’s promotion gate will introduce the stronger, multi-person confidence and sign-off requirement for practices seeking greater investment or exposure.
+- Status: candidate
 
 ## Stage 3: Managed Workflows
 
