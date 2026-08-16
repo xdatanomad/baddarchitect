@@ -65,6 +65,42 @@ Field-note and guide assignments will be defined article-by-article.
 - Additional notes: Do not impose a formal signature gate on a low-risk Team Practice Card. The third article’s promotion gate will introduce the stronger, multi-person confidence and sign-off requirement for practices seeking greater investment or exposure.
 - Status: candidate
 
+### Calibrate Shared Work Before Scaling It
+
+- Reader/job: Team leads, practitioners, architects, and managers deciding whether a Team Practice Card is reliable enough for colleagues to reuse, and whether its current authority and data boundary remain appropriate.
+- Goal: Give teams a low-friction, psychologically safe way to test a shared practice on representative work, compare outcomes and verification burden, learn from failures, and set a proportionate use boundary before the practice spreads.
+- Core argument: A practice that worked once for its creator is an anecdote. A practice that another person can use on representative work, with approved context and visible limits, is beginning to earn team trust. Calibration is how the team makes that distinction without building a formal evaluation platform.
+- Detailed outline:
+  - Open with the false sense of safety created by a completed Team Practice Card. The card may be clear, but its author still carries hidden judgment about context, quality, tool behavior, and exceptions. Reuse exposes the gap between a documented method and a dependable shared practice.
+  - Define **team calibration** as a small, repeatable learning loop, not a public performance contest, a generic show-and-tell, a technical benchmark, or an advanced production-evaluation suite. Its purpose is to improve the practice and its boundary—not to rank people, prove that AI is always useful, or identify low performers.
+  - Establish the trust conditions for the loop: participants use only approved tools and appropriate test material; findings are attached to the practice, not used to judge the contributor; contributors need not disclose private prompt history; and a failed result is useful evidence, not embarrassment.
+  - Position the calibration clinic as a **designed space for knowledge transfer**. It gives the team a recurring, optional place to bring a shared practice, learn the reasoning behind its boundaries, compare real outcomes, and preserve what was learned on the two cards. The aim is not to force people to disclose private methods; it is to make the deliberately shared practice less dependent on memory, informal chat, or access to one AI-forward colleague.
+  - Introduce a **Team Calibration Card** as the companion canvas to the Team Practice Card. It can be a physical card placed beside the practice or a linked digital-board card. It records:
+    - the Team Practice Card and version being tested, its intended task, and its current use boundary;
+    - two to five representative, approved cases: a normal case, a common variation, and where relevant an ambiguous or edge case;
+    - the minimum acceptable outcome and review questions before the test begins, including what a human must verify;
+    - the people taking part and their perspectives, such as a task practitioner, an AI-forward colleague, and a skeptical or quality-minded peer; the creator may participate but should not need to coach every attempt;
+    - observed output quality, correction or rework required, missing context, tool/integration behavior, and any data or permission concern;
+    - the updated known-failure list, changes required to the Team Practice Card, and the decision reached.
+  - Walk through a lightweight calibration clinic:
+    1. Choose one Team Practice Card in team-trial status and state the specific claim being tested, such as “a teammate can draft a complete internal brief from an approved source pack and verify it in ten minutes.”
+    2. Agree the small case set and the minimum acceptable outcome. Use representative work, but sanitize, mask, or replace sensitive content when the practice does not have permission to use it.
+    3. Have a colleague use the card with the approved tool and context. The creator may clarify the documented card, but should not supply hidden steps that a future user would not have.
+    4. Compare the outcome and the human effort required. Ask where the practice helped, where it created cleanup, where it failed, and whether the reviewer could recognize the failure before it mattered.
+    5. Update the practice, narrow its scope, add examples or warnings, or stop using it. Capture the decision on the Calibration Card rather than relying on meeting memory.
+  - Introduce proportionate **use boundaries** as the calibration decision:
+    - **Everyday assistance:** a person uses an approved practice for advisory drafting, analysis, or learning and verifies the result.
+    - **Human-approved shared work:** AI prepares a shared or consequential result, but a named person reviews and authorizes it before use.
+    - **Needs formal design:** the practice touches sensitive/proprietary context beyond the agreed boundary, systems of record, recurring automation, or has material failure cost. It should not spread informally; it becomes a candidate for the promotion gate.
+  - Make clear that a boundary is not a quality score. A practice may be useful and still stay at everyday assistance indefinitely. Higher authority is not the prize; the smallest safe authority is usually the right choice.
+  - Explain how calibration prevents the AI-forward help-desk problem. The visible cards and repeatable clinic create a deliberate path for knowledge transfer: understanding moves from one person’s memory to a team asset, and each session leaves the next colleague a clearer starting point. The skeptical colleague has a defined constructive role: pressure-test the conditions, not veto progress.
+  - Close with the next boundary: calibration can show that a practice is reusable, limited, or not worth keeping. Only a small subset should proceed to Article 3’s promotion gate; a good calibration result is not automatic approval for investment, integration, or automation.
+- Practical takeaway: A **Team Calibration Card** that teams can display beside the Team Practice Card. Used in an optional, recurring calibration clinic, it records the practice version, representative cases, quality bar, participant perspectives, verification/rework findings, failure patterns, revised use boundary, and decision: revise, share with limits, stop, or consider for promotion. Together, the cards preserve the team’s deliberately shared knowledge between sessions.
+- Decision rule: Do not call a method a reusable team practice until someone other than its creator can apply the documented card to representative approved work, identify its limits, and complete the required human verification. If the task needs hidden expertise, prohibited data, unbounded permissions, or disproportionate cleanup, revise or narrow the practice instead of scaling it.
+- Source notes: `docs/adoption-stages.md` Stage 2 situation, challenges, teaching points, authority continuum, and transition signal; `docs/roadmap.md` Stage 2 milestone and cross-cutting control commitments; `docs/principles.md` principles on trust, quality, permissions, ownership, and proportionate authority; prior Foundation and Stage 2 discussions on optional learning, privacy of personal methods, and informed skepticism.
+- Additional notes: Participation in a clinic is voluntary and learning-oriented, but some proportionate calibration is required before a practice is labelled as a shared team default. Keep the process small enough for a team; production evaluation suites, monitoring, and formal operational controls belong primarily to Stage 3.
+- Status: candidate
+
 ## Stage 3: Managed Workflows
 
 Field-note and guide assignments will be defined article-by-article.
