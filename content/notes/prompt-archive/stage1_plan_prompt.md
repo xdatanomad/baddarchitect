@@ -134,3 +134,6 @@ Perhaps this is best fit as a paragraph or a point in the field notes (the Revie
 
 I think the personal computer actions should be part of stage 1 but best fit as a separate in-depth technical guide. Seek information on "Implementation Guide" in the glossary.md. We can reference it the field notes (4 field notes planned here), but not make it a separate field note.
 
+## ASK
+
+WORK TOGETHER
