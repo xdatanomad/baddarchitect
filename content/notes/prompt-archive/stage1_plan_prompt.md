@@ -90,7 +90,7 @@ The four field notes are well defined. I like the titles and the takeaways.
 
 I think we should make sure to include examples whenever possible to help people understand what it looks like and how to use it.
 
-In the "The Review Is Part of the Work" note, what do you think about introducing of the concept of light-weight context-layer and memory?
+In the "The Review Is Part of the Work" note, what do you think about introducing of the concept of light-weight context-layer and memory here?
 
 
 ## Implementation Guides
@@ -136,4 +136,6 @@ I think the personal computer actions should be part of stage 1 but best fit as 
 
 ## ASK
 
-WORK TOGETHER
+Let's discuss together and resolve the open items and ideas above before proceeding to write the content-map. Ask me any questions needed. Challenge requirements where needed. 
+
+After this, we can proceed to write the content-map for stage 1.
