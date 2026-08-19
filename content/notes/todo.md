@@ -16,7 +16,7 @@
 
 [ ] Review @content/drafts/articles/foundation-safe-participation.md
 
-[ ] Plan stage 2 - session: 
+[ ] Plan stage 1 - resume session: "Define stage 1 content focus"
 	- "what is the best prompt for the first stage"
 	- OR "what is the best direction of the first stage"
 

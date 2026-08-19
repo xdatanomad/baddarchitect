@@ -25,6 +25,34 @@ without being punished or ignored.
 Stage 1. An individual uses AI manually to improve their own work while
 retaining responsibility for decisions and actions.
 
+## Personal Practice Canvas
+
+A private-by-default Stage 1 artifact that defines a repeatable personal
+AI-assisted practice: its task, outcome, use boundary, context, method,
+verification, limits, authority boundary, and review point. It is not a team
+standard, performance log, or production runbook.
+
+## Personal Verification Compact
+
+A downloadable, editable Stage 1 self-agreement for a personal practice. It
+records what AI may prepare, what the person must check, prohibited data or
+actions, the required confirmation point, and when to stop or escalate. It is
+not a legal contract or a certification of safety.
+
+## Personal Context Pack and Work Log
+
+Two related Stage 1 aids. A Personal Context Pack holds the current, permitted
+references and instructions for a task. A Work Log holds human-curated
+decisions, actions, corrections, and open state. Neither is equivalent to
+opaque provider-managed chat memory or a governed organizational context layer.
+
+## Human-Reviewed Event Workflow
+
+A Stage 1 pattern in which an email, calendar event, file change, or similar
+event starts narrowly scoped AI preparation that stops in a private review
+queue. A person inspects and confirms any consequential next step; the flow
+does not execute unattended consequential action.
+
 ## Shared Team Practice
 
 Stage 2. A team shares repeatable skills, approved tools, and semi-structured
