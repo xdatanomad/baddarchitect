@@ -34,7 +34,205 @@ Detailed content mapping is intentionally deferred to the next planning step.
 
 ## Stage 1: Personal Leverage
 
-Field-note and guide assignments will be defined article-by-article.
+Stage 1 turns permitted experimentation into repeatable, personally operated
+AI-assisted work. Its field notes keep the individual responsible for judgment
+and consequential action; its implementation guides provide the technical
+detail needed to build bounded personal practices. The stage does not require
+people to disclose private prompts or methods, standardize work for a team, or
+automate a workflow.
+
+### A Prompt Is a Moment. A Personal Practice Is a Method.
+
+- Format: field note
+- Primary stage: Personal Leverage
+- Reader/job: Individual practitioners, and the leaders or architects enabling them, who need to turn a useful AI interaction into a repeatable personal method without mistaking a prompt collection for a workflow.
+- Goal: Help a person define a bounded, private-by-default AI-assisted practice with a clear task, intended outcome, trusted context, method, verification, and limit—so they can repeat it, improve it, and later choose whether any part is worth sharing.
+- Core argument: A prompt is a moment of interaction. A personal practice is the set of conditions that let one person do a recurring piece of work with AI and retain judgment over the result. Better prompting helps, but it is not enough when the useful context, quality bar, and failure boundary live only in a past chat or in the person’s memory.
+- Detailed outline:
+  - Open with the familiar pattern: a person has one excellent AI result, saves a fragment of the prompt, then cannot reproduce the result a week later because the source material, surrounding conversation, tool configuration, or unstated quality bar has changed.
+  - Make the distinction explicit: a prompt library is not a personal working system. It can preserve words, but not necessarily the task, trusted inputs, context, sequence, expected result, human check, or reason not to use the method.
+  - Introduce the **Personal Practice Canvas** as a lightweight, private-by-default artifact. It is not a performance log, team standard, approval form, or production runbook. The individual may keep all or part of it private.
+  - Define the canvas fields: recurring task and trigger; intended user and outcome; use and non-use boundary; allowed context and data; chosen tool, skill, or reusable instruction block; method at the level useful to the person; one or two examples; required verification; known failure signals; authority boundary; value signal; and a review point.
+  - Explain that “context” is an explicit input to a practice, not an invitation to paste every available document into a chat. The method should name the smallest current information set that helps the task and remains permitted to use.
+  - Use a concrete operations example: a manager prepares a weekly customer-risk brief from an approved source pack, asks AI to surface changed commitments and open issues, then checks each claim against the sources before deciding what to raise.
+  - Use a concrete technical example: an engineer uses a repository-aware skill to investigate a bug, captures the issue, relevant files, tests, expected behavior, and review steps, then treats a proposed diff as input to normal testing and code review—not as an automatic change.
+  - Show how a personal practice improves: refine a confusing instruction, add an example, narrow the task, update a source link, record a recurring failure, or retire the practice when it no longer saves effort or produces dependable work.
+  - Link forward to the Personal AI Playbook guide for the storage and maintenance mechanics, and to the review field note before suggesting that any method is dependable.
+  - Close with the Stage 1 boundary: the canvas makes one person’s work more intentional; it does not make the practice safe for colleagues, a shared team default, or an automation candidate by itself.
+- Practical takeaway: A downloadable, editable **Personal Practice Canvas**. Its fields—task, outcome, use and non-use boundary, context/data boundary, tool or method, examples, verification, known failures, authority boundary, value signal, and review point—give an individual a small working system without requiring public disclosure.
+- Decision rule: Treat an AI interaction as exploration, not a personal practice, until the person can name the recurring task, allowed context, expected outcome, required verification, and a condition in which they will not use it.
+- Implementation guide links: **Build a Personal AI Playbook That Stays Useful**; **Build a Personal Context Pack and Work Log**.
+- Source notes: `docs/adoption-stages.md` Stage 1 situation, teaching points, and transition signal; `docs/roadmap.md` Stage 1 milestone; `content/notes/project_refactor_prompt.md` Personal Use and initial Personal Leverage subjects; `content/notes/NOTES.md` development practices, project instructions, and precise expected-versus-actual behavior.
+- Additional notes: Keep the narrative tool-agnostic. Named tools belong in the implementation guide as dated examples, not as the definition of a good personal practice.
+- Status: planned
+
+### The Review Is Part of the Work.
+
+- Format: field note
+- Primary stage: Personal Leverage
+- Reader/job: Individual practitioners and leaders helping them use AI-assisted outputs responsibly when factual accuracy, analytical judgment, policy boundaries, or consequential action matter.
+- Goal: Replace the vague instruction to “review the output” with a small, task-appropriate verification method that makes the person’s evidence, judgment, and stop conditions explicit.
+- Core argument: Review is not the apology added after AI produces an answer. It is part of the practice design. A polished response may still rely on stale context, unsupported claims, missing constraints, or an incorrect interpretation; the right human check depends on the kind of work and the cost of getting it wrong.
+- Detailed outline:
+  - Open with the false comfort of a fluent result: a meeting brief confidently misstates a commitment, an analysis overlooks a denominator, a policy draft omits an exception, or a computer action is aimed at the wrong record. The failure is not that the user failed to “look carefully”; the practice lacked a defined check.
+  - Introduce the **Personal Verification Compact** as a downloadable, editable self-agreement for one personal practice. It is neither a legal contract nor a corporate policy. It records what AI may prepare, what the person must check, what it must not do, and when the person must stop or escalate.
+  - Define the Compact fields: task and intended use; allowed sources and required freshness; claims or output elements to verify; task-specific checks; prohibited data or actions; required human decision or confirmation point; failure or uncertainty signals; and a review/update date.
+  - Distinguish proportional review patterns: factual work requires source checks and attribution; analytical work requires checking inputs, assumptions, calculations, and counterexamples; policy or compliance work requires checking the current authoritative rule and known exceptions; creative work still requires checking the brief, rights, brand, and audience constraints.
+  - Introduce a lightweight **Personal Context Pack and Work Log** as an aid to review. The Context Pack holds the current, allowed references and instructions for the practice. The Work Log records human-curated decisions, actions, open state, and corrections. Neither should be confused with opaque provider chat memory.
+  - Make the source-of-truth boundary explicit: an AI system may recall something useful, but a consequential claim should be checked against the current authorized source. A stale saved answer, untraceable chat memory, or broad personal knowledge base is not sufficient evidence.
+  - Walk through the customer-risk-brief example: the practitioner checks named commitments against their sources, verifies the reporting period, records the decision to escalate a risk, and does not let AI send the escalation.
+  - Walk through the engineering example: the practitioner verifies the issue reproduction, runs the relevant tests, inspects a proposed change for scope and security implications, and records why a fix was accepted or rejected.
+  - Explain that a correction is valuable operational memory. Record the failure or change in the Canvas, Context Pack, or Work Log so the next run begins with a better boundary—not with another attempt to remember what went wrong.
+  - Close with the limit: a personal verification loop is not a production evaluation suite, audit trail, or substitute for team controls. It earns appropriate confidence for a bounded, personally operated practice.
+- Practical takeaway: A downloadable, editable **Personal Verification Compact** that readers complete for one real practice. It records the work, allowed sources, checks, prohibited data/actions, human confirmation point, uncertainty signals, and review date.
+- Decision rule: Do not use an AI-prepared result for a consequential decision or action if the person cannot state what must be checked, identify the current authoritative source or test, and recognize the condition that requires them to stop or escalate.
+- Implementation guide links: **Build a Personal Context Pack and Work Log**; **Build a Personal AI Playbook That Stays Useful**.
+- Source notes: `docs/adoption-stages.md` Stage 1 teaching points and authority continuum; `docs/roadmap.md` Stage 1 and cross-cutting control commitments; `docs/principles.md` principles on trust, quality, permissions, and proportionate authority; `content/notes/NOTES.md` precise expected-versus-actual behavior, tests, and human review ideas.
+- Additional notes: The compact should be downloadable and printable, like the Stage 2 cards, but it remains private-by-default. It must avoid implying that a completed template certifies a practice as safe or correct.
+- Status: planned
+
+### Connect AI With Intent: Skills, Integrations, and Computer Actions.
+
+- Format: field note
+- Primary stage: Personal Leverage
+- Reader/job: Individual practitioners and enabling leaders deciding when a skill, extension, integration, computer-use feature, or event trigger has an appropriate purpose, data scope, permission set, and human confirmation point.
+- Goal: Help readers gain useful personal leverage from connected AI tools without treating convenience, broad access, or unattended action as signs of maturity.
+- Core argument: Tool capability and tool authority are different decisions. A skill that can read a workspace, an integration that can update a system, or a computer-use feature that can click through a browser may be useful, but only within a deliberately chosen task, smallest practical access scope, and human-controlled action boundary.
+- Detailed outline:
+  - Open with the capability trap: a person finds a promising extension or automation template, grants broad workspace access, and discovers only later that it can see more context, write to more systems, or act more quickly than the task required.
+  - Separate the decisions that are often collapsed together: what task needs help; which data is necessary; which tool is trusted and approved; whether it needs read or write access; what it may prepare; and what the person must explicitly decide or confirm.
+  - Introduce a **Personal Access Decision** as a small companion to the Personal Practice Canvas. It records purpose, allowed data, tool or integration, permission scope, read/write boundary, action boundary, confirmation point, revocation path, and review date.
+  - Establish the Stage 1 default: use approved tools with the minimum practical permission; prefer read-only access where it supports the task; keep secrets and disallowed data out of prompts and tool context; and remove or revisit access when the practice changes or stops being useful.
+  - Explain supervised computer actions precisely. AI may navigate, collect information, fill a draft, or prepare a proposed change while the person is actively supervising. Any consequential or irreversible action requires explicit human confirmation in the moment; the person remains accountable for the action.
+  - Establish the confirmed event-workflow boundary: an email, calendar event, or file change may start preparation, but the result must arrive in a private review queue, draft, or staging area. It may not send, publish, approve, update a consequential record, or take other unattended consequential action.
+  - Use a calendar example: an upcoming customer meeting can trigger a private preparation brief based on approved calendar details and source material. The practitioner verifies the brief and decides whether any follow-up is sent.
+  - Use a computer-action example: an engineer lets an assistant gather failing test output and stage a proposed patch, then reviews the diff, runs tests, and chooses whether to commit or open a pull request.
+  - Explain the trigger to leave Stage 1: recurring unattended writes, long-lived background runs, shared use, sensitive systems, material failure cost, or a need for retries, exception handling, auditability, and operational ownership require a managed-workflow design rather than a personal setup.
+  - Link to the two technical guides for tactical setup while keeping this field note focused on the access and authority decision.
+- Practical takeaway: A **Personal Access Decision** checklist that readers can add to a Personal Practice Canvas: purpose, data boundary, tool, permissions, allowed preparation, prohibited actions, confirmation point, revocation path, and review date.
+- Decision rule: Do not connect a tool or enable computer action until the person can explain the specific task, the minimum data and permissions needed, what the tool may prepare, and the exact point at which a human must confirm a consequential action.
+- Implementation guide links: **Use Skills, Integrations, and Computer Actions With a Human in Control**; **Build a Human-Reviewed Event Workflow**.
+- Source notes: `docs/adoption-stages.md` Stage 1 situation, challenges, teaching points, and authority continuum; `docs/roadmap.md` cross-cutting security and authority commitments; `content/notes/project_refactor_prompt.md` Personal Use; `content/notes/NOTES.md` approved MCP, logging, and easy approval-path ideas.
+- Additional notes: Do not make a named tool, MCP server, or computer-use product the article’s premise. Tool-specific examples need a visible reviewed date, a durable principle, safe scope, verification step, and limitation.
+- Status: planned
+
+### A Personal Win Is a Candidate, Not an Automation Proposal.
+
+- Format: field note
+- Primary stage: Personal Leverage
+- Reader/job: Individual practitioners, team leads, architects, and managers deciding which personal practices should remain private assistance, which may be worth voluntarily offering to colleagues, and which should not be promoted at all.
+- Goal: Give readers a humane, evidence-based way to recognize a promising workflow candidate without forcing private-method disclosure, turning usage into a performance ranking, or mistaking a personal success for a case for automation.
+- Core argument: A useful personal practice is evidence, not a mandate. The next responsible question is not “How do we automate this?” but “Is this a recurring, bounded problem that another person could benefit from examining with its context, limits, and human review made visible?”
+- Detailed outline:
+  - Open with the two unhelpful defaults: valuable methods disappear into one person’s private chat history, or an impressive demo is immediately described as an automation opportunity despite having no owner, baseline, exposure assessment, or evidence that anyone else can use it.
+  - Preserve the right to private leverage. People may reasonably keep personal prompts, configurations, and hard-won methods private. Participation in Stage 2 begins only when someone chooses to share enough for responsible reuse; it is not a condition of being seen as an adopter or contributor.
+  - Introduce the **Candidate Note** as a lightweight private or optional-sharing artifact. It can become a Stage 2 Practice Seed, but it is intentionally smaller than a Team Practice Card and makes no claim that the method is ready for others.
+  - Define the Candidate Note fields: recurring task and current friction; intended beneficiary; small value signal such as time, rework, quality, or risk; example result; likely repeatability and frequency; minimum context and data boundary; known limitations; required human review; sharing question; and the next requested step—keep private, ask for peer input, or offer a Practice Seed.
+  - Show a qualified candidate: a recurring weekly customer-risk brief that takes too long to assemble, has known approved sources, and consistently benefits from an AI-prepared first pass that the manager reviews. The candidate is the bounded briefing practice, not “automate customer management.”
+  - Contrast a poor candidate: a one-off impressive presentation generated from a long, private conversation; the result may be useful, but its task, context, quality, and reuse potential are too unclear to ask colleagues to adopt it.
+  - Explain that a candidate can be declined, narrowed, or left as personal assistance indefinitely. Team value, repeatability, data readiness, failure cost, and ownership will be examined more rigorously in Stage 2; higher authority is not a reward for a good idea.
+  - Connect deliberately to Stage 2: a person may share a Candidate Note as a Practice Seed, then a team decides whether to create a Team Practice Card. No private prompt history or full personal configuration is required.
+  - Close with the personal-to-team boundary: a candidate note makes the opportunity legible; it does not make a shared practice, create a team commitment, or approve an integration or automation.
+- Practical takeaway: A lightweight **Candidate Note** that readers can keep private, discuss with a peer, or optionally offer as a Stage 2 Practice Seed. It captures the recurring task, value signal, evidence, context boundary, limitations, human review, and requested next step.
+- Decision rule: Offer a personal practice for team examination only when the person can show a recurring problem, a bounded proposed use, a plausible benefit beyond themselves, the minimum context and data required, known limits, and a human review point. Otherwise keep learning privately, narrow it, or stop using it.
+- Implementation guide links: **Build a Personal AI Playbook That Stays Useful**; **Build a Personal Context Pack and Work Log**.
+- Source notes: `docs/adoption-stages.md` Stage 1 signals, Stage 2 situation, and transition signal; `docs/content-map.md` Stage 2 Team Practice Card, Practice Seed, Calibration Card, and promotion gate; `docs/roadmap.md` workflow-portfolio commitment; `docs/principles.md` privacy, ownership, and proportionate-authority principles.
+- Additional notes: This note must actively reject productivity ranking and mandatory prompt disclosure. It prepares voluntary, bounded sharing; Stage 2 owns peer calibration and its stronger conditions for reuse.
+- Status: planned
+
+### Build a Personal AI Playbook That Stays Useful
+
+- Format: implementation guide
+- Primary stage: Personal Leverage
+- Referenced from: **A Prompt Is a Moment. A Personal Practice Is a Method**; **The Review Is Part of the Work**; **A Personal Win Is a Candidate, Not an Automation Proposal**.
+- Reader/job: Practitioners who have several useful prompts, reusable instruction blocks, skills, and examples, and need a lightweight way to curate them into a library they can actually find, maintain, and retire.
+- Goal: Provide a tactical, tool-neutral method for building a small Personal AI Playbook that preserves the method and boundaries of a practice rather than accumulating an unsearchable archive of prompt fragments.
+- Core argument: A personal library compounds only if it preserves why and when something works. Save a reusable method with its task, context, example, check, and review point—not just the prompt text that happened to be in a successful chat.
+- Detailed outline:
+  - Start with a compact information architecture: the Personal Practice Canvas as the index; playbook entries for repeatable methods; reusable instruction blocks or skills; approved examples; and links to the Context Pack, Verification Compact, and Work Log where they apply.
+  - Show the minimum metadata for every entry: title, task, trigger, use and non-use boundary, tool or skill dependency, context requirements, version, review date, and status such as active, changing, paused, or retired.
+  - Explain how to choose a home: local Markdown or a version-controlled repository for technical work, an approved notes or documentation system for knowledge work, or another permitted workspace. Named products are examples to review at publication time, not required infrastructure.
+  - Walk through creating one entry from the weekly customer-risk-brief example: preserve the source checklist, outline, reusable instruction blocks, example output, Verification Compact, and known limits rather than a single opaque prompt.
+  - Walk through a technical example: preserve the bug-investigation method, issue template, repository instructions, test commands, safe tool boundary, example finding, and review steps.
+  - Teach curation routines: add examples when a method changes, record meaningful failure patterns, review entries when a model, skill, source, or policy changes, and retire entries that no longer save effort or require too much hidden judgment.
+  - Address privacy and security: do not store secrets in prompts, export disallowed data into a personal library, or rely on a shared workspace merely because it is convenient. Follow existing data and tool boundaries.
+  - Include a starter template and a small first-week exercise: document one recurring task, use it three times, update it after each use, then decide whether it deserves to stay in the playbook.
+- Practical takeaway: A **Personal AI Playbook starter structure** and entry template that links task method, reusable instruction blocks, skills, examples, Verification Compact, Context Pack, and review date.
+- Decision rule: Do not keep a reusable prompt or skill as an active playbook entry unless it has a stated task, a current context/data boundary, a verification step, and a review or retirement point.
+- Source notes: `docs/adoption-stages.md` Stage 1 teaching points; `content/notes/project_refactor_prompt.md` Personal Use and personal AI working system; `content/notes/NOTES.md` project instructions, slash-command, and documentation ideas.
+- Additional notes: Tool-specific setup instructions must name their durable principle, safe scope, verification step, limitation, and a visible reviewed date.
+- Status: planned
+
+### Build a Personal Context Pack and Work Log
+
+- Format: implementation guide
+- Primary stage: Personal Leverage
+- Referenced from: **A Prompt Is a Moment. A Personal Practice Is a Method**; **The Review Is Part of the Work**; **A Personal Win Is a Candidate, Not an Automation Proposal**.
+- Reader/job: Practitioners who need personal AI practices to use current, permitted context and retain a small, inspectable record of decisions and open state without turning an opaque chat history into a source of truth.
+- Goal: Show how to create a lightweight personal context system that separates authoritative reference material, reusable practice instructions, and human-curated work memory.
+- Core argument: Context and memory serve different purposes. A Context Pack supplies the approved, current information for the present task. A Work Log preserves the decisions, corrections, action state, and open questions that a person deliberately chooses to retain. Neither is the same as provider-managed chat memory or a dump of every available document.
+- Detailed outline:
+  - Establish the three-part model: the Playbook answers **how** to perform the practice; the Context Pack answers **what current, allowed information the practice needs**; the Work Log answers **what happened, was decided, and remains open**.
+  - Define a Context Pack’s minimum contents: purpose, approved source links or extracts, freshness expectation, data classification or boundary, relevant instructions and templates, attribution requirements, and an owner or update cue where one exists.
+  - Define a Work Log’s minimum contents: date and practice run, source/context version, important human decisions, action taken or deliberately not taken, open state, corrections, and a link to any result worth retaining. Keep it human-curated; do not treat raw transcripts as durable memory.
+  - Show how to choose a home. An approved documentation or database service such as Notion can be useful for structured pages and logs; a repository, issue tracker, or local Markdown may fit technical work better. The architecture matters more than the vendor.
+  - Walk through a meeting-preparation example: a Context Pack contains the agenda, approved account notes, current commitments, and policy constraints; the Work Log records what the manager chose to raise and what follow-up remains.
+  - Walk through an engineering example: the Context Pack contains the issue, relevant architecture notes, test expectations, and approved repository instructions; the Work Log records the root-cause hypothesis, test result, and reason to accept or reject a proposed fix.
+  - Teach selective retrieval and freshness checks: provide only the source material that supports the task, trace important claims back to it, and refresh or remove context that has changed. More context is not inherently more reliable context.
+  - Address permissions and privacy: do not create a personal shadow knowledge base from sensitive company material, widen access through a connector without approval, or assume content remains permitted once copied into a notes system.
+  - Draw the Stage 1 limit: this is a personal working aid, not a governed organizational trusted context layer, shared system of record, or production memory service. Those require broader ownership, identity-aware access, freshness controls, and observability.
+- Practical takeaway: A **Personal Context Pack and Work Log starter schema** with fields for sources, freshness, allowed use, task instructions, decisions, action state, corrections, and review date.
+- Decision rule: Do not use a saved context item or remembered AI claim as the basis for consequential work when its source, freshness, permission boundary, or relevance to the current task is unclear.
+- Source notes: `docs/adoption-stages.md` Stage 1 teaching points, cross-cutting permissions/context practice, and authority continuum; `docs/roadmap.md` trusted-context carry-forward commitment; `content/notes/bottlenecks.md` context, memory, and permission sections; `content/notes/NOTES.md` Notion knowledgebase and project-pattern ideas.
+- Additional notes: This guide should explain Notion or similar services as current examples, but must not present a personal setup as a substitute for the Stage 4 trusted context layer.
+- Status: planned
+
+### Use Skills, Integrations, and Computer Actions With a Human in Control
+
+- Format: implementation guide
+- Primary stage: Personal Leverage
+- Referenced from: **Connect AI With Intent: Skills, Integrations, and Computer Actions.**
+- Reader/job: Practitioners configuring a personal AI tool, skill, extension, integration, or computer-use feature who need a practical way to grant only appropriate access and keep consequential work under human control.
+- Goal: Provide a tactical setup and review method for personal connected AI use: deliberate task scope, least privilege, approved data, explicit confirmation, and quick revocation when the practice or tool changes.
+- Core argument: The useful question is not “Can this agent connect?” It is “What narrow task needs this connection, what is the minimum access it requires, and where does a person retain control?” Connected capability without a bounded purpose creates personal tool sprawl and unnecessary exposure.
+- Detailed outline:
+  - Begin with a short capability inventory: task, systems or information involved, approved tool or source, required data, read versus write need, proposed computer action, and the human decision or confirmation point.
+  - Walk through the Personal Access Decision: name the purpose; select the smallest permissions and shortest credential lifetime available; choose read-only access where possible; list prohibited data and actions; record revocation and review steps.
+  - Explain how to evaluate a skill, extension, or connector before use: source and publisher, permissions requested, data handling, action surface, update behavior, organizational approval, and whether the user understands the failure path.
+  - Define safe supervised computer use: the person remains present to inspect what is being collected or prepared, directs or explicitly confirms consequential steps, and can stop the run. A tool may draft a message, stage an edit, or prepare a form; it must not send, publish, approve, or materially update a system without explicit confirmation.
+  - Use a meeting-preparation example: an assistant reads permitted calendar and document context, assembles a private brief, and drafts optional follow-up points; the user checks them before any external communication.
+  - Use an engineering example: an assistant reads the permitted repository and test output, prepares a patch in a branch or staging area, and leaves the user to inspect, test, commit, and open a pull request.
+  - Cover routine maintenance: remove unused connectors, revisit access after a scope change, rotate or revoke credentials through the approved path, and update the Personal Practice Canvas when an integration, skill, or model behavior changes.
+  - Make escalation conditions visible: stop and seek a managed-workflow design when the tool needs unattended writes, persistent background execution, shared credentials or users, sensitive systems, material failure handling, or recurring exception recovery.
+- Practical takeaway: A **Personal Access Decision worksheet** and a pre-connection checklist covering task purpose, data boundary, permission scope, action boundary, confirmation point, revocation path, and review date.
+- Decision rule: If a connection cannot be narrowed to an approved purpose, minimum data and permissions, and an explicit human confirmation boundary, do not enable it as a Stage 1 personal practice.
+- Source notes: `docs/adoption-stages.md` Stage 1 safety teaching points, authority continuum, and boundaries; `docs/roadmap.md` cross-cutting security and authority commitments; `content/notes/NOTES.md` approved MCP, logging, sandboxing, and approval-path notes.
+- Additional notes: Keep this guide current through tool-specific reviewed dates. Do not turn it into a tool directory or imply that a vendor’s permission screen is a complete security review.
+- Status: planned
+
+### Build a Human-Reviewed Event Workflow
+
+- Format: implementation guide
+- Primary stage: Personal Leverage
+- Referenced from: **Connect AI With Intent: Skills, Integrations, and Computer Actions.**
+- Reader/job: Practitioners who want an email, calendar event, file change, or similar event to initiate helpful personal preparation without silently turning the workflow into autonomous action.
+- Goal: Give readers a simple, tactical reference pattern for event-triggered personal AI assistance in which every consequential outcome remains in a private review queue and the person decides whether to act.
+- Core argument: An event can start preparation; it cannot justify unattended authority. A safe Stage 1 event workflow gathers a narrow, permitted input, prepares a reviewable draft or recommendation, and stops for the person. It is an inbox or staging pattern, not a background agent that runs the business.
+- Detailed outline:
+  - Start with the hard Stage 1 rule: **event-triggered workflows may prepare work but may not execute unattended consequential actions.** An event may never directly send, publish, approve, change a consequential system record, or make an externally visible commitment.
+  - Present the reference flow: **event → filter and narrow input → retrieve permitted context → AI prepares a draft, summary, or recommendation → private review queue → human checks and confirms or discards → human-performed or explicitly confirmed action**.
+  - Show how to pick a narrow first use case: high-frequency but low-exposure preparation work, a clear human recipient, approved source material, an obvious review point, and a result that is still useful when the human decides not to act.
+  - Work through a calendar example: a meeting event starts preparation of a briefing with agenda, approved account notes, recent work-log entries, and open questions. The output waits in a private workspace; the manager reviews it and separately decides any follow-up.
+  - Work through a file-change example: an updated requirements document starts a comparison and change summary for the author. The system flags questions and drafts a checklist, but it does not alter the specification, assign work, or notify stakeholders without the author’s review.
+  - Describe the minimum technical components in tool-neutral terms: event source, narrow filter, permitted context source, AI preparation step, private queue or draft location, human confirmation, and a visible way to disable the flow. Use named tools only as reviewed reference implementations when the guide is drafted.
+  - Set simple operational limits appropriate to Stage 1: no recursive agents, no hidden retries that take additional action, no shared queue presented as a team service, no long-lived background ownership, and no reliance on the flow for critical deadlines or recovery.
+  - Include basic failure handling: make failure visible to the person, preserve the original event or source link, avoid silently substituting missing context, and make it easy to pause or disable the flow.
+  - Explain the promotion trigger: if the workflow needs recurring unattended writes, retries, exception handling, shared users, sensitive-system access, audit logs, service-level expectations, or a named operational owner, it has reached Stage 3 managed-workflow territory.
+- Practical takeaway: A **Human-Reviewed Event Workflow reference pattern** and launch checklist covering trigger, allowed input, context, private review queue, prohibited actions, confirmation point, disable switch, and escalation conditions.
+- Decision rule: Keep an event workflow in Stage 1 only if it stops before a consequential action and a person can inspect the relevant source, result, and proposed next step before deciding what happens.
+- Source notes: `docs/adoption-stages.md` Stage 1 situation, teaching points, authority continuum, and boundaries; `docs/roadmap.md` Stage 1 milestone and Managed Workflows commitments; `content/notes/project_refactor_prompt.md` Personal Use; `content/notes/NOTES.md` daily refresh, project tool, and workflow ideas.
+- Additional notes: This guide deliberately uses a stronger boundary than “a human is somewhere in the loop.” The person must review before a consequential action, not merely discover and correct it afterward.
+- Status: planned
 
 ## Stage 2: Shared Team Practice
 
