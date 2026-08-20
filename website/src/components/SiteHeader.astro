@@ -1,5 +1,9 @@
 ---
-import { pillars, site } from "@/lib/site";
+import { getGuides, getStages } from "@/lib/content";
+import { site } from "@/lib/site";
+
+const stages = await getStages();
+const guides = await getGuides();
 ---
 
 <header class="site-header">
@@ -18,14 +22,28 @@ import { pillars, site } from "@/lib/site";
       </span>
     </a>
     <div class="links">
-      <details class="blueprint-menu">
-        <summary>Blueprint</summary>
-        <div class="blueprint-panel">
+      <details class="nav-menu">
+        <summary>Journey</summary>
+        <div class="nav-panel">
+          <a class="nav-panel-top" href="/stages/">All stages</a>
           {
-            pillars.map((pillar) => (
-              <a class="pillar-link" href={`/topics/${pillar.slug}/`}>
-                <span>{pillar.title}</span>
-                <small>{pillar.description}</small>
+            stages.map((stage) => (
+              <a class="nav-link" href={`/stages/${stage.id}/`}>
+                <span class="nav-link-num">{stage.data.order}</span>
+                <span>{stage.data.title}</span>
+              </a>
+            ))
+          }
+        </div>
+      </details>
+      <details class="nav-menu">
+        <summary>Guides</summary>
+        <div class="nav-panel">
+          <a class="nav-panel-top" href="/guides/">All guides</a>
+          {
+            guides.map((guide) => (
+              <a class="nav-link" href={`/guides/${guide.data.routeSlug}/`}>
+                <span>{guide.data.title}</span>
               </a>
             ))
           }
@@ -38,8 +56,9 @@ import { pillars, site } from "@/lib/site";
 
 <style>
   .site-header {
+    background: color-mix(in srgb, var(--bg) 90%, transparent);
+    backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--line);
-    background: rgba(247, 244, 237, 0.92);
     position: sticky;
     top: 0;
     z-index: 10;
@@ -47,7 +66,7 @@ import { pillars, site } from "@/lib/site";
 
   .skip {
     background: var(--ink);
-    color: var(--surface);
+    color: var(--bg);
     left: 12px;
     padding: 8px 12px;
     position: absolute;
@@ -62,7 +81,7 @@ import { pillars, site } from "@/lib/site";
     align-items: center;
     display: flex;
     justify-content: space-between;
-    min-height: 72px;
+    min-height: 68px;
   }
 
   .brand {
@@ -75,11 +94,13 @@ import { pillars, site } from "@/lib/site";
 
   .mark {
     align-items: center;
-    background: var(--ink);
-    color: var(--surface);
+    background: var(--accent);
+    border-radius: 4px;
+    color: #0f131c;
     display: inline-flex;
+    font-family: var(--mono);
     font-size: 0.72rem;
-    font-weight: 850;
+    font-weight: 600;
     gap: 1px;
     height: 34px;
     justify-content: center;
@@ -111,7 +132,7 @@ import { pillars, site } from "@/lib/site";
     display: flex;
     font-family: var(--sans);
     font-size: 0.9rem;
-    font-weight: 700;
+    font-weight: 600;
     gap: 22px;
   }
 
@@ -124,10 +145,10 @@ import { pillars, site } from "@/lib/site";
 
   .links a:hover,
   summary:hover {
-    color: var(--signal);
+    color: var(--accent);
   }
 
-  .blueprint-menu {
+  .nav-menu {
     position: relative;
   }
 
@@ -152,54 +173,63 @@ import { pillars, site } from "@/lib/site";
     width: 6px;
   }
 
-  .blueprint-menu[open] summary {
-    color: var(--accent-strong);
+  .nav-menu[open] summary {
+    color: var(--accent);
   }
 
-  .blueprint-menu[open] summary::after {
+  .nav-menu[open] summary::after {
     margin-top: 0.62em;
     transform: rotate(225deg);
   }
 
-  .blueprint-panel {
-    background: rgba(255, 253, 248, 0.98);
+  .nav-panel {
+    background: var(--bg-raised);
     border: 1px solid var(--line);
-    box-shadow: 0 18px 40px rgba(23, 23, 23, 0.12);
+    border-radius: 6px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
     display: grid;
     gap: 0;
-    min-width: min(420px, calc(100vw - 48px));
+    min-width: min(360px, calc(100vw - 48px));
     padding: 8px;
     position: absolute;
     right: 0;
     top: calc(100% + 16px);
   }
 
-  .pillar-link {
-    border-bottom: 1px solid rgba(201, 192, 177, 0.72);
-    display: grid;
-    gap: 4px;
-    padding: 13px 14px;
+  .nav-panel-top {
+    border-bottom: 1px solid var(--line);
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    padding: 11px 14px;
+    text-transform: uppercase;
   }
 
-  .pillar-link:last-child {
+  .nav-link {
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    font-size: 0.88rem;
+    font-weight: 500;
+    gap: 10px;
+    padding: 12px 14px;
+  }
+
+  .nav-link:last-child {
     border-bottom: 0;
   }
 
-  .pillar-link:hover,
-  .pillar-link:focus-visible {
-    background: rgba(18, 106, 91, 0.08);
-    color: var(--accent-strong);
+  .nav-link:hover,
+  .nav-link:focus-visible {
+    background: var(--accent-soft);
+    color: var(--accent);
   }
 
-  .pillar-link span {
-    font-weight: 800;
-  }
-
-  .pillar-link small {
-    color: var(--muted);
-    font-size: 0.78rem;
-    font-weight: 600;
-    line-height: 1.35;
+  .nav-link-num {
+    color: var(--ink-faint);
+    font-family: var(--mono);
+    font-size: 0.72rem;
   }
 
   @media (max-width: 760px) {
@@ -218,11 +248,11 @@ import { pillars, site } from "@/lib/site";
       width: 100%;
     }
 
-    .blueprint-menu {
+    .nav-menu {
       width: 100%;
     }
 
-    .blueprint-panel {
+    .nav-panel {
       box-shadow: none;
       margin-top: 10px;
       min-width: 0;

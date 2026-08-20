@@ -1,0 +1,113 @@
+---
+interface Props {
+  stage: any;
+}
+
+const { stage } = Astro.props;
+const { challengeMap, challengesAndLimits } = stage.data;
+---
+
+<section class="shell section tight challenge-response">
+  {
+    challengeMap.length > 0 ? (
+      <Fragment>
+        <h2 class="section-title">Pains to response</h2>
+        <p class="section-note">
+          Each material challenge paired with the corresponding practice, decision, or content path. The map is an
+          at-a-glance aid; it does not imply a single practice solves the whole problem.
+        </p>
+        <div class="cr-list">
+          {challengeMap.map((row: { challenge: string; whyItMatters: string; response: string }) => (
+            <div class="cr-row card">
+              <div class="cr-col">
+                <span class="cr-label">Challenge</span>
+                <p>{row.challenge}</p>
+              </div>
+              <div class="cr-col">
+                <span class="cr-label">Why it matters</span>
+                <p>{row.whyItMatters}</p>
+              </div>
+              <div class="cr-col">
+                <span class="cr-label">Response</span>
+                <p>{row.response}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Fragment>
+    ) : (
+      <Fragment>
+        <h2 class="section-title">Challenges and limits</h2>
+        <ul class="cr-limits">
+          {challengesAndLimits.map((item: string) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </Fragment>
+    )
+  }
+</section>
+
+<style>
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(1.5rem, 3vw, 1.9rem);
+    font-weight: 500;
+    margin: 0 0 10px;
+  }
+
+  .section-note {
+    color: var(--ink-soft);
+    font-size: 0.94rem;
+    line-height: 1.55;
+    margin: 0 0 24px;
+    max-width: var(--reading);
+  }
+
+  .cr-list {
+    display: grid;
+    gap: 16px;
+  }
+
+  .cr-row {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .cr-label {
+    color: var(--accent);
+    display: block;
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  .cr-col p {
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .cr-limits {
+    display: grid;
+    gap: 12px;
+    margin: 0;
+    max-width: var(--reading);
+    padding-left: 20px;
+  }
+
+  .cr-limits li {
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+
+  @media (max-width: 780px) {
+    .cr-row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,19 +1,19 @@
 import rss from "@astrojs/rss";
-import { getPublishedArticles } from "@/lib/content";
+import { getPublishedBlogPosts } from "@/lib/content";
 import { site } from "@/lib/site";
 
 export async function GET(context) {
-  const articles = await getPublishedArticles();
+  const posts = await getPublishedBlogPosts();
 
   return rss({
     title: site.name,
     description: site.description,
     site: context.site,
-    items: articles.map((article) => ({
-      title: article.data.title,
-      description: article.data.description,
-      pubDate: article.data.publishedDate,
-      link: `/articles/${article.data.routeSlug}/`
+    items: posts.map((post) => ({
+      title: post.data.title,
+      description: post.data.description,
+      pubDate: post.data.publishedDate,
+      link: `/blog/${post.data.routeSlug}/`
     }))
   });
 }

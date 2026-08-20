@@ -1,0 +1,147 @@
+---
+import FieldNoteCard from "@/components/FieldNoteCard.astro";
+import { getFieldNotesForStage, getStages } from "@/lib/content";
+
+const stages = await getStages();
+const stageNotes = await Promise.all(
+  stages.map(async (stage) => ({
+    stage,
+    notes: await getFieldNotesForStage(stage.id)
+  }))
+);
+---
+
+<ol class="journey-list">
+  {
+    stageNotes.map(({ stage, notes }) => (
+      <li class="journey-stage">
+        <div class="journey-num">
+          <span class="journey-num-badge">{stage.data.order}</span>
+        </div>
+        <div class="journey-content">
+          <a class="journey-title" href={`/stages/${stage.id}/`}>
+            {stage.data.title}
+          </a>
+          <p class="journey-desc">{stage.data.whatChanges}</p>
+          {notes.length > 0 ? (
+            <div class="journey-notes">
+              {notes.map((note) => (
+                <FieldNoteCard entry={note} variant="compact" />
+              ))}
+            </div>
+          ) : (
+            <p class="journey-empty">Field notes for this stage are in planning.</p>
+          )}
+        </div>
+      </li>
+    ))
+  }
+</ol>
+
+<style>
+  .journey-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+
+  .journey-list::before {
+    background: var(--line);
+    bottom: 8px;
+    content: "";
+    left: 27px;
+    position: absolute;
+    top: 8px;
+    width: 1px;
+  }
+
+  .journey-stage {
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    gap: 4px 22px;
+    grid-template-columns: 56px 1fr;
+    padding: 30px 0;
+    position: relative;
+  }
+
+  .journey-stage:first-child {
+    padding-top: 2px;
+  }
+
+  .journey-stage:last-child {
+    border-bottom: none;
+    padding-bottom: 4px;
+  }
+
+  .journey-num {
+    display: flex;
+    justify-content: center;
+    padding-top: 3px;
+  }
+
+  .journey-num-badge {
+    align-items: center;
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    color: var(--accent);
+    display: flex;
+    font-family: var(--mono);
+    font-size: 1.05rem;
+    height: 40px;
+    justify-content: center;
+    width: 40px;
+    z-index: 1;
+  }
+
+  .journey-title {
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: clamp(1.2rem, 2.6vw, 1.5rem);
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .journey-title:hover {
+    color: var(--accent);
+  }
+
+  .journey-desc {
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin: 8px 0 18px;
+    max-width: 640px;
+  }
+
+  .journey-notes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .journey-empty {
+    color: var(--ink-faint);
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+    margin: 0;
+  }
+
+  @media (max-width: 560px) {
+    .journey-list::before {
+      left: 23px;
+    }
+
+    .journey-stage {
+      gap: 4px 14px;
+      grid-template-columns: 48px 1fr;
+    }
+
+    .journey-num-badge {
+      font-size: 0.85rem;
+      height: 32px;
+      width: 32px;
+    }
+  }
+</style>

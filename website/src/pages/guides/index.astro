@@ -1,0 +1,37 @@
+---
+import GuideCard from "@/components/GuideCard.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getGuides } from "@/lib/content";
+
+const guides = await getGuides();
+---
+
+<BaseLayout
+  title="Guides"
+  description="Implementation guides for the AI adoption stage journey. Each guide has one primary stage and may be relevant to others."
+>
+  <section class="shell section tight">
+    <div class="prose">
+      <p class="eyebrow">Guides</p>
+      <h1>Technical depth when a task needs it.</h1>
+      <p class="lede">
+        Guides are cross-cutting: each has one primary narrative stage and can be discovered from other stages
+        where it applies. Most are still in planning.
+      </p>
+    </div>
+  </section>
+  <section class="shell section tight grid">
+    {guides.map((entry) => <GuideCard entry={entry} variant="full" />)}
+  </section>
+</BaseLayout>
+
+<style>
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4.6vw, 2.6rem);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+    margin: 16px 0 16px;
+  }
+</style>

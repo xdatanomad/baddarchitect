@@ -1,31 +1,43 @@
 import { getCollection } from "astro:content";
 
-const lessonFiles = import.meta.glob("../content/lessons/**/*.mdx");
-
-export function hasLessonFiles() {
-  return Object.keys(lessonFiles).length > 0;
+export async function getStages() {
+  const stages = await getCollection("stages");
+  return stages.sort((a, b) => a.data.order - b.data.order);
 }
 
-export async function getPublishedArticles() {
-  const articles = await getCollection("articles", ({ data }) => {
-    return data.status === "published" && !data.draft;
-  });
+export async function getStageById(id: string) {
+  const stages = await getStages();
+  return stages.find((stage) => stage.id === id);
+}
 
-  return articles.sort(
-    (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()
+export async function getFieldNotes() {
+  return getCollection("fieldNotes");
+}
+
+export async function getFieldNotesForStage(stageId: string) {
+  const fieldNotes = await getFieldNotes();
+  return fieldNotes.filter((note) => note.data.stage.id === stageId);
+}
+
+export async function getGuides() {
+  return getCollection("guides");
+}
+
+export async function getGuidesForStage(stageId: string) {
+  const guides = await getGuides();
+  return guides.filter(
+    (guide) =>
+      guide.data.primaryStage.id === stageId ||
+      guide.data.crossListedStages.some((stage) => stage.id === stageId)
   );
 }
 
-export async function getPublishedLessons() {
-  if (!hasLessonFiles()) {
-    return [];
-  }
-
-  const lessons = await getCollection("lessons", ({ data }) => {
+export async function getPublishedBlogPosts() {
+  const posts = await getCollection("blog", ({ data }) => {
     return data.status === "published" && !data.draft;
   });
 
-  return lessons.sort(
+  return posts.sort(
     (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()
   );
 }

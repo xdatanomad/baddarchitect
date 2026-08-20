@@ -1,0 +1,35 @@
+---
+import JourneyMap from "@/components/JourneyMap.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="The Journey"
+  description="The stage-led AI adoption journey: Foundation, Personal Leverage, Shared Team Practice, Managed Workflows, and Governed Organizational Capability."
+>
+  <section class="shell section tight">
+    <div class="prose">
+      <p class="eyebrow">The Journey</p>
+      <h1>Five stages from safe participation to governed capability.</h1>
+      <p class="lede">
+        The model is a guide to the next bottleneck, not a certification or a company-wide maturity score. A
+        company can be well-managed in one workflow and still at personal leverage in another—assess the
+        specific workflow or team in front of you.
+      </p>
+    </div>
+  </section>
+  <section class="shell section tight">
+    <JourneyMap />
+  </section>
+</BaseLayout>
+
+<style>
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.1rem, 5vw, 2.9rem);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.08;
+    margin: 16px 0 16px;
+  }
+</style>

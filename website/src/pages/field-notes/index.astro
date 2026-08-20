@@ -1,0 +1,37 @@
+---
+import FieldNoteCard from "@/components/FieldNoteCard.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getFieldNotes } from "@/lib/content";
+
+const fieldNotes = await getFieldNotes();
+---
+
+<BaseLayout
+  title="Field Notes"
+  description="Field notes across the AI adoption stage journey. Each addresses one decision, practice, or perspective."
+>
+  <section class="shell section tight">
+    <div class="prose">
+      <p class="eyebrow">Field Notes</p>
+      <h1>One decision or practice at a time.</h1>
+      <p class="lede">
+        Each field note has one primary stage in the adoption journey. Most are still in planning—the outline
+        below is what each one will cover once it's drafted.
+      </p>
+    </div>
+  </section>
+  <section class="shell section tight grid">
+    {fieldNotes.map((entry) => <FieldNoteCard entry={entry} variant="full" />)}
+  </section>
+</BaseLayout>
+
+<style>
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4.6vw, 2.6rem);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+    margin: 16px 0 16px;
+  }
+</style>

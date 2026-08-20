@@ -1,0 +1,59 @@
+---
+interface Props {
+  stage: any;
+}
+
+const { stage } = Astro.props;
+const { hasDetailedOrientation, preamble, pullQuote, whatChanges } = stage.data;
+---
+
+<section class="shell section tight stage-preamble">
+  <div class="prose">
+    <p>{whatChanges}</p>
+    {
+      hasDetailedOrientation ? (
+        <Fragment>
+          {preamble.map((paragraph: string) => (
+            <p>{paragraph}</p>
+          ))}
+          {pullQuote && (
+            <div class="banner">
+              <p>{pullQuote}</p>
+            </div>
+          )}
+        </Fragment>
+      ) : (
+        <div class="banner banner--muted">
+          <p class="mono-label">In planning</p>
+          <p class="planning-note">
+            A detailed orientation and problem-to-response map for this stage has not been written yet.
+            The challenges, limits, and teaching points below are canonical and already approved.
+          </p>
+        </div>
+      )
+    }
+  </div>
+</section>
+
+<style>
+  .mono-label {
+    color: var(--amber);
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    font-style: normal;
+    letter-spacing: 0.1em;
+    margin: 0 0 8px;
+    text-transform: uppercase;
+  }
+
+  .banner--muted {
+    border-left-color: var(--amber-line);
+  }
+
+  .banner--muted .planning-note {
+    color: var(--ink-soft);
+    font-family: var(--sans);
+    font-size: 0.94rem;
+    font-style: normal;
+  }
+</style>

@@ -1,0 +1,72 @@
+---
+import AuthorityContinuum from "@/components/AuthorityContinuum.astro";
+import ChallengeResponseTable from "@/components/ChallengeResponseTable.astro";
+import FieldNoteCard from "@/components/FieldNoteCard.astro";
+import GuideCard from "@/components/GuideCard.astro";
+import StageClosing from "@/components/StageClosing.astro";
+import StageHero from "@/components/StageHero.astro";
+import StagePreamble from "@/components/StagePreamble.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getFieldNotesForStage, getGuidesForStage, getStages } from "@/lib/content";
+
+export async function getStaticPaths() {
+  const stages = await getStages();
+  return stages.map((stage) => ({
+    params: { slug: stage.id },
+    props: { stage }
+  }));
+}
+
+const { stage } = Astro.props;
+const fieldNotes = await getFieldNotesForStage(stage.id);
+const guides = await getGuidesForStage(stage.id);
+---
+
+<BaseLayout title={stage.data.title} description={stage.data.situation} canonical={`/stages/${stage.id}/`}>
+  <StageHero stage={stage} />
+  <StagePreamble stage={stage} />
+  <ChallengeResponseTable stage={stage} />
+
+  <section class="shell section tight">
+    <h2 class="section-title">Field notes</h2>
+    {
+      fieldNotes.length > 0 ? (
+        <div class="grid">
+          {fieldNotes.map((entry) => (
+            <FieldNoteCard entry={entry} variant="full" />
+          ))}
+        </div>
+      ) : (
+        <p class="muted">Field notes for this stage are in planning.</p>
+      )
+    }
+  </section>
+
+  <section class="shell section tight">
+    <h2 class="section-title">Guides</h2>
+    {
+      guides.length > 0 ? (
+        <div class="grid">
+          {guides.map((entry) => (
+            <GuideCard entry={entry} variant="full" />
+          ))}
+        </div>
+      ) : (
+        <p class="muted">No implementation guides target this stage yet.</p>
+      )
+    }
+  </section>
+
+  <AuthorityContinuum activeLevels={stage.data.authorityLevels} note={stage.data.authorityNote} />
+
+  <StageClosing stage={stage} />
+</BaseLayout>
+
+<style>
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(1.5rem, 3vw, 1.9rem);
+    font-weight: 500;
+    margin: 0 0 20px;
+  }
+</style>

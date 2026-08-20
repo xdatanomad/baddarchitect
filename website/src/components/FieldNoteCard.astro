@@ -1,0 +1,141 @@
+---
+interface CrossListedTag {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  entry: any;
+  kind?: "field-note" | "guide";
+  variant?: "compact" | "full";
+  crossListed?: CrossListedTag[];
+}
+
+const { entry, kind = "field-note", variant = "full", crossListed = [] } = Astro.props;
+
+const base = kind === "guide" ? "/guides/" : "/field-notes/";
+const href = `${base}${entry.data.routeSlug}/`;
+const statusLabel = entry.data.status === "published" ? "Published" : "Planned";
+const statusClass = entry.data.status === "published" ? "pill--published" : "pill--planned";
+---
+
+{
+  variant === "compact" ? (
+    <a class="fn-chip" href={href}>
+      <span class="fn-chip-title">{entry.data.title}</span>
+      <span class={`pill ${statusClass}`}>{statusLabel}</span>
+    </a>
+  ) : (
+    <div class="fn-card-wrap">
+      <a class="fn-card card" href={href}>
+        <div class="fn-card-head">
+          <span class={`pill ${statusClass}`}>{statusLabel}</span>
+          {kind === "guide" && <span class="pill pill--neutral">Guide</span>}
+        </div>
+        <h3>{entry.data.title}</h3>
+        <p>{entry.data.readerJob}</p>
+        <span class="fn-card-cta">Read the outline &rarr;</span>
+      </a>
+      {crossListed.length > 0 && (
+        <div class="fn-cross-listed">
+          <span>Also relevant to</span>
+          {crossListed.map((stage) => (
+            <a class="pill pill--neutral" href={stage.href}>
+              {stage.label}
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
+
+<style>
+  .fn-chip {
+    align-items: center;
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    display: inline-flex;
+    gap: 10px;
+    max-width: 300px;
+    padding: 9px 12px;
+    text-decoration: none;
+    transition: border-color 120ms ease;
+  }
+
+  .fn-chip:hover {
+    border-color: var(--accent);
+  }
+
+  .fn-chip-title {
+    color: var(--ink);
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1.32;
+  }
+
+  .fn-card-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+  }
+
+  .fn-card {
+    display: block;
+    flex: 1;
+    text-decoration: none;
+    transition: border-color 120ms ease;
+  }
+
+  .fn-card:hover {
+    border-color: var(--accent);
+  }
+
+  .fn-card-head {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .fn-card h3 {
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 1.14rem;
+    font-weight: 500;
+    line-height: 1.28;
+    margin: 0 0 10px;
+  }
+
+  .fn-card p {
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    line-height: 1.5;
+    margin: 0 0 16px;
+  }
+
+  .fn-card-cta {
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .fn-cross-listed {
+    align-items: center;
+    color: var(--ink-faint);
+    display: flex;
+    flex-wrap: wrap;
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    gap: 8px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .fn-cross-listed a {
+    text-decoration: none;
+  }
+</style>

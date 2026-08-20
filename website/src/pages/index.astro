@@ -1,276 +1,82 @@
 ---
 import ArticleCard from "@/components/ArticleCard.astro";
-import TopicCard from "@/components/TopicCard.astro";
+import JourneyMap from "@/components/JourneyMap.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { getPublishedArticles } from "@/lib/content";
-import { pillars } from "@/lib/site";
+import { getPublishedBlogPosts } from "@/lib/content";
 
-const articles = (await getPublishedArticles()).slice(0, 3);
-const rolePaths = [
-  {
-    role: "For Leaders",
-    description:
-      "Use the blueprint to build trust, choose the right operating model, and create governance that enables adoption.",
-    steps: [
-      {
-        label: "Start with fear and safe participation",
-        href: "/articles/ai-adoption-starts-with-fear-safe-participation/",
-      },
-      {
-        label: "Move into the operating model",
-        href: "/topics/operating-manual/",
-      },
-      {
-        label: "Set governance and review gates",
-        href: "/topics/ai-security/",
-      },
-    ],
-  },
-  {
-    role: "For Architects",
-    description:
-      "Use the blueprint to turn promising demos into workflows with clear context, boundaries, and production paths.",
-    steps: [
-      {
-        label: "Start with workflow, not demos",
-        href: "/articles/demo-is-not-the-product-workflow-is-the-product/",
-      },
-      {
-        label: "Map the trust boundary",
-        href: "/articles/trust-factor-when-is-ai-safe-enough-to-act/",
-      },
-      {
-        label: "Design the production blueprint",
-        href: "/topics/production-ai-systems/",
-      },
-    ],
-  },
-  {
-    role: "For Engineers",
-    description:
-      "Use the blueprint to build AI workflows that are observable, testable, cost-aware, and permission-conscious.",
-    steps: [
-      {
-        label: "Understand the workflow product",
-        href: "/articles/demo-is-not-the-product-workflow-is-the-product/",
-      },
-      {
-        label: "Build for evals, observability, and cost",
-        href: "/topics/production-ai-systems/",
-      },
-      {
-        label: "Treat permissions and tool access as architecture",
-        href: "/topics/ai-security/",
-      },
-    ],
-  },
-] as const;
+const posts = (await getPublishedBlogPosts()).slice(0, 3);
 ---
 
 <BaseLayout>
   <section class="hero shell">
     <div class="prose">
-      <p class="eyebrow">Badd Architect</p>
-      <!-- <h1>A blueprint for building Production-grade AI Applications</h1> -->
-      <h1>Built for teams turning AI experiments into production systems.</h1>
+      <p class="eyebrow">AI Adoption Blueprint</p>
+      <h1>From safe participation to governed AI capability.</h1>
       <p class="lede">
-        A practical <b>blueprint</b> for architects and leaders moving from scattered
-        AI experiments to measurable, governed, production-grade systems.
+        A practical blueprint for architects and leaders moving people and teams from scattered AI experiments to
+        measurable, governed, production-grade adoption—without treating autonomy as the default goal.
       </p>
       <div class="button-row">
-        <a class="button" href="/articles">Read the articles</a>
-        <a class="button secondary" href="/topics">Browse the blueprint</a>
+        <a class="button" href="/stages/">Start the journey</a>
+        <a class="button secondary" href="/guides/">Browse the guides</a>
       </div>
     </div>
   </section>
 
-  <section
-    class="positioning section shell"
-    aria-labelledby="positioning-title"
-  >
-    <!-- 
+  <section class="section shell" aria-labelledby="journey-title">
     <div class="section-head">
-      <p class="eyebrow">Who this is for</p>
-      <h2 id="positioning-title">
-        Built for teams turning AI experiments into governed, measurable
-        systems.
-      </h2>
-    </div>
-    -->
-    <div>
-      <article>
-        <!-- <h3>Who this site is for</h3> -->
-        <p class="eyebrow">Who this site is for</p>
-        <p>
-          For AI architects, CTOs, product leaders, AI practice leaders, and
-          adoption teams who need to move beyond scattered experiments and make
-          AI useful inside real operating constraints.
-        </p>
-      </article>
-      <article>
-        <!-- <h3>What this site is</h3> -->
-        <p class="eyebrow">What this site is</p>
-        <p>
-          A set of strategic and architectural <b>guidelines</b> for AI adoption —
-          to <b>hands-on</b> tools, techniques, and code examples for building governed
-          practical AI applications.
-        </p>
-      </article>
-    </div>
-  </section>
-
-  <!--
-  <section
-    class="reading-paths section shell"
-    aria-labelledby="reading-paths-title"
-  >
-    <div class="section-head">
-      <p class="eyebrow">How to use this site</p>
-      <h2 id="reading-paths-title">
-        Start with the pressure you are carrying.
-      </h2>
+      <p class="eyebrow">The Journey</p>
+      <h2 id="journey-title">Five stages, one bottleneck at a time.</h2>
       <p class="lede">
-        Follow the pillars in order when you are shaping an adoption program.
-        Jump by role when you need a practical path into a specific problem.
+        Stages describe the next bottleneck for a specific workflow or team—not a company-wide maturity score.
+        Each stage links to the field notes and guides that address it.
       </p>
     </div>
-    <div class="role-grid">
-      {
-        rolePaths.map((path) => (
-          <article class="role-card">
-            <p class="role-label">{path.role}</p>
-            <p class="role-description">{path.description}</p>
-            <ol>
-              {path.steps.map((step) => (
-                <li>
-                  <a href={step.href}>{step.label}</a>
-                </li>
-              ))}
-            </ol>
-          </article>
-        ))
-      }
-    </div>
-  </section>
-  -->
-
-  <section class="section shell">
-    <div class="section-head">
-      <p class="eyebrow">What this site covers</p>
-      <h2>
-        Start with the pressure you are carrying. Four practical pillars for
-        AI adoption.
-      </h2>
-      <p class="lede">
-        Follow the pillars in order or jump into a pillar based on what you care
-        about.
-      </p>
-    </div>
-    <div class="stacked-card-list">
-      {pillars.map((pillar) => <TopicCard topic={pillar} variant="stacked" />)}
-    </div>
+    <JourneyMap />
   </section>
 
-  <section class="section shell">
+  <section class="section tight shell" aria-labelledby="blog-title">
     <div class="section-head">
-      <p class="eyebrow">Start here</p>
-      <h2>Recent articles</h2>
+      <p class="eyebrow">From the Blog</p>
+      <h2 id="blog-title">Recent essays</h2>
     </div>
     <div>
-      {articles.map((article) => <ArticleCard entry={article} />)}
+      {posts.map((post) => <ArticleCard entry={post} />)}
     </div>
   </section>
 </BaseLayout>
 
 <style>
   .hero {
-    min-height: calc(72svh - 72px);
     padding-bottom: 60px;
     padding-top: 78px;
   }
 
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(2.3rem, 6vw, 3.6rem);
+    letter-spacing: -0.01em;
+    line-height: 1.08;
+    margin: 16px 0 18px;
+  }
+
   .section-head {
-    margin-bottom: 24px;
+    margin-bottom: 32px;
     max-width: 760px;
   }
 
   .section-head h2 {
-    font-size: clamp(1.9rem, 4vw, 3rem);
-    line-height: 1.08;
-    margin: 8px 0 0;
-  }
-
-  .positioning {
-    padding-top: 0;
-  }
-
-  .role-grid {
-    display: grid;
-    gap: 18px;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .role-card {
-    background: rgba(255, 253, 248, 0.74);
-    border: 1px solid var(--line);
-    display: flex;
-    flex-direction: column;
-    min-height: 320px;
-    padding: 24px;
-  }
-
-  .role-label {
-    font-family: var(--sans);
-    font-size: 1rem;
-    font-weight: 800;
-    line-height: 1.2;
-    margin: 0 0 12px;
-  }
-
-  .role-description {
-    color: var(--muted);
-    margin: 0;
-  }
-
-  .role-card ol {
-    border-top: 1px solid var(--line);
-    display: grid;
-    gap: 14px;
-    list-style-position: inside;
-    margin: auto 0 0;
-    padding: 22px 0 0;
-  }
-
-  .role-card li {
-    color: var(--muted);
-    font-family: var(--sans);
-    font-size: 0.92rem;
-    font-weight: 750;
-  }
-
-  .role-card a {
-    color: var(--ink);
-    text-decoration: none;
-  }
-
-  .role-card a:hover {
-    color: var(--accent-strong);
-    text-decoration: underline;
-    text-underline-offset: 0.18em;
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(1.8rem, 3.6vw, 2.4rem);
+    line-height: 1.1;
+    margin: 8px 0 10px;
   }
 
   @media (max-width: 820px) {
     .hero {
-      min-height: auto;
       padding-top: 48px;
-    }
-
-    .role-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .role-card {
-      min-height: 0;
     }
   }
 </style>
