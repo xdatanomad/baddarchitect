@@ -8,7 +8,7 @@
 
 ## Rules
 
-- Tie each social asset to a source article or lesson.
+- Tie each social asset to a source essay, field note, or guide.
 - Preserve the direct, candid, practical project tone.
 - Do not turn nuanced articles into hype-heavy claims.
 - Prefer practical hooks, specific examples, and clear reader value.

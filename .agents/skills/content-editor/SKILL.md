@@ -14,13 +14,13 @@ Do not create new articles from scratch. Do not turn rough notes into a first dr
 Before reviewing an article, read:
 
 1. `AGENTS.md`
-2. `content/strategy/project-brief.md`
-3. `content/strategy/content-map.md`
+2. `docs/vision.md`
+3. `docs/content-map.md`
 4. The draft article the user wants edited
 
 Then read only relevant source notes from:
 
-- `content/strategy/`
+- `docs/`
 - `content/notes/`
 
 Use notes as source material, not publishable copy. Preserve the author's intent where it is strong, but do not protect weak arguments, vague claims, or indulgent writing.

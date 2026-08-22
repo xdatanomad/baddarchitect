@@ -14,7 +14,7 @@
 
 ## Quick Checklist
 
-[ ] Review @content/drafts/articles/foundation-safe-participation.md
+[ ] Review @content/drafts/essays/foundation-safe-participation.md
 
 [ ] Plan stage 1 - resume session: "Define stage 1 content focus"
 	- "what is the best prompt for the first stage"
@@ -28,7 +28,7 @@ No need to write any changes yet. Let's discuss together. Work collaboratively. 
 PREVIOUS SESSIONS:
 [X] ~~Resume session "Define stage 2 practice sharing"~~
 
-[ ] A promotion strategy from @content/ready `.md` format to @website/src/content/articles `.mdx` format.
+[ ] A promotion strategy from @content/ready `.md` format to @website/src/content/essays `.mdx` format.
 [ ] Add daily automation for new articles and content.
 
 ## Website
@@ -50,7 +50,7 @@ PREVIOUS SESSIONS:
 
 [ ] Promotion strategy from:
 	- @content/drafts `.md` format to @content/ready `.md` format.
-	- @content/ready `.md` format to @website/src/content/articles `.mdx` format.
+	- @content/ready `.md` format to @website/src/content/essays `.mdx` format.
 [ ] A _Guide-specifc_ article style and tone
 [ ] Adding **visuals** to articles and lessons
 [ ] Synchronizing @content to Notion for collaboration with co-authors and editors.

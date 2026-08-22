@@ -1,6 +1,6 @@
 # LinkedIn Short Post: AI Adoption Starts With Fear
 
-- Source article: `content/ready/articles/p1-challenges/p1-01_ai-adoption-starts-with-fear-safe-participation.md`
+- Source article: `content/ready/essays/ai-adoption-starts-with-fear-safe-participation.md`
 - Target length: 10-20 seconds
 - Status: draft
 

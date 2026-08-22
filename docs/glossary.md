@@ -82,6 +82,13 @@ and business value.
 A concise page that helps readers locate a stage, understand its current
 bottleneck, and choose the next useful investment.
 
+## Essay
+
+A longer argument piece on an adoption challenge, written to persuade and to
+frame a problem rather than to walk a reader through a task. Essays are not
+scoped to a single stage and carry no stage-based content ID; an essay filename
+is its route slug.
+
 ## Field Note
 
 A concise article that addresses one decision, practice, or perspective in the
@@ -99,7 +106,8 @@ The root `content/` directory. It holds raw notes, drafts, ready source content,
 
 ## Live Website Content
 
-The MDX content under `website/src/content/` that Astro reads to build public article and lesson pages.
+The MDX content under `website/src/content/` that Astro reads to build the public
+stage, essay, field note, and guide pages.
 
 ## Ready Content
 

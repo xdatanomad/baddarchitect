@@ -9,8 +9,8 @@ Use this skill to plan content for the AI Adoption Blueprint site. The job is to
 
 ## Hard Boundaries
 
-- Only modify `content/strategy/content-map.md`.
-- Do not create article drafts, publishable pages, outlines in `content/articles/`, or long-form content.
+- Only modify `docs/content-map.md`.
+- Do not create article drafts, publishable pages, outlines in `content/drafts/`, or long-form content.
 - Do not edit raw notes in `content/notes/`.
 - Do not edit milestones, project phases, site architecture, AGENTS files, or skill inventory files unless the user explicitly asks outside this skill.
 - Preserve source material. Treat notes as inputs, not destinations.
@@ -20,12 +20,12 @@ Use this skill to plan content for the AI Adoption Blueprint site. The job is to
 Before changing the content map, read:
 
 1. `AGENTS.md`
-2. `content/strategy/project-brief.md`
-3. `content/strategy/content-map.md`
+2. `docs/vision.md`
+3. `docs/content-map.md`
 
 Then read only the relevant source files from:
 
-- `content/strategy/`
+- `docs/`
 - `content/notes/`
 
 Use the notes to identify useful planning candidates, but keep raw phrasing and unfinished thinking out of the content map unless it has been shaped into a clear plan.
@@ -49,7 +49,7 @@ Challenge weak content. If an idea is generic, hype-driven, purely opinion-based
 
 ## Content Map Shape
 
-Keep `content/strategy/content-map.md` concise and scannable. Organize planned content under the approved pillars.
+Keep `docs/content-map.md` concise and scannable. Organize planned content under the approved pillars.
 
 For each planned item, prefer this compact shape:
 

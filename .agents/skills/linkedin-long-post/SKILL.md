@@ -12,10 +12,10 @@ Use this skill to create a long LinkedIn post description from an already publis
 Before generating a post, read:
 
 1. `AGENTS.md`
-2. `content/strategy/project-brief.md`
+2. `docs/vision.md`
 3. The published article
 
-Read `content/strategy/content-map.md` only when needed to understand the article's pillar, ID, or planned role.
+Read `docs/content-map.md` only when needed to understand the article's pillar, ID, or planned role.
 
 ## Output Location
 
