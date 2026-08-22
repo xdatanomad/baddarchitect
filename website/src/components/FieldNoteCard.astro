@@ -1,4 +1,6 @@
 ---
+import { entryHref, entryStatusLabel } from "@/lib/content";
+
 interface CrossListedTag {
   label: string;
   href: string;
@@ -13,9 +15,8 @@ interface Props {
 
 const { entry, kind = "field-note", variant = "full", crossListed = [] } = Astro.props;
 
-const base = kind === "guide" ? "/guides/" : "/field-notes/";
-const href = `${base}${entry.data.routeSlug}/`;
-const statusLabel = entry.data.status === "published" ? "Published" : "Planned";
+const href = entryHref(entry, kind);
+const statusLabel = entryStatusLabel(entry);
 const statusClass = entry.data.status === "published" ? "pill--published" : "pill--planned";
 ---
 
@@ -121,6 +122,7 @@ const statusClass = entry.data.status === "published" ? "pill--published" : "pil
 
   .fn-card-head {
     display: flex;
+    flex-wrap: wrap;
     gap: 8px;
     margin-bottom: 14px;
   }
@@ -163,5 +165,11 @@ const statusClass = entry.data.status === "published" ? "pill--published" : "pil
 
   .fn-cross-listed a {
     text-decoration: none;
+  }
+
+  @media (max-width: 720px) {
+    .fn-note {
+      padding: 14px 16px;
+    }
   }
 </style>

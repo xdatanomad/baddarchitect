@@ -49,7 +49,7 @@ const { challengeMap, challengesAndLimits } = stage.data;
     font-family: var(--serif);
     font-size: clamp(1.5rem, 3vw, 1.9rem);
     font-weight: 500;
-    margin: 0 0 24px;
+    margin: 0 0 20px;
   }
 
 
@@ -97,7 +97,13 @@ const { challengeMap, challengesAndLimits } = stage.data;
 
   @media (max-width: 780px) {
     .cr-row {
+      gap: 14px;
       grid-template-columns: 1fr;
+    }
+
+    .cr-col + .cr-col {
+      border-top: 1px solid var(--line);
+      padding-top: 14px;
     }
   }
 </style>

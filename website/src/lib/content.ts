@@ -50,3 +50,15 @@ export function formatDate(date: Date) {
     year: "numeric"
   }).format(date);
 }
+
+export function entryHref(
+  entry: { data: { routeSlug: string } },
+  kind: "field-note" | "guide" = "field-note"
+) {
+  const base = kind === "guide" ? "/guides/" : "/field-notes/";
+  return `${base}${entry.data.routeSlug}/`;
+}
+
+export function entryStatusLabel(entry: { data: { status: string } }) {
+  return entry.data.status === "published" ? "Published" : "Planned";
+}

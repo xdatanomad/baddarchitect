@@ -1,5 +1,5 @@
 ---
-import FieldNoteCard from "@/components/FieldNoteCard.astro";
+import FieldNoteRow from "@/components/FieldNoteRow.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getFieldNotes } from "@/lib/content";
 
@@ -20,15 +20,19 @@ const fieldNotes = await getFieldNotes();
       </p>
     </div>
   </section>
-  <section class="shell section tight grid">
-    {fieldNotes.map((entry) => <FieldNoteCard entry={entry} variant="full" />)}
+  <section class="shell section tight fn-list">
+    {fieldNotes.map((entry) => <FieldNoteRow entry={entry} headingLevel={2} />)}
   </section>
 </BaseLayout>
 
 <style>
+  .fn-list {
+    display: grid;
+  }
+
   h1 {
     font-family: var(--serif);
-    font-size: clamp(2rem, 4.6vw, 2.6rem);
+    font-size: clamp(1.7rem, 4.6vw, 2.6rem);
     font-weight: 500;
     letter-spacing: -0.01em;
     line-height: 1.1;

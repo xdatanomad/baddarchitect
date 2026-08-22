@@ -21,7 +21,21 @@ const guides = await getGuides();
         <span>Architect</span>
       </span>
     </a>
-    <div class="links">
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-controls="primary-nav"
+      aria-expanded="false"
+      hidden
+    >
+      <span class="nav-toggle-bars" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+      <span class="sr-only">Menu</span>
+    </button>
+    <div class="links" id="primary-nav">
       <details class="nav-menu">
         <summary>Journey</summary>
         <div class="nav-panel">
@@ -53,6 +67,51 @@ const guides = await getGuides();
     </div>
   </nav>
 </header>
+
+<script>
+  const header = document.querySelector<HTMLElement>(".site-header");
+  const toggle = header?.querySelector<HTMLButtonElement>(".nav-toggle");
+  const panel = header?.querySelector<HTMLElement>("#primary-nav");
+
+  if (header && toggle && panel) {
+    // Only collapse the nav once JS is running, so a no-JS visit keeps the
+    // full link list visible rather than an unopenable menu.
+    header.dataset.js = "true";
+    toggle.hidden = false;
+
+    const setOpen = (open: boolean) => {
+      toggle.setAttribute("aria-expanded", String(open));
+      if (open) {
+        header.dataset.navOpen = "true";
+      } else {
+        delete header.dataset.navOpen;
+        panel
+          .querySelectorAll<HTMLDetailsElement>("details[open]")
+          .forEach((item) => item.removeAttribute("open"));
+      }
+    };
+
+    toggle.addEventListener("click", () => {
+      setOpen(toggle.getAttribute("aria-expanded") !== "true");
+    });
+
+    panel.addEventListener("click", (event) => {
+      if ((event.target as HTMLElement).closest("a")) setOpen(false);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape") return;
+      if (toggle.getAttribute("aria-expanded") !== "true") return;
+      setOpen(false);
+      toggle.focus();
+    });
+
+    const wide = window.matchMedia("(min-width: 761px)");
+    wide.addEventListener("change", (event) => {
+      if (event.matches) setOpen(false);
+    });
+  }
+</script>
 
 <style>
   .site-header {
@@ -125,6 +184,37 @@ const guides = await getGuides();
   .mark-letter-a {
     font-size: 1.15em;
     transform: translateY(-0.01em);
+  }
+
+  .nav-toggle {
+    align-items: center;
+    background: none;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    color: var(--ink);
+    cursor: pointer;
+    display: none;
+    height: 44px;
+    justify-content: center;
+    padding: 0;
+    width: 44px;
+  }
+
+  .nav-toggle:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .nav-toggle-bars {
+    display: grid;
+    gap: 4px;
+    width: 18px;
+  }
+
+  .nav-toggle-bars span {
+    background: currentColor;
+    height: 2px;
+    width: 100%;
   }
 
   .links {
@@ -234,18 +324,35 @@ const guides = await getGuides();
 
   @media (max-width: 760px) {
     .nav {
-      align-items: flex-start;
-      flex-direction: column;
-      gap: 14px;
-      padding-bottom: 16px;
-      padding-top: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .nav-toggle {
+      display: inline-flex;
     }
 
     .links {
       align-items: flex-start;
-      flex-wrap: wrap;
+      flex-direction: column;
       gap: 14px 18px;
       width: 100%;
+    }
+
+    .site-header[data-js] .links {
+      display: none;
+    }
+
+    .site-header[data-js][data-nav-open] .links {
+      border-top: 1px solid var(--line);
+      display: flex;
+      /* Bound the sticky header: an open group must scroll, not grow the bar. */
+      max-height: calc(100dvh - 68px);
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      padding-bottom: 18px;
+      padding-top: 18px;
     }
 
     .nav-menu {

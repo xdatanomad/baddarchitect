@@ -1,7 +1,7 @@
 ---
 import AuthorityContinuum from "@/components/AuthorityContinuum.astro";
 import ChallengeResponseTable from "@/components/ChallengeResponseTable.astro";
-import FieldNoteCard from "@/components/FieldNoteCard.astro";
+import FieldNoteRow from "@/components/FieldNoteRow.astro";
 import GuideCard from "@/components/GuideCard.astro";
 import StageClosing from "@/components/StageClosing.astro";
 import StageHero from "@/components/StageHero.astro";
@@ -31,9 +31,9 @@ const guides = await getGuidesForStage(stage.id);
     <h2 class="section-title">Field notes</h2>
     {
       fieldNotes.length > 0 ? (
-        <div class="grid">
+        <div class="fn-list">
           {fieldNotes.map((entry) => (
-            <FieldNoteCard entry={entry} variant="full" />
+            <FieldNoteRow entry={entry} />
           ))}
         </div>
       ) : (
@@ -46,7 +46,7 @@ const guides = await getGuidesForStage(stage.id);
     <h2 class="section-title">Guides</h2>
     {
       guides.length > 0 ? (
-        <div class="grid">
+        <div class="guide-grid">
           {guides.map((entry) => (
             <GuideCard entry={entry} variant="full" />
           ))}
@@ -68,5 +68,32 @@ const guides = await getGuidesForStage(stage.id);
     font-size: clamp(1.5rem, 3vw, 1.9rem);
     font-weight: 500;
     margin: 0 0 20px;
+  }
+
+  /* Field notes read as an editorial stack: no container, rule-separated. */
+  .fn-list {
+    display: grid;
+  }
+
+  /*
+    Guides stay contained and columnar. The column count is fixed rather than
+    auto-fit so card width is identical on every stage, whatever the count.
+  */
+  .guide-grid {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @media (max-width: 980px) {
+    .guide-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .guide-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
