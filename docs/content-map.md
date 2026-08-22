@@ -9,13 +9,32 @@ This file holds the planned content map for the site. It is not a draft backlog,
 - Prefer decision rules, checklists, blueprints, operating models, and implementation paths over broad commentary.
 - Challenge ideas that are generic, hype-driven, too broad, or not yet tied to the project quality bar.
 
+## Content Numbering
+
+Field notes and implementation guides carry a stage-based content ID. The ID is
+the filename prefix in `content/drafts/` and `content/ready/`, and it stays with
+the piece if it later moves between stage directories.
+
+- Field notes: `s<N>-fn<NN>` - for example `s1-fn01`.
+- Implementation guides: `s<N>-g<NN>` - for example `s1-g01`.
+- `s0` is Foundation: Safe Participation, matching `order: 0` in the website
+  stages collection. `s1` through `s4` are Stages 1 through 4.
+- Numbers run per stage and per format, so `s1-fn01` and `s2-fn01` both exist.
+- Essays are not numbered. An essay filename is its route slug.
+
+This file is the registry. Before assigning a new ID, check the highest number
+already used for that stage and format below.
+
 ## Planned Content Entry Shape
 
 Use this shape for each planned content entry:
 
 ```markdown
-### p1-01 Title
+### Title
 
+- Format: field note | implementation guide | essay
+- Content ID: s1-fn01
+- Primary stage: Personal Leverage
 - Reader/job:
 - Goal:
 - Outline:
@@ -44,6 +63,7 @@ automate a workflow.
 ### A Prompt Is a Moment. A Personal Practice Is a Method.
 
 - Format: field note
+- Content ID: s1-fn01
 - Primary stage: Personal Leverage
 - Reader/job: Individual practitioners, and the leaders or architects enabling them, who need to turn a useful AI interaction into a repeatable personal method without mistaking a prompt collection for a workflow.
 - Goal: Help a person define a bounded, private-by-default AI-assisted practice with a clear task, intended outcome, trusted context, method, verification, and limit—so they can repeat it, improve it, and later choose whether any part is worth sharing.
@@ -62,13 +82,14 @@ automate a workflow.
 - Practical takeaway: A downloadable, editable **Personal Practice Canvas**. Its fields—task, outcome, use and non-use boundary, context/data boundary, tool or method, examples, verification, known failures, authority boundary, value signal, and review point—give an individual a small working system without requiring public disclosure.
 - Decision rule: Treat an AI interaction as exploration, not a personal practice, until the person can name the recurring task, allowed context, expected outcome, required verification, and a condition in which they will not use it.
 - Implementation guide links: **Build a Personal AI Playbook That Stays Useful**; **Build a Personal Context Pack and Work Log**.
-- Source notes: `docs/adoption-stages.md` Stage 1 situation, teaching points, and transition signal; `docs/roadmap.md` Stage 1 milestone; `content/notes/project_refactor_prompt.md` Personal Use and initial Personal Leverage subjects; `content/notes/NOTES.md` development practices, project instructions, and precise expected-versus-actual behavior.
+- Source notes: `docs/adoption-stages.md` Stage 1 situation, teaching points, and transition signal; `docs/roadmap.md` Stage 1 milestone; `content/notes/prompt-archive/project_refactor_prompt.md` Personal Use and initial Personal Leverage subjects; `content/notes/NOTES.md` development practices, project instructions, and precise expected-versus-actual behavior.
 - Additional notes: Keep the narrative tool-agnostic. Named tools belong in the implementation guide as dated examples, not as the definition of a good personal practice.
 - Status: planned
 
 ### The Review Is Part of the Work.
 
 - Format: field note
+- Content ID: s1-fn02
 - Primary stage: Personal Leverage
 - Reader/job: Individual practitioners and leaders helping them use AI-assisted outputs responsibly when factual accuracy, analytical judgment, policy boundaries, or consequential action matter.
 - Goal: Replace the vague instruction to “review the output” with a small, task-appropriate verification method that makes the person’s evidence, judgment, and stop conditions explicit.
@@ -94,6 +115,7 @@ automate a workflow.
 ### Connect AI With Intent: Skills, Integrations, and Computer Actions.
 
 - Format: field note
+- Content ID: s1-fn03
 - Primary stage: Personal Leverage
 - Reader/job: Individual practitioners and enabling leaders deciding when a skill, extension, integration, computer-use feature, or event trigger has an appropriate purpose, data scope, permission set, and human confirmation point.
 - Goal: Help readers gain useful personal leverage from connected AI tools without treating convenience, broad access, or unattended action as signs of maturity.
@@ -112,13 +134,14 @@ automate a workflow.
 - Practical takeaway: A **Personal Access Decision** checklist that readers can add to a Personal Practice Canvas: purpose, data boundary, tool, permissions, allowed preparation, prohibited actions, confirmation point, revocation path, and review date.
 - Decision rule: Do not connect a tool or enable computer action until the person can explain the specific task, the minimum data and permissions needed, what the tool may prepare, and the exact point at which a human must confirm a consequential action.
 - Implementation guide links: **Use Skills, Integrations, and Computer Actions With a Human in Control**; **Build a Human-Reviewed Event Workflow**.
-- Source notes: `docs/adoption-stages.md` Stage 1 situation, challenges, teaching points, and authority continuum; `docs/roadmap.md` cross-cutting security and authority commitments; `content/notes/project_refactor_prompt.md` Personal Use; `content/notes/NOTES.md` approved MCP, logging, and easy approval-path ideas.
+- Source notes: `docs/adoption-stages.md` Stage 1 situation, challenges, teaching points, and authority continuum; `docs/roadmap.md` cross-cutting security and authority commitments; `content/notes/prompt-archive/project_refactor_prompt.md` Personal Use; `content/notes/NOTES.md` approved MCP, logging, and easy approval-path ideas.
 - Additional notes: Do not make a named tool, MCP server, or computer-use product the article’s premise. Tool-specific examples need a visible reviewed date, a durable principle, safe scope, verification step, and limitation.
 - Status: planned
 
 ### A Personal Win Is a Candidate, Not an Automation Proposal.
 
 - Format: field note
+- Content ID: s1-fn04
 - Primary stage: Personal Leverage
 - Reader/job: Individual practitioners, team leads, architects, and managers deciding which personal practices should remain private assistance, which may be worth voluntarily offering to colleagues, and which should not be promoted at all.
 - Goal: Give readers a humane, evidence-based way to recognize a promising workflow candidate without forcing private-method disclosure, turning usage into a performance ranking, or mistaking a personal success for a case for automation.
@@ -143,6 +166,7 @@ automate a workflow.
 ### Build a Personal AI Playbook That Stays Useful
 
 - Format: implementation guide
+- Content ID: s1-g01
 - Primary stage: Personal Leverage
 - Referenced from: **A Prompt Is a Moment. A Personal Practice Is a Method**; **The Review Is Part of the Work**; **A Personal Win Is a Candidate, Not an Automation Proposal**.
 - Reader/job: Practitioners who have several useful prompts, reusable instruction blocks, skills, and examples, and need a lightweight way to curate them into a library they can actually find, maintain, and retire.
@@ -159,13 +183,14 @@ automate a workflow.
   - Include a starter template and a small first-week exercise: document one recurring task, use it three times, update it after each use, then decide whether it deserves to stay in the playbook.
 - Practical takeaway: A **Personal AI Playbook starter structure** and entry template that links task method, reusable instruction blocks, skills, examples, Verification Compact, Context Pack, and review date.
 - Decision rule: Do not keep a reusable prompt or skill as an active playbook entry unless it has a stated task, a current context/data boundary, a verification step, and a review or retirement point.
-- Source notes: `docs/adoption-stages.md` Stage 1 teaching points; `content/notes/project_refactor_prompt.md` Personal Use and personal AI working system; `content/notes/NOTES.md` project instructions, slash-command, and documentation ideas.
+- Source notes: `docs/adoption-stages.md` Stage 1 teaching points; `content/notes/prompt-archive/project_refactor_prompt.md` Personal Use and personal AI working system; `content/notes/NOTES.md` project instructions, slash-command, and documentation ideas.
 - Additional notes: Tool-specific setup instructions must name their durable principle, safe scope, verification step, limitation, and a visible reviewed date.
 - Status: planned
 
 ### Build a Personal Context Pack and Work Log
 
 - Format: implementation guide
+- Content ID: s1-g02
 - Primary stage: Personal Leverage
 - Referenced from: **A Prompt Is a Moment. A Personal Practice Is a Method**; **The Review Is Part of the Work**; **A Personal Win Is a Candidate, Not an Automation Proposal**.
 - Reader/job: Practitioners who need personal AI practices to use current, permitted context and retain a small, inspectable record of decisions and open state without turning an opaque chat history into a source of truth.
@@ -190,6 +215,7 @@ automate a workflow.
 ### Use Skills, Integrations, and Computer Actions With a Human in Control
 
 - Format: implementation guide
+- Content ID: s1-g03
 - Primary stage: Personal Leverage
 - Referenced from: **Connect AI With Intent: Skills, Integrations, and Computer Actions.**
 - Reader/job: Practitioners configuring a personal AI tool, skill, extension, integration, or computer-use feature who need a practical way to grant only appropriate access and keep consequential work under human control.
@@ -213,6 +239,7 @@ automate a workflow.
 ### Build a Human-Reviewed Event Workflow
 
 - Format: implementation guide
+- Content ID: s1-g04
 - Primary stage: Personal Leverage
 - Referenced from: **Connect AI With Intent: Skills, Integrations, and Computer Actions.**
 - Reader/job: Practitioners who want an email, calendar event, file change, or similar event to initiate helpful personal preparation without silently turning the workflow into autonomous action.
@@ -230,7 +257,7 @@ automate a workflow.
   - Explain the promotion trigger: if the workflow needs recurring unattended writes, retries, exception handling, shared users, sensitive-system access, audit logs, service-level expectations, or a named operational owner, it has reached Stage 3 managed-workflow territory.
 - Practical takeaway: A **Human-Reviewed Event Workflow reference pattern** and launch checklist covering trigger, allowed input, context, private review queue, prohibited actions, confirmation point, disable switch, and escalation conditions.
 - Decision rule: Keep an event workflow in Stage 1 only if it stops before a consequential action and a person can inspect the relevant source, result, and proposed next step before deciding what happens.
-- Source notes: `docs/adoption-stages.md` Stage 1 situation, teaching points, authority continuum, and boundaries; `docs/roadmap.md` Stage 1 milestone and Managed Workflows commitments; `content/notes/project_refactor_prompt.md` Personal Use; `content/notes/NOTES.md` daily refresh, project tool, and workflow ideas.
+- Source notes: `docs/adoption-stages.md` Stage 1 situation, teaching points, authority continuum, and boundaries; `docs/roadmap.md` Stage 1 milestone and Managed Workflows commitments; `content/notes/prompt-archive/project_refactor_prompt.md` Personal Use; `content/notes/NOTES.md` daily refresh, project tool, and workflow ideas.
 - Additional notes: This guide deliberately uses a stronger boundary than “a human is somewhere in the loop.” The person must review before a consequential action, not merely discover and correct it afterward.
 - Status: planned
 
@@ -238,6 +265,9 @@ automate a workflow.
 
 ### A Shared Practice Is Not a Shared Prompt
 
+- Format: field note
+- Content ID: s2-fn01
+- Primary stage: Shared Team Practice
 - Reader/job: Team leads, architects, managers, and experienced practitioners who need to turn useful individual AI methods into practices colleagues can reuse without exposing private methods, copying unsafe assumptions, or creating a permanent dependence on the most AI-fluent people.
 - Goal: Help a team make a responsible reuse promise: share enough task context, boundaries, verification, and ownership for a colleague to use a practice safely, while respecting that people may reasonably retain private prompts, methods, and competitive advantage.
 - Core argument: A shared prompt shares text. A shared practice shares the conditions that make a useful result repeatable and safe. If a method depends on one person’s private chat history, unstated judgment, or willingness to help, it is not yet a team practice.
@@ -265,6 +295,9 @@ automate a workflow.
 
 ### Calibrate Shared Work Before Scaling It
 
+- Format: field note
+- Content ID: s2-fn02
+- Primary stage: Shared Team Practice
 - Reader/job: Team leads, practitioners, architects, and managers deciding whether a Team Practice Card is reliable enough for colleagues to reuse, and whether its current authority and data boundary remain appropriate.
 - Goal: Give teams a low-friction, psychologically safe way to test a shared practice on representative work, compare outcomes and verification burden, learn from failures, and set a proportionate use boundary before the practice spreads.
 - Core argument: A practice that worked once for its creator is an anecdote. A practice that another person can use on representative work, with approved context and visible limits, is beginning to earn team trust. Calibration is how the team makes that distinction without building a formal evaluation platform.
@@ -301,6 +334,9 @@ automate a workflow.
 
 ### Create a Promotion Gate: Which Shared Practices Deserve Investment?
 
+- Format: field note
+- Content ID: s2-fn03
+- Primary stage: Shared Team Practice
 - Reader/job: Team leads, managers, architects, and practitioners deciding which calibrated team practices should remain useful shared assistance, which should be retired, and which are sufficiently valuable and bounded to justify managed-workflow design.
 - Goal: Help a team turn a noisy collection of AI ideas and successful local practices into a small, trusted set of workflow candidates with a named owner, a measurable intended outcome, known exposure, and an explicit decision to invest—or not.
 - Core argument: A calibrated Team Practice Card is not a mandate to automate. The team’s job is not to collect the largest possible AI opportunity backlog; it is to identify the few practices whose value, repeatability, data readiness, failure cost, and ownership justify a higher level of design and operating responsibility.
@@ -349,13 +385,18 @@ Field-note and guide assignments will be defined article-by-article.
 ---
 
 
-## Legacy Article Map — Pending Stage Migration
+## Legacy Essay Map — Pending Stage Migration
 
 The entries below were planned under the former pillar model. Their IDs,
 reader/jobs, outlines, source notes, status, and future stage assignments are
 intentionally preserved until the next planning step. These entries will be 
 ONLY used for reference and backlog until they are migrated to the new stage model
 where they will be archived.
+
+The four published `p1` entries are **essays**. Their source Markdown lives in
+`content/ready/essays/`, named by route slug rather than pillar number. The `p1`
+through `p4` identifiers here are historical pillar IDs, not content IDs under
+the stage numbering scheme above.
 
 ### p1 Pillar 1: AI Adoption Stages & Challenges
 
@@ -369,7 +410,7 @@ where they will be archived.
   - Define safe experimentation: employees can learn, test, question, and share AI workflows without feeling watched, ranked, or quietly replaced.
   - Fold in the balanced-builder idea: useful AI adopters are neither frozen skeptics nor reckless accelerators; they combine curiosity, verification discipline, security judgment, workflow thinking, and customer responsibility.
   - Practical takeaway: a team participation compact covering what AI is for, what it is not for, how experiments are shared, how risks are raised, when human judgment stays in control, and how leaders will avoid weaponizing participation data.
-- Source notes: `content/ready/articles/p1-challenges/p1-01_ai-adoption-starts-with-fear-safe-participation.md`; archived source material in `content/ready/articles/p1-challenges/archive/p1-x01_the-fear.md` and `content/ready/articles/p1-challenges/archive/p1-x02_moving_forward.md`; `content/notes/NOTES.md` adoption and team notes; `content/notes/bottlenecks.md` section 11.
+- Source notes: `content/ready/essays/ai-adoption-starts-with-fear-safe-participation.md`; archived source material in `content/ready/essays/archive/p1-x01_the-fear.md` and `content/ready/essays/archive/p1-x02_moving_forward.md`; `content/notes/NOTES.md` adoption and team notes; `content/notes/bottlenecks.md` section 11.
 - Additional notes: This replaces the standalone `p1-04 The Talent Mix` article by folding the balanced-builder argument into the opener. Preserve the original fear, moving-forward, and talent notes as source material.
 - Status: planned
 
@@ -438,7 +479,7 @@ where they will be archived.
   - Include skeptics and middle adopters in adoption design, not only the most enthusiastic front-runners.
   - Use small exercises, office hours, show-and-tells, and paired adoption patterns to build trust and surface what AI should not do.
   - Practical takeaway: a 30-day participation plan for safe experimentation, team learning, and early workflow discovery.
-- Source notes: `content/ready/articles/p1-challenges/p1-01_ai-adoption-starts-with-fear-safe-participation.md`; archived source material in `content/ready/articles/p1-challenges/archive/p1-x01_the-fear.md` and `content/ready/articles/p1-challenges/archive/p1-x02_moving_forward.md`; `content/notes/NOTES.md` adoption notes.
+- Source notes: `content/ready/essays/ai-adoption-starts-with-fear-safe-participation.md`; archived source material in `content/ready/essays/archive/p1-x01_the-fear.md` and `content/ready/essays/archive/p1-x02_moving_forward.md`; `content/notes/NOTES.md` adoption notes.
 - Status: planned
 
 ### p2-03 Choose the Workflows That Deserve AI Investment
@@ -450,7 +491,7 @@ where they will be archived.
   - Score candidate workflows by business value, repeatability, data readiness, permission risk, failure cost, owner clarity, and measurable outcome.
   - Require each selected workflow to define the trigger, systems touched, human review points, eval approach, monitoring needs, and cost per completed workflow.
   - Practical takeaway: a workflow portfolio scorecard and kill/continue decision rule.
-- Source notes: `content/notes/bottlenecks.md` sections 1, 5, 7, 9; `content/ready/articles/p1-challenges/p1-02_demo-is-not-the-product-workflow-is-the-product.md`; `content/ready/articles/p1-challenges/p1-04_roi-reality-check-ai-unit-economics-and-the-moat-problem.md`; `content/notes/NOTES.md` project pattern notes.
+- Source notes: `content/notes/bottlenecks.md` sections 1, 5, 7, 9; `content/ready/essays/demo-is-not-the-product-workflow-is-the-product.md`; `content/ready/essays/roi-reality-check-ai-unit-economics-and-the-moat-problem.md`; `content/notes/NOTES.md` project pattern notes.
 - Status: planned
 
 ### p2-04 Build the AI Acceleration Team
@@ -486,7 +527,7 @@ where they will be archived.
   - Require each workflow to have an owner, success metric, human-in-the-loop design, eval set, escalation path, and rollback plan.
   - Explain why durable execution, monitoring, cost control, and governance matter even for internal-only automation.
   - Practical takeaway: an internal automation launch gate for trusted agentic workflows.
-- Source notes: `content/notes/bottlenecks.md` sections 6-10 and maturity ladder; `content/ready/articles/p1-challenges/p1-02_demo-is-not-the-product-workflow-is-the-product.md`; `content/notes/NOTES.md` internal development operating system notes.
+- Source notes: `content/notes/bottlenecks.md` sections 6-10 and maturity ladder; `content/ready/essays/demo-is-not-the-product-workflow-is-the-product.md`; `content/notes/NOTES.md` internal development operating system notes.
 - Status: planned
 
 ### p3 Pillar 3: Production AI Engineering Blueprint
@@ -512,7 +553,7 @@ where they will be archived.
   - Cover implementation building blocks: orchestration, durable execution, retries, queues/schedules, tool boundaries, logs, evals, and rollback.
   - Show how to choose narrow workflow agents over general-purpose agents.
   - Practical takeaway: an internal workflow architecture checklist from prototype to hosted automation.
-- Source notes: `content/notes/bottlenecks.md` sections 1, 7, 8, 9; `content/ready/articles/p1-challenges/p1-02_demo-is-not-the-product-workflow-is-the-product.md`; `content/notes/articles_outline.md` Blueprint for Production-grade Customer-facing Agents.
+- Source notes: `content/notes/bottlenecks.md` sections 1, 7, 8, 9; `content/ready/essays/demo-is-not-the-product-workflow-is-the-product.md`; `content/notes/articles_outline.md` Blueprint for Production-grade Customer-facing Agents.
 - Status: planned
 
 ### p3-03 Trusted Context Layer Technical Guide
@@ -536,7 +577,7 @@ where they will be archived.
   - Instrument traces, logs, latency, cost per completed workflow, failure classes, escalations, and drift signals.
   - Use cost controls such as model routing, caching, bounded retries, deterministic code, context limits, and workflow-level budgets.
   - Practical takeaway: a minimum observability and eval dashboard spec for internal AI workflows.
-- Source notes: `content/notes/bottlenecks.md` sections 7, 8, 9; `content/ready/articles/p1-challenges/p1-04_roi-reality-check-ai-unit-economics-and-the-moat-problem.md`; `content/notes/perosnal_growth_plan.md` production AI ideas.
+- Source notes: `content/notes/bottlenecks.md` sections 7, 8, 9; `content/ready/essays/roi-reality-check-ai-unit-economics-and-the-moat-problem.md`; `content/notes/perosnal_growth_plan.md` production AI ideas.
 - Status: planned
 
 ### p4 Pillar 4: AI Security & Governance
@@ -550,7 +591,7 @@ where they will be archived.
   - Define practical controls: approved MCP/tools, role-based access, read/write separation, sensitive-action approvals, logging, sandboxing, eval gates, red-team prompts, and incident response.
   - Keep governance enabling rather than bureaucratic: clear defaults, fast exception paths, and reusable approved patterns.
   - Practical takeaway: an AI/MCP security review checklist and launch gate for internal workflows.
-- Source notes: `content/notes/bottlenecks.md` section 10; `content/notes/NOTES.md` security notes; `content/ready/articles/p1-challenges/p1-03_trust-factor-when-is-ai-safe-enough-to-act.md`.
+- Source notes: `content/notes/bottlenecks.md` section 10; `content/notes/NOTES.md` security notes; `content/ready/essays/trust-factor-when-is-ai-safe-enough-to-act.md`.
 - Status: planned
 
 ### cc Challenged / Later Candidates
@@ -563,7 +604,7 @@ where they will be archived.
   - Treat external exposure as a maturity gate, not the default destination.
   - Require stronger evals, customer trust design, legal/security review, escalation paths, and rollback.
   - Decision point: promote to p3/p4 once the internal automation and trust-gate content is complete.
-- Source notes: `content/ready/articles/p1-challenges/p1-03_trust-factor-when-is-ai-safe-enough-to-act.md`; `content/notes/articles_outline.md` Blueprint for Production-grade Customer-facing Agents; `content/notes/bottlenecks.md` sections 3, 7, 8, 10.
+- Source notes: `content/ready/essays/trust-factor-when-is-ai-safe-enough-to-act.md`; `content/notes/articles_outline.md` Blueprint for Production-grade Customer-facing Agents; `content/notes/bottlenecks.md` sections 3, 7, 8, 10.
 - Status: candidate
 
 ### cc-02 Advanced RAG and MCP Patterns

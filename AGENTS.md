@@ -56,7 +56,11 @@ each stage.
 - `content/notes/bottlenecks.md` - major source essay on AI-native bottlenecks. Ideas on the general site content strategy and article topics.
 - `content/notes/NOTES.md` - raw milestone, adoption-stage, security, team, and tool notes.
 - `content/notes/articles_outline.md` - article backlog and article concepts. A mind draft space for article outlines and ideas.
-- `content/ready/articles/...` - polished source articles ready to adapt into website MDX.
+- `content/drafts/{essays,field-notes,guides}/` - active drafts, mirroring the
+  website taxonomy. Field notes and guides are organized into per-stage
+  directories and numbered `s1-fn01_`, `s1-g01_`; essays are flat and unnumbered.
+- `content/ready/{essays,field-notes,guides}/` - polished source content ready to
+  adapt into website MDX. Same structure as `drafts/`.
 - `content/social/...` - LinkedIn and other social derivatives.
 - `research/` - source research, learning notes, evidence maps, and market maps.
 - `website/src/content/...` - live MDX content used by the Astro site.

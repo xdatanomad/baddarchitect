@@ -34,7 +34,7 @@ See `docs/decisions/0002-astro-static-site.md` for the decision record.
 ## Website Subsystems
 
 - Pages: file-based Astro routes in `website/src/pages/`.
-- Content collections: articles and lessons configured in `website/src/content.config.ts`.
+- Content collections: stages, essays, field notes, and guides configured in `website/src/content.config.ts`.
 - Layouts: shared page shells in `website/src/layouts/`.
 - Components: reusable UI in `website/src/components/`.
 - Site data/helpers: `website/src/lib/`.

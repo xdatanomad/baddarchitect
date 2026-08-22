@@ -12,7 +12,7 @@ Use this skill to plan a LinkedIn post sequence for a published article. This sk
 Before planning, read:
 
 1. `AGENTS.md`
-2. `content/strategy/project-brief.md`
+2. `docs/vision.md`
 3. The published article
 
 Also inspect existing planned/generated LinkedIn content when present:
@@ -21,7 +21,7 @@ Also inspect existing planned/generated LinkedIn content when present:
 - `content/linkedin-short-posts/`
 - `content/linkedin-long-posts/`
 
-Read `content/strategy/content-map.md` only when needed to understand the article's pillar, ID, or planned role.
+Read `docs/content-map.md` only when needed to understand the article's pillar, ID, or planned role.
 
 ## Output Location
 

@@ -14,7 +14,8 @@ This directory contains the Astro website for AI Adoption Blueprint. Keep websit
 
 ## Rules
 
-- Preserve the root `content/` workspace as the editorial source area.
+- Preserve the root `content/` workspace as the editorial source area. It uses
+  the same taxonomy as this site: essays, field notes, and guides.
 - Preserve root `docs/` as the project source-of-truth area.
 - Do not delete or move root notes, ready content, research, or docs as part of routine website work.
 - Copy or adapt only launch-ready content into `src/content/`.

@@ -2,7 +2,7 @@
 
 ## 1. Intake
 
-Start from raw notes in `content/notes/` or drafts in `content/articles/`.
+Start from raw notes in `content/notes/` or drafts in `content/drafts/`.
 
 Capture:
 

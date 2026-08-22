@@ -12,10 +12,10 @@ Use this skill to add one real-world example or short story to a polished or rea
 Before recommending examples, read:
 
 1. `AGENTS.md`
-2. `content/strategy/project-brief.md`
+2. `docs/vision.md`
 3. The article the user wants to improve
 
-Read `content/strategy/content-map.md` or relevant notes only when needed to understand the article's planned role or source material.
+Read `docs/content-map.md` or relevant notes only when needed to understand the article's planned role or source material.
 
 ## Hard Workflow
 
