@@ -1,38 +1,87 @@
-import { defineCollection } from "astro:content";
+import { defineCollection, reference } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 
-const pillarSchema = z.enum([
-  "AI Adoption Stages & Challenges",
-  "AI Adoption Operating Manual",
-  "Production AI Engineering Blueprint",
-  "AI Security & Governance"
+const authorityLevel = z.enum([
+  "advisory",
+  "human-approved",
+  "bounded-action",
+  "delegated-action"
 ]);
 
-const baseContentSchema = z.object({
-  title: z.string(),
-  description: z.string(),
-  routeSlug: z.string(),
-  publishedDate: z.coerce.date(),
-  updatedDate: z.coerce.date(),
-  pillar: pillarSchema,
-  status: z.enum(["published", "draft"]),
-  canonical: z.string().optional(),
-  tags: z.array(z.string()).default([]),
-  summary: z.string().optional(),
-  draft: z.boolean().default(false)
-});
-
-const articles = defineCollection({
-  loader: glob({ pattern: "p*/**/*.{md,mdx}", base: "./src/content" }),
-  schema: baseContentSchema
-});
-
-const lessons = defineCollection({
-  loader: glob({ pattern: "**/*.mdx", base: "./src/content/lessons" }),
-  schema: baseContentSchema.extend({
-    level: z.enum(["intro", "intermediate", "advanced"]).default("intro")
+const stages = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/stages" }),
+  schema: z.object({
+    order: z.number(),
+    slug: z.string(),
+    title: z.string(),
+    shortLabel: z.string(),
+    situation: z.string(),
+    whatChanges: z.string(),
+    hasDetailedOrientation: z.boolean().default(false),
+    preamble: z.array(z.string()).default([]),
+    pullQuote: z.string().optional(),
+    challengeMap: z
+      .array(
+        z.object({
+          challenge: z.string(),
+          // Retained in content but not rendered on the stage page today.
+          whyItMatters: z.string(),
+          response: z.string()
+        })
+      )
+      .default([]),
+    challengesAndLimits: z.array(z.string()),
+    whatWeTeach: z.array(z.string()),
+    signalsLabel: z.string(),
+    signals: z.string(),
+    nextBottleneck: z.string().optional(),
+    authorityLevels: z.array(authorityLevel),
+    authorityNote: z.string()
   })
 });
 
-export const collections = { articles, lessons };
+const outlineBaseSchema = z.object({
+  title: z.string(),
+  routeSlug: z.string(),
+  status: z.enum(["planned", "published"]).default("planned"),
+  readerJob: z.string(),
+  goal: z.string(),
+  coreArgument: z.string().optional(),
+  decisionRule: z.string().optional(),
+  practicalTakeaway: z.string().optional()
+});
+
+const fieldNotes = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/field-notes" }),
+  schema: outlineBaseSchema.extend({
+    stage: reference("stages"),
+    guideLinks: z.array(reference("guides")).default([])
+  })
+});
+
+const guides = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/guides" }),
+  schema: outlineBaseSchema.extend({
+    primaryStage: reference("stages"),
+    crossListedStages: z.array(reference("stages")).default([])
+  })
+});
+
+const essays = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/essays" }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    routeSlug: z.string(),
+    publishedDate: z.coerce.date(),
+    updatedDate: z.coerce.date(),
+    status: z.enum(["published", "draft"]),
+    canonical: z.string().optional(),
+    tags: z.array(z.string()).default([]),
+    summary: z.string().optional(),
+    draft: z.boolean().default(false)
+  })
+});
+
+export const collections = { stages, fieldNotes, guides, essays };

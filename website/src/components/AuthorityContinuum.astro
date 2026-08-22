@@ -1,0 +1,132 @@
+---
+import { authorityLevels } from "@/lib/site";
+
+interface Props {
+  activeLevels?: readonly string[];
+  note?: string;
+}
+
+const { activeLevels = [], note } = Astro.props;
+---
+
+<section class="shell section tight authority-continuum">
+  <h2 class="section-title">Authority continuum</h2>
+  <p class="section-note">
+    Authority is separate from stage maturity. It describes what an AI-enabled workflow is allowed to do; each
+    workflow stops at the level justified by its risk, reversibility, and value.
+  </p>
+  {note && <p class="ac-stage-note">{note}</p>}
+  <div class="ac-steps">
+    {
+      authorityLevels.map((level, index) => {
+        const active = activeLevels.includes(level.id);
+        return (
+          <div class={`ac-step${active ? " ac-step--active" : ""}`}>
+            <span class="ac-step-num">{index + 1}</span>
+            <h3>{level.label}</h3>
+            <p>{level.meaning}</p>
+            <p class="ac-min">{level.minimumExpectation}</p>
+          </div>
+        );
+      })
+    }
+  </div>
+</section>
+
+<style>
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(1.5rem, 3vw, 1.9rem);
+    font-weight: 500;
+    margin: 0 0 10px;
+  }
+
+  .section-note {
+    color: var(--ink-soft);
+    font-size: 0.94rem;
+    line-height: 1.55;
+    margin: 0 0 14px;
+    max-width: var(--reading);
+  }
+
+  .ac-stage-note {
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+    margin: 0 0 26px;
+  }
+
+  .ac-steps {
+    display: grid;
+    gap: 2px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .ac-step {
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    padding: 18px 16px;
+    position: relative;
+    transition:
+      border-color 120ms ease,
+      opacity 120ms ease;
+  }
+
+  .ac-step:not(.ac-step--active) {
+    opacity: 0.5;
+  }
+
+  .ac-step--active {
+    border-color: var(--accent);
+  }
+
+  .ac-step-num {
+    color: var(--ink-faint);
+    display: block;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    margin-bottom: 10px;
+  }
+
+  .ac-step--active .ac-step-num {
+    color: var(--accent);
+  }
+
+  .ac-step h3 {
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 1.02rem;
+    font-weight: 500;
+    margin: 0 0 8px;
+  }
+
+  .ac-step p {
+    color: var(--ink-soft);
+    font-size: 0.82rem;
+    line-height: 1.45;
+    margin: 0 0 10px;
+  }
+
+  .ac-min {
+    color: var(--ink-faint) !important;
+    font-family: var(--mono);
+    font-size: 0.7rem !important;
+    line-height: 1.4 !important;
+  }
+
+  @media (max-width: 780px) {
+    .ac-steps {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .ac-step p {
+      font-size: 0.95rem;
+    }
+
+    .ac-min {
+      font-size: 0.82rem !important;
+    }
+  }
+</style>

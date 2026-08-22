@@ -1,0 +1,36 @@
+---
+import ArticleCard from "@/components/ArticleCard.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getPublishedEssays } from "@/lib/content";
+
+const posts = await getPublishedEssays();
+---
+
+<BaseLayout
+  title="Essays"
+  description="Practical essays on AI adoption, production workflows, AI systems, ROI, and security."
+>
+  <section class="shell section tight">
+    <div class="prose">
+      <p class="eyebrow">Essays</p>
+      <h1>Essays on AI adoption and production systems.</h1>
+      <p class="lede">
+        Direct, practical writing for teams moving from AI experiments to measurable, governed workflows.
+      </p>
+    </div>
+  </section>
+  <section class="shell">
+    {posts.map((post) => <ArticleCard entry={post} />)}
+  </section>
+</BaseLayout>
+
+<style>
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(1.7rem, 4.6vw, 2.6rem);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+    margin: 16px 0 16px;
+  }
+</style>

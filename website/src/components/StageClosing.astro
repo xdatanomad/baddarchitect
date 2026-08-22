@@ -1,0 +1,97 @@
+---
+interface Props {
+  stage: any;
+}
+
+const { stage } = Astro.props;
+const { whatWeTeach, signalsLabel, signals, nextBottleneck } = stage.data;
+---
+
+<section class="shell section tight stage-closing">
+  <div class="closing-grid">
+    <div>
+      <h2 class="section-title">This Stage Covers</h2>
+      <ul>
+        {whatWeTeach.map((item: string) => <li>{item}</li>)}
+      </ul>
+    </div>
+    <div class="closing-signals">
+      <div class="card">
+        <span class="cr-label">{signalsLabel}</span>
+        <p>{signals}</p>
+      </div>
+      {
+        nextBottleneck && (
+          <div class="card card--amber">
+            <span class="cr-label cr-label--amber">Next bottleneck</span>
+            <p>{nextBottleneck}</p>
+          </div>
+        )
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(1.5rem, 3vw, 1.9rem);
+    font-weight: 500;
+    margin: 0 0 20px;
+  }
+
+  .closing-grid {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+
+  .closing-grid ul {
+    display: grid;
+    gap: 12px;
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  .closing-grid li {
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+
+  .closing-signals {
+    display: grid;
+    gap: 16px;
+  }
+
+  .cr-label {
+    color: var(--accent);
+    display: block;
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  .cr-label--amber {
+    color: var(--amber);
+  }
+
+  .card--amber {
+    border-color: var(--amber-line);
+  }
+
+  .card p {
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  @media (max-width: 780px) {
+    .closing-grid {
+      gap: 24px;
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

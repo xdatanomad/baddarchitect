@@ -1,12 +1,9 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { formatDate } from "@/lib/content";
-import { getPillarSlug } from "@/lib/site";
 
 const { entry } = Astro.props;
-const contentType = entry.collection === "lessons" ? "lessons" : "articles";
-const canonical = entry.data.canonical ?? `/${contentType}/${entry.data.routeSlug}/`;
-const pillarUrl = `/topics/${getPillarSlug(entry.data.pillar)}/`;
+const canonical = entry.data.canonical ?? `/essays/${entry.data.routeSlug}/`;
 ---
 
 <BaseLayout
@@ -17,8 +14,8 @@ const pillarUrl = `/topics/${getPillarSlug(entry.data.pillar)}/`;
 >
   <article class="shell article">
     <div class="article-kicker">
-      <a href={pillarUrl}>{entry.data.pillar}</a>
       <span>{formatDate(entry.data.publishedDate)}</span>
+      {entry.data.tags.map((tag: string) => <span class="tag">{tag}</span>)}
     </div>
     <div class="prose">
       <h1>{entry.data.title}</h1>
@@ -38,18 +35,20 @@ const pillarUrl = `/topics/${getPillarSlug(entry.data.pillar)}/`;
 
   .article-kicker {
     align-items: center;
-    color: var(--muted);
+    color: var(--ink-faint);
     display: flex;
     flex-wrap: wrap;
-    font-family: Avenir Next, Avenir, "Segoe UI", sans-serif;
-    font-size: 0.86rem;
+    font-family: var(--mono);
+    font-size: 0.78rem;
     gap: 10px;
     margin-bottom: 18px;
   }
 
-  .article-kicker span::before {
-    content: "/";
-    margin-right: 10px;
+  .tag {
+    background: var(--accent-soft);
+    border-radius: 999px;
+    color: var(--ink-soft);
+    padding: 2px 9px;
   }
 
   .article-body {
@@ -60,6 +59,7 @@ const pillarUrl = `/topics/${getPillarSlug(entry.data.pillar)}/`;
 
   @media (max-width: 720px) {
     .article {
+      padding-bottom: 56px;
       padding-top: 34px;
     }
   }

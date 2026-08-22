@@ -1,0 +1,3 @@
+/blog              /essays              301
+/blog/             /essays/             301
+/blog/*            /essays/:splat       301

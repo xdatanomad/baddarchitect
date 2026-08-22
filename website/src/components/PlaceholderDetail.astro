@@ -1,0 +1,172 @@
+---
+interface RelatedItem {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  kicker: string;
+  title: string;
+  statusLabel: string;
+  stageLabel: string;
+  stageHref: string;
+  readerJob: string;
+  goal: string;
+  coreArgument?: string;
+  decisionRule?: string;
+  practicalTakeaway?: string;
+  related?: RelatedItem[];
+  relatedLabel?: string;
+}
+
+const {
+  kicker,
+  title,
+  statusLabel,
+  stageLabel,
+  stageHref,
+  readerJob,
+  goal,
+  coreArgument,
+  decisionRule,
+  practicalTakeaway,
+  related = [],
+  relatedLabel = "Related"
+} = Astro.props;
+---
+
+<article class="shell section placeholder-detail">
+  <div class="pd-meta">
+    <p class="eyebrow">{kicker}</p>
+    <a class="pill pill--neutral" href={stageHref}>{stageLabel}</a>
+    <span class="pill pill--planned">{statusLabel}</span>
+  </div>
+  <div class="prose">
+    <h1>{title}</h1>
+    <div class="banner banner--muted">
+      <p class="mono-label">In planning</p>
+      <p class="planning-note">
+        This {kicker.toLowerCase()} has not been written yet. What follows is the approved outline it will be
+        drafted from.
+      </p>
+    </div>
+
+    <h2>Who it's for</h2>
+    <p>{readerJob}</p>
+
+    <h2>Goal</h2>
+    <p>{goal}</p>
+
+    {
+      coreArgument && (
+        <Fragment>
+          <h2>Core argument</h2>
+          <p>{coreArgument}</p>
+        </Fragment>
+      )
+    }
+
+    {
+      decisionRule && (
+        <Fragment>
+          <h2>Decision rule</h2>
+          <p>{decisionRule}</p>
+        </Fragment>
+      )
+    }
+
+    {
+      practicalTakeaway && (
+        <Fragment>
+          <h2>Practical takeaway</h2>
+          <p>{practicalTakeaway}</p>
+        </Fragment>
+      )
+    }
+  </div>
+
+  {
+    related.length > 0 && (
+      <div class="pd-related">
+        <span class="pd-related-label">{relatedLabel}</span>
+        <div class="pd-related-list">
+          {related.map((item) => (
+            <a class="pill pill--neutral" href={item.href}>
+              {item.label}
+            </a>
+          ))}
+        </div>
+      </div>
+    )
+  }
+</article>
+
+<style>
+  .placeholder-detail {
+    padding-bottom: 88px;
+    padding-top: 56px;
+  }
+
+  .pd-meta {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .mono-label {
+    color: var(--amber);
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    font-style: normal;
+    letter-spacing: 0.1em;
+    margin: 0 0 8px;
+    text-transform: uppercase;
+  }
+
+  .banner--muted {
+    border-left-color: var(--amber-line);
+    margin: 20px 0 36px;
+  }
+
+  .banner--muted .planning-note {
+    color: var(--ink-soft);
+    font-family: var(--sans);
+    font-size: 0.94rem;
+    font-style: normal;
+  }
+
+  .pd-related {
+    border-top: 1px solid var(--line);
+    margin-top: 44px;
+    padding-top: 24px;
+  }
+
+  .pd-related-label {
+    color: var(--ink-faint);
+    display: block;
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+
+  .pd-related-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .pd-related-list a {
+    text-decoration: none;
+  }
+
+  @media (max-width: 720px) {
+    .placeholder-detail {
+      padding-bottom: 56px;
+      padding-top: 36px;
+    }
+  }
+</style>

@@ -1,0 +1,24 @@
+---
+import { getEntry } from "astro:content";
+import FieldNoteCard from "@/components/FieldNoteCard.astro";
+
+interface Props {
+  entry: any;
+  variant?: "compact" | "full";
+}
+
+const { entry, variant = "full" } = Astro.props;
+
+const crossListedEntries =
+  variant === "full"
+    ? await Promise.all(
+        entry.data.crossListedStages.map((ref: { collection: "stages"; id: string }) => getEntry(ref))
+      )
+    : [];
+
+const crossListed = crossListedEntries
+  .filter((stage): stage is NonNullable<typeof stage> => Boolean(stage))
+  .map((stage) => ({ label: stage.data.shortLabel, href: `/stages/${stage.id}/` }));
+---
+
+<FieldNoteCard entry={entry} kind="guide" variant={variant} crossListed={crossListed} />

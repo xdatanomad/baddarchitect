@@ -9,17 +9,28 @@ const { title = "Takeaway" } = Astro.props;
 
 <style>
   .callout {
-    background: rgba(18, 106, 91, 0.08);
-    border: 1px solid rgba(18, 106, 91, 0.24);
-    border-left: 5px solid var(--accent);
+    background: var(--accent-soft);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
     margin: 28px 0;
-    padding: 18px;
+    padding: 18px 20px;
   }
 
   strong {
+    color: var(--ink);
     display: block;
-    font-family: Avenir Next, Avenir, "Segoe UI", sans-serif;
-    margin-bottom: 8px;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 720px) {
+    .callout {
+      margin: 22px 0;
+      padding: 16px;
+    }
   }
 </style>
-

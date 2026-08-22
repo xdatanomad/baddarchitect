@@ -1,0 +1,87 @@
+---
+import { entryHref, entryStatusLabel } from "@/lib/content";
+
+interface Props {
+  entry: any;
+  kind?: "field-note" | "guide";
+  headingLevel?: 2 | 3;
+}
+
+const { entry, kind = "field-note", headingLevel = 3 } = Astro.props;
+
+const Heading = `h${headingLevel}` as "h2" | "h3";
+const href = entryHref(entry, kind);
+const statusLabel = entryStatusLabel(entry);
+const kindLabel = kind === "guide" ? "Guide" : "Field note";
+const statusClass = entry.data.status === "published" ? "status--published" : "status--planned";
+---
+
+<article class="fn-row">
+  <div class="fn-meta">
+    <span>{kindLabel}</span>
+    <span class="fn-sep" aria-hidden="true">&middot;</span>
+    <span class={`fn-status ${statusClass}`}>{statusLabel}</span>
+  </div>
+  <Heading class="fn-title"><a href={href}>{entry.data.title}</a></Heading>
+  <p class="fn-job">{entry.data.readerJob}</p>
+</article>
+
+<style>
+  .fn-row {
+    border-top: 1px solid var(--line);
+    padding: 24px 0;
+  }
+
+  .fn-meta {
+    align-items: center;
+    color: var(--ink-faint);
+    display: flex;
+    flex-wrap: wrap;
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    gap: 8px;
+    letter-spacing: 0.02em;
+    margin-bottom: 12px;
+  }
+
+  .fn-sep {
+    color: var(--line);
+  }
+
+  .fn-status {
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .status--planned {
+    color: var(--amber);
+  }
+
+  .status--published {
+    color: var(--green);
+  }
+
+  .fn-title {
+    font-family: var(--serif);
+    font-size: clamp(1.3rem, 2.8vw, 1.7rem);
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0;
+    max-width: 820px;
+  }
+
+  .fn-title a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .fn-title a:hover {
+    color: var(--accent);
+  }
+
+  .fn-job {
+    color: var(--ink-soft);
+    margin: 10px 0 0;
+    max-width: 760px;
+  }
+</style>

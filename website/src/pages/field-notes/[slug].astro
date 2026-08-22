@@ -1,0 +1,40 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import PlaceholderDetail from "@/components/PlaceholderDetail.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const notes = await getCollection("fieldNotes");
+  return notes.map((entry) => ({
+    params: { slug: entry.data.routeSlug },
+    props: { entry }
+  }));
+}
+
+const { entry } = Astro.props;
+const stage = await getEntry(entry.data.stage);
+const guides = (await Promise.all(entry.data.guideLinks.map((ref) => getEntry(ref)))).filter(
+  (guide): guide is NonNullable<typeof guide> => Boolean(guide)
+);
+const related = guides.map((guide) => ({
+  label: guide.data.title,
+  href: `/guides/${guide.data.routeSlug}/`
+}));
+---
+
+<BaseLayout title={entry.data.title} description={entry.data.goal} canonical={`/field-notes/${entry.data.routeSlug}/`}>
+  <PlaceholderDetail
+    kicker="Field Note"
+    title={entry.data.title}
+    statusLabel={entry.data.status === "published" ? "Published" : "Planned"}
+    stageLabel={stage!.data.shortLabel}
+    stageHref={`/stages/${stage!.id}/`}
+    readerJob={entry.data.readerJob}
+    goal={entry.data.goal}
+    coreArgument={entry.data.coreArgument}
+    decisionRule={entry.data.decisionRule}
+    practicalTakeaway={entry.data.practicalTakeaway}
+    related={related}
+    relatedLabel="Implementation guides"
+  />
+</BaseLayout>

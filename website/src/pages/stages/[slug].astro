@@ -1,0 +1,99 @@
+---
+import AuthorityContinuum from "@/components/AuthorityContinuum.astro";
+import ChallengeResponseTable from "@/components/ChallengeResponseTable.astro";
+import FieldNoteRow from "@/components/FieldNoteRow.astro";
+import GuideCard from "@/components/GuideCard.astro";
+import StageClosing from "@/components/StageClosing.astro";
+import StageHero from "@/components/StageHero.astro";
+import StagePreamble from "@/components/StagePreamble.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getFieldNotesForStage, getGuidesForStage, getStages } from "@/lib/content";
+
+export async function getStaticPaths() {
+  const stages = await getStages();
+  return stages.map((stage) => ({
+    params: { slug: stage.id },
+    props: { stage }
+  }));
+}
+
+const { stage } = Astro.props;
+const fieldNotes = await getFieldNotesForStage(stage.id);
+const guides = await getGuidesForStage(stage.id);
+---
+
+<BaseLayout title={stage.data.title} description={stage.data.situation} canonical={`/stages/${stage.id}/`}>
+  <StageHero stage={stage} />
+  <ChallengeResponseTable stage={stage} />
+  <StageClosing stage={stage} />
+
+  <section class="shell section tight">
+    <h2 class="section-title">Field notes</h2>
+    {
+      fieldNotes.length > 0 ? (
+        <div class="fn-list">
+          {fieldNotes.map((entry) => (
+            <FieldNoteRow entry={entry} />
+          ))}
+        </div>
+      ) : (
+        <p class="muted">Field notes for this stage are in planning.</p>
+      )
+    }
+  </section>
+
+  <section class="shell section tight">
+    <h2 class="section-title">Guides</h2>
+    {
+      guides.length > 0 ? (
+        <div class="guide-grid">
+          {guides.map((entry) => (
+            <GuideCard entry={entry} variant="full" />
+          ))}
+        </div>
+      ) : (
+        <p class="muted">No implementation guides target this stage yet.</p>
+      )
+    }
+  </section>
+
+  <AuthorityContinuum activeLevels={stage.data.authorityLevels} note={stage.data.authorityNote} />
+
+  <StagePreamble stage={stage} />
+</BaseLayout>
+
+<style>
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(1.5rem, 3vw, 1.9rem);
+    font-weight: 500;
+    margin: 0 0 20px;
+  }
+
+  /* Field notes read as an editorial stack: no container, rule-separated. */
+  .fn-list {
+    display: grid;
+  }
+
+  /*
+    Guides stay contained and columnar. The column count is fixed rather than
+    auto-fit so card width is identical on every stage, whatever the count.
+  */
+  .guide-grid {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @media (max-width: 980px) {
+    .guide-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .guide-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

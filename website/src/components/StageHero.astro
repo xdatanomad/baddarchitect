@@ -1,0 +1,28 @@
+---
+interface Props {
+  stage: any;
+}
+
+const { stage } = Astro.props;
+---
+
+<section class="shell section tight stage-hero">
+  <p class="eyebrow">{stage.data.shortLabel}</p>
+  <h1>{stage.data.title}</h1>
+  <p class="lede">{stage.data.situation}</p>
+</section>
+
+<style>
+  .stage-hero {
+    padding-bottom: 20px;
+  }
+
+  .stage-hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 5vw, 2.9rem);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.08;
+    margin: 16px 0 16px;
+  }
+</style>

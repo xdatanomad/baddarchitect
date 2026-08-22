@@ -14,15 +14,15 @@ import { site } from "@/lib/site";
         </span>
       </strong>
       <p>
-        Practical guidance for architects and leaders building production-grade
-        AI applications and agents with the operating model to run them.
+        A practical blueprint for AI architects and leaders moving from scattered experimentation to governed,
+        production-grade AI adoption.
       </p>
     </div>
     <nav aria-label="Footer navigation">
-      <a href="/articles">Articles</a>
-      <a href="/lessons">Lessons</a>
-      <a href="/topics">Topics</a>
-      <a href="/about">About</a>
+      <a href="/stages/">Journey</a>
+      <a href="/guides/">Guides</a>
+      <a href="/essays/">Essays</a>
+      <a href="/about/">About</a>
       <a href="/rss.xml">RSS</a>
     </nav>
   </div>
@@ -38,11 +38,11 @@ import { site } from "@/lib/site";
     align-items: start;
     display: grid;
     gap: 24px;
-    grid-template-columns: minmax(0, 1.5fr) minmax(220px, 0.7fr);
+    grid-template-columns: minmax(0, 1.5fr) minmax(min(220px, 100%), 0.7fr);
   }
 
   p {
-    color: var(--muted);
+    color: var(--ink-soft);
     margin: 8px 0 0;
     max-width: 520px;
   }
@@ -58,8 +58,12 @@ import { site } from "@/lib/site";
     color: var(--ink);
     font-family: var(--sans);
     font-size: 0.9rem;
-    font-weight: 700;
+    font-weight: 600;
     text-decoration: none;
+  }
+
+  nav a:hover {
+    color: var(--accent);
   }
 
   @media (max-width: 720px) {
