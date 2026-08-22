@@ -21,9 +21,13 @@ const statusClass = entry.data.status === "published" ? "pill--published" : "pil
 
 {
   variant === "compact" ? (
-    <a class="fn-chip" href={href}>
-      <span class="fn-chip-title">{entry.data.title}</span>
-      <span class={`pill ${statusClass}`}>{statusLabel}</span>
+    <a class="fn-note card" href={href}>
+      <div class="fn-note-meta">
+        <span>{kind === "guide" ? "Guide" : "Field Note"}</span>
+        <span class={`pill ${statusClass}`}>{statusLabel}</span>
+      </div>
+      <h3 class="fn-note-title">{entry.data.title}</h3>
+      <p class="fn-note-desc">{entry.data.goal}</p>
     </a>
   ) : (
     <div class="fn-card-wrap">
@@ -51,28 +55,50 @@ const statusClass = entry.data.status === "published" ? "pill--published" : "pil
 }
 
 <style>
-  .fn-chip {
-    align-items: center;
-    background: var(--bg-raised);
-    border: 1px solid var(--line);
-    border-radius: 4px;
-    display: inline-flex;
-    gap: 10px;
-    max-width: 300px;
-    padding: 9px 12px;
+  .fn-note {
+    display: block;
+    padding: 16px 20px;
     text-decoration: none;
     transition: border-color 120ms ease;
   }
 
-  .fn-chip:hover {
+  .fn-note:hover {
     border-color: var(--accent);
   }
 
-  .fn-chip-title {
+  .fn-note:hover .fn-note-title {
+    color: var(--accent);
+  }
+
+  .fn-note-meta {
+    align-items: center;
+    color: var(--ink-faint);
+    display: flex;
+    flex-wrap: wrap;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    gap: 10px;
+    letter-spacing: 0.06em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  .fn-note-title {
     color: var(--ink);
-    font-size: 0.82rem;
+    font-family: var(--serif);
+    font-size: clamp(1.05rem, 2.1vw, 1.22rem);
     font-weight: 500;
-    line-height: 1.32;
+    line-height: 1.25;
+    margin: 0;
+    transition: color 120ms ease;
+  }
+
+  .fn-note-desc {
+    color: var(--ink-soft);
+    font-size: 1rem;
+    line-height: 1.55;
+    margin: 8px 0 0;
+    max-width: 68ch;
   }
 
   .fn-card-wrap {

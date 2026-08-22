@@ -111,13 +111,12 @@ const stageNotes = await Promise.all(
     color: var(--ink-soft);
     line-height: 1.55;
     margin: 8px 0 18px;
-    max-width: 640px;
+    max-width: var(--reading);
   }
 
   .journey-notes {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    display: grid;
+    gap: 16px;
   }
 
   .journey-empty {

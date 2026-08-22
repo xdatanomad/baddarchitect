@@ -11,11 +11,7 @@ const { challengeMap, challengesAndLimits } = stage.data;
   {
     challengeMap.length > 0 ? (
       <Fragment>
-        <h2 class="section-title">Pains to response</h2>
-        <p class="section-note">
-          Each material challenge paired with the corresponding practice, decision, or content path. The map is an
-          at-a-glance aid; it does not imply a single practice solves the whole problem.
-        </p>
+        <h2 class="section-title">Challenges and Responses</h2>
         <div class="cr-list">
           {challengeMap.map((row: { challenge: string; whyItMatters: string; response: string }) => (
             <div class="cr-row card">
@@ -24,7 +20,7 @@ const { challengeMap, challengesAndLimits } = stage.data;
                 <p>{row.challenge}</p>
               </div>
               <div class="cr-col">
-                <span class="cr-label">Why it matters</span>
+                <span class="cr-label">Why</span>
                 <p>{row.whyItMatters}</p>
               </div>
               <div class="cr-col">
@@ -53,16 +49,9 @@ const { challengeMap, challengesAndLimits } = stage.data;
     font-family: var(--serif);
     font-size: clamp(1.5rem, 3vw, 1.9rem);
     font-weight: 500;
-    margin: 0 0 10px;
+    margin: 0 0 24px;
   }
 
-  .section-note {
-    color: var(--ink-soft);
-    font-size: 0.94rem;
-    line-height: 1.55;
-    margin: 0 0 24px;
-    max-width: var(--reading);
-  }
 
   .cr-list {
     display: grid;
@@ -79,16 +68,17 @@ const { challengeMap, challengesAndLimits } = stage.data;
     color: var(--accent);
     display: block;
     font-family: var(--mono);
-    font-size: 0.66rem;
-    letter-spacing: 0.08em;
-    margin-bottom: 8px;
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
     text-transform: uppercase;
   }
 
   .cr-col p {
     color: var(--ink-soft);
-    font-size: 0.92rem;
-    line-height: 1.5;
+    font-size: 1rem;
+    line-height: 1.55;
     margin: 0;
   }
 
