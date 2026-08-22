@@ -1,9 +1,9 @@
 import rss from "@astrojs/rss";
-import { getPublishedBlogPosts } from "@/lib/content";
+import { getPublishedEssays } from "@/lib/content";
 import { site } from "@/lib/site";
 
 export async function GET(context) {
-  const posts = await getPublishedBlogPosts();
+  const posts = await getPublishedEssays();
 
   return rss({
     title: site.name,
@@ -13,7 +13,7 @@ export async function GET(context) {
       title: post.data.title,
       description: post.data.description,
       pubDate: post.data.publishedDate,
-      link: `/blog/${post.data.routeSlug}/`
+      link: `/essays/${post.data.routeSlug}/`
     }))
   });
 }

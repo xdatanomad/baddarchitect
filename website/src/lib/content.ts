@@ -32,8 +32,8 @@ export async function getGuidesForStage(stageId: string) {
   );
 }
 
-export async function getPublishedBlogPosts() {
-  const posts = await getCollection("blog", ({ data }) => {
+export async function getPublishedEssays() {
+  const posts = await getCollection("essays", ({ data }) => {
     return data.status === "published" && !data.draft;
   });
 

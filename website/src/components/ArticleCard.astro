@@ -9,7 +9,7 @@ const { entry } = Astro.props;
     <span>{formatDate(entry.data.publishedDate)}</span>
     {entry.data.tags.map((tag: string) => <span class="tag">{tag}</span>)}
   </div>
-  <h2><a href={`/blog/${entry.data.routeSlug}/`}>{entry.data.title}</a></h2>
+  <h2><a href={`/essays/${entry.data.routeSlug}/`}>{entry.data.title}</a></h2>
   <p>{entry.data.summary ?? entry.data.description}</p>
 </article>
 

@@ -4,7 +4,7 @@ export const site = {
   description:
     "A practical blueprint for AI architects and leaders moving from scattered experimentation to governed, production-grade AI adoption, organized around the stage-led adoption journey.",
   nav: [
-    { href: "/blog/", label: "Blog" },
+    { href: "/essays/", label: "Essays" },
     { href: "/about/", label: "About" }
   ]
 } as const;

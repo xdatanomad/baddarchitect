@@ -3,7 +3,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { formatDate } from "@/lib/content";
 
 const { entry } = Astro.props;
-const canonical = entry.data.canonical ?? `/blog/${entry.data.routeSlug}/`;
+const canonical = entry.data.canonical ?? `/essays/${entry.data.routeSlug}/`;
 ---
 
 <BaseLayout

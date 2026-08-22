@@ -25,6 +25,7 @@ const stages = defineCollection({
       .array(
         z.object({
           challenge: z.string(),
+          // Retained in content but not rendered on the stage page today.
           whyItMatters: z.string(),
           response: z.string()
         })
@@ -67,8 +68,8 @@ const guides = defineCollection({
   })
 });
 
-const blog = defineCollection({
-  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/blog" }),
+const essays = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/essays" }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
@@ -83,4 +84,4 @@ const blog = defineCollection({
   })
 });
 
-export const collections = { stages, fieldNotes, guides, blog };
+export const collections = { stages, fieldNotes, guides, essays };
