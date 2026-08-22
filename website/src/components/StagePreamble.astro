@@ -8,6 +8,7 @@ const { hasDetailedOrientation, preamble, pullQuote, whatChanges } = stage.data;
 ---
 
 <section class="shell section tight stage-preamble">
+  <h2 class="section-title">What Changes at This Stage</h2>
   <div class="prose">
     <p>{whatChanges}</p>
     {
@@ -36,6 +37,13 @@ const { hasDetailedOrientation, preamble, pullQuote, whatChanges } = stage.data;
 </section>
 
 <style>
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(1.5rem, 3vw, 1.9rem);
+    font-weight: 500;
+    margin: 0 0 20px;
+  }
+
   .mono-label {
     color: var(--amber);
     font-family: var(--mono);

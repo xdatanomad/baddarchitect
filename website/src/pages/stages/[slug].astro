@@ -24,8 +24,8 @@ const guides = await getGuidesForStage(stage.id);
 
 <BaseLayout title={stage.data.title} description={stage.data.situation} canonical={`/stages/${stage.id}/`}>
   <StageHero stage={stage} />
-  <StagePreamble stage={stage} />
   <ChallengeResponseTable stage={stage} />
+  <StageClosing stage={stage} />
 
   <section class="shell section tight">
     <h2 class="section-title">Field notes</h2>
@@ -59,7 +59,7 @@ const guides = await getGuidesForStage(stage.id);
 
   <AuthorityContinuum activeLevels={stage.data.authorityLevels} note={stage.data.authorityNote} />
 
-  <StageClosing stage={stage} />
+  <StagePreamble stage={stage} />
 </BaseLayout>
 
 <style>
