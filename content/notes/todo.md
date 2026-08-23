@@ -1,13 +1,12 @@
 # Todo
 
-[ ] Task title
-	- Notes:
-	- Due:
-
 ## Research
 [ ] feed into AI And look for reddit and other sources for information on the topic.
+
 [ ] Fireside chats with others with topic from each session.
+
 [ ] build the project skeleton then collaborate with others: Steven, Francois, Rok, ...
+
 [ ] co-record IN posts with other people in my network to get more exposure and reach.
 
 ---
@@ -16,19 +15,17 @@
 
 [ ] Review @content/drafts/essays/foundation-safe-participation.md
 
-[ ] Plan stage 1 - resume session: "Define stage 1 content focus"
+[ ] Plan stage 1 - resume session: "Define stage 3 content focus"
 	- "what is the best prompt for the first stage"
 	- OR "what is the best direction of the first stage"
 
-```text
-Looking at the [docs](docs/) , [adoption-stages.md](docs/adoption-stages.md) and [content-map.md](docs/content-map.md) , what are the main topics we should focus on in the foundation Safe Participation phase?
-No need to write any changes yet. Let's discuss together. Work collaboratively. Present ideas, options, and we can debate together.
-```
-
-PREVIOUS SESSIONS:
-[X] ~~Resume session "Define stage 2 practice sharing"~~
+	```text
+	Looking at the [docs](docs/) , [adoption-stages.md](docs/adoption-stages.md) and [content-map.md](docs/content-map.md) , what are the main topics we should focus on in the foundation Safe Participation phase?
+	No need to write any changes yet. Let's discuss together. Work collaboratively. Present ideas, options, and we can debate together.
+	```
 
 [ ] A promotion strategy from @content/ready `.md` format to @website/src/content/essays `.mdx` format.
+
 [ ] Add daily automation for new articles and content.
 
 ## Website
