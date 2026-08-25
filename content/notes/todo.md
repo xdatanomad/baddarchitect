@@ -17,6 +17,8 @@
 
 [ ] Review @content/drafts/field-notes/personal-leverage/s1-fn02_the-review-is-part-of-the-work.md
 
+[ ] Check for missing guides in @content/drafts/field-notes/personal-leverage/s1-fn01_a-prompt-is-a-moment.md
+
 [ ] Plan stage 1 - resume session: "Define stage 3 content focus"
 	- "what is the best prompt for the first stage"
 	- OR "what is the best direction of the first stage"
