@@ -62,10 +62,12 @@ challengeMap:
       different ways.
     response: >-
       The Review Is Part of the Work. introduces the downloadable Personal
-      Verification Compact and explains how a Personal Context Pack and
-      Work Log make the relevant sources, constraints, decisions, and open
-      state visible. Build a Personal Context Pack and Work Log provides
-      the practical setup.
+      Verification Compact and explains how two distinct aids support
+      verification: a Personal Context Pack makes current sources,
+      constraints, and freshness visible; a Personal Work Log preserves
+      selected decisions, corrections, actions, and open state. Build a
+      Personal Context Pack and Build a Personal Work Log provide the
+      separate practical setups.
   - challenge: >-
       Skills, integrations, computer actions, and event triggers have more
       access or authority than the task needs

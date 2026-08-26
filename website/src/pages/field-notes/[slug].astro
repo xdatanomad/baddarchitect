@@ -17,7 +17,7 @@ const guides = (await Promise.all(entry.data.guideLinks.map((ref) => getEntry(re
   (guide): guide is NonNullable<typeof guide> => Boolean(guide)
 );
 const related = guides.map((guide) => ({
-  label: guide.data.title,
+  label: `${guide.data.title}${guide.data.status === "planned" ? " · Planned" : ""}`,
   href: `/guides/${guide.data.routeSlug}/`
 }));
 ---

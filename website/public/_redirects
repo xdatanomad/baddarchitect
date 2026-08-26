@@ -1,3 +1,5 @@
 /blog              /essays              301
 /blog/             /essays/             301
 /blog/*            /essays/:splat       301
+/guides/build-a-personal-context-pack-and-work-log  /guides/build-a-personal-context-pack/  301
+/guides/build-a-personal-context-pack-and-work-log/ /guides/build-a-personal-context-pack/  301

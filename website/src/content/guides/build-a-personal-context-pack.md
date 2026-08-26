@@ -1,29 +1,28 @@
 ---
-title: "Build a Personal Context Pack and Work Log"
-routeSlug: "build-a-personal-context-pack-and-work-log"
+title: "Build a Personal Context Pack"
+routeSlug: "build-a-personal-context-pack"
 primaryStage: "personal-leverage"
 crossListedStages: []
 status: "planned"
 readerJob: >-
-  Practitioners who need personal AI practices to use current, permitted
-  context and retain a small, inspectable record of decisions and open
-  state without turning an opaque chat history into a source of truth.
+  Practitioners who need one AI-assisted practice to use a small, current,
+  permitted source set without treating old chats, copied notes, or a broad
+  personal knowledge store as authoritative context.
 goal: >-
-  Show how to create a lightweight personal context system that separates
-  authoritative reference material, reusable practice instructions, and
-  human-curated work memory.
+  Show how to create and maintain a lightweight Personal Context Pack that
+  makes the practice's approved sources, source-of-truth rule, freshness
+  requirement, instructions, and data boundary visible.
 coreArgument: >-
-  Context and memory serve different purposes. A Context Pack supplies the
-  approved, current information for the present task. A Work Log preserves
-  the decisions, corrections, action state, and open questions that a
-  person deliberately chooses to retain. Neither is the same as
-  provider-managed chat memory or a dump of every available document.
+  A Context Pack supplies the current, allowed information needed for the
+  present task. It is deliberately selective and refreshable; it is not
+  durable memory, a transcript archive, or a substitute for an
+  organizational system of record.
 decisionRule: >-
-  Do not use a saved context item or remembered AI claim as the basis for
-  consequential work when its source, freshness, permission boundary, or
-  relevance to the current task is unclear.
+  Do not use a saved context item or remembered AI claim for consequential
+  work when its source, freshness, permission boundary, or relevance to the
+  current task is unclear.
 practicalTakeaway: >-
-  A Personal Context Pack and Work Log starter schema with fields for
-  sources, freshness, allowed use, task instructions, decisions, action
-  state, corrections, and review date.
+  A Personal Context Pack starter schema with fields for purpose, approved
+  sources, source of truth, freshness, allowed use, data boundary, task
+  instructions, attribution, and review date.
 ---

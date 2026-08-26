@@ -24,5 +24,5 @@ decisionRule: >-
 practicalTakeaway: >-
   A Personal AI Playbook starter structure and entry template that links
   task method, reusable instruction blocks, skills, examples, Verification
-  Compact, Context Pack, and review date.
+  Compact, Context Pack, Work Log, and review date.
 ---

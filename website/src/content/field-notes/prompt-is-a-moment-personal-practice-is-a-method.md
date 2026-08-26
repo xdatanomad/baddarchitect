@@ -31,5 +31,5 @@ practicalTakeaway: >-
   without requiring public disclosure.
 guideLinks:
   - "build-a-personal-ai-playbook"
-  - "build-a-personal-context-pack-and-work-log"
+  - "build-a-personal-context-pack"
 ---
