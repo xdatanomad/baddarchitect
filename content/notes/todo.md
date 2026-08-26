@@ -15,9 +15,7 @@
 
 [ ] Review @content/drafts/essays/foundation-safe-participation.md
 
-[ ] Review @content/drafts/field-notes/personal-leverage/s1-fn02_the-review-is-part-of-the-work.md
-
-[ ] Check for missing guides in @content/drafts/field-notes/personal-leverage/s1-fn01_a-prompt-is-a-moment.md
+[ ] Website field notes for stage 1 don't match!
 
 [ ] Plan stage 1 - resume session: "Define stage 3 content focus"
 	- "what is the best prompt for the first stage"
