@@ -39,12 +39,19 @@ records what AI may prepare, what the person must check, prohibited data or
 actions, the required confirmation point, and when to stop or escalate. It is
 not a legal contract or a certification of safety.
 
-## Personal Context Pack and Work Log
+## Personal Context Pack
 
-Two related Stage 1 aids. A Personal Context Pack holds the current, permitted
-references and instructions for a task. A Work Log holds human-curated
-decisions, actions, corrections, and open state. Neither is equivalent to
-opaque provider-managed chat memory or a governed organizational context layer.
+A Stage 1 aid that holds the small, current, permitted set of references and
+instructions needed for one personal AI-assisted practice. It makes the source
+of truth, freshness requirement, and data boundary visible. It is not durable
+memory, a system of record, or a governed organizational context layer.
+
+## Personal Work Log
+
+A Stage 1 aid that preserves selected, human-curated decisions, actions,
+corrections, and open state between runs of a personal AI-assisted practice. It
+is not a raw conversation transcript, an authoritative source, an
+organizational audit trail, or provider-managed chat memory.
 
 ## Human-Reviewed Event Workflow
 
