@@ -136,17 +136,17 @@ Two separate personal aids can help.
 
 A **Personal Context Pack** holds the current, permitted references and instructions needed for the present practice. It makes sources, freshness, and allowed use visible without turning every available document into AI context.
 
-A separate implementation guide, **Build a Personal Context Pack**, will cover the structure and tooling for maintaining it.
+The planned implementation guide [Build a Personal Context Pack](/guides/build-a-personal-context-pack/) will cover the structure and tooling for maintaining it.
 
 ### Work Log
 
 A **Work Log** records the decisions, actions, corrections, and open state that you deliberately choose to retain. It is selected operational memory, not a transcript of every interaction.
 
-A separate implementation guide, **Build a Personal Work Log**, will cover its structure, maintenance, and supporting tools.
+The planned implementation guide [Build a Personal Work Log](/guides/build-a-personal-work-log/) will cover its structure, maintenance, and supporting tools.
 
 These aids serve different purposes and should not be confused with opaque provider-managed chat memory. The practical boundary is simple: if AI recalls a material fact but you cannot locate its current authorized source, treat the fact as unverified.
 
-A [Personal AI Playbook](/guides/build-a-personal-ai-playbook/) can later link the compact, Context Pack, Work Log, and reusable method without forcing everything into one long prompt.
+The planned [Personal AI Playbook guide](/guides/build-a-personal-ai-playbook/) will later show how to link the compact, Context Pack, Work Log, and reusable method without forcing everything into one long prompt.
 
 ## Turn Corrections Into Better Boundaries
 

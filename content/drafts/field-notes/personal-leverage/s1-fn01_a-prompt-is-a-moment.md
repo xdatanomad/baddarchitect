@@ -68,7 +68,7 @@ Copy the six prompts below into an approved notes system, local Markdown file, o
 - Which source is authoritative when information conflicts?
 - What needs a freshness check before each use?
 
-Context is an input, not an invitation to paste every document into a chat. More material can add noise, expose data, and obscure stale information. A [Personal Context Pack and Work Log](/guides/build-a-personal-context-pack-and-work-log/) can separate approved references from decisions and corrections worth retaining.
+Context is an input, not an invitation to paste every document into a chat. More material can add noise, expose data, and obscure stale information. The planned [Personal Context Pack guide](/guides/build-a-personal-context-pack/) will show how to keep approved, current references visible for the task. A separate [Personal Work Log guide](/guides/build-a-personal-work-log/) will cover the decisions and corrections worth carrying into the next run.
 
 ### 4. Method
 
@@ -164,7 +164,7 @@ You may need to:
 
 These changes turn isolated success into personal learning. [The Review Is Part of the Work](/field-notes/review-is-part-of-the-work/) develops the grounding and quality gate into a task-appropriate Personal Verification Compact.
 
-For now, **one maintained Canvas is enough**. When several practices become worth keeping, a [Personal AI Playbook](/guides/build-a-personal-ai-playbook/) gives them a home:
+For now, **one maintained Canvas is enough**. When several practices become worth keeping, the planned [Personal AI Playbook guide](/guides/build-a-personal-ai-playbook/) will give them a home:
 
 - **Git-backed Markdown** fits technical work that benefits from version history, diffs, and proximity to repository instructions or tests.
 - **An approved notes or database workspace** fits work that benefits from accessible editing, filtering, and links to current business context.

@@ -304,8 +304,8 @@ automate a workflow.
   - Use one bounded example to demonstrate the artifacts without implying that the framework replaces product judgment.
 - Practical takeaway: An **agent-ready project planning checklist** and the reusable Badd Project Planner skill for moving from intake to implementation tasks without skipping feature contracts.
 - Decision rule: Do not ask a coding agent to implement the product until its constitution, architecture, capability boundaries, dependencies, and feature contracts make the intended behavior and constraints explicit.
-- Source notes: `content/drafts/guides/personal-leverage/s1-g05_project-constitution-and-agent-planning.md`; `.agents/skills/badd-project-planner/`.
-- Additional notes: The existing draft will move to `s1-g06` during the source-file synchronization step. Do not force this standalone guide into the Field Notes 1–2 reading path.
+- Source notes: `content/drafts/guides/personal-leverage/s1-g06_project-constitution-and-agent-planning.md`; `.agents/skills/badd-project-planner/`.
+- Additional notes: Do not force this standalone guide into the Field Notes 1–2 reading path.
 - Status: planned
 
 ## Stage 2: Shared Team Practice
