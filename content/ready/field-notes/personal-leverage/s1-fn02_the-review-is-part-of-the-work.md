@@ -1,40 +1,17 @@
----
-title: "The Review Is Part of the Work."
-description: >-
-  Apply the familiar discipline of engineering checks to AI-assisted
-  factual, analytical, policy, creative, and technical work.
-routeSlug: "review-is-part-of-the-work"
-canonical: "/field-notes/review-is-part-of-the-work/"
-publishedDate: 2026-09-01
-updatedDate: 2026-09-01
-stage: "personal-leverage"
-status: "published"
-readerJob: >-
-  Individual practitioners and leaders helping them use AI-assisted
-  outputs responsibly when factual accuracy, analytical judgment, policy
-  boundaries, or consequential action matter.
-goal: >-
-  Apply the familiar discipline of engineering checks to AI-assisted work
-  by giving one person a proportionate verification method with expected
-  behavior, evidence, checks, authority boundaries, and stop conditions.
-coreArgument: >-
-  Verification is part of the work, not a final glance added after it.
-  Engineering already offers a useful model: define expected behavior,
-  choose evidence capable of exposing failure, and apply checks and review
-  gates proportional to the consequence.
-decisionRule: >-
-  Do not use an AI-prepared result for a consequential decision or action
-  if the person cannot state what must be checked, identify the current
-  authoritative source or test, and recognize the condition that requires
-  them to stop or escalate.
-practicalTakeaway: >-
-  Verification is part of the work, not a final glance added after it.
-  Define expected behavior, evidence, checks, and stop conditions before
-  relying on an AI-prepared result.
-guideLinks:
-  - "build-a-personal-context-pack"
-  - "build-a-personal-work-log"
----
+# The Review Is Part of the Work.
+
+**SEO title:** The Review Is Part of the Work: Verify AI-Assisted Work
+
+**Description:** Apply the familiar discipline of engineering checks to AI-assisted factual, analytical, policy, creative, and technical work.
+
+**Canonical slug:** `/field-notes/review-is-part-of-the-work/`
+
+**Reader/job:** Individual practitioners and leaders helping them use AI-assisted outputs responsibly when factual accuracy, analytical judgment, policy boundaries, or consequential action matter.
+
+**Takeaway:** **Verification is part of the work, not a final glance added after it.** Define expected behavior, evidence, checks, and stop conditions before you rely on an AI-prepared result.
+
+**Decision rule:** Do not use an AI-prepared result for a consequential decision or action if you cannot state what must be checked, identify the current authoritative source or test, and recognize the condition that requires you to stop or escalate.
+
 **Review is not work added after AI produces a result. It is part of the work.**
 
 An AI-prepared result can look finished long before it is ready to use. A customer-risk brief repeats a commitment from last month's notes. A cost analysis says spending fell but overlooks a change in transaction volume. A policy summary gives the general rule and misses the exception that applies to this employee.

@@ -1,0 +1,155 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { formatDate } from "@/lib/content";
+
+interface RelatedItem {
+  label: string;
+  href: string;
+}
+
+const {
+  entry,
+  stageLabel,
+  stageHref,
+  related = []
+} = Astro.props;
+
+const description = entry.data.description ?? entry.data.goal;
+const canonical = entry.data.canonical ?? `/field-notes/${entry.data.routeSlug}/`;
+---
+
+<BaseLayout
+  title={entry.data.title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+>
+  <article class="shell field-note">
+    <div class="field-note-meta">
+      <span>Field Note</span>
+      <a href={stageHref}>{stageLabel}</a>
+      {entry.data.publishedDate && <span>{formatDate(entry.data.publishedDate)}</span>}
+    </div>
+
+    <header class="prose">
+      <h1>{entry.data.title}</h1>
+      <p class="lede">{description}</p>
+    </header>
+
+    <aside class="field-note-takeaway" aria-labelledby="takeaway-title">
+      <p id="takeaway-title" class="mono-label">Practical takeaway</p>
+      <p>{entry.data.practicalTakeaway}</p>
+      {entry.data.decisionRule && (
+        <p class="field-note-rule"><strong>Decision rule:</strong> {entry.data.decisionRule}</p>
+      )}
+    </aside>
+
+    <div class="article-body prose">
+      <slot />
+    </div>
+
+    {related.length > 0 && (
+      <nav class="field-note-related" aria-label="Related implementation guides">
+        <span>Related implementation guides</span>
+        <div>
+          {related.map((item: RelatedItem) => <a class="pill pill--neutral" href={item.href}>{item.label}</a>)}
+        </div>
+      </nav>
+    )}
+  </article>
+</BaseLayout>
+
+<style>
+  .field-note {
+    padding-bottom: 88px;
+    padding-top: 56px;
+  }
+
+  .field-note-meta {
+    align-items: center;
+    color: var(--ink-faint);
+    display: flex;
+    flex-wrap: wrap;
+    font-family: var(--mono);
+    font-size: 0.76rem;
+    gap: 12px;
+    letter-spacing: 0.04em;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+  }
+
+  .field-note-meta a {
+    color: var(--accent);
+  }
+
+  .field-note-takeaway {
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    margin: 34px 0;
+    max-width: var(--reading);
+    padding: 20px 22px;
+  }
+
+  .field-note-takeaway p {
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  .field-note-takeaway .mono-label {
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  .field-note-takeaway .field-note-rule {
+    border-top: 1px solid var(--line);
+    margin-top: 16px;
+    padding-top: 16px;
+  }
+
+  .article-body {
+    border-top: 1px solid var(--line);
+    padding-top: 4px;
+  }
+
+  .field-note-related {
+    border-top: 1px solid var(--line);
+    margin-top: 48px;
+    max-width: var(--reading);
+    padding-top: 24px;
+  }
+
+  .field-note-related > span {
+    color: var(--ink-faint);
+    display: block;
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+
+  .field-note-related div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .field-note-related a {
+    text-decoration: none;
+  }
+
+  @media (max-width: 720px) {
+    .field-note {
+      padding-bottom: 56px;
+      padding-top: 36px;
+    }
+
+    .field-note-takeaway {
+      padding: 18px;
+    }
+  }
+</style>

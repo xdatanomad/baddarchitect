@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Badd Architect">
+  <rect width="64" height="64" rx="8" fill="#8ba7d9"/>
+  <g fill="#0f131c" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="22" font-weight="700">
+    <text x="7" y="39" transform="matrix(-1 0 0 1 27 0)">B</text>
+    <text x="28" y="39">|</text>
+    <text x="42" y="39">A</text>
+  </g>
+</svg>

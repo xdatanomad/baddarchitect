@@ -43,7 +43,11 @@ const stages = defineCollection({
 
 const outlineBaseSchema = z.object({
   title: z.string(),
+  description: z.string().optional(),
   routeSlug: z.string(),
+  canonical: z.string().optional(),
+  publishedDate: z.coerce.date().optional(),
+  updatedDate: z.coerce.date().optional(),
   status: z.enum(["planned", "published"]).default("planned"),
   readerJob: z.string(),
   goal: z.string(),

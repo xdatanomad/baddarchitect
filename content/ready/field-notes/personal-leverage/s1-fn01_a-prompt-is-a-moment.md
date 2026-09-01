@@ -1,41 +1,17 @@
----
-title: "A Prompt Is a Moment. A Personal Practice Is a Method."
-description: >-
-  Turn a useful AI interaction into a repeatable personal practice with
-  clear context, boundaries, verification, and human judgment.
-routeSlug: "prompt-is-a-moment-personal-practice-is-a-method"
-canonical: "/field-notes/prompt-is-a-moment-personal-practice-is-a-method/"
-publishedDate: 2026-09-01
-updatedDate: 2026-09-01
-stage: "personal-leverage"
-status: "published"
-readerJob: >-
-  Individual practitioners, and the leaders or architects enabling them,
-  who need to turn a useful AI interaction into a repeatable personal
-  method without mistaking a prompt collection for a workflow.
-goal: >-
-  Help a person define a bounded, private-by-default AI-assisted practice
-  with a clear task, intended outcome, trusted context, method,
-  verification, and limit—so they can repeat it, improve it, and later
-  choose whether any part is worth sharing.
-coreArgument: >-
-  A prompt is a moment of interaction. A personal practice is the set of
-  conditions that let one person do a recurring piece of work with AI and
-  retain judgment over the result. Better prompting helps, but it is not
-  enough when the useful context, quality bar, and failure boundary live
-  only in a past chat or in the person's memory.
-decisionRule: >-
-  Treat an AI interaction as exploration, not a personal practice, until
-  the person can name the recurring task, allowed context, expected
-  outcome, required verification, and a condition in which they will not
-  use it.
-practicalTakeaway: >-
-  Do not save only the prompt. Preserve the task, grounded information,
-  repeatable method, explicit quality gate, and reason to stop using it.
-guideLinks:
-  - "build-a-personal-ai-playbook"
-  - "build-a-personal-context-pack"
----
+# A Prompt Is a Moment. A Personal Practice Is a Method.
+
+**SEO title:** A Prompt Is a Moment. A Personal Practice Is a Method.
+
+**Description:** Turn a useful AI interaction into a repeatable personal practice with clear context, boundaries, verification, and human judgment.
+
+**Canonical slug:** `/field-notes/prompt-is-a-moment-personal-practice-is-a-method/`
+
+**Reader/job:** Individual practitioners, and the leaders or architects enabling them, who need to turn a useful AI interaction into a repeatable personal method without mistaking a prompt collection for a workflow.
+
+**Takeaway:** Do not save only the prompt. Preserve the task, grounded information, repeatable method, explicit quality gate, and reason to stop using it.
+
+**Decision rule:** Treat an AI interaction as exploration, not a personal practice, until you can name the recurring task, allowed context, expected outcome, required verification, and a condition in which you will not use it.
+
 A good prompt can produce a useful result once. That does not make the result repeatable.
 
 Consider a hypothetical manager preparing a weekly customer-risk brief. One Friday, they give an AI assistant meeting notes, account updates, and careful instructions. The result is concise, accurate, and focused on changed commitments.

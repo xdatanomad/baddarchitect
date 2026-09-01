@@ -1,5 +1,6 @@
 ---
-import { getCollection, getEntry } from "astro:content";
+import { getCollection, getEntry, render } from "astro:content";
+import FieldNoteLayout from "@/layouts/FieldNoteLayout.astro";
 import PlaceholderDetail from "@/components/PlaceholderDetail.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
@@ -20,21 +21,33 @@ const related = guides.map((guide) => ({
   label: `${guide.data.title}${guide.data.status === "planned" ? " · Planned" : ""}`,
   href: `/guides/${guide.data.routeSlug}/`
 }));
+const { Content } = await render(entry);
 ---
 
-<BaseLayout title={entry.data.title} description={entry.data.goal} canonical={`/field-notes/${entry.data.routeSlug}/`}>
-  <PlaceholderDetail
-    kicker="Field Note"
-    title={entry.data.title}
-    statusLabel={entry.data.status === "published" ? "Published" : "Planned"}
+{entry.data.status === "published" ? (
+  <FieldNoteLayout
+    entry={entry}
     stageLabel={stage!.data.shortLabel}
     stageHref={`/stages/${stage!.id}/`}
-    readerJob={entry.data.readerJob}
-    goal={entry.data.goal}
-    coreArgument={entry.data.coreArgument}
-    decisionRule={entry.data.decisionRule}
-    practicalTakeaway={entry.data.practicalTakeaway}
     related={related}
-    relatedLabel="Implementation guides"
-  />
-</BaseLayout>
+  >
+    <Content />
+  </FieldNoteLayout>
+) : (
+  <BaseLayout title={entry.data.title} description={entry.data.goal} canonical={`/field-notes/${entry.data.routeSlug}/`}>
+    <PlaceholderDetail
+      kicker="Field Note"
+      title={entry.data.title}
+      statusLabel="Planned"
+      stageLabel={stage!.data.shortLabel}
+      stageHref={`/stages/${stage!.id}/`}
+      readerJob={entry.data.readerJob}
+      goal={entry.data.goal}
+      coreArgument={entry.data.coreArgument}
+      decisionRule={entry.data.decisionRule}
+      practicalTakeaway={entry.data.practicalTakeaway}
+      related={related}
+      relatedLabel="Implementation guides"
+    />
+  </BaseLayout>
+)}

@@ -39,7 +39,9 @@ const statusClass = entry.data.status === "published" ? "pill--published" : "pil
         </div>
         <h3>{entry.data.title}</h3>
         <p>{entry.data.readerJob}</p>
-        <span class="fn-card-cta">Read the outline &rarr;</span>
+        <span class="fn-card-cta">
+          {entry.data.status === "published" ? "Read the field note" : "Read the outline"} &rarr;
+        </span>
       </a>
       {crossListed.length > 0 && (
         <div class="fn-cross-listed">

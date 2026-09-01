@@ -320,6 +320,30 @@ select {
   padding: 18px;
 }
 
+.prose table {
+  border-collapse: collapse;
+  display: block;
+  margin: 28px 0;
+  max-width: 100%;
+  overflow-x: auto;
+  width: max-content;
+}
+
+.prose th,
+.prose td {
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.prose th {
+  background: var(--bg-raised);
+  color: var(--ink);
+  font-weight: 600;
+}
+
 .prose hr {
   border: 0;
   border-top: 1px solid var(--line);
