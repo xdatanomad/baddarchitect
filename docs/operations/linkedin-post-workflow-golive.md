@@ -135,8 +135,13 @@ Repo → **Settings → Secrets and variables → Actions → Variables**, or:
 
 ```bash
 gh variable set LI_TZ          --repo xdatanomad/baddarchitect-notes --body 'America/Los_Angeles'   # your timezone
-gh variable set LI_POST_DRYRUN --repo xdatanomad/baddarchitect-notes --body '1'                     # 1 = dry-run. Keep it 1 for now.
+gh variable set LI_POST_DRYRUN --repo xdatanomad/baddarchitect-notes --body '1'                     # optional — dry-run is already the default everywhere
 ```
+
+`LI_POST_DRYRUN` is **fail-safe**: unset (or `1`) means dry-run in the config,
+the Action, and the routine. Only an explicit `0` in the Action variable *and*
+the routine env makes it publish. Setting the variable to `1` now is just
+belt-and-braces.
 
 ### 3c. Confirm
 
@@ -258,13 +263,14 @@ When you have seen a few PREPARE previews you are happy with:
 - [ ] You are OK with the routine posting to your real LinkedIn profile
       unattended on its schedule.
 
-**The change (one variable):**
+**The change (two places — both required, because dry-run is fail-safe):**
 
 ```bash
 gh variable set LI_POST_DRYRUN --repo xdatanomad/baddarchitect-notes --body '0'
 ```
 
-And set `LI_POST_DRYRUN=0` in the routine's environment.
+…and set `LI_POST_DRYRUN=0` in the routine's environment. If either is still
+unset or `1`, that path stays in dry-run.
 
 **First live run:** prefer to publish the first one yourself with `/post` on a
 draft you have approved, and watch the Action run + the resulting LinkedIn post,

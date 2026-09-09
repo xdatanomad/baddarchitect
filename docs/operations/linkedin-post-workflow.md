@@ -81,9 +81,9 @@ Edit `scripts/social/config.sh`:
 - `LI_TZ` — timezone for dates in `/schedule` (no default; set it).
 - `LI_GENERATE_DAYS` — days of week idea generation may run (0=Sun..6=Sat,
   comma list; default `1` = Monday, matching the weekly routine).
-- `LI_POST_DRYRUN` — `1` makes the publish-sweep run `li-post.mjs --prepare`
-  only (preview comment, issue stays `li:scheduled`). Start here; flip to `0`
-  to post live.
+- `LI_POST_DRYRUN` — **default `1`** (fail-safe): the publish-sweep runs
+  `li-post.mjs --prepare` only (preview comment, issue stays `li:scheduled`).
+  Set to `0` in the routine env *and* the GitHub repo variable to post live.
 - `LI_MEDIA` — `0` in v1.
 - `LI_IMAGE_ATTEMPT_CAP` — image text-fidelity retry cap (default `3`).
 

@@ -30,7 +30,8 @@ enforce the rules. Operator guide: `docs/operations/linkedin-post-workflow.md`.
 | `li-oauth.mjs` | setup | One-time local OAuth: mint the first access + refresh token + author URN. | landed |
 | `li-token-check.mjs` | read | Refresh the token, confirm it works, `WARN` when the refresh token is near expiry; exit 77 if auth is broken. | landed |
 | `li-post.mjs` | gate | Publish a workflow issue's copy to LinkedIn. Re-checks preconditions, mints a fresh token, posts, writes the permalink back. `--prepare` = dry run (preview comment, no API call). Exit 0 posted / 75 precondition / 77 auth / 71 API. | landed |
-| `li-render-check.mjs` | gate | Image text-fidelity check + attempt cap. | Phase 5 |
+| `li-image.mjs` | render | Generate one post image from a prompt file via `IMAGE_API_*` (OpenAI-compatible shape by default). `--prepare` prints the request, no call. | landed (LI_MEDIA=1) |
+| `li-render-check.mjs` | gate | Verify a rendered image's on-image text against `panel-text.json`. Anthropic vision, `tesseract` fallback. Exit 0 PASS/NEAR-PASS, 1 FAIL (`--json` for a diff), 2 no backend. Attempt cap is enforced by the orchestrator loop. | landed (LI_MEDIA=1) |
 
 ## LinkedIn credentials
 

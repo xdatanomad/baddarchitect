@@ -34,11 +34,19 @@ set -euo pipefail
 : "${LI_MEDIA:=0}"
 
 # 1 = publish-sweep runs li-post.mjs in --prepare (dry run) only: it posts a
-# preview comment and leaves the issue on li:scheduled. Flip to 0 to post live.
-: "${LI_POST_DRYRUN:=0}"
+# preview comment and leaves the issue on li:scheduled. Default 1 (fail-safe).
+# Set to 0 — in the routine env and the GitHub repo variable — to post live.
+: "${LI_POST_DRYRUN:=1}"
 
 # Image text-fidelity retry cap (attempts before the issue is blocked).
 : "${LI_IMAGE_ATTEMPT_CAP:=3}"
+
+# Image generation provider (used only when LI_MEDIA=1). Defaults to the
+# OpenAI-compatible /v1/images/generations shape; set these for another
+# provider and adjust scripts/social/li-image.mjs to match its API.
+: "${IMAGE_API_URL:=https://api.openai.com/v1/images/generations}"
+: "${IMAGE_API_MODEL:=gpt-image-1}"
+# IMAGE_API_KEY — set in the environment, never commit it.
 
 # --- Paths -------------------------------------------------------------
 

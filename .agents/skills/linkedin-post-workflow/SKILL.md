@@ -19,7 +19,11 @@ the scripts in `scripts/social/`.
 - `references/issue-template.md` — the issue body layout and first comment.
 - `references/idea-scout.md` — brief for the idea-selection subagent.
 - `references/researcher.md` — brief for the supporting-material subagent.
-- `references/style-library.md` — image house styles (Phase 5 / `LI_MEDIA=1`).
+- `references/style-library.md` — image house styles + project palette (`LI_MEDIA=1`).
+- `references/visual-designer.md` — brief for the image subagent.
+- `references/video-scripter.md` — brief for the video-script subagent.
+- `references/panel-text.schema.md` — the `panel-text.json` contract the image
+  checker verifies.
 
 ## Invocation contract
 
@@ -211,7 +215,7 @@ the body with `body-set` if the draft changed, then mark the comment handled.
 
 ---
 
-## Media (only when `LI_MEDIA=1`)
+## Media (only when `LI_MEDIA=1`; default `LI_MEDIA=0` → always `text`)
 
 `decide_type`:
 - `text` — a single sharp idea, decision rule, or contrarian claim.
@@ -220,21 +224,44 @@ the body with `body-set` if the draft changed, then mark the comment handled.
 - `video` — a short narrative or "reason through this with me" beat that a
   10–30s talking clip serves better than a static frame.
 
-Image loop (subagent brief: `references/style-library.md` + the chosen style):
-1. Subagent writes `panel-text.json` (every visible string, in order) then
-   renders the image to match.
-2. `node scripts/social/li-render-check.mjs --image <f> --expect <panel-text.json>`.
-3. exit 0 → attach image + spec to the Media section, done.
-   exit 1 → re-dispatch the subagent with the diff, up to
-   `LI_IMAGE_ATTEMPT_CAP` total attempts.
-   exit 3 → cap hit: `gh issue edit <n> --add-label li:image-check-failed`,
-   `transition -> li:blocked`, post the diff + best attempt, ask the owner to
-   `/image <clearer text>` (resets the counter) or `/type text`.
+### Image (`li:type-image`)
 
-Video: produce a 10–30s script — hook line, 3–5 spoken beats, on-screen text
-list, one shot/caption note, end card. Put it in the Media section. Publishing a
-`li:type-video` post sends the text; the owner attaches the recorded clip in
-LinkedIn and replies `/post done <permalink>`.
+`build_media` image loop. Attempt count is tracked by this loop; also write
+`<!-- li:image-attempts=N -->` into the Media section each render so a later run
+can see it. `/image` / `/image-style` reset the count to 0.
+
+1. Dispatch a subagent with `references/visual-designer.md` (which pulls in
+   `references/style-library.md` and `references/panel-text.schema.md`), passing
+   the idea, the post copy, and a style (or "choose"). On a retry also pass the
+   previous `panel-text.json`, the previous image, and the diff.
+2. The subagent returns `IMAGE`, `PANEL_TEXT`, `PROMPT` paths. It has already
+   run `scripts/social/li-image.mjs`.
+3. `node scripts/social/li-render-check.mjs --image <IMAGE> --expect <PANEL_TEXT> --json`.
+   - exit 0 (`PASS` / `NEAR-PASS`) → put the image, the chosen style, the
+     `panel-text.json` contents, and `<!-- li:image-attempts=N -->` in the
+     Media section. Done.
+   - exit 1 (`FAIL`) → if attempts < `LI_IMAGE_ATTEMPT_CAP`, re-dispatch the
+     subagent with the JSON diff as direction; loop.
+   - exit 2 → no extraction backend or bad input: post the error,
+     `transition -> li:blocked`, stop.
+4. Attempts reach `LI_IMAGE_ATTEMPT_CAP` without a pass →
+   `gh issue edit <n> --add-label li:image-check-failed`,
+   `transition -> li:blocked`, post the last diff + attach the best attempt, and
+   ask the owner to `/image <clearer, shorter caption text>` (resets the count)
+   or `/type text` (drop the image). `li:image-check-failed` blocks `/approve`
+   until cleared by one of those.
+
+Attaching the image to the LinkedIn post itself is done by `li-post.mjs` when
+`LI_MEDIA=1` (image upload → asset URN → post `content`); that path is a Phase 5
+addition to `li-post.mjs` and is not exercised while `LI_MEDIA=0`.
+
+### Video (`li:type-video`)
+
+Dispatch a subagent with `references/video-scripter.md`. Put its full return
+(runtime, hook, beats, takeaway, on-screen text, shot note, end card) in the
+Media section. v1 does **not** render a video: publishing a `li:type-video` post
+sends the **text**; the owner records and attaches the clip in LinkedIn and
+replies `/post done <permalink>`.
 
 ---
 
