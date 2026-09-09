@@ -7,7 +7,8 @@ deterministic gate. Every idea, park, and publish is logged under
 `content/social/worklog/`.
 
 Design and rationale: see the approved plan. This file is the running-it
-reference.
+reference. **First-time setup: follow
+`docs/operations/linkedin-post-workflow-golive.md` step by step.**
 
 - **Skill / SOP:** `.agents/skills/linkedin-post-workflow/SKILL.md`
 - **State machine (source of truth):** `.agents/skills/linkedin-post-workflow/references/state-machine.md`
