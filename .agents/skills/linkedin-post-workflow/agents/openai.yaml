@@ -1,0 +1,4 @@
+interface:
+  display_name: "LinkedIn Post Workflow"
+  short_description: "Run the semi-automated LinkedIn post pipeline (propose, review via GitHub issue, publish through a gate)"
+  default_prompt: "Use $linkedin-post-workflow to run the LinkedIn post pipeline. Pass a mode: respond <issue>, generate, publish, or auto."
