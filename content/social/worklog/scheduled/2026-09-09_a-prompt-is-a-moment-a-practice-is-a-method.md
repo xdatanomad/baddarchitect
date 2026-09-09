@@ -1,13 +1,13 @@
 ---
 date: 2026-09-09
 issue: 20
-state: idea
+state: scheduled
 type: text
 title: "A Prompt Is a Moment. A Practice Is a Method."
 source_content:
   - content/ready/field-notes/personal-leverage/s1-fn01_a-prompt-is-a-moment.md
 citation: "https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/"
-scheduled_date: ""
+scheduled_date: "2026-09-09"
 linkedin_url: ""
 parked_reason: ""
 dropped_reason: ""
@@ -17,7 +17,7 @@ dropped_reason: ""
 
 A good AI prompt can produce a great result once. That is not the same as being able to repeat it.
 
-You know the pattern. Friday, you feed the assistant the right notes and get a sharp draft. You save the prompt. A week later the same prompt misses an open issue, repeats a commitment that changed, and leans on a source that has gone stale.
+On Friday you feed the assistant the right notes and get a sharp draft; a week later the same prompt misses an open issue, repeats a commitment that changed, and leans on a source that has gone stale.
 
 The prompt was fine. It was carrying more than a prompt can hold: which sources are current and allowed, what a good result looks like, what to check, and when to stop.
 

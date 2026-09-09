@@ -9,3 +9,4 @@ Append-only ledger. Newest row at the bottom. One row per state change.
 | 2026-09-09 | 14 | scheduled | text | Review Is Part of the Work, Not a Final Glance | - |
 | 2026-09-09 | 14 | dropped | text | Review Is Part of the Work, Not a Final Glance | - |
 | 2026-09-09 | 20 | idea | text | A Prompt Is a Moment. A Practice Is a Method. | - |
+| 2026-09-09 | 20 | scheduled | text | A Prompt Is a Moment. A Practice Is a Method. | - |
