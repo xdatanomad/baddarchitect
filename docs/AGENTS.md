@@ -10,6 +10,7 @@
 - `adoption-stages.md` - canonical foundation, stages, authority continuum, cross-cutting practices, and library model.
 - `roadmap.md` - approved stage-led milestones and carry-forward commitments.
 - `operations/project-phases.md` - phased roadmap from scaffold through production polish.
+- `operations/linkedin-post-workflow.md` - operator guide for the scheduled, semi-automated LinkedIn post pipeline (skill + scripts + GitHub issue review loop).
 - `architecture.md` - current website architecture and stack decision context.
 - `content-map.md` - canonical top-level stage structure plus legacy article briefs pending a later migration.
 - `decisions/` - durable architecture and project decisions.

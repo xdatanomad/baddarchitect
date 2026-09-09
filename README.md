@@ -21,6 +21,7 @@ The website is a static-first Astro app under `website/`. The broader repository
 - `content/drafts/` and `content/ready/` - editorial pipeline, each split into
   `essays/`, `field-notes/`, and `guides/` to match the website taxonomy.
 - `research/` - evidence, learning notes, market maps, and source tracking.
+- `scripts/social/` - deterministic gates for the semi-automated LinkedIn post pipeline (`docs/operations/linkedin-post-workflow.md`).
 - `website/` - deployable Astro website and live MDX content.
 
 ## Adoption Model
