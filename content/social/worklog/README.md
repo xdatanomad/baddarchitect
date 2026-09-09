@@ -39,8 +39,10 @@ dropped_reason: ""        # set on /drop
 ---
 ```
 
-Body: the last-known post copy, the supporting-material block, and any media
-notes.
+Body: the post copy. It is written at idea time and refreshed from the issue
+(`li-issue.sh copy-get`) on `schedule` and `publish`, so a `published/` entry
+always holds the copy that actually went out. While an idea is still in review,
+the GitHub issue — not this file — is the source of truth for the current draft.
 
 ## INDEX.md
 

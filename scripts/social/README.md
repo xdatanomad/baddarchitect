@@ -23,7 +23,7 @@ enforce the rules. Operator guide: `docs/operations/linkedin-post-workflow.md`.
 | `li-context.sh` | read | Emit the compact JSON context pack for generate mode. | landed |
 | `li-state.sh` | gate | The only way labels change; validates every edge against `state-machine.md` (`current` \| `check` \| `transition` \| `edges`). Closes the issue on terminal states. | landed |
 | `li-comments.sh` | read | `unhandled <issue>` — owner comments with `/commands` not yet marked handled, as JSON. | landed |
-| `li-issue.sh` | write | `create` \| `body-set` \| `comment` (`--handled`) \| `react`. Refuses issues not labelled `linkedin-post`. | landed |
+| `li-issue.sh` | write | `create` \| `body-set` \| `comment` (`--handled`) \| `react` \| `copy-get` (print the current post-copy block). Refuses issues not labelled `linkedin-post`. | landed |
 | `li-worklog.sh` | gate | `idea` \| `schedule` \| `publish` \| `park` \| `drop` — write/move the entry file + append one `INDEX.md` row. `--commit` to commit. | landed |
 | `li-guard.sh` | gate | `preflight <issue>` — re-check every publish precondition; exit 0 only if no FAILs. | landed |
 | `li-oauth.mjs` | setup | One-time: mint the first LinkedIn access + refresh token. | Phase 3 |

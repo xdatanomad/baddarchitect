@@ -18,12 +18,18 @@
 #
 #   li-issue.sh react <issue> <comment-id> [<emoji>]
 #       Add a reaction (default: eyes) to a comment.
+#
+#   li-issue.sh copy-get <issue>
+#       Print the current post copy: the text between the
+#       <!-- li:copy:start --> and <!-- li:copy:end --> markers in the body,
+#       with the leading "## Post copy" heading stripped. Use it to feed
+#       li-worklog.sh --copy-file on schedule/publish.
 
 set -euo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 . "$HERE/common.sh"
 
-usage() { sed -n '2,28p' "$0" | sed 's/^# \{0,1\}//'; exit 64; }
+usage() { sed -n '2,34p' "$0" | sed 's/^# \{0,1\}//'; exit 64; }
 
 require_workflow_issue() {
   li_issue_has_label "$1" "$LI_UMBRELLA_LABEL" \
@@ -106,6 +112,21 @@ case "$sub" in
     gh api --method POST "repos/$repo/issues/comments/$cid/reactions" \
       -f "content=$emoji" >/dev/null
     echo "react: comment $cid += :$emoji:"
+    ;;
+
+  copy-get)
+    # Print the copy block (including its "## Post copy" heading) so it can be
+    # passed straight to `li-worklog.sh --copy-file`.
+    n="${1:-}"
+    [ -n "$n" ] || usage
+    require_workflow_issue "$n"
+    li_gh issue view "$n" --json body -q .body \
+      | awk '
+          /<!-- li:copy:start -->/ { inblk=1; next }
+          /<!-- li:copy:end -->/   { inblk=0 }
+          inblk { print }
+        ' \
+      | sed '/./,$!d'
     ;;
 
   *)

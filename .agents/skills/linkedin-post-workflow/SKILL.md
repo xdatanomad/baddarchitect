@@ -157,7 +157,8 @@ Exactly one idea per generate run.
       (use the two-arg form: `transition <n> li:publishing --from li:scheduled`).
    c. `node scripts/social/li-post.mjs --issue <n>`.
       - exit 0: it wrote the permalink to the issue. Then
-        `scripts/social/li-worklog.sh publish --issue <n> --url "<permalink>" --commit`
+        `scripts/social/li-issue.sh copy-get <n> > <copy>`,
+        `scripts/social/li-worklog.sh publish --issue <n> --url "<permalink>" --copy-file <copy> --commit`,
         and `li-state.sh transition <n> li:publishing li:published` (closes the
         issue). Post a final comment with the permalink.
       - exit non-zero: post its stderr, `li-state.sh transition <n> li:publishing li:blocked`,
@@ -182,10 +183,10 @@ Cite `references/commands.md` for validity. Procedures:
 | `/image <notes>` / `/image-style <name>` | `LI_MEDIA=0`: reply disabled. Else §Media image loop with the direction; reset attempt counter. |
 | `/script <notes>` | `LI_MEDIA=0`: reply disabled. Else revise the video script in the Media section. |
 | `/approve` | `li-guard`-style check: refuse if `li:image-check-failed` present (tell the owner to fix the image or `/type text`). Else `transition <n> <state> li:approved`. Reply: "Approved. `/schedule <YYYY-MM-DD>` to queue, or `/post` to publish now." |
-| `/schedule <YYYY-MM-DD> [notes]` | Parse the date (must be today or later, `LI_TZ`). If state is `needs-review`/`revising`, auto-`/approve` first. Record the date in the issue body meta line. `li-worklog.sh schedule --issue <n> --date <d> --commit`. `transition -> li:scheduled`. Reply with the date. |
+| `/schedule <YYYY-MM-DD> [notes]` | Parse the date (must be today or later, `LI_TZ`). If state is `needs-review`/`revising`, auto-`/approve` first. Record the date in the issue body meta table. `scripts/social/li-issue.sh copy-get <n> > <copy>` then `li-worklog.sh schedule --issue <n> --date <d> --copy-file <copy> --commit`. `transition -> li:scheduled`. Reply with the date. |
 | `/unschedule` | `transition li:scheduled li:approved`. |
 | `/post [notes]` | If needed auto-`/approve`. Run PUBLISH MODE steps a–c for this issue now. |
-| `/post done <permalink>` | Record a manual publish: validate the URL looks like a LinkedIn post. `li-worklog.sh publish --issue <n> --url <permalink> --commit`. `transition -> li:published`. |
+| `/post done <permalink>` | Record a manual publish: validate the URL looks like a LinkedIn post. `li-issue.sh copy-get <n> > <copy>` then `li-worklog.sh publish --issue <n> --url <permalink> --copy-file <copy> --commit`. `transition -> li:published`. |
 | `/park <reason>` | `li-worklog.sh park --issue <n> --reason "<reason>" --commit`. `transition <n> <state> li:parked` (closes issue). Then run GENERATE MODE to open a replacement (ignore the generation-day check for a park-triggered generate). |
 | `/drop <reason>` | `li-worklog.sh drop --issue <n> --reason "<reason>" --commit`. `transition -> li:dropped` (closes issue). No replacement. |
 | `/status` | Post: current state, post type, what the workflow is waiting on, and the single next action the owner can take. No state change. |
