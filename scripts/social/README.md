@@ -24,12 +24,22 @@ enforce the rules. Operator guide: `docs/operations/linkedin-post-workflow.md`.
 | `li-state.sh` | gate | The only way labels change; validates every edge against `state-machine.md` (`current` \| `check` \| `transition` \| `edges`). Closes the issue on terminal states. | landed |
 | `li-comments.sh` | read | `unhandled <issue>` — owner comments with `/commands` not yet marked handled, as JSON. | landed |
 | `li-issue.sh` | write | `create` \| `body-set` \| `comment` (`--handled`) \| `react` \| `copy-get` (print the current post-copy block). Refuses issues not labelled `linkedin-post`. | landed |
-| `li-worklog.sh` | gate | `idea` \| `schedule` \| `publish` \| `park` \| `drop` — write/move the entry file + append one `INDEX.md` row. `--commit` to commit. | landed |
+| `li-worklog.sh` | gate | `idea` \| `schedule` \| `publish` \| `park` \| `drop` (write/move the entry + one `INDEX.md` row, `--commit` to commit) \| `due` (list issue numbers whose `scheduled_date` ≤ today). | landed |
 | `li-guard.sh` | gate | `preflight <issue>` — re-check every publish precondition; exit 0 only if no FAILs. | landed |
-| `li-oauth.mjs` | setup | One-time: mint the first LinkedIn access + refresh token. | Phase 3 |
-| `li-token-check.mjs` | read | Warn when the LinkedIn access token is near expiry. | Phase 3 |
-| `li-post.mjs` | gate | Publish to LinkedIn. `--prepare` = dry run. | Phase 3 |
+| `lib.mjs` | lib | Shared Node helpers: env, `gh` shell-out, LinkedIn token refresh + text post + userinfo. No deps (Node ≥ 18). | landed |
+| `li-oauth.mjs` | setup | One-time local OAuth: mint the first access + refresh token + author URN. | landed |
+| `li-token-check.mjs` | read | Refresh the token, confirm it works, `WARN` when the refresh token is near expiry; exit 77 if auth is broken. | landed |
+| `li-post.mjs` | gate | Publish a workflow issue's copy to LinkedIn. Re-checks preconditions, mints a fresh token, posts, writes the permalink back. `--prepare` = dry run (preview comment, no API call). Exit 0 posted / 75 precondition / 77 auth / 71 API. | landed |
 | `li-render-check.mjs` | gate | Image text-fidelity check + attempt cap. | Phase 5 |
+
+## LinkedIn credentials
+
+`li-post.mjs` / `li-token-check.mjs` always mint a fresh access token from
+`LINKEDIN_REFRESH_TOKEN` (+ `LINKEDIN_CLIENT_ID` / `LINKEDIN_CLIENT_SECRET`) at
+the start of every run — LinkedIn refresh tokens are reusable for ~365 days, so
+no access token is persisted between runs. When the refresh token itself
+expires, re-run `li-oauth.mjs` and update the secrets. `LINKEDIN_ACCESS_TOKEN`
+alone is honored as a fallback for a one-off manual test.
 
 ## Handled-comment protocol
 

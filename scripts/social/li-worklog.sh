@@ -11,9 +11,12 @@
 #   li-worklog.sh publish  --issue <n> --url <permalink> [--copy-file <f>] [--commit]
 #   li-worklog.sh park     --issue <n> --reason <text> [--commit]
 #   li-worklog.sh drop     --issue <n> --reason <text> [--commit]
+#   li-worklog.sh due
+#       Print the issue numbers of scheduled entries whose scheduled_date is
+#       today or earlier (one per line). No writes.
 #
-# Prints the entry path. Without --commit the change is written and `git add`ed
-# but not committed.
+# Prints the entry path. Without --commit the change is written to disk but
+# nothing is staged or committed.
 
 set -euo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -25,6 +28,28 @@ WL="$LI_WORKLOG_DIR"
 [ -d "$WL" ] || li_die "worklog dir not found: $WL"
 
 event="${1:-}"; shift || usage
+
+fm_get() {  # fm_get <file> <key> : print a frontmatter scalar value
+  awk -v k="$2" '
+    NR==1 && $0=="---" {infm=1; next}
+    infm && $0=="---" {exit}
+    infm { i=index($0,":"); if(i>0){ key=substr($0,1,i-1); val=substr($0,i+2);
+           if(key==k){ gsub(/^["[:space:]]+|["[:space:]]+$/,"",val); print val; exit } } }
+  ' "$1"
+}
+
+# `due` takes no --issue; handle it before the arg checks below.
+if [ "$event" = due ]; then
+  today="$(li_today)"
+  shopt -s nullglob
+  for f in "$WL"/scheduled/*.md; do
+    d="$(fm_get "$f" scheduled_date || true)"
+    i="$(fm_get "$f" issue || true)"
+    [ -n "$i" ] && [ -n "$d" ] || continue
+    if [[ "$d" < "$today" || "$d" == "$today" ]]; then echo "$i"; fi
+  done
+  exit 0
+fi
 
 # --- args ---
 issue=""; title=""; type=""; citation=""; url=""; reason=""; date=""
@@ -47,15 +72,6 @@ done
 [ -n "$issue" ] || usage
 
 # --- helpers ---
-fm_get() {  # fm_get <file> <key>
-  awk -v k="$2" '
-    NR==1 && $0=="---" {infm=1; next}
-    infm && $0=="---" {exit}
-    infm { i=index($0,":"); if(i>0){ key=substr($0,1,i-1); val=substr($0,i+2);
-           if(key==k){ gsub(/^["[:space:]]+|["[:space:]]+$/,"",val); print val; exit } } }
-  ' "$1"
-}
-
 find_entry() {  # by issue number; echoes path or nothing
   grep -rl --include='*.md' -E "^issue: ${issue}\$" "$WL"/*/ 2>/dev/null | head -n1 || true
 }
@@ -82,7 +98,7 @@ write_entry() {  # write_entry <path> <state>  (frontmatter + body)
     printf '## Post copy\n\n_(draft in issue #%s)_\n' "$issue" > "$body_tmp"
   fi
 
-  local f_date f_type f_title f_cit f_url f_park f_drop
+  local f_date f_type f_title f_cit f_url f_park f_drop f_sched
   f_date="$created_date"
   f_type="$( [ -n "$type" ] && printf '%s' "$type" || fm_or "$path" type text )"
   f_type="${f_type:-text}"
@@ -90,6 +106,7 @@ write_entry() {  # write_entry <path> <state>  (frontmatter + body)
   f_cit="$( [ -n "$citation" ] && printf '%s' "$citation" || fm_or "$path" citation none )"
   f_cit="${f_cit:-none}"
   f_url="$( [ -n "$url" ] && printf '%s' "$url" || fm_or "$path" linkedin_url '' )"
+  f_sched="$( [ -n "$date" ] && printf '%s' "$date" || fm_or "$path" scheduled_date '' )"
   if [ "$event" = park ]; then f_park="$reason"; else f_park="$(fm_or "$path" parked_reason '')"; fi
   if [ "$event" = drop ]; then f_drop="$reason"; else f_drop="$(fm_or "$path" dropped_reason '')"; fi
 
@@ -110,6 +127,7 @@ write_entry() {  # write_entry <path> <state>  (frontmatter + body)
       echo "source_content: []"
     fi
     echo "citation: \"${f_cit}\""
+    echo "scheduled_date: \"${f_sched:-}\""
     echo "linkedin_url: \"${f_url:-}\""
     echo "parked_reason: \"$(printf '%s' "${f_park:-}" | sed 's/"/\\"/g')\""
     echo "dropped_reason: \"$(printf '%s' "${f_drop:-}" | sed 's/"/\\"/g')\""

@@ -146,26 +146,35 @@ Exactly one idea per generate run.
 
 ## PUBLISH MODE
 
-1. **Token check.** Run `node scripts/social/li-token-check.mjs` (Phase 3+). On
-   "near expiry", post a note on the newest open workflow issue and continue.
-2. **Due posts.** List `li:scheduled` issues. For each, read its scheduled date
-   (the `/schedule` command's date, echoed in the issue body's Media/▸meta or
-   the worklog `scheduled/` entry). If `date == today` (in `LI_TZ`):
+1. **Token check.** `node scripts/social/li-token-check.mjs`.
+   - prints `WARN …` → post that line as a note on the newest open workflow
+     issue, continue.
+   - exits non-zero (77) → LinkedIn auth is broken. For every `li:scheduled`
+     issue: `gh issue edit <n> --add-label li:linkedin-auth`, post the re-auth
+     steps, do **not** publish anything this run. Stop PUBLISH MODE.
+2. **Due posts.** `dues=$(scripts/social/li-worklog.sh due)` — issue numbers
+   whose `scheduled_date` is today or earlier. For each `<n>`:
    a. `scripts/social/li-guard.sh preflight <n>` — if it exits non-zero, post
-      the failing lines, `li-state.sh transition <n> li:blocked`, continue.
-   b. `scripts/social/li-state.sh transition <n> li:scheduled li:publishing`
-      (use the two-arg form: `transition <n> li:publishing --from li:scheduled`).
-   c. `node scripts/social/li-post.mjs --issue <n>`.
-      - exit 0: it wrote the permalink to the issue. Then
+      the failing lines, `li-state.sh transition <n> li:scheduled li:blocked`,
+      continue.
+   b. **Dry-run gate.** If `LI_POST_DRYRUN=1` (`scripts/social/config.sh`):
+      `node scripts/social/li-post.mjs --issue <n> --prepare` (posts a preview
+      comment), leave the issue on `li:scheduled`, continue. Do not transition.
+   c. `scripts/social/li-state.sh transition <n> li:publishing --from li:scheduled`.
+   d. `node scripts/social/li-post.mjs --issue <n>` (prints the permalink on its
+      last stdout line).
+      - exit 0: it already wrote a permalink comment. Then
         `scripts/social/li-issue.sh copy-get <n> > <copy>`,
         `scripts/social/li-worklog.sh publish --issue <n> --url "<permalink>" --copy-file <copy> --commit`,
-        and `li-state.sh transition <n> li:publishing li:published` (closes the
-        issue). Post a final comment with the permalink.
-      - exit non-zero: post its stderr, `li-state.sh transition <n> li:publishing li:blocked`,
-        and if the error is auth-related also `gh issue edit <n> --add-label li:linkedin-auth`.
+        `li-state.sh transition <n> li:publishing li:published` (closes the issue).
+      - exit non-zero: post its stderr,
+        `li-state.sh transition <n> li:publishing li:blocked`; if the exit code
+        is 77 also `gh issue edit <n> --add-label li:linkedin-auth`.
 
-`/post` (publish now) runs the same a–c sequence from RESPOND MODE, starting
-from `li:approved` or a publish-related `li:blocked`.
+`/post` (publish now) runs steps a, c, d for this issue from RESPOND MODE,
+starting from `li:approved` (auto-`/approve` first if needed) or a
+publish-related `li:blocked`. `/post` ignores `LI_POST_DRYRUN` — an explicit
+"publish now" always attempts a real post.
 
 ---
 

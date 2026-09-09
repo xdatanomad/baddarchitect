@@ -30,6 +30,10 @@ set -euo pipefail
 # 0 = text-only (v1). 1 = enable image/video paths (Phase 5).
 : "${LI_MEDIA:=0}"
 
+# 1 = publish-sweep runs li-post.mjs in --prepare (dry run) only: it posts a
+# preview comment and leaves the issue on li:scheduled. Flip to 0 to post live.
+: "${LI_POST_DRYRUN:=0}"
+
 # Image text-fidelity retry cap (attempts before the issue is blocked).
 : "${LI_IMAGE_ATTEMPT_CAP:=3}"
 

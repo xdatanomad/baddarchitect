@@ -1,0 +1,11 @@
+{
+  "name": "linkedin-post-workflow-scripts",
+  "private": true,
+  "type": "module",
+  "description": "Deterministic gates for the LinkedIn post workflow. No dependencies.",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "oauth": "node li-oauth.mjs",
+    "token-check": "node li-token-check.mjs"
+  }
+}
