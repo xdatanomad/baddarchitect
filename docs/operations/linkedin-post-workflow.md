@@ -21,8 +21,8 @@ reference.
   disabled. Set `LI_MEDIA=1` in `scripts/social/config.sh` to enable them once
   Phase 5 is done.
 - Two triggers: a GitHub Action on issue comments (fast response to your
-  commands) and a Claude Routine on a schedule (proposes ideas, publishes
-  scheduled posts).
+  `/commands`) and a **weekly** Claude Routine (proposes one idea, runs the
+  publish-sweep).
 
 ## One-time setup
 
@@ -78,37 +78,64 @@ Edit `scripts/social/config.sh`:
 - `LI_OWNERS` — GitHub logins whose issue comments are honored (default:
   `xdatanomad`).
 - `LI_TZ` — timezone for dates in `/schedule` (no default; set it).
-- `LI_GENERATE_DAYS` — cron-style day list for idea generation (default `1,3` =
-  Mon, Wed).
+- `LI_GENERATE_DAYS` — days of week idea generation may run (0=Sun..6=Sat,
+  comma list; default `1` = Monday, matching the weekly routine).
+- `LI_POST_DRYRUN` — `1` makes the publish-sweep run `li-post.mjs --prepare`
+  only (preview comment, issue stays `li:scheduled`). Start here; flip to `0`
+  to post live.
 - `LI_MEDIA` — `0` in v1.
 - `LI_IMAGE_ATTEMPT_CAP` — image text-fidelity retry cap (default `3`).
 
 ### 6. Install the triggers
 
-- **Action:** `.github/workflows/linkedin-comment.yml` is committed; nothing to
-  do once secrets are set.
-- **Routine:** create it with the `schedule` skill / Cron tooling, pointing at
-  the `linkedin-post-workflow` skill. Recommended: once daily ~08:00 `LI_TZ`.
-  It runs generate mode on `LI_GENERATE_DAYS` and the publish-sweep every run.
+**Cadence: the workflow runs once a week.** One Claude Routine on a weekly cron
+does idea generation + the publish-sweep; the GitHub Action handles your
+`/commands` in between, within about a minute.
 
-## Daily use
+- **Action** (`.github/workflows/linkedin-comment.yml`, committed): needs the
+  `ANTHROPIC_API_KEY` secret and the `LINKEDIN_*` secrets. Optional repo
+  *variables* `LI_TZ` and `LI_POST_DRYRUN`. Verify the
+  `anthropics/claude-code-action` input names against its current README before
+  relying on it. Also committed: `.github/workflows/lint-social-scripts.yml`
+  (shellcheck + `node --check` on `scripts/social/**`).
+- **Routine** — create it with the `schedule` skill (or `/schedule`), pointing
+  at the `linkedin-post-workflow` skill, in the Claude cloud environment that
+  has the repo checked out, `gh` authenticated, and the `LINKEDIN_*` env vars
+  set. Suggested cron (local time): **`33 8 * * 1`** — Mondays 08:33.
+  Prompt for the routine:
 
-1. On a generation day, the routine opens an issue titled
-   `[LinkedIn] <working title>` with the draft, a supporting-material block, and
-   a first comment listing your options. State: `li:needs-review`.
+  > Load the `linkedin-post-workflow` skill and run it in `auto` mode for
+  > `xdatanomad/baddarchitect-notes`. Follow SKILL.md exactly: (1) respond to
+  > any unhandled owner `/commands` on open `linkedin-post` issues, (2) run the
+  > publish-sweep for due `li:scheduled` issues, (3) if no idea is in flight
+  > and today is a generation day, generate one new post idea. Commit any
+  > worklog changes to `main`.
+
+  Keep `LI_POST_DRYRUN=1` for the first few weeks; the sweep will post a
+  preview comment on each due issue instead of publishing. Flip it to `0` when
+  you are ready to go live.
+
+## Weekly use
+
+1. On Monday the routine opens an issue titled `[LinkedIn] <working title>`
+   with the draft, a supporting-material block, and a first comment listing
+   your options. State: `li:needs-review`.
 2. You reply with commands (full list:
    `.agents/skills/linkedin-post-workflow/references/commands.md`):
    - `/revise <notes>`, `/caption <notes>`, `/research <notes>`,
      `/regenerate <notes>` to shape it.
    - `/approve` when it is right.
-   - `/schedule 2026-09-15` to queue it, or `/post` to publish now.
-   - `/park <reason>` to shelve it (a fresh idea is generated), `/drop <reason>`
-     to kill it.
+   - `/schedule 2026-09-21` to queue it, or `/post` to publish now.
+   - `/park <reason>` to shelve it (a fresh idea comes next run), `/drop
+     <reason>` to kill it.
    - `/hold` / `/resume` to pause automation on that issue.
-3. The Action responds to each command within about a minute. The routine
-   publishes `li:scheduled` issues on their date.
-4. On publish, the issue gets the LinkedIn permalink, is labeled `li:published`,
-   and is closed. A row lands in `content/social/worklog/INDEX.md`.
+3. The Action responds to each command within about a minute.
+4. **Publish timing:** the sweep runs weekly, so a `/schedule`d post goes out
+   on the **first Monday routine run on or after its date**. Schedule to a
+   Monday for exact timing, or accept that a mid-week date publishes the
+   following Monday. `/post` publishes immediately, any day.
+5. On publish the issue gets the LinkedIn permalink, is labeled `li:published`
+   and closed, and a row lands in `content/social/worklog/INDEX.md`.
 
 ## Runbook
 

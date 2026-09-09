@@ -28,11 +28,13 @@ Invoked with a mode:
 | Mode | Who sends it | Does |
 |---|---|---|
 | `respond` | GitHub Action on `issue_comment` | Act on unhandled owner `/commands` for the given issue. |
-| `generate` | Routine, on a generation day | If no idea is in flight, propose one new post and open its issue. |
-| `publish` | Routine, every run | Publish any `li:scheduled` issue whose date is today; run token check. |
-| `auto` | Manual (`/linkedin-run`) | Run `respond` for every open workflow issue, then `publish`, then `generate`. |
+| `generate` | Weekly routine, on a generation day (`LI_GENERATE_DAYS`) | If no idea is in flight, propose one new post and open its issue. |
+| `publish` | Weekly routine | Publish `li:scheduled` issues that are due (`scheduled_date` ≤ today). |
+| `auto` | Weekly routine, or manual (`/linkedin-run`) | `respond` for every open workflow issue → `publish` → `generate`. |
 
-If no mode is given, assume `auto`.
+If no mode is given, assume `auto`. The workflow runs on a **weekly** cron, so
+`publish` fires at most once a week: a due date that is not the routine's
+weekday publishes on the next routine run on or after that date.
 
 ## Hard rules
 
@@ -146,7 +148,8 @@ Exactly one idea per generate run.
 
 ## PUBLISH MODE
 
-1. **Token check.** `node scripts/social/li-token-check.mjs`.
+1. **Token check.** Skip this step entirely when `LI_POST_DRYRUN=1` (no API is
+   touched). Otherwise `node scripts/social/li-token-check.mjs`:
    - prints `WARN …` → post that line as a note on the newest open workflow
      issue, continue.
    - exits non-zero (77) → LinkedIn auth is broken. For every `li:scheduled`
@@ -192,7 +195,7 @@ Cite `references/commands.md` for validity. Procedures:
 | `/image <notes>` / `/image-style <name>` | `LI_MEDIA=0`: reply disabled. Else §Media image loop with the direction; reset attempt counter. |
 | `/script <notes>` | `LI_MEDIA=0`: reply disabled. Else revise the video script in the Media section. |
 | `/approve` | `li-guard`-style check: refuse if `li:image-check-failed` present (tell the owner to fix the image or `/type text`). Else `transition <n> <state> li:approved`. Reply: "Approved. `/schedule <YYYY-MM-DD>` to queue, or `/post` to publish now." |
-| `/schedule <YYYY-MM-DD> [notes]` | Parse the date (must be today or later, `LI_TZ`). If state is `needs-review`/`revising`, auto-`/approve` first. Record the date in the issue body meta table. `scripts/social/li-issue.sh copy-get <n> > <copy>` then `li-worklog.sh schedule --issue <n> --date <d> --copy-file <copy> --commit`. `transition -> li:scheduled`. Reply with the date. |
+| `/schedule <YYYY-MM-DD> [notes]` | Parse the date (must be today or later, `LI_TZ`). If state is `needs-review`/`revising`, auto-`/approve` first. Add/update a `\| **Scheduled** \| <d> \|` row in the issue body meta table (and set the `State` row to `li:scheduled`). `scripts/social/li-issue.sh copy-get <n> > <copy>` then `li-worklog.sh schedule --issue <n> --date <d> --copy-file <copy> --commit`. `transition -> li:scheduled`. Reply with the date **and** note that the weekly sweep publishes it on the first routine run on or after that date (so a non-routine-weekday date slips to the next routine day). |
 | `/unschedule` | `transition li:scheduled li:approved`. |
 | `/post [notes]` | If needed auto-`/approve`. Run PUBLISH MODE steps a–c for this issue now. |
 | `/post done <permalink>` | Record a manual publish: validate the URL looks like a LinkedIn post. `li-issue.sh copy-get <n> > <copy>` then `li-worklog.sh publish --issue <n> --url <permalink> --copy-file <copy> --commit`. `transition -> li:published`. |

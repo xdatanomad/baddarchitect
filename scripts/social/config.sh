@@ -2,6 +2,8 @@
 # Shared configuration for the LinkedIn post workflow scripts.
 # Source this file: `. "$(dirname "$0")/config.sh"`
 # Every value can be overridden by an environment variable of the same name.
+#
+# shellcheck disable=SC2034  # many vars here are consumed only by sibling scripts
 
 set -euo pipefail
 
@@ -20,7 +22,8 @@ set -euo pipefail
 : "${LI_TZ:=UTC}"
 
 # Days of week the routine may generate a new idea (0=Sun .. 6=Sat), comma list.
-: "${LI_GENERATE_DAYS:=1,3}"
+# Default: Monday only (the workflow runs once a week).
+: "${LI_GENERATE_DAYS:=1}"
 
 # Max number of open, non-terminal idea issues allowed at once.
 : "${LI_MAX_OPEN_IDEAS:=1}"
