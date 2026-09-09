@@ -1,14 +1,14 @@
 ---
 date: 2026-09-09
 issue: 20
-state: scheduled
+state: published
 type: text
 title: "A Prompt Is a Moment. A Practice Is a Method."
 source_content:
   - content/ready/field-notes/personal-leverage/s1-fn01_a-prompt-is-a-moment.md
 citation: "https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/"
 scheduled_date: "2026-09-09"
-linkedin_url: ""
+linkedin_url: "https://www.linkedin.com/feed/update/urn:li:activity:0000000000000000000-SIMULATED"
 parked_reason: ""
 dropped_reason: ""
 ---
