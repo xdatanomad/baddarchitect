@@ -1,12 +1,13 @@
 ---
 date: 2026-09-09
 issue: 14
-state: idea
+state: scheduled
 type: text
 title: "Review Is Part of the Work, Not a Final Glance"
 source_content:
   - content/ready/field-notes/personal-leverage/s1-fn02_the-review-is-part-of-the-work.md
 citation: "https://arxiv.org/abs/2402.11364"
+scheduled_date: "2026-09-09"
 linkedin_url: ""
 parked_reason: ""
 dropped_reason: ""
@@ -32,6 +33,4 @@ Before you rely on an AI-prepared result, answer three questions:
 
 That turns review from a vague responsibility into part of the work.
 
-Decision rule: don't use an AI result for a consequential decision if you can't name what to check, the authoritative source or test, and the condition that makes you stop or escalate.
-
-#AIadoption #AIengineering
+The decision rule: don't rely on an AI result for a consequential call unless you can name what to check, the authoritative source or test, and the condition that makes you stop or escalate.
