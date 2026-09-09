@@ -15,19 +15,24 @@ enforce the rules. Operator guide: `docs/operations/linkedin-post-workflow.md`.
 
 ## Scripts
 
-| Script | Kind | Purpose |
-|---|---|---|
-| `config.sh` | lib | Shared settings, paths, label table. Sourced by the rest. |
-| `li-labels.sh` | setup | Create/update the `linkedin-post` + `li:*` GitHub labels. |
-| `li-context.sh` | read | Emit the compact JSON context pack for generate mode. _(Phase 1)_ |
-| `li-state.sh` | gate | The only way labels change; validates against `state-machine.md`. _(Phase 1)_ |
-| `li-comments.sh` | read | List unhandled owner commands on an issue as JSON. _(Phase 1)_ |
-| `li-issue.sh` | write | Create a workflow issue / rewrite a body section / post a comment. _(Phase 1)_ |
-| `li-worklog.sh` | gate | Write/move a worklog entry + append one `INDEX.md` row. _(Phase 1)_ |
-| `li-guard.sh` | gate | `preflight <issue>`: re-check every publish precondition. _(Phase 1)_ |
-| `li-oauth.mjs` | setup | One-time: mint the first LinkedIn access + refresh token. _(Phase 3)_ |
-| `li-token-check.mjs` | read | Warn when the LinkedIn access token is near expiry. _(Phase 3)_ |
-| `li-post.mjs` | gate | Publish to LinkedIn. `--prepare` = dry run. _(Phase 3)_ |
-| `li-render-check.mjs` | gate | Image text-fidelity check + attempt cap. _(Phase 5)_ |
+| Script | Kind | Purpose | Status |
+|---|---|---|---|
+| `config.sh` | lib | Shared settings, paths, label table. | landed |
+| `common.sh` | lib | Helpers: `gh` wrapper, slug, label/state queries, state-machine parser, `/command` parser. Sources `config.sh`. | landed |
+| `li-labels.sh` | setup | Create/update the `linkedin-post` + `li:*` GitHub labels (`create` \| `list`). | landed |
+| `li-context.sh` | read | Emit the compact JSON context pack for generate mode. | landed |
+| `li-state.sh` | gate | The only way labels change; validates every edge against `state-machine.md` (`current` \| `check` \| `transition` \| `edges`). Closes the issue on terminal states. | landed |
+| `li-comments.sh` | read | `unhandled <issue>` — owner comments with `/commands` not yet marked handled, as JSON. | landed |
+| `li-issue.sh` | write | `create` \| `body-set` \| `comment` (`--handled`) \| `react`. Refuses issues not labelled `linkedin-post`. | landed |
+| `li-worklog.sh` | gate | `idea` \| `schedule` \| `publish` \| `park` \| `drop` — write/move the entry file + append one `INDEX.md` row. `--commit` to commit. | landed |
+| `li-guard.sh` | gate | `preflight <issue>` — re-check every publish precondition; exit 0 only if no FAILs. | landed |
+| `li-oauth.mjs` | setup | One-time: mint the first LinkedIn access + refresh token. | Phase 3 |
+| `li-token-check.mjs` | read | Warn when the LinkedIn access token is near expiry. | Phase 3 |
+| `li-post.mjs` | gate | Publish to LinkedIn. `--prepare` = dry run. | Phase 3 |
+| `li-render-check.mjs` | gate | Image text-fidelity check + attempt cap. | Phase 5 |
 
-Phase labels track the build plan; scripts appear as their phase lands.
+## Handled-comment protocol
+
+The agent replies to a processed comment and appends `<!-- li:handled <id> -->`
+(via `li-issue.sh comment --handled <id>`). `li-comments.sh unhandled` skips any
+comment whose id appears in such a marker, so each run only sees new commands.
