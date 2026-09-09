@@ -5,3 +5,4 @@ Append-only ledger. Newest row at the bottom. One row per state change.
 
 | date | issue | state | type | title | url |
 |---|---|---|---|---|---|
+| 2026-09-09 | 14 | idea | text | Review Is Part of the Work, Not a Final Glance | - |
