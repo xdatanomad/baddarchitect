@@ -79,6 +79,10 @@ li:blocked       >> li:dropped      :: /drop <reason>                      :: â€
 
 ## Rules
 
+- **Every publish goes through `li:publishing`.** There is no direct edge to
+  `li:published` from any other state â€” the routine sweep, `/post`, and
+  `/post done` all `transition -> li:publishing` first, then
+  `li:publishing -> li:published`.
 - On `/park` and `/drop`: the issue moves to the terminal label **and is
   closed**. On `/park`, the routine opens a fresh `li:idea` issue on its next
   generate run (or immediately, if the command handler does it inline).
