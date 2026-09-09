@@ -1,7 +1,7 @@
 ---
 date: 2026-09-09
 issue: 14
-state: scheduled
+state: dropped
 type: text
 title: "Review Is Part of the Work, Not a Final Glance"
 source_content:
@@ -10,7 +10,7 @@ citation: "https://arxiv.org/abs/2402.11364"
 scheduled_date: "2026-09-09"
 linkedin_url: ""
 parked_reason: ""
-dropped_reason: ""
+dropped_reason: "Phase 2-4 dry-run test artifact; superseded by the fresh end-to-end walkthrough run"
 ---
 
 ## Post copy
