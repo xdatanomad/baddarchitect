@@ -21,7 +21,7 @@ Read `docs/content-map.md` only when needed to understand the article's pillar, 
 
 Store generated posts in:
 
-`content/linkedin-long-posts/`
+`content/social/linkedin-long-posts/`
 
 Use one markdown file per post. Keep the directory flat.
 

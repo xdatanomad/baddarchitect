@@ -17,9 +17,9 @@ Before planning, read:
 
 Also inspect existing planned/generated LinkedIn content when present:
 
-- `content/linkedin-content-plans/`
-- `content/linkedin-short-posts/`
-- `content/linkedin-long-posts/`
+- `content/social/linkedin-plans/`
+- `content/social/linkedin-short-posts/`
+- `content/social/linkedin-long-posts/`
 
 Read `docs/content-map.md` only when needed to understand the article's pillar, ID, or planned role.
 
@@ -27,7 +27,7 @@ Read `docs/content-map.md` only when needed to understand the article's pillar, 
 
 Store plans in:
 
-`content/linkedin-content-plans/`
+`content/social/linkedin-plans/`
 
 Use one markdown file per article plan. Keep the directory flat.
 
@@ -55,8 +55,8 @@ The plan should help the post generators create content later. Do not write full
 
 Recommend a posting schedule based on:
 
-- Existing planned LinkedIn posts in `content/linkedin-content-plans/`.
-- Existing generated posts in `content/linkedin-short-posts/` and `content/linkedin-long-posts/`.
+- Existing planned LinkedIn posts in `content/social/linkedin-plans/`.
+- Existing generated posts in `content/social/linkedin-short-posts/` and `content/social/linkedin-long-posts/`.
 - Avoiding multiple posts from the same article too close together.
 - Spacing the sequence over days or weeks so each post has a clear purpose.
 

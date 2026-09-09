@@ -1,0 +1,93 @@
+name: LinkedIn workflow — comment
+
+# Near-instant response to an owner /command on a `linkedin-post` issue.
+# The scheduled reasoning (idea generation + publish-sweep) is a separate
+# weekly Claude Routine — see docs/operations/linkedin-post-workflow.md.
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: write   # commit the worklog to main
+  issues: write     # labels + comments
+
+concurrency:
+  group: linkedin-issue-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  respond:
+    # Cheap pre-filter. The authoritative owner check is LI_OWNERS in
+    # scripts/social/config.sh, enforced by li-comments.sh / the skill.
+    if: >-
+      github.event.issue.state == 'open' &&
+      contains(join(github.event.issue.labels.*.name, ','), 'linkedin-post') &&
+      github.event.comment.user.login == github.repository_owner
+    runs-on: ubuntu-latest
+    steps:
+      - name: Does the comment contain a /command?
+        id: filter
+        env:
+          COMMENT_BODY: ${{ github.event.comment.body }}
+        run: |
+          if printf '%s' "$COMMENT_BODY" | grep -qE '^[[:space:]]*/[a-z][a-z-]*'; then
+            echo "run=1" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=0" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout main
+        if: steps.filter.outputs.run == '1'
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Setup Node
+        if: steps.filter.outputs.run == '1'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Git identity (for worklog commits)
+        if: steps.filter.outputs.run == '1'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      # Verify the action input names against the action's current README —
+      # the `claude_args` interface has changed across major versions.
+      - name: Orchestrator — respond mode
+        if: steps.filter.outputs.run == '1'
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          claude_args: >-
+            --allowed-tools Bash,Read,Edit,Write,WebSearch,WebFetch
+            --max-turns 60
+          prompt: >-
+            Load the `linkedin-post-workflow` skill and run it in **respond**
+            mode for issue #${{ github.event.issue.number }} in this repository.
+            Process only unhandled owner /commands, following
+            .agents/skills/linkedin-post-workflow/SKILL.md to the letter. All
+            state changes go through scripts/social/li-state.sh. Push any
+            worklog commit to `main`.
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LI_TZ: ${{ vars.LI_TZ || 'UTC' }}
+          # fail-safe: unset variable => dry-run. Set the repo variable to 0 to publish live.
+          LI_POST_DRYRUN: ${{ vars.LI_POST_DRYRUN || '1' }}
+          LINKEDIN_CLIENT_ID: ${{ secrets.LINKEDIN_CLIENT_ID }}
+          LINKEDIN_CLIENT_SECRET: ${{ secrets.LINKEDIN_CLIENT_SECRET }}
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_REFRESH_TOKEN: ${{ secrets.LINKEDIN_REFRESH_TOKEN }}
+          LINKEDIN_AUTHOR_URN: ${{ secrets.LINKEDIN_AUTHOR_URN }}
+
+      - name: Push worklog changes
+        if: steps.filter.outputs.run == '1'
+        run: |
+          if ! git diff --quiet origin/main -- content/social/worklog; then
+            git push origin HEAD:main || echo "nothing to push / push rejected"
+          fi

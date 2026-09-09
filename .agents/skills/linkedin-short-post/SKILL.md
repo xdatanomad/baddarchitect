@@ -21,7 +21,7 @@ Read `docs/content-map.md` only when needed to understand the article's pillar, 
 
 Store generated scripts in:
 
-`content/linkedin-short-posts/`
+`content/social/linkedin-short-posts/`
 
 Use one markdown file per post. Keep the directory flat.
 

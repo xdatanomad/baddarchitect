@@ -62,6 +62,8 @@ each stage.
 - `content/ready/{essays,field-notes,guides}/` - polished source content ready to
   adapt into website MDX. Same structure as `drafts/`.
 - `content/social/...` - LinkedIn and other social derivatives.
+- `content/social/worklog/` - log of the scheduled LinkedIn post pipeline; see `docs/operations/linkedin-post-workflow.md`.
+- `scripts/social/` - deterministic gates and plumbing for the LinkedIn post pipeline.
 - `research/` - source research, learning notes, evidence maps, and market maps.
 - `website/src/content/...` - live MDX content used by the Astro site.
 
